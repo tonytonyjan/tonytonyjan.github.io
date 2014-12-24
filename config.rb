@@ -1,3 +1,4 @@
 activate :blog do |blog|
-  # set options on blog
+  blog.layout  = 'blog'
+  blog.sources = 'posts/{year}-{month}-{day}-{title}.html'
 end
