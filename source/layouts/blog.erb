@@ -1,3 +1,8 @@
+<% content_for :nav do %>
+<li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+<% end %>
+
 <% wrap_layout :layout do %>
 <!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -5,57 +10,41 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">{{ page.title }}</h1>
+      <h1 class="entry-title"><%= current_article.title %></h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-in">
-        posted in
-        {% for category in page.categories %}<a href="/categories/{{ category }}" title="瀏覽所有 {{ category }} 分類的文章">{{ category }}</a>{% endfor %}
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
       <span class="posted-on">
-        on 
-        <a href="#" title="{{ page.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time></a>
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="<%= current_article.date.xmlschema %>"><%= I18n.l current_article.date, format: :date %></time></a>
       </span>
-      <span class="posted-by"> 
-        by
-        <a class="url fn n" href="#" title="View all posts by ahmetsali" rel="author">大兜</a>
+      <span class="posted-in">
+        發表於
+        <% Array(current_article.data.categories).each do |category| %><a href="#" title="瀏覽所有 <%= category %> 分類的文章"><%= category %></a><% end %> 分類
       </span>
     </div>
     <!-- .entry-meta -->
-    {% if page.image %}<!-- .featured-image -->
+    <% if current_article.data.image %><!-- .featured-image -->
     <div class="featured-image">
-      <img src="/images/{{ page.image }}" alt="blog-image">
+      <img src="/images/<%= current_article.data.image %>" alt="blog-image">
     </div>
-    <!-- .featured-image -->{% endif %}
+    <!-- .featured-image --><% end %>
     <!-- .entry-content -->
     <div class="entry-content">
       <%= yield %>
-      {% if page.download or page.preview or page.github %}<!-- .project-action -->
+      <% if current_article.data.download || current_article.data.preview || current_article.data.github %><!-- .project-action -->
       <div class="project-action">
-        {% if page.download %}<a href="{{ page.download }}" class="button button-icon big blue"><i class="fa fa-cloud-download"></i>DOWNLOAD</a>{% endif %}
-        {% if page.preview %}<a href="{{ page.preview }}" class="button button-icon big grass"><i class="fa fa-eye"></i>PREVIEW</a>{% endif %}
-        {% if page.github %}<a href="{{ page.github }}" class="button button-icon big red"><i class="fa fa-github"></i>GITHUB</a>{% endif %}
+        <% if current_article.data.download %><a href="<%= current_article.data.download %>" class="button button-icon big blue"><i class="fa fa-cloud-download"></i>DOWNLOAD</a><% end %>
+        <% if current_article.data.preview %><a href="<%= current_article.data.preview %>" class="button button-icon big grass"><i class="fa fa-eye"></i>PREVIEW</a><% end %>
+        <% if current_article.data.github %><a href="<%= current_article.data.github %>" class="button button-icon big red"><i class="fa fa-github"></i>GITHUB</a><% end %>
       </div>
-      <!-- .project-action -->{% endif %}
-      <!-- .related-posts -->
-      <div class="related-posts">
-        <h3>相關文章</h3>
-        <ol>
-          {% for post in site.related_posts limit:3 %}<li><a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a></li>
-          {% endfor %}
-        </ol>
-      </div>
-      <!-- .related-posts -->
+      <!-- .project-action --><% end %>
     </div>
-    <!-- .entry-content -->
-    {% if page.tags != empty %}<!-- .entry-meta -->
-    <footer class="entry-meta">
-      <h3>標籤</h3>
-      {% for tag in page.tags %}<a href="#" rel="tag">{{ tag }}</a> {% endfor %}
-    </footer>
-    <!-- .entry-meta -->{% endif %}
   </article>
   <!-- .hentry -->
   <!-- .about-author -->
@@ -80,14 +69,14 @@
   <!-- .about-author -->
   <!-- .nav-single -->
   <nav class="nav-single row">
-    {% if page.previous %}<div class="nav-previous col-sm-6">
+    <% if current_article.previous_article %><div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="{{ page.previous.url }}" rel="prev"><span class="meta-nav">←</span> {{ page.previous.title }}</a>
-  </div>{% endif %}
-  {% if page.next %}<div class="nav-next col-sm-6">
+    <a href="<%= current_article.previous_article.url %>" rel="prev"><span class="meta-nav">←</span> <%= current_article.previous_article.title %></a>
+  </div><% end %>
+  <% if current_article.next_article %><div class="nav-next col-sm-6">
   <h4>下一篇</h4>
-  <a href="{{ page.next.url }}" rel="next">{{ page.next.title }} <span class="meta-nav">→</span></a>
-</div>{% endif %}
+  <a href="<%= current_article.next_article.url %>" rel="next"><%= current_article.next_article.title %> <span class="meta-nav">→</span></a>
+</div><% end %>
 </nav>
 <!-- .nav-single --> 
 <!-- #comments -->

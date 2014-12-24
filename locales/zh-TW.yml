@@ -198,6 +198,7 @@ zh-TW:
     am: 上午
     formats:
       default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
-      long: ! '%Y年%b%d日 %H:%M'
+      long: ! '%Y 年 %b %d 日 %H:%M'
       short: ! '%b%d日 %H:%M'
+      date: ! '%Y 年 %m 月 %d 日'
     pm: 下午

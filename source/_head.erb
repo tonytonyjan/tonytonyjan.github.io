@@ -4,7 +4,7 @@
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | truncate: 150 }}{% endif %}">
   <meta name="keywords" content="Rails, Ruby, C, Web Development, 程式設計, 大兜, 簡煒航, 作曲, 鋼琴">
   <meta name="author" content="簡煒航, tonyotnyjan, 大兜">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}不歸錄</title>
+  <title><%= "#{current_article.title} - " if current_article %>不歸錄</title>
   <!-- FAV and TOUCH ICONS -->
   <link rel="shortcut icon" href="/images/ico/favicon.ico">
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>

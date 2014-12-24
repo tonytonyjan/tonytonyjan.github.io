@@ -1,11 +1,9 @@
 ---
 title: "RubyKaigi 2014 攻略心得"
 date: 2014-10-10 10:29:04 +0800
-comments: true
 categories: ["Ruby", "Chatting"]
+image: rubykaigi.png
 ---
-
-![RubyKaigi 2014](/images/rubykaigi.png)
 
 > 這輩子截至目前為止出國好像都還不是為了玩，不知幸也不幸。
 
