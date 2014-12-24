@@ -1,0 +1,97 @@
+<% wrap_layout :layout do %>
+<!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">{{ page.title }}</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-in">
+        posted in
+        {% for category in page.categories %}<a href="/categories/{{ category }}" title="瀏覽所有 {{ category }} 分類的文章">{{ category }}</a>{% endfor %}
+      </span>
+      <span class="posted-on">
+        on 
+        <a href="#" title="{{ page.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time></a>
+      </span>
+      <span class="posted-by"> 
+        by
+        <a class="url fn n" href="#" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    {% if page.image %}<!-- .featured-image -->
+    <div class="featured-image">
+      <img src="/images/{{ page.image }}" alt="blog-image">
+    </div>
+    <!-- .featured-image -->{% endif %}
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <%= yield %>
+      {% if page.download or page.preview or page.github %}<!-- .project-action -->
+      <div class="project-action">
+        {% if page.download %}<a href="{{ page.download }}" class="button button-icon big blue"><i class="fa fa-cloud-download"></i>DOWNLOAD</a>{% endif %}
+        {% if page.preview %}<a href="{{ page.preview }}" class="button button-icon big grass"><i class="fa fa-eye"></i>PREVIEW</a>{% endif %}
+        {% if page.github %}<a href="{{ page.github }}" class="button button-icon big red"><i class="fa fa-github"></i>GITHUB</a>{% endif %}
+      </div>
+      <!-- .project-action -->{% endif %}
+      <!-- .related-posts -->
+      <div class="related-posts">
+        <h3>相關文章</h3>
+        <ol>
+          {% for post in site.related_posts limit:3 %}<li><a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      </div>
+      <!-- .related-posts -->
+    </div>
+    <!-- .entry-content -->
+    {% if page.tags != empty %}<!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+      {% for tag in page.tags %}<a href="#" rel="tag">{{ tag }}</a> {% endfor %}
+    </footer>
+    <!-- .entry-meta -->{% endif %}
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    {% if page.previous %}<div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="{{ page.previous.url }}" rel="prev"><span class="meta-nav">←</span> {{ page.previous.title }}</a>
+  </div>{% endif %}
+  {% if page.next %}<div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="{{ page.next.url }}" rel="next">{{ page.next.title }} <span class="meta-nav">→</span></a>
+</div>{% endif %}
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+{% include disqus.html %}
+</div>
+<!-- .blog-single --> 
+<% end %>
