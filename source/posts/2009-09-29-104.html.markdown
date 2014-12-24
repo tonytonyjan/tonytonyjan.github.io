@@ -1,6 +1,6 @@
 ---
 title: "Bla Bla Bla"
-date: 2009-09-29 00:12:16
+date: 2009-09-29 00:12:16 +0800
 comments: true
 categories: Chatting
 ---

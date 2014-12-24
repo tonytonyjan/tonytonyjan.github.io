@@ -1,6 +1,6 @@
 ---
 title: "人生難得，快去快回"
-date: 2010-08-08 00:38:51
+date: 2010-08-08 00:38:51 +0800
 comments: true
 categories: Life
 ---

@@ -1,6 +1,6 @@
 ---
 title: "遺憾"
-date: 2009-10-18 00:40:12
+date: 2009-10-18 00:40:12 +0800
 comments: true
 categories: Chatting
 ---

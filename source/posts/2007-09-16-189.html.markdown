@@ -1,6 +1,6 @@
 ---
 title: "I Met a Girl Recently."
-date: 2007-09-16 00:13:51
+date: 2007-09-16 00:13:51 +0800
 comments: true
 categories: Chatting
 ---

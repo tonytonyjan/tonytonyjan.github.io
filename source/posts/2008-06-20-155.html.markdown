@@ -1,6 +1,6 @@
 ---
 title: "準到爆炸的心測......"
-date: 2008-06-20 00:14:38
+date: 2008-06-20 00:14:38 +0800
 comments: true
 categories: Chatting
 ---

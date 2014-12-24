@@ -1,6 +1,6 @@
 ---
 title: "我瘋了"
-date: 2007-03-02 00:53:24
+date: 2007-03-02 00:53:24 +0800
 comments: true
 categories: Chatting
 ---

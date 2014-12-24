@@ -1,6 +1,6 @@
 ---
 title: "喜悅的淚水"
-date: 2011-08-12 00:12:53
+date: 2011-08-12 00:12:53 +0800
 comments: true
 categories: Chatting
 ---

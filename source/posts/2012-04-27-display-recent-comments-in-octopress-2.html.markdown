@@ -1,6 +1,6 @@
 ---
 title: "在 Octopress 加上近期回覆（二）"
-date: 2012-04-27 14:55
+date: 2012-04-27 14:55 +0800
 comments: true
 categories: [Octopress, Disqus]
 ---

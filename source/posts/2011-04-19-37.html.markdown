@@ -1,6 +1,6 @@
 ---
 title: "人是雜食動物，只是很多人忘了"
-date: 2011-04-19 00:28:19
+date: 2011-04-19 00:28:19 +0800
 comments: true
 categories: Life
 ---

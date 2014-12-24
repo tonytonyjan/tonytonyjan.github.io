@@ -1,6 +1,6 @@
 ---
 title: "無聊的打算"
-date: 2005-12-15 00:18:02
+date: 2005-12-15 00:18:02 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "CSsula新春鐵馬行"
-date: 2010-02-19 00:49:19
+date: 2010-02-19 00:49:19 +0800
 comments: true
 categories: Chatting
 ---

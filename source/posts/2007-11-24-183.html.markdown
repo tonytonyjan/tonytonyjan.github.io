@@ -1,6 +1,6 @@
 ---
 title: "員中有同學需要我們的幫忙！！"
-date: 2007-11-24 00:40:20
+date: 2007-11-24 00:40:20 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "敏感的人大多不幸福"
-date: 2010-03-26 00:28:48
+date: 2010-03-26 00:28:48 +0800
 comments: true
 categories: Chatting
 ---

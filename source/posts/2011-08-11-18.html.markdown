@@ -1,6 +1,6 @@
 ---
 title: "從我，到我們，到我"
-date: 2011-08-11 00:13:46
+date: 2011-08-11 00:13:46 +0800
 comments: true
 categories: Chatting
 ---

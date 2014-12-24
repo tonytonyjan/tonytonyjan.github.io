@@ -1,6 +1,6 @@
 ---
 title: "愛密莉的異想世界～另一個夏天的童謠：在午後"
-date: 2007-06-03 00:12:29
+date: 2007-06-03 00:12:29 +0800
 comments: true
 categories: Chatting
 ---

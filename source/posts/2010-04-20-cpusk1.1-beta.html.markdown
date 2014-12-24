@@ -1,6 +1,6 @@
 ---
 title: "CPUSK1.1-Beta"
-date: 2010-04-20 21:38:46
+date: 2010-04-20 21:38:46 +0800
 comments: true
 categories: Java Swing
 ---

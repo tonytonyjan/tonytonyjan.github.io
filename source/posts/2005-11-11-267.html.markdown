@@ -1,6 +1,6 @@
 ---
 title: "眾犬吠聲"
-date: 2005-11-11 00:35:09
+date: 2005-11-11 00:35:09 +0800
 comments: true
 categories: Life
 ---

@@ -1,6 +1,6 @@
 ---
 title: "新光計畫"
-date: 2012-03-18 13:52
+date: 2012-03-18 13:52 +0800
 comments: true
 categories: Chatting
 ---

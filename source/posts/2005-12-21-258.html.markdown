@@ -1,6 +1,6 @@
 ---
 title: "「群」在我們班......"
-date: 2005-12-21 00:15:47
+date: 2005-12-21 00:15:47 +0800
 comments: true
 categories: Chatting
 ---

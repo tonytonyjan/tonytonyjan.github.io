@@ -1,6 +1,6 @@
 ---
 title: "羽球"
-date: 2011-04-08 00:55:48
+date: 2011-04-08 00:55:48 +0800
 comments: true
 categories: Chatting
 ---

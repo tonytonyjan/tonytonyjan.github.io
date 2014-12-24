@@ -1,6 +1,6 @@
 ---
 title: "～林強～唱出鄉下人的心聲"
-date: 2007-04-11 00:38:32
+date: 2007-04-11 00:38:32 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "怎麼挑"
-date: 2012-05-16 22:59
+date: 2012-05-16 22:59 +0800
 comments: true
 categories: Life
 published: false

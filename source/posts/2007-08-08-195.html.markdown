@@ -1,6 +1,6 @@
 ---
 title: "var Father's Day = '颱風假' ;"
-date: 2007-08-08 00:40:20
+date: 2007-08-08 00:40:20 +0800
 comments: true
 categories: Chatting
 ---

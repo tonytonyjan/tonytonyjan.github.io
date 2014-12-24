@@ -1,6 +1,6 @@
 ---
 title: "我也不知道自己在寫些時麼..."
-date: 2006-08-16 00:33:04
+date: 2006-08-16 00:33:04 +0800
 comments: true
 categories: Works
 ---

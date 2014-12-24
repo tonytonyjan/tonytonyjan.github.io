@@ -1,6 +1,6 @@
 ---
 title: "My Rails Template"
-date: 2012-11-04 16:24
+date: 2012-11-04 16:24 +0800
 comments: true
 categories: [Ruby, Rails]
 ---

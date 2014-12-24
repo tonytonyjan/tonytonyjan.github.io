@@ -1,6 +1,6 @@
 ---
 title: "那你為什麼還繼續吃素？"
-date: 2011-09-25 00:58:37
+date: 2011-09-25 00:58:37 +0800
 comments: true
 categories: Chatting
 ---

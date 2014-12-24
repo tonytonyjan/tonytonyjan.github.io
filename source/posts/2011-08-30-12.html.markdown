@@ -1,6 +1,6 @@
 ---
 title: "列車上的女孩"
-date: 2011-08-30 00:08:43
+date: 2011-08-30 00:08:43 +0800
 comments: true
 categories: Chatting
 ---

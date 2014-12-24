@@ -1,6 +1,6 @@
 ---
 title: "Dear Blog, I'm going to leave you alone......"
-date: 2006-09-01 00:53:47
+date: 2006-09-01 00:53:47 +0800
 comments: true
 categories: Chatting
 ---

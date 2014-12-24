@@ -1,6 +1,6 @@
 ---
 title: "～音樂創作～ I Said ～"
-date: 2006-07-11 00:50:38
+date: 2006-07-11 00:50:38 +0800
 comments: true
 categories: Works
 ---

@@ -1,6 +1,6 @@
 ---
 title: "如果你是我，你也會很無奈"
-date: 2008-12-03 00:59:20
+date: 2008-12-03 00:59:20 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "試彈：另一個夏天的童謠，在午後"
-date: 2007-12-27 00:47:24
+date: 2007-12-27 00:47:24 +0800
 comments: true
 categories: Works
 ---

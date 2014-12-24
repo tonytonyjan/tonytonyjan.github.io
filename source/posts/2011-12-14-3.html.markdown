@@ -1,6 +1,6 @@
 ---
 title: "From Taipei To Oulan Bator（MIT 台灣誌片尾曲）"
-date: 2011-12-14 00:32:19
+date: 2011-12-14 00:32:19 +0800
 comments: true
 categories: Chatting
 ---

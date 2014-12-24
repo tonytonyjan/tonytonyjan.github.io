@@ -1,6 +1,6 @@
 ---
 title: "Ruby Tuesday Taiwan #22 初體驗"
-date: 2013-04-22 21:45
+date: 2013-04-22 21:45 +0800
 comments: true
 categories: Chatting
 ---

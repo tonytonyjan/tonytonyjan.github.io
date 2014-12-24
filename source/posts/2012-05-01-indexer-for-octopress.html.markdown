@@ -1,6 +1,6 @@
 ---
 title: "將 Octopress Page 依照標題自動索引"
-date: 2012-05-01 13:30
+date: 2012-05-01 13:30 +0800
 comments: true
 categories: [Octopress, Jekyll]
 ---

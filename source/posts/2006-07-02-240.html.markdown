@@ -1,6 +1,6 @@
 ---
 title: "流水帳──難得瘋癲"
-date: 2006-07-02 00:26:29
+date: 2006-07-02 00:26:29 +0800
 comments: true
 categories: Chatting
 ---

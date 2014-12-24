@@ -1,6 +1,6 @@
 ---
 title: "讓wine完全中文"
-date: 2010-02-12 00:34:16
+date: 2010-02-12 00:34:16 +0800
 comments: true
 categories: FreeBSD
 ---

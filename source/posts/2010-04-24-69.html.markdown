@@ -1,6 +1,6 @@
 ---
 title: "CSsula機房部落格，推一下XD"
-date: 2010-04-24 00:28:54
+date: 2010-04-24 00:28:54 +0800
 comments: true
 categories: Chatting
 ---

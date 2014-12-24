@@ -1,6 +1,6 @@
 ---
 title: "快笑啊…"
-date: 2010-08-31 00:15:45
+date: 2010-08-31 00:15:45 +0800
 comments: true
 categories: Dream
 ---

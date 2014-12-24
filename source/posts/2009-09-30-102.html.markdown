@@ -1,6 +1,6 @@
 ---
 title: "上了大學才知道"
-date: 2009-09-30 00:34:49
+date: 2009-09-30 00:34:49 +0800
 comments: true
 categories: Chatting
 ---

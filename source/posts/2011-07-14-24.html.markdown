@@ -1,6 +1,6 @@
 ---
 title: "分擔的幸福"
-date: 2011-07-14 00:05:08
+date: 2011-07-14 00:05:08 +0800
 comments: true
 categories: Chatting
 ---

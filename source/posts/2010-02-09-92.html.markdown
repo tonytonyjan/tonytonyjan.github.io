@@ -1,6 +1,6 @@
 ---
 title: "交大數位音樂創作社的悲歌..."
-date: 2010-02-09 00:35:39
+date: 2010-02-09 00:35:39 +0800
 comments: true
 categories: Chatting
 ---

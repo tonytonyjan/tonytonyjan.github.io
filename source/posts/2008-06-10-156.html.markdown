@@ -1,6 +1,6 @@
 ---
 title: "等了三年，終於畢業了！"
-date: 2008-06-10 00:02:08
+date: 2008-06-10 00:02:08 +0800
 comments: true
 categories: Chatting
 ---

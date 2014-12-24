@@ -1,6 +1,6 @@
 ---
 title: "～C語言程式設計～數字大戰～"
-date: 2008-11-08 00:29:20
+date: 2008-11-08 00:29:20 +0800
 comments: true
 categories: C
 ---

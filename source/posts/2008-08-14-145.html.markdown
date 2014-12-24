@@ -1,6 +1,6 @@
 ---
 title: "十八年來唯一無奈的一件事..."
-date: 2008-08-14 00:00:38
+date: 2008-08-14 00:00:38 +0800
 comments: true
 categories: Chatting
 ---

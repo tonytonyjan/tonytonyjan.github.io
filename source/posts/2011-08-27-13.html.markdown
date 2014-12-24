@@ -1,6 +1,6 @@
 ---
 title: "原汁原味的我"
-date: 2011-08-27 00:27:13
+date: 2011-08-27 00:27:13 +0800
 comments: true
 categories: Chatting
 ---

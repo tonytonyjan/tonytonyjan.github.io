@@ -1,6 +1,6 @@
 ---
 title: "玩世哲學"
-date: 2011-12-13 00:43:46
+date: 2011-12-13 00:43:46 +0800
 comments: true
 categories: Life
 ---

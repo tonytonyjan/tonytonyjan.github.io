@@ -1,6 +1,6 @@
 ---
 title: "好開心啊～友達混音版～"
-date: 2007-09-15 00:41:57
+date: 2007-09-15 00:41:57 +0800
 comments: true
 categories: Works
 ---

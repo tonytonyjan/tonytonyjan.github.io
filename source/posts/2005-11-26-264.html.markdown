@@ -1,6 +1,6 @@
 ---
 title: "扶輪盃籃球賽"
-date: 2005-11-26 00:52:04
+date: 2005-11-26 00:52:04 +0800
 comments: true
 categories: Chatting
 ---

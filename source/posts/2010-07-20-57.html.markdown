@@ -1,6 +1,6 @@
 ---
 title: "小歇片刻"
-date: 2010-07-20 00:26:54
+date: 2010-07-20 00:26:54 +0800
 comments: true
 categories: Chatting
 ---

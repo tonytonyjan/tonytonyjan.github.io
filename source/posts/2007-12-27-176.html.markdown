@@ -1,6 +1,6 @@
 ---
 title: "音樂創作～輕快午後"
-date: 2007-12-27 00:47:51
+date: 2007-12-27 00:47:51 +0800
 comments: true
 categories: Works
 ---

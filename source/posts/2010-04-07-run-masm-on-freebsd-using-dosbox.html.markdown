@@ -1,6 +1,6 @@
 ---
 title: "用 dosbox 在 FreeBSD上寫 masm"
-date: 2010-04-07 16:49:30
+date: 2010-04-07 16:49:30 +0800
 comments: true
 categories: FreeBSD ASM
 ---

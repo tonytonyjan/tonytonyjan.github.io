@@ -1,6 +1,6 @@
 ---
 title: "你喜歡雪嗎？"
-date: 2011-04-23 00:56:11
+date: 2011-04-23 00:56:11 +0800
 comments: true
 categories: Chatting
 ---

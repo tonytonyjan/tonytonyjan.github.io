@@ -1,6 +1,6 @@
 ---
 title: "我的第二把吉他"
-date: 2007-08-24 00:40:49
+date: 2007-08-24 00:40:49 +0800
 comments: true
 categories: Chatting
 ---

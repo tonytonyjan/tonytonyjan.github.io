@@ -1,6 +1,6 @@
 ---
 title: "～音樂欣賞～I'm Yours～by Jason Mraz"
-date: 2008-10-04 00:55:11
+date: 2008-10-04 00:55:11 +0800
 comments: true
 categories: Chatting
 ---

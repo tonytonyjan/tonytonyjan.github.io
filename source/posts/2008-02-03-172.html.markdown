@@ -1,6 +1,6 @@
 ---
 title: "Annie Rose，相隔一個太平洋的邂逅"
-date: 2008-02-03 00:37:40
+date: 2008-02-03 00:37:40 +0800
 comments: true
 categories: Chatting
 ---

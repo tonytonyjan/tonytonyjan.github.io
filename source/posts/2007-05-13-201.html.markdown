@@ -1,6 +1,6 @@
 ---
 title: "～音樂創作～這一路上～"
-date: 2007-05-13 00:34:15
+date: 2007-05-13 00:34:15 +0800
 comments: true
 categories: Works
 ---

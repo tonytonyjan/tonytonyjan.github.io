@@ -1,6 +1,6 @@
 ---
 title: "勉強自己"
-date: 2005-12-07 00:03:01
+date: 2005-12-07 00:03:01 +0800
 comments: true
 categories: Chatting
 ---

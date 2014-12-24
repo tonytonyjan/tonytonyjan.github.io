@@ -1,6 +1,6 @@
 ---
 title: "安逸，要有代價。"
-date: 2007-05-25 00:47:13
+date: 2007-05-25 00:47:13 +0800
 comments: true
 categories: Life
 ---

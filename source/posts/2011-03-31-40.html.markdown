@@ -1,6 +1,6 @@
 ---
 title: "新的對象"
-date: 2011-03-31 00:17:30
+date: 2011-03-31 00:17:30 +0800
 comments: true
 categories: Chatting
 ---

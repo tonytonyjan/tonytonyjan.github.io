@@ -1,6 +1,6 @@
 ---
 title: "CSRPG2.14版"
-date: 2010-03-12 00:44:35
+date: 2010-03-12 00:44:35 +0800
 comments: true
 categories: Works
 ---

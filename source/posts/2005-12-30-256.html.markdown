@@ -1,6 +1,6 @@
 ---
 title: "寓言一小則～權力決定對錯～"
-date: 2005-12-30 00:39:00
+date: 2005-12-30 00:39:00 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "好久沒玩點名了...既然中了...心血來潮寫一篇..."
-date: 2008-02-11 00:08:08
+date: 2008-02-11 00:08:08 +0800
 comments: true
 categories: Chatting
 ---

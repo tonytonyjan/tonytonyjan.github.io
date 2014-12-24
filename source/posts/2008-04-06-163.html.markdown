@@ -1,6 +1,6 @@
 ---
 title: "水中的你們啊..."
-date: 2008-04-06 00:26:04
+date: 2008-04-06 00:26:04 +0800
 comments: true
 categories: Chatting
 ---

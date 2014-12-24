@@ -1,6 +1,6 @@
 ---
 title: "每到期末就亂～～"
-date: 2010-06-02 00:18:08
+date: 2010-06-02 00:18:08 +0800
 comments: true
 categories: Chatting
 ---

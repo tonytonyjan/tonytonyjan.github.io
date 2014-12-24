@@ -1,6 +1,6 @@
 ---
 title: "交通大學資訊工程學系（仁洋，不要收我版稅啊～）"
-date: 2008-08-12 00:46:13
+date: 2008-08-12 00:46:13 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "params[\"key\"] 和 params[:key]"
-date: 2012-03-03 15:31
+date: 2012-03-03 15:31 +0800
 comments: true
 categories: Rails
 ---

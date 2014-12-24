@@ -1,6 +1,6 @@
 ---
 title: "真傷腦筋"
-date: 2011-08-27 00:29:06
+date: 2011-08-27 00:29:06 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "青草無限好，只是公車少"
-date: 2011-07-03 00:53:05
+date: 2011-07-03 00:53:05 +0800
 comments: true
 categories: Chatting
 ---

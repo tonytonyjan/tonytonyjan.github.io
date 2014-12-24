@@ -1,6 +1,6 @@
 ---
 title: "贈嘉中"
-date: 2007-03-16 00:15:35
+date: 2007-03-16 00:15:35 +0800
 comments: true
 categories: Works
 ---

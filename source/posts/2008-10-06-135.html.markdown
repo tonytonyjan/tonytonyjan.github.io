@@ -1,6 +1,6 @@
 ---
 title: "我是大一"
-date: 2008-10-06 00:35:09
+date: 2008-10-06 00:35:09 +0800
 comments: true
 categories: Chatting
 ---

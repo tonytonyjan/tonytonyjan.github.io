@@ -1,6 +1,6 @@
 ---
 title: "寫遺書"
-date: 2011-09-02 00:58:19
+date: 2011-09-02 00:58:19 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "新世紀鋼琴的綠色奇蹟──凱文‧柯恩"
-date: 2006-02-05 00:21:27
+date: 2006-02-05 00:21:27 +0800
 comments: true
 categories: Chatting
 ---

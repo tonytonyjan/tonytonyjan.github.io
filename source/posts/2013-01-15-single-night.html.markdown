@@ -1,6 +1,6 @@
 ---
 title: "[音樂創作] 獨夜"
-date: 2013-01-15 20:37
+date: 2013-01-15 20:37 +0800
 comments: true
 categories: Works
 ---

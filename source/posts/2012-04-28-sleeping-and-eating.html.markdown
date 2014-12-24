@@ -1,6 +1,6 @@
 ---
 title: "吃、睡與生活"
-date: 2012-04-28 19:10
+date: 2012-04-28 19:10 +0800
 comments: true
 categories: Life
 ---

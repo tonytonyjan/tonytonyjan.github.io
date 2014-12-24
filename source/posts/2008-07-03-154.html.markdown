@@ -1,6 +1,6 @@
 ---
 title: "另一個夏天的童謠：在午後（合併文）"
-date: 2008-07-03 00:30:21
+date: 2008-07-03 00:30:21 +0800
 comments: true
 categories: Chatting
 ---

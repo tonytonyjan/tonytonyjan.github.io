@@ -1,6 +1,6 @@
 ---
 title: "～愜意的日子也可以很充實呦～"
-date: 2008-02-20 00:13:16
+date: 2008-02-20 00:13:16 +0800
 comments: true
 categories: Chatting
 ---

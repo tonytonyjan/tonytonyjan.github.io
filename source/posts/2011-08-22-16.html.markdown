@@ -1,6 +1,6 @@
 ---
 title: "好久不見，親愛的嘉中"
-date: 2011-08-22 00:42:51
+date: 2011-08-22 00:42:51 +0800
 comments: true
 categories: Chatting
 ---

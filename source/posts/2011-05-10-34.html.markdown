@@ -1,6 +1,6 @@
 ---
 title: "殺人"
-date: 2011-05-10 00:07:54
+date: 2011-05-10 00:07:54 +0800
 comments: true
 categories: Dream
 ---

@@ -1,6 +1,6 @@
 ---
 title: "好久沒來的訪客"
-date: 2005-10-28 00:26:20
+date: 2005-10-28 00:26:20 +0800
 comments: true
 categories: Chatting
 ---

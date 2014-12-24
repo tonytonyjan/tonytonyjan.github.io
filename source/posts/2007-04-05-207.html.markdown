@@ -1,6 +1,6 @@
 ---
 title: "內自省，外人警，中庸行，保此三者庶臻至人矣。"
-date: 2007-04-05 00:34:40
+date: 2007-04-05 00:34:40 +0800
 comments: true
 categories: Chatting
 ---

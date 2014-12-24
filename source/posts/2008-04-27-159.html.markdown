@@ -1,6 +1,6 @@
 ---
 title: "～音樂創作～旭陵子（二部試唱）"
-date: 2008-04-27 00:33:13
+date: 2008-04-27 00:33:13 +0800
 comments: true
 categories: Works
 ---

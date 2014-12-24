@@ -1,6 +1,6 @@
 ---
 title: "第四屆敦安學園開訓心得"
-date: 2006-07-13 00:40:24
+date: 2006-07-13 00:40:24 +0800
 comments: true
 categories: Life
 ---

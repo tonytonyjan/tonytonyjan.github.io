@@ -1,6 +1,6 @@
 ---
 title: "～音樂創作～不曾對妳說的一句話～"
-date: 2008-11-07 00:49:59
+date: 2008-11-07 00:49:59 +0800
 comments: true
 categories: Works
 ---

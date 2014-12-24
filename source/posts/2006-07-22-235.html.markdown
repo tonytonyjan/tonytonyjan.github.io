@@ -1,6 +1,6 @@
 ---
 title: "DIY冷氣"
-date: 2006-07-22 00:48:48
+date: 2006-07-22 00:48:48 +0800
 comments: true
 categories: Works
 ---

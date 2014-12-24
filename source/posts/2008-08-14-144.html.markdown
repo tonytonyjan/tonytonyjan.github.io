@@ -1,6 +1,6 @@
 ---
 title: "Lost Luggage "
-date: 2008-08-14 00:14:33
+date: 2008-08-14 00:14:33 +0800
 comments: true
 categories: Chatting
 ---

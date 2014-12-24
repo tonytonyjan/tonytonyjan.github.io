@@ -1,6 +1,6 @@
 ---
 title: "音樂創作～友達～（徵主唱！！）"
-date: 2007-07-11 00:10:03
+date: 2007-07-11 00:10:03 +0800
 comments: true
 categories: Works
 ---

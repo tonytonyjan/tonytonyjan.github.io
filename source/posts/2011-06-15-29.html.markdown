@@ -1,6 +1,6 @@
 ---
 title: "Jewel - Satisfied"
-date: 2011-06-15 00:29:13
+date: 2011-06-15 00:29:13 +0800
 comments: true
 categories: Chatting
 ---

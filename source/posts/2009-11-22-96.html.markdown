@@ -1,6 +1,6 @@
 ---
 title: "I am room-alone every weekends..."
-date: 2009-11-22 00:37:41
+date: 2009-11-22 00:37:41 +0800
 comments: true
 categories: Chatting
 ---

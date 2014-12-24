@@ -1,6 +1,6 @@
 ---
 title: "可憐的小烏龜"
-date: 2005-12-10 00:59:39
+date: 2005-12-10 00:59:39 +0800
 comments: true
 categories: Chatting
 ---

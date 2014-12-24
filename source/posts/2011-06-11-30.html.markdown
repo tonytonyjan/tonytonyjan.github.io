@@ -1,6 +1,6 @@
 ---
 title: "吾乃追天之人"
-date: 2011-06-11 00:36:04
+date: 2011-06-11 00:36:04 +0800
 comments: true
 categories: Life
 ---

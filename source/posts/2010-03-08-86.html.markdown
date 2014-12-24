@@ -1,6 +1,6 @@
 ---
 title: "數位電路實驗中"
-date: 2010-03-08 00:03:04
+date: 2010-03-08 00:03:04 +0800
 comments: true
 categories: Chatting
 ---

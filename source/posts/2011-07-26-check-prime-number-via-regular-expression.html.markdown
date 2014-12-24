@@ -1,6 +1,6 @@
 ---
 title: "正規表達式檢查質數"
-date: 2011-07-26 17:57
+date: 2011-07-26 17:57 +0800
 comments: true
 categories: Regex
 ---

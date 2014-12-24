@@ -1,6 +1,6 @@
 ---
 title: "[台北] 後門咖啡 Cafe Backstage"
-date: 2013-08-12 13:31
+date: 2013-08-12 13:31 +0800
 comments: true
 categories: SOHO
 ---

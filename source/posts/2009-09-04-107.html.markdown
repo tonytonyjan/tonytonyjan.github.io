@@ -1,6 +1,6 @@
 ---
 title: "Visa廣告"
-date: 2009-09-04 00:33:16
+date: 2009-09-04 00:33:16 +0800
 comments: true
 categories: Experience
 ---

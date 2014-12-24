@@ -1,6 +1,6 @@
 ---
 title: "上帝DJ"
-date: 2008-04-15 00:36:39
+date: 2008-04-15 00:36:39 +0800
 comments: true
 categories: Chatting
 ---

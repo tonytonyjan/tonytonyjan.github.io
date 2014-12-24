@@ -1,6 +1,6 @@
 ---
 title: "～Happy Go 成長營～營歌操教學"
-date: 2009-07-06 00:51:39
+date: 2009-07-06 00:51:39 +0800
 comments: true
 categories: Chatting
 ---

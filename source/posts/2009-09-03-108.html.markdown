@@ -1,6 +1,6 @@
 ---
 title: "哇哈哈"
-date: 2009-09-03 00:11:21
+date: 2009-09-03 00:11:21 +0800
 comments: true
 categories: Chatting
 ---

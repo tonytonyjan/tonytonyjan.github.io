@@ -1,6 +1,6 @@
 ---
 title: "計圖概作業＠＠"
-date: 2010-04-02 00:13:17
+date: 2010-04-02 00:13:17 +0800
 comments: true
 categories: Chatting
 ---

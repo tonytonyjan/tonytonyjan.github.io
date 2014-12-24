@@ -1,6 +1,6 @@
 ---
 title: "在目錄下打開命令提示字元"
-date: 2012-03-06 23:03
+date: 2012-03-06 23:03 +0800
 comments: true
 categories: Windows
 ---

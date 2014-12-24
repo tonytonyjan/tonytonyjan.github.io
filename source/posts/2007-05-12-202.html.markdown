@@ -1,6 +1,6 @@
 ---
 title: "多芬自信基金廣告曲～True Colors～"
-date: 2007-05-12 00:00:47
+date: 2007-05-12 00:00:47 +0800
 comments: true
 categories: Chatting
 ---

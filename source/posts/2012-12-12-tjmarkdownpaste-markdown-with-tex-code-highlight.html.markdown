@@ -1,6 +1,6 @@
 ---
 title: "TJMarkdownPaste - Markdown with Tex and code highlight"
-date: 2012-12-12 07:09
+date: 2012-12-12 07:09 +0800
 comments: true
 categories: Rails
 ---

@@ -1,6 +1,6 @@
 ---
 title: "音樂創作 - 三更半夜"
-date: 2011-08-31 00:03:07
+date: 2011-08-31 00:03:07 +0800
 comments: true
 categories: Works
 ---

@@ -1,6 +1,6 @@
 ---
 title: "跟簡報說話"
-date: 2013-07-03 14:12
+date: 2013-07-03 14:12 +0800
 comments: true
 categories: JavaScript
 ---

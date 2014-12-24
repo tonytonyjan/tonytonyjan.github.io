@@ -1,6 +1,6 @@
 ---
 title: "籃球Bye Bye"
-date: 2007-03-18 00:40:34
+date: 2007-03-18 00:40:34 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "在 Octopress 顯示目錄與標籤雲"
-date: 2012-02-13 00:34
+date: 2012-02-13 00:34 +0800
 comments: true
 categories: Octopress
 ---

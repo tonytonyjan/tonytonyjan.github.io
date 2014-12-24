@@ -1,6 +1,6 @@
 ---
 title: "除夕再一彈～XD"
-date: 2009-01-25 00:10:50
+date: 2009-01-25 00:10:50 +0800
 comments: true
 categories: Chatting
 ---

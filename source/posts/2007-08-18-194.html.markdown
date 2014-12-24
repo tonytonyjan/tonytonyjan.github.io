@@ -1,6 +1,6 @@
 ---
 title: "還好我家有屋頂"
-date: 2007-08-18 00:21:25
+date: 2007-08-18 00:21:25 +0800
 comments: true
 categories: Chatting
 ---

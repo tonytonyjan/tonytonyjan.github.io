@@ -1,6 +1,6 @@
 ---
 title: "大概是累了…"
-date: 2010-03-19 00:43:29
+date: 2010-03-19 00:43:29 +0800
 comments: true
 categories: Chatting
 ---

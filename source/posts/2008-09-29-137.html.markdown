@@ -1,6 +1,6 @@
 ---
 title: "～音樂創作～征魂～"
-date: 2008-09-29 00:18:25
+date: 2008-09-29 00:18:25 +0800
 comments: true
 categories: Works
 ---

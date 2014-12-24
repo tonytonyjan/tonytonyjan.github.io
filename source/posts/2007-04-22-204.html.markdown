@@ -1,6 +1,6 @@
 ---
 title: "音樂創作～Single Night～"
-date: 2007-04-22 00:47:05
+date: 2007-04-22 00:47:05 +0800
 comments: true
 categories: Works
 ---

@@ -1,6 +1,6 @@
 ---
 title: "「笑」長盃 haha long cup"
-date: 2008-12-18 00:09:27
+date: 2008-12-18 00:09:27 +0800
 comments: true
 categories: Chatting
 ---

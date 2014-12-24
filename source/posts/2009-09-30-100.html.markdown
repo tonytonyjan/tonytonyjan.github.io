@@ -1,6 +1,6 @@
 ---
 title: "有感而發"
-date: 2009-09-30 00:58:59
+date: 2009-09-30 00:58:59 +0800
 comments: true
 categories: Chatting
 ---

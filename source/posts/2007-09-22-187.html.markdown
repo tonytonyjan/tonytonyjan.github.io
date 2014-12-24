@@ -1,6 +1,6 @@
 ---
 title: "是誰在扯後腿？"
-date: 2007-09-22 00:40:47
+date: 2007-09-22 00:40:47 +0800
 comments: true
 categories: Chatting
 ---

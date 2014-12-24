@@ -1,6 +1,6 @@
 ---
 title: "熬夜會有什麼結果"
-date: 2009-06-18 00:30:39
+date: 2009-06-18 00:30:39 +0800
 comments: true
 categories: Chatting
 ---

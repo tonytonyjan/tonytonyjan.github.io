@@ -1,6 +1,6 @@
 ---
 title: "兜翔健康工作室元旦特輯！！"
-date: 2009-01-01 00:21:31
+date: 2009-01-01 00:21:31 +0800
 comments: true
 categories: Works
 ---

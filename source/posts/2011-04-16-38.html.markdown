@@ -1,6 +1,6 @@
 ---
 title: "十二次的自殺"
-date: 2011-04-16 00:03:28
+date: 2011-04-16 00:03:28 +0800
 comments: true
 categories: Dream
 ---

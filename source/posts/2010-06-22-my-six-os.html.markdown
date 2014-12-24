@@ -1,6 +1,6 @@
 ---
 title: "大兜 VM 下的六個OS"
-date: 2010-06-22 03:01:15
+date: 2010-06-22 03:01:15 +0800
 comments: true
 categories: System
 ---

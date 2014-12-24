@@ -1,6 +1,6 @@
 ---
 title: "～音樂創作～吉貝嶼的風"
-date: 2008-09-03 00:04:02
+date: 2008-09-03 00:04:02 +0800
 comments: true
 categories: Works
 ---

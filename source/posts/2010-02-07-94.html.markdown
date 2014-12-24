@@ -1,6 +1,6 @@
 ---
 title: "今日心情給五顆星吧"
-date: 2010-02-07 00:50:00
+date: 2010-02-07 00:50:00 +0800
 comments: true
 categories: Chatting
 ---

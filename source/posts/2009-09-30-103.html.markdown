@@ -1,6 +1,6 @@
 ---
 title: "健康生活第一天"
-date: 2009-09-30 00:48:53
+date: 2009-09-30 00:48:53 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "自私的人們，醒醒吧！"
-date: 2007-05-30 00:52:32
+date: 2007-05-30 00:52:32 +0800
 comments: true
 categories: Chatting
 ---

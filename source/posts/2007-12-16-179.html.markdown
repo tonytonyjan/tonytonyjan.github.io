@@ -1,6 +1,6 @@
 ---
 title: "星座真是個好物"
-date: 2007-12-16 00:33:54
+date: 2007-12-16 00:33:54 +0800
 comments: true
 categories: Chatting
 ---

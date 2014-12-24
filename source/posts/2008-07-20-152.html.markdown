@@ -1,6 +1,6 @@
 ---
 title: "音樂創作～未命名～"
-date: 2008-07-20 00:45:19
+date: 2008-07-20 00:45:19 +0800
 comments: true
 categories: Works
 ---

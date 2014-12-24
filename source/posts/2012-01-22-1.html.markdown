@@ -1,6 +1,6 @@
 ---
 title: "生意人真是辛苦"
-date: 2012-01-22 00:26:17
+date: 2012-01-22 00:26:17 +0800
 comments: true
 categories: Chatting
 ---

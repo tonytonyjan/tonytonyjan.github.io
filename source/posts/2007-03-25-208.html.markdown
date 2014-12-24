@@ -1,6 +1,6 @@
 ---
 title: "醉翁之意不在酒？"
-date: 2007-03-25 00:08:52
+date: 2007-03-25 00:08:52 +0800
 comments: true
 categories: Chatting
 ---

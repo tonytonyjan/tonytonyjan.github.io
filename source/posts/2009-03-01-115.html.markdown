@@ -1,6 +1,6 @@
 ---
 title: "女王演講的小心得"
-date: 2009-03-01 00:47:53
+date: 2009-03-01 00:47:53 +0800
 comments: true
 categories: Life
 ---

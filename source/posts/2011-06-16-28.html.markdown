@@ -1,6 +1,6 @@
 ---
 title: "The House That Built Me"
-date: 2011-06-16 00:19:22
+date: 2011-06-16 00:19:22 +0800
 comments: true
 categories: Chatting
 ---

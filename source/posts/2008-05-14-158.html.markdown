@@ -1,6 +1,6 @@
 ---
 title: "人間煉獄：四川大地震估十萬死..."
-date: 2008-05-14 00:29:04
+date: 2008-05-14 00:29:04 +0800
 comments: true
 categories: Chatting
 ---

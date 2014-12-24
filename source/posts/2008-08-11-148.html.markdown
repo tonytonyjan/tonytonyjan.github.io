@@ -1,6 +1,6 @@
 ---
 title: "雅婷再度衛冕！"
-date: 2008-08-11 00:33:03
+date: 2008-08-11 00:33:03 +0800
 comments: true
 categories: Chatting
 ---

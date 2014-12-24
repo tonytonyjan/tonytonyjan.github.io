@@ -1,6 +1,6 @@
 ---
 title: "敦安之歌〈和你一起〉鋼琴瑕疵版"
-date: 2006-10-30 00:41:11
+date: 2006-10-30 00:41:11 +0800
 comments: true
 categories: Works
 ---

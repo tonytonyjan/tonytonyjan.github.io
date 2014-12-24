@@ -1,6 +1,6 @@
 ---
 title: "寒假雜記"
-date: 2009-02-09 00:27:17
+date: 2009-02-09 00:27:17 +0800
 comments: true
 categories: Chatting
 ---

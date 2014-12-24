@@ -1,6 +1,6 @@
 ---
 title: "PTT 不會死"
-date: 2011-12-09 00:31:00
+date: 2011-12-09 00:31:00 +0800
 comments: true
 categories: Chatting
 ---

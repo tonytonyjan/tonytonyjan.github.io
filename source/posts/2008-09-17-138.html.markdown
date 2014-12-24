@@ -1,6 +1,6 @@
 ---
 title: "竹夢X逐夢X築夢"
-date: 2008-09-17 00:16:25
+date: 2008-09-17 00:16:25 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "回家啦～"
-date: 2010-07-04 00:55:52
+date: 2010-07-04 00:55:52 +0800
 comments: true
 categories: Chatting
 ---

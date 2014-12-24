@@ -1,6 +1,6 @@
 ---
 title: "哈哈！過了！過了！"
-date: 2005-12-02 00:49:21
+date: 2005-12-02 00:49:21 +0800
 comments: true
 categories: Chatting
 ---

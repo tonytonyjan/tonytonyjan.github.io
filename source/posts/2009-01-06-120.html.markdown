@@ -1,6 +1,6 @@
 ---
 title: "2009年1月1號，我告別了19年來單身的日子"
-date: 2009-01-06 00:23:04
+date: 2009-01-06 00:23:04 +0800
 comments: true
 categories: Chatting
 ---

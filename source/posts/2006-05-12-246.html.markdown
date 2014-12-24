@@ -1,6 +1,6 @@
 ---
 title: "正因為我有夢──真的是僅僅如此"
-date: 2006-05-12 00:58:58
+date: 2006-05-12 00:58:58 +0800
 comments: true
 categories: Life
 ---

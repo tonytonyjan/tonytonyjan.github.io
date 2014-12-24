@@ -1,6 +1,6 @@
 ---
 title: "火海中的人"
-date: 2011-05-14 00:33:45
+date: 2011-05-14 00:33:45 +0800
 comments: true
 categories: Chatting
 ---

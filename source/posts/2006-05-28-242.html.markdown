@@ -1,6 +1,6 @@
 ---
 title: "真實的苦"
-date: 2006-05-28 00:15:23
+date: 2006-05-28 00:15:23 +0800
 comments: true
 categories: Life
 ---

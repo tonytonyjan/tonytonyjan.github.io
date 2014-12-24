@@ -1,6 +1,6 @@
 ---
 title: "素話記"
-date: 2011-06-19 00:15:02
+date: 2011-06-19 00:15:02 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "退休的戰士"
-date: 2009-02-26 00:03:14
+date: 2009-02-26 00:03:14 +0800
 comments: true
 categories: Life
 ---

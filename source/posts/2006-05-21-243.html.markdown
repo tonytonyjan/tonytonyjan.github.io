@@ -1,6 +1,6 @@
 ---
 title: "For foreigners who can not understand Chinese."
-date: 2006-05-21 00:36:59
+date: 2006-05-21 00:36:59 +0800
 comments: true
 categories: Chatting
 ---

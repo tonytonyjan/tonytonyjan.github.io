@@ -1,6 +1,6 @@
 ---
 title: "凱薩密碼中文版"
-date: 2013-03-20 16:33
+date: 2013-03-20 16:33 +0800
 comments: true
 categories: Ruby
 ---

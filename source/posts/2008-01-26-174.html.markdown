@@ -1,6 +1,6 @@
 ---
 title: "我只有大睡，沒有呼呼"
-date: 2008-01-26 00:49:31
+date: 2008-01-26 00:49:31 +0800
 comments: true
 categories: Chatting
 ---

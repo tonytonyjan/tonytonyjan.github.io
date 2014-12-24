@@ -1,6 +1,6 @@
 ---
 title: "黨救了我們"
-date: 2010-09-08 00:43:30
+date: 2010-09-08 00:43:30 +0800
 comments: true
 categories: Chatting
 ---

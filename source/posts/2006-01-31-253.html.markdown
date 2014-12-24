@@ -1,6 +1,6 @@
 ---
 title: "裝置藝術"
-date: 2006-01-31 00:52:50
+date: 2006-01-31 00:52:50 +0800
 comments: true
 categories: Chatting
 ---

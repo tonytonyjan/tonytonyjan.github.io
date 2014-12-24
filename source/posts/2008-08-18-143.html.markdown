@@ -1,6 +1,6 @@
 ---
 title: "米勒展v.s.當代藝術館"
-date: 2008-08-18 00:40:34
+date: 2008-08-18 00:40:34 +0800
 comments: true
 categories: Chatting
 ---

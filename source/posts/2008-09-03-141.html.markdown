@@ -1,6 +1,6 @@
 ---
 title: "樹不要皮，必死無疑；人不要臉，天下無敵。"
-date: 2008-09-03 00:34:37
+date: 2008-09-03 00:34:37 +0800
 comments: true
 categories: Chatting
 ---

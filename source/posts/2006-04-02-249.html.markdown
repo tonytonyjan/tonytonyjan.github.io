@@ -1,6 +1,6 @@
 ---
 title: "給──那些草莓"
-date: 2006-04-02 00:10:52
+date: 2006-04-02 00:10:52 +0800
 comments: true
 categories: Life
 ---

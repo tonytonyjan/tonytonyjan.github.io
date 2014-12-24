@@ -1,6 +1,6 @@
 ---
 title: "台灣人的世界觀"
-date: 2008-06-07 00:11:50
+date: 2008-06-07 00:11:50 +0800
 comments: true
 categories: Chatting
 ---

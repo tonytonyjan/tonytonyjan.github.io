@@ -1,6 +1,6 @@
 ---
 title: "這年代誰會喜歡被批評呢？"
-date: 2007-09-09 00:33:28
+date: 2007-09-09 00:33:28 +0800
 comments: true
 categories: Chatting
 ---

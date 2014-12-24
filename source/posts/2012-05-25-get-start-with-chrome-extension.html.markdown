@@ -1,6 +1,6 @@
 ---
 title: "大兜的 Chrome Extension 學習筆記"
-date: 2012-05-25 12:12
+date: 2012-05-25 12:12 +0800
 comments: true
 categories: Chrome
 ---

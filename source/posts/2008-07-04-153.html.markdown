@@ -1,6 +1,6 @@
 ---
 title: "這是一篇未來文XDD"
-date: 2008-07-04 00:00:30
+date: 2008-07-04 00:00:30 +0800
 comments: true
 categories: Chatting
 ---

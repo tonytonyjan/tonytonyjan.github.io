@@ -1,6 +1,6 @@
 ---
 title: "一篇沒有大腦的文章XD"
-date: 2008-04-02 00:27:25
+date: 2008-04-02 00:27:25 +0800
 comments: true
 categories: Chatting
 ---

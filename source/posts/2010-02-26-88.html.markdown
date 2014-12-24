@@ -1,6 +1,6 @@
 ---
 title: "在FreeBSD上寫masm"
-date: 2010-02-26 00:53:50
+date: 2010-02-26 00:53:50 +0800
 comments: true
 categories: FreeBSD
 ---

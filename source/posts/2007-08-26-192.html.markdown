@@ -1,6 +1,6 @@
 ---
 title: "A Piece of News about Kenya and the Reflectoin"
-date: 2007-08-26 00:06:46
+date: 2007-08-26 00:06:46 +0800
 comments: true
 categories: Chatting
 ---

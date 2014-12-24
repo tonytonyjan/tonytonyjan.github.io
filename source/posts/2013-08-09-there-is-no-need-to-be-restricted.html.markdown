@@ -1,6 +1,6 @@
 ---
 title: "別把世界關在外面"
-date: 2013-08-09 04:50
+date: 2013-08-09 04:50 +0800
 comments: true
 categories: Life
 ---

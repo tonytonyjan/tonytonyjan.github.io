@@ -1,6 +1,6 @@
 ---
 title: "撐家的滋味"
-date: 2011-07-05 00:51:52
+date: 2011-07-05 00:51:52 +0800
 comments: true
 categories: Chatting
 ---

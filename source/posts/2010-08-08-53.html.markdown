@@ -1,6 +1,6 @@
 ---
 title: "嘉義高雄路跑暨千人哈哈行前通知"
-date: 2010-08-08 00:48:04
+date: 2010-08-08 00:48:04 +0800
 comments: true
 categories: Life
 ---

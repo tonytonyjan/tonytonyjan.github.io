@@ -1,6 +1,6 @@
 ---
 title: "八月行事曆 and 千人哈哈計畫"
-date: 2010-08-01 00:41:49
+date: 2010-08-01 00:41:49 +0800
 comments: true
 categories: Chatting
 ---

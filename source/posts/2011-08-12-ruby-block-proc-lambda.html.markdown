@@ -1,6 +1,6 @@
 ---
 title: "Ruby Block, Proc and Lambda"
-date: 2011-08-12 16:44
+date: 2011-08-12 16:44 +0800
 comments: true
 categories: Ruby
 ---

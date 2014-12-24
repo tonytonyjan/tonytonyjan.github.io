@@ -1,6 +1,6 @@
 ---
 title: "Wow ! It Is Fate !"
-date: 2008-08-04 00:41:33
+date: 2008-08-04 00:41:33 +0800
 comments: true
 categories: Chatting
 ---

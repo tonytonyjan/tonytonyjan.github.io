@@ -1,6 +1,6 @@
 ---
 title: "我的愛"
-date: 2009-09-05 00:28:01
+date: 2009-09-05 00:28:01 +0800
 comments: true
 categories: Chatting
 ---

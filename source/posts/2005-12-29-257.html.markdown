@@ -1,6 +1,6 @@
 ---
 title: "這禮拜的音樂課及鋼琴革命"
-date: 2005-12-29 00:30:13
+date: 2005-12-29 00:30:13 +0800
 comments: true
 categories: Chatting
 ---

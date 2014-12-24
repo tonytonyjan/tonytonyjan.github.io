@@ -1,6 +1,6 @@
 ---
 title: "給我們班"
-date: 2009-01-02 00:05:20
+date: 2009-01-02 00:05:20 +0800
 comments: true
 categories: Chatting
 ---

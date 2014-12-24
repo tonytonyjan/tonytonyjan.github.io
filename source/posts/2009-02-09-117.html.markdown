@@ -1,6 +1,6 @@
 ---
 title: "打死蚊子後請記得要洗手..."
-date: 2009-02-09 00:22:15
+date: 2009-02-09 00:22:15 +0800
 comments: true
 categories: Chatting
 ---

@@ -1,6 +1,6 @@
 ---
 title: "大學和高中一樣刺激啊..."
-date: 2008-09-17 00:13:10
+date: 2008-09-17 00:13:10 +0800
 comments: true
 categories: Chatting
 ---

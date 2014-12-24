@@ -1,6 +1,6 @@
 ---
 title: "球與運氣"
-date: 2005-10-20 00:46:45
+date: 2005-10-20 00:46:45 +0800
 comments: true
 categories: Chatting
 ---

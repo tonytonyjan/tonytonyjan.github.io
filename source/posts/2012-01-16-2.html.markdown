@@ -1,6 +1,6 @@
 ---
 title: "聊聊漂亮的女人"
-date: 2012-01-16 00:55:42
+date: 2012-01-16 00:55:42 +0800
 comments: true
 categories: Life
 ---

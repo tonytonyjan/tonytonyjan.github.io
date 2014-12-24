@@ -1,6 +1,6 @@
 ---
 title: "心理矛盾"
-date: 2005-11-18 00:02:18
+date: 2005-11-18 00:02:18 +0800
 comments: true
 categories: Chatting
 ---

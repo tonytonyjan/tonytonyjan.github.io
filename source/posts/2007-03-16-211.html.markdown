@@ -1,6 +1,6 @@
 ---
 title: "杞人憂天"
-date: 2007-03-16 00:25:29
+date: 2007-03-16 00:25:29 +0800
 comments: true
 categories: Chatting
 ---

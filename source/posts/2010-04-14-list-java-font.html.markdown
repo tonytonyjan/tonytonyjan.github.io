@@ -1,6 +1,6 @@
 ---
 title: "列出系統中 Java 可用字型"
-date: 2010-04-14 21:18:02
+date: 2010-04-14 21:18:02 +0800
 comments: true
 categories: Java
 ---

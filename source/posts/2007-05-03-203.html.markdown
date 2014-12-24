@@ -1,6 +1,6 @@
 ---
 title: "嘉中不過如此"
-date: 2007-05-03 00:25:33
+date: 2007-05-03 00:25:33 +0800
 comments: true
 categories: Chatting
 ---

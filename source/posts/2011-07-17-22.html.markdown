@@ -1,6 +1,6 @@
 ---
 title: "為什麼去新竹"
-date: 2011-07-17 00:00:21
+date: 2011-07-17 00:00:21 +0800
 comments: true
 categories: Chatting
 ---
