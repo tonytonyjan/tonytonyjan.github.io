@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 400px;
+      margin: 10px;
+      float: left;
+    }
+
+    .box img{
+      display: block;
+      width: 100%;
+    }
+    /**** Transitions ****/
+
+    .masonry,
+    .masonry .masonry-brick {
+      -webkit-transition-duration: 0.7s;
+         -moz-transition-duration: 0.7s;
+          -ms-transition-duration: 0.7s;
+           -o-transition-duration: 0.7s;
+              transition-duration: 0.7s;
+    }
+
+    .masonry {
+      -webkit-transition-property: height, width;
+         -moz-transition-property: height, width;
+          -ms-transition-property: height, width;
+           -o-transition-property: height, width;
+              transition-property: height, width;
+    }
+
+    .masonry .masonry-brick {
+      -webkit-transition-property: left, right, top;
+         -moz-transition-property: left, right, top;
+          -ms-transition-property: left, right, top;
+           -o-transition-property: left, right, top;
+              transition-property: left, right, top;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.min.js"></script>
+  <script src="/javascripts/libs/jquery.masonry.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="box"><img src="/images/potluck/1.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/2.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/3.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/4.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/5.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/6.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/7.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/8.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/9.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/10.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/11.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/12.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/13.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/14.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/15.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/16.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/17.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/18.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/19.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/20.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/21.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/22.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/23.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/24.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/25.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/26.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/27.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/28.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/29.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/30.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/31.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/32.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/33.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/34.jpg" alt=""></div>
+    <div class="box"><img src="/images/potluck/35.jpg" alt=""></div>
+  </div>
+  <script>
+    var container = $('#container');
+    container.imagesLoaded(function(){
+      container.masonry({
+        itemSelector: '.box'
+      });
+    });
+  </script>
+</body>
+</html>

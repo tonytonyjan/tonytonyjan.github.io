@@ -1,0 +1,241 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+<title>楽天が運営するポータルサイト ： 【インフォシーク】Infoseek</title>
+<style type="text/css">
+img { border: medium none; }
+a:link { color: #00329B; }
+.clear { clear: both; }
+.clear hr { display: none; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #FFFFFF;
+    font-size: 13px;
+    text-align: center;
+}
+body * {
+    font-size: 100%;
+}
+
+div#all {
+    width: 738px;
+    margin: 0 auto;
+    paddind: 0;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    text-align: left;
+}
+
+div#header {
+    position: relative;
+}
+div#header h1{
+    padding: 20px 0 10px 20px;
+    border-bottom: 3px solid #BF0000;
+}
+div#header div#help {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+div#contents {
+    margin: 10px 10px 0;
+    font-size: 125%;
+}
+div#contents h2 {
+    font-size: 150%;
+    text-align: center;
+}
+div#contents h3 {
+    margin-top: 10px;
+    font-size: 125%;
+    text-align: center;
+}
+div#contents div#sentence {
+    margin-top: 20px;
+    padding-left: 150px;
+}
+div#contents div#info {
+    margin-top: 30px;
+    padding-left: 475px;
+}
+div#contents div#toplink {
+    margin-top: 20px;
+    font-size: 150%;
+    text-align: center;
+}
+
+div#link {
+    margin:10px 10px 0;
+}
+div#link div#infoseek {
+    width: 350px;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    background-color: #FFFFFF;
+    border:1px solid #B7B7B7;
+    font-size: 110%;
+}
+div#link div#rakuten {
+    width: 350px;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    float: right;
+    background-color: #FFFFFF;
+    border:1px solid #B7B7B7;
+    font-size:110%;
+}
+div#link div#infoseek ul,
+div#link div#rakuten ul {
+    padding: 5px 6px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+}
+div#link div#infoseek ul li,
+div#link div#rakuten ul li {
+    padding: 3px;
+    text-align: left;
+}
+div#link h2 {
+    padding: 3px 5px;
+    background-color: #E2E2E2;
+    border-bottom: 1px solid #B7B7B7;
+    border-top: 1px solid #FFFFFF;
+}
+div#link h2 span {
+    padding: 2px 0 2px 5px;
+    border-left: 3px solid #BF0000;
+    display: block;
+}
+div#link div#infoseek p,
+div#link div#rakuten p {
+    position: absolute;
+    top: 135px;
+    right: 10px;
+    text-align: right;
+}
+div#link div#infoseek ul#infoseek1,
+div#link div#rakuten ul#rakuten1 {
+    width: 160px;
+    float: left;
+}
+div#link div#infoseek ul#infoseek2,
+div#link div#rakuten ul#rakuten2 {
+    width: 160px;
+    float: right;
+}
+
+div#footer {
+    border-top: 3px solid #333333;
+    text-align: center;
+}
+div#footer p#copyright {
+    padding: 10px;
+    border-bottom: 15px solid #E9E9E9;
+    color: #666666;
+    font-size: 77%;
+    line-height: 1.4;
+}
+</style>
+</head>
+<body>
+<!-- ====================  all   ===================== -->
+<div id="all">
+<!-- ==================== header ===================== -->
+<div id="header">
+<h1 id="logo">
+<a href="http://www.infoseek.co.jp/">
+<img src="http://image.infoseek.rakuten.co.jp/content/top-ajax/logo.gif" alt="インフォシーク" width="195" height="25" />
+</a>
+</h1>
+<div id="help">
+<a href="http://portal.faq.rakuten.co.jp/app/home">ヘルプ</a>
+</div>
+</div>
+<!-- =================== /header ===================== -->
+<!-- =================== contents ==================== -->
+<div id="contents">
+<h2>インフォシークをご利用のみなさまへ</h2>
+<br>
+<h3>お探しのページは、サービス終了のため存在しません。</h3>
+<div id="sentence">
+引き続きインフォシークサービスをご利用の皆様は、<br />
+以下のリンクよりご利用お願い申し上げます。
+</div>
+<div id="info">インフォシーク</div>
+<div id="toplink">
+<a href="http://www.infoseek.co.jp/">インフォシークトップ</a>
+</div>
+<div class="clear"><hr /></div>
+</div>
+<!-- ================== /contents ==================== -->
+<!-- ===================== link ====================== -->
+<div id="link">
+
+<div id="infoseek">
+<h2><span>インフォシークのサービス</span></h2>
+<ul id="infoseek1">
+    <li id="news">・<a href="http://news.infoseek.co.jp/">ニュース</a></li>
+    <li id="weather">・<a href="http://infoseek.tenki.jp/">天気</a></li>
+    <li id="search">・<a href="http://search.www.infoseek.co.jp/">検索</a></li>
+    <li id="mail">・<a href="http://mail.infoseek.co.jp/">メール</a></li>
+</ul>
+<ul id="infoseek2">
+    <li id="dictionary">・<a href="http://dictionary.infoseek.ne.jp/">辞書</a></li>
+    <li id="translation">・<a href="http://translation.infoseek.ne.jp/">翻訳</a></li>
+    <li id="menuTV">・<a href="http://map.infoseek.co.jp/">地図</a></li>
+    <li id="train">・<a href="http://special.infoseek.co.jp/transfer/index.html">乗換案内</a></li>
+</ul>
+<p><a href="http://services.infoseek.co.jp/">インフォシークのサービス一覧へ&nbsp;&gt;&gt;</a></p>
+</div>
+
+<div id="rakuten">
+<h2><span>楽天のサービス</span></h2>
+<ul id="rakuten1">
+    <li id="ichiba">・<a href="http://www.rakuten.co.jp/">楽天市場</a></li>
+    <li id="books">・<a href="http://books.rakuten.co.jp/">楽天ブックス</a></li>
+    <li id="auction">・<a href="http://auction.rakuten.co.jp/">楽天オークション</a></li>
+    <li id="travel">・<a href="http://travel.rakuten.co.jp/">楽天トラベル</a></li>
+</ul>
+<ul id="rakuten2">
+    <li id="blog">・<a href="http://plaza.rakuten.co.jp/">楽天ブログ</a></li>
+    <li id="shoken">・<a href="https://www.rakuten-sec.co.jp/">楽天証券</a></li>
+    <li id="card">・<a href="http://www.rakuten-kc.co.jp/">楽天KC</a></li>
+    <li id="bank">・<a href="http://www.rakuten-bank.co.jp/">楽天銀行</a></li>
+</ul>
+<p><a href="http://www.rakuten.co.jp/sitemap/">楽天グループのサービス一覧へ&nbsp;&gt;&gt;</a></p>
+</div>
+
+<div class="clear"><hr /></div>
+</div>
+<!-- ==================== /link ====================== -->
+
+<!-- ==================== footer ===================== -->
+<div id="footer">
+<p id="copyright">
+Infoseek, およびInfoseekロゴは 楽天株式会社の商標です。
+<br />
+これら以外のマークは、それぞれ関係各社の商標および登録商標です。
+<br />
+Copyright (c)
+<a href="http://www.rakuten.co.jp/info/">Rakuten, Inc.</a>
+All Rights Reserved.
+</p>
+</div>
+<!-- =================== /footer ===================== -->
+</div>
+<!-- ====================  /all  ===================== -->
+</body>
+</html>

@@ -1,0 +1,9 @@
+pre.prettyprint > code{
+  background: initial;
+  border: initial;
+  box-shadow: initial;
+}
+
+code{
+  overflow: initial;
+}
