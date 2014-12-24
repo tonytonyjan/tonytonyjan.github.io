@@ -1,0 +1,31 @@
+---
+title: "笑典 - 教育部國語辭典 Chrome 離線版"
+date: 2013-02-19 14:47
+comments: true
+categories: Works
+---
+
+![](/images/hahadict2.png)
+
+[下載](https://chrome.google.com/webstore/detail/%E7%AC%91%E5%85%B8/ppgggcmomnpmeikbpaelmefpjfnmaidk)
+
+<iframe width="853" height="480" src="http://www.youtube.com/embed/oetCzmsT6IY" frameborder="0" allowfullscreen></iframe>
+
+響應 [3du.tw 黑客松](http://www.facebook.com/photo.php?fbid=500331380008153&set=a.456791061028852.107377.454607821247176&type=1)時做的玩具。
+
+## 使用
+1.  在一般網頁 反白字串 + 右鍵
+2.  Ctrl + 拖曳反白
+
+## 資料來源
+
+教育部重編國語辭典修訂本
+
+## 特別感謝
+
+1.  教育部國語推行委員會團隊
+2.  Audrey Tang、TonyQ Wang、kcwu、及其他 3du.tw 的熱血黑客
+
+## 貢獻
+
+[https://github.com/tonytonyjan/hahadict](https://github.com/tonytonyjan/hahadict)

@@ -1,0 +1,76 @@
+---
+title: "～C語言程式設計～亂數不重複函數～"
+date: 2008-11-07 00:39:12
+comments: true
+categories: C
+---
+
+今天完成的XDD  還是熱的
+這大概是黃金版本了XD(自以為)
+放上來當作開放式原碼吧^^～
+想套的人可以拿去=3=
+
+ps.函數什麼東西都可以回傳，包括指標> <
+
+使用方法：
+1.在main之前先宣告 int* getRand(int,int,int);
+2.在main後面複製貼上函數
+3.在main裡呼叫時請寫下面兩行：
+
+```c
+int *randNum;  //這個等等要拿來指向getRand傳回的東西
+randNum = getRand(MIN,MAX,NUM);  //randNum指向getRand回傳的指標
+/*MIN放入最小值，MAX放最大值，NUM放你想要幾個亂數
+```
+
+例如：
+
+```c
+int *randNum;
+randNum = getRand(1,42,6);
+//這樣就是樂透開獎啦～～～
+```
+
+而得到的六個亂數會被放在randNum[0],ransNum[1],randNum[2]...randNum[5]
+
+下面是原碼：
+
+```c
+#include&amp;lt;stdio.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+#include&amp;lt;time.h&amp;gt;
+#define MIN 1  //代表不重複亂數的最小值 
+#define MAX 42  //代表不重複亂數的最大值 
+#define NUM 6  //代表需要幾個不重複亂數的個數
+//例如這個預設值代表從1到42選6個不重複的亂數（就是樂透開獎啦！） 
+int* getRand(int,int,int);  //宣告一個函數可以input三個整數然後回傳一個整數指標 
+int main(void){ 
+    int *randNum;  //這個等等要拿來指向getRand傳回的東西 
+    int i;  //迴圈專用 
+    randNum = getRand(MIN,MAX,NUM);  //randNum指向getRand回傳的指標
+    for(i=0;i&amp;lt;NUM;i++){  //印出來
+        printf("%d\n",*(randNum+i));
+    }
+    getchar();
+    return 0;
+}
+int* getRand(int min, int max, int num){
+    int tol = max - min +1;  //算出總數
+    int a[30000];  //放min~max的所有數字 
+    static int b[30000];  //放取出的亂數 
+    int i,j;
+    for(i=0;i&amp;lt;tol;i++){  //跟電腦要記憶格放數字，從小排到大放進a[0]~a[tol-1] 
+        *(a+i) = min+i;
+    }
+    srand(time(0));
+    int ctr;  //這只是個容器，拿來裝a[n]裡的n，而這個n是用亂數製造的 
+    for(i=0;i&amp;lt;num;i++){
+        ctr = rand()%(tol-i);
+        b[i] = a[ctr];  //把抓好的亂數丟到b裡面 
+        for(j=ctr;j&amp;lt;(tol-1-i);j++){  //這是整個不重複亂數函數的經髓所在！
+            a[j] = a[j+1];  //很微妙的通通往前移動一格 
+        }
+    }
+    return b;
+}
+```

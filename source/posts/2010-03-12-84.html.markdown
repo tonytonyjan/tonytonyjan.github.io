@@ -1,0 +1,7 @@
+---
+title: "CSRPG2.14版"
+date: 2010-03-12 00:44:35
+comments: true
+categories: Works
+---
+<p>![](/images/slum-area/89_0.jpg)</p><p><a href="http://www.cs.nctu.edu.tw/~whchien/csrpg2.14.rar">下載</a></p><p>好吧，這是大一上和翔先生無聊之際寫的，全名應該叫NCTU大冒險，目的除了娛樂性質之外，也是為了更熟悉C語言，另外也學會一些Windows API。</p><p>裡面的角色全是系上的同學。在地圖的右下角可以找到512寢和513寢，翔先生住住512，我住我住513。</p><p>Enter可以開啟包包，確認鍵同對話鍵。</p><p><span style="font-size: 12pt;"><b>解壓縮後可以找到開放的地圖與對話檔，甚至可以自行修改對話，放入自己的家人或同學XDD</b></span></p><p>不過由於當時還沒有學過物件導向，所以寫到最後遇到一些瓶頸就停止開發了，2.15一直有bug無法修正...</p><p>這篇算是紀念文吧XD</p><p>&nbsp;</p>
