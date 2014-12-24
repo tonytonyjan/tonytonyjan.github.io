@@ -118,4 +118,3 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 3.3.7)
   middleman-blog
-  wdm (~> 0.1.0)
