@@ -3,6 +3,7 @@ title: C 語言之多行巨集
 date: 2014-10-07 02:19:13 +0800
 comments: true
 categories: C
+thumb: thumbs/c.png
 ---
 
 有時候我們在翻閱原始碼的時候會看到類似這樣的寫法：

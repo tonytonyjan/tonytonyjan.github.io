@@ -29,11 +29,6 @@
       </span>
     </div>
     <!-- .entry-meta -->
-    <% if current_article.data.image %><!-- .featured-image -->
-    <div class="featured-image">
-      <img src="/images/<%= current_article.data.image %>" alt="blog-image">
-    </div>
-    <!-- .featured-image --><% end %>
     <!-- .entry-content -->
     <div class="entry-content">
       <%= yield %>

@@ -2,6 +2,7 @@
 title: "Rails 4.2 重點介紹"
 date: 2014-12-20 09:46:11 +0800
 categories: Rails
+thumb: thumbs/rails.jpg
 ---
 
 Rails 團隊終於要在[聖誕節](http://weblog.rubyonrails.org/2014/12/19/Rails-4-2-final)的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目：
