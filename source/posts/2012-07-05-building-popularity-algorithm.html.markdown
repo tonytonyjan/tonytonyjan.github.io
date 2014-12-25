@@ -2,7 +2,8 @@
 title: "計算主題熱門度的演算法（上）"
 date: 2012-07-05 11:17 +0800
 comments: true
-category: Algorithm
+category: 程式
+tags: 演算法, 熱門排序, 權重, SQL, Bayesian Average
 ---
 
 ![](/images/ranking.jpg)
