@@ -8,7 +8,7 @@
   <meta name="description" content=" 範例展示、文件 gist 用法懶人包 下載 Indexer for Octopress。 將 indexer.rb 複製到 plugins 目錄下。 新增 source\_includes\custom\asides\indexer.html。 {% if page.indexer == true %} &lt;section&gt; &lt;h1&gt;Catalog&lt;/h1&gt; {{ page.indexer_aside }} &lt;/section&gt; {% else %} {% if site.page_asides.size %} {% include_array default_asides %} {% endif %} {% endif %} 編輯 _config.yml。 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below # and add an array with the asides you want to use. # blog_index_asides: # post_asides: page_asides: [custom/asides/indexer.html] # 加上這個 完成！之後只要在你需要索引的 page 上方 YAML 區塊加上 indexer: true，右方欄位就會自己索引了。 ">
   <meta name="keywords" content="Octopress, Jekyll">
   <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="不歸錄" />
   <meta property="og:title" content="將 Octopress Page 依照標題自動索引 - 不歸錄" />
   <meta property="og:description" content=" 範例展示、文件 gist 用法懶人包 下載 Indexer for Octopress。 將 indexer.rb 複製到 plugins 目錄下。 新增 source\_includes\custom\asides\indexer.html。 {% if page.indexer == true %} &lt;section&gt; &lt;h1&gt;Catalog&lt;/h1&gt; {{ page.indexer_aside }} &lt;/section&gt; {% else %} {% if site.page_asides.size %} {% include_array default_asides %} {% endif %} {% endif %} 編輯 _config.yml。 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below # and add an array with the asides you want to use. # blog_index_asides: # post_asides: page_asides: [custom/asides/indexer.html] # 加上這個 完成！之後只要在你需要索引的 page 上方 YAML 區塊加上 indexer: true，右方欄位就會自己索引了。 " />

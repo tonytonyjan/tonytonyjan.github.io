@@ -8,7 +8,7 @@
   <meta name="description" content="由於不是很清楚 gcc 在編譯 c 文件時到底做了什麼事情，於是展開了深入理解的旅程。從最簡單的 hello.c 開始： ``` c hello.c #include int main(int argc, char* args[]){ printf("Hello, world!"); } ``` 在編譯之前，讓我們回顧一下編譯的步驟： 步驟 指令 中出檔     原始碼 前處理（preprocessing） gcc -E hello.c -o hello.i ↓↓     原始碼（標頭被展開） 編譯（compiling） gcc -S hello.i -o hello.s ↓↓     組合語言 組譯（assembling） gcc -c hello.s -o hello.o ↓↓     機器碼 連結（linking） ld … （暫略） ↓↓     可執行機器碼 -E 僅作預先處理，不進行編譯、組譯和連結 -S 編譯到組合語言，不進行組譯和連結 -c 編譯、組譯到目的程式碼，不進行連結 看到鍵盤上的 Esc 了嗎？那正是編譯步驟，是不是超好記的。 ">
   <meta name="keywords" content="C, C++, gcc">
   <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="不歸錄" />
   <meta property="og:title" content="大兜的 gcc 歷險記 - 不歸錄" />
   <meta property="og:description" content="由於不是很清楚 gcc 在編譯 c 文件時到底做了什麼事情，於是展開了深入理解的旅程。從最簡單的 hello.c 開始： ``` c hello.c #include int main(int argc, char* args[]){ printf("Hello, world!"); } ``` 在編譯之前，讓我們回顧一下編譯的步驟： 步驟 指令 中出檔     原始碼 前處理（preprocessing） gcc -E hello.c -o hello.i ↓↓     原始碼（標頭被展開） 編譯（compiling） gcc -S hello.i -o hello.s ↓↓     組合語言 組譯（assembling） gcc -c hello.s -o hello.o ↓↓     機器碼 連結（linking） ld … （暫略） ↓↓     可執行機器碼 -E 僅作預先處理，不進行編譯、組譯和連結 -S 編譯到組合語言，不進行組譯和連結 -c 編譯、組譯到目的程式碼，不進行連結 看到鍵盤上的 Esc 了嗎？那正是編譯步驟，是不是超好記的。 " />
