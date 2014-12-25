@@ -1,9 +1,11 @@
 set :site_url, 'http://tonytonyjan.net'
+set :site_author, '大兜, 簡煒航, tonytonyjan, Jian Weihang'
 
 set :markdown_engine, :kramdown
 set :markdown, input: :GFM
 set :time_zone, 'Taipei'
 
+page 'feed.xml', layout: false
 
 activate :i18n, mount_at_root: :'zh-TW'
 activate :blog do |blog|

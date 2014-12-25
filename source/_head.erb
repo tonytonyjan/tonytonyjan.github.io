@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="<%= current_page.data.description || condense(strip_tags(current_article.try(:summary))) || I18n.t('site.description')  %>">
   <meta name="keywords" content="Rails, Ruby, C, Web Development, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴">
-  <meta name="author" content="簡煒航, tonyotnyjan, 大兜, Jian Weihang">
+  <meta name="author" content="<%= site_author %>">
   <title><%= "#{current_article.title} - " if current_article %>不歸錄</title>
   <!-- FAV and TOUCH ICONS -->
   <link rel="shortcut icon" href="/images/ico/favicon.ico">

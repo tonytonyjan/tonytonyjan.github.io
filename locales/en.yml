@@ -1,2 +1,12 @@
 en:
-  hello: Hello
+  site:
+    description: tonyotnyjan's personal site.
+  header:
+    name: Jian Weihang
+    tagline: double keyboard player, piano and laptop
+  nav:
+    about_me: aboue me
+    portfolio: portfolio
+    contact: contact
+    blog: blog
+    resume: resume

@@ -1,3 +1,12 @@
 zh-TW:
   site:
     description: 簡煒航的個人網站
+  header:
+    name: 大兜
+    tagline: 右手寫程式，左手寫音樂
+  nav:
+    about_me: 關於我
+    portfolio: 作品
+    contact: 聯絡
+    blog: 部落格
+    resume: 簡歷

@@ -1,0 +1,46 @@
+en:
+  about:
+    a_little_about_me: A LITTLE ABOUT ME
+    latest_news: LATEST NEWS
+    specialty: SPECIALTIES
+    specialties:
+      - title: WEB DESIGN
+        icon_class: fa fa-html5
+        description: I design super cool websites. It is a long established fact that a reader will be distracted by the readable content.
+      - title: TYPE DESIGN
+        icon_class: fa fa-font
+        description: I can design beautiful type faces for both digital and print media. It is a long established fact that a reader will be distracted.
+      - title: BLOG WRITER
+        icon_class: fa icon-smashmag
+        description: I write about web design. It is a long established fact that a reader will be distracted by the readable content.
+      - title: PROJECT MANAGEMENT
+        icon_class: fa fa-rocket
+        description: I have strong project management skills. It is a long established fact that a reader will be distracted by the readable content.
+    fun_fact: FUN FACT
+    fun_facts:
+      - title: 24000 SHOTS CAPTURED
+        icon_class: icon-instagram-1
+      - title: 37 PROJECTS COMPLETED
+        icon_class: icon-jabber
+      - title: 87 SATISFIED CUSTOMERS
+        icon_class: icon-child
+      - title: 1450 KM CYCLED
+        icon_class: icon-bicycle
+    intro: |
+      <div class="intro">
+        <h2>
+          Hello, I am
+          <span class="rotate-words">
+            <span>an engineer</span>
+            <span>a student</span>
+            <span>a freelancer</span>
+            <span>a composer</span>
+            <span>a piano player</span>
+            <span><del>a lolicon</del></span>
+          </span>
+          <br>
+          Love <strong>Ruby, Java and C</strong>. Program for joy and living.
+          <br>
+          I am not interested in human mortal. If you are an alian, an android, a freak or come from the future, please make firneds with me.
+        </h2>
+      </div>
