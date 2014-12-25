@@ -13,6 +13,7 @@
   <% if content_for? :open_graph %>
   <%= yield_content :open_graph %>
   <% end %>
+  <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml" />
   <title><%= site_title %></title>
   <!-- FAV and TOUCH ICONS -->
   <link rel="shortcut icon" href="/images/ico/favicon.ico">
