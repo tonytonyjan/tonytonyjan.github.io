@@ -7,3 +7,7 @@ pre.prettyprint > code{
 code{
   overflow: initial;
 }
+
+.social li a.plurk:hover {
+  background-color: #cf682f;
+}
