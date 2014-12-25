@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#">
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# article: http://ogp.me/ns/article#">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
   <meta property="og:title" content="params["key"] 和 params[:key] - 不歸錄" />
   <meta property="og:description" content="今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 params[:id] 和 params["id"] 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。 我臨時寫了一個程式，先 trace params[:id]，再 trace params["id"]，並用等於符號分隔，看他們之間的不同： ``` ruby Experiment in controller set_trace_func proc { |event, file, line, id, binding, classname| printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname } params[:id] set_trace_func nil puts "=====================" # 我不希望 trace 到 puts method set_trace_func proc { |event, file, line, id, binding, classname| printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname } params["id"] set_trace_func nil ``` " />
   <meta property="og:url" content="http://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/" />
-  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar.png" />
+  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
   <meta property="article:tag" content="Ruby" />
 <meta property="article:tag" content="Ruby on Rails" />
 <meta property="article:section" content="程式" />
