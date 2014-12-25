@@ -4,6 +4,8 @@ date: 2012-05-01 13:30 +0800
 comments: true
 tags: [Octopress, Jekyll]
 category: 程式
+preview: /projects/octopress-indexer
+github: https://gist.github.com/2565249/6151c81f7af333d5c1d9dd0b2bdcba2c7a966dca
 ---
 
 *   [範例展示、文件](/projects/octopress-indexer)
@@ -15,7 +17,6 @@ category: 程式
 2.  將 `indexer.rb` 複製到 `plugins` 目錄下。
 3.  新增 `source\_includes\custom\asides\indexer.html`。
 
-        {% raw %}
         {% if page.indexer == true %}
           <section>
           <h1>Catalog</h1>
@@ -26,7 +27,6 @@ category: 程式
             {% include_array default_asides %}
           {% endif %}
         {% endif %}
-        {% endraw %}
 
 4.  編輯 `_config.yml`。
 

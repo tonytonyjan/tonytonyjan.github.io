@@ -18,11 +18,12 @@ Wordpress 的的文章全部存在 wp_posts table 裡，如果要對應到，Oct
 
 1. 把所有在資料庫中屬於我的文章，轉成檔案存至 _posts 資料夾
 2. 在轉換過程中 wordpress 用到的圖片，下載下來，存至 images/cssula-blog 資料夾
-3. 在轉換過程中將所有的 `<img src="">` 轉成 `{%raw%}![](/images/cssula-blog){%endraw%}`
+3. 在轉換過程中將所有的 `<img src="">` 轉成 `![](/images/cssula-blog)`
 
 這是我粗糙的程式碼，程式碼中大寫的部份可以改成別的資料，這東西可以寫得更完善，達到無痛搬家。我想如果網路上沒有開源項目，也許考慮奉獻看看（總之得先看看其他人怎麼寫吧）。
 
-``` ruby Ruby code to migrate from Wordpress to Octopress.
+```ruby
+# Ruby code to migrate from Wordpress to Octopress.
 require 'mysql2'
 require 'open-uri'
 
@@ -50,7 +51,7 @@ eos
         }
       }
       # replace image tag into plugin style
-      "{%raw%}![](/images/cssula-blog/#{filename}){%endraw%}"
+      "![](/images/cssula-blog/#{filename})"
     }
     f.write(yaml+content)
   }

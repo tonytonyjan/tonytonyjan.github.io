@@ -10,8 +10,9 @@ category: 程式
 
 octopress 內建的回覆外掛是 [disqus]。但卻沒有提供在 asides 顯示近期回應的功能，加上我在網路上查不太到別人的寫法，於是我就自己寫了一個，也許對一些人有幫助：
 
-``` html \source\_includes\custom\asides\recent_comments.html
-{% raw %}{% if site.disqus_short_name and page.comments != false %}{% endraw %}
+```html
+<!-- source\_includes\custom\asides\recent_comments.html -->
+{% if site.disqus_short_name and page.comments != false %}
 <section>
   <h1>近期回覆</h1>
   <script type="text/javascript">
@@ -36,7 +37,7 @@ octopress 內建的回覆外掛是 [disqus]。但卻沒有提供在 asides 顯�
   </script>
   <script type="text/javascript" src="http://disqus.com/api/3.0/forums/listPosts.jsonp?forum={{ site.disqus_short_name }}&api_key=IVQOSOjZknRNZi3rYa3gxFA5CCLjuGP9ojHi3TSeUenFl2mckhh3gl9k9NqGDetu&related=thread&callback=recent_comments"></script>
 </section>
-{% raw %}{% endif %}{% endraw %}
+{% endif %}
 ```
 
 備註：需要用到 [disqus] 提供的 [API](http://disqus.com/api)。
