@@ -5,9 +5,6 @@ set :markdown_engine, :kramdown
 set :markdown, input: :GFM, parse_block_html: true
 set :time_zone, 'Taipei'
 
-page 'feed.xml', layout: false
-page "google7bd685dfb8300eb0.html", directory_index: false
-
 activate :i18n, langs: %i[zh-TW en]
 activate :blog do |blog|
   blog.layout   = 'blog'
@@ -29,6 +26,10 @@ activate :deploy do |deploy|
   deploy.branch       = :master
   deploy.build_before = true
 end
+
+page 'feed.xml', layout: false
+page "google7bd685dfb8300eb0.html", directory_index: false
+
 
 helpers do
   def condense str

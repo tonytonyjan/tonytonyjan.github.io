@@ -1,0 +1,34 @@
+en:
+  portfolio:
+    my_works: MY WORKS
+    all: ALL
+    work_types:
+      tool: Tool
+      code: Code
+      site: Site
+    works:
+      - title: TJDict
+        category: Chrome 多核心字典外掛
+        image: portfolio/tjdict.png
+        url: https://chrome.google.com/webstore/detail/tjdict/caafmojgjlbflohillejdmnghkpcjjpp
+        type: tool
+      - title: WebEP
+        category: 能源耗模擬平台
+        image: portfolio/webep.png
+        url: http://new.webep.me
+        type: site
+      - title: 5xRuby
+        category: 程式教育、課程網站
+        image: portfolio/5xruby.png
+        url: http://5xruby.tw
+        type: site
+      - title: 善耕 365
+        category: 公益平台
+        image: portfolio/harvest365.png
+        url: http://harvest365.org/
+        type: site
+      - title: TJStamp 印章產生器
+        category: 支援 1 到 4 字的印章產生器
+        image: portfolio/tjstamp.jpg
+        url: http://tjstamp.tonytonyjan.net/
+        type: tool

@@ -1,0 +1,60 @@
+zh-TW:
+  portfolio:
+    my_works: 我的作品
+    all: 全部
+    work_types:
+      tool: 工具
+      code: 程式
+      site: 網站
+    works:
+      - title: TJDict
+        category: Chrome 多核心字典外掛
+        image: portfolio/tjdict.png
+        url: https://chrome.google.com/webstore/detail/tjdict/caafmojgjlbflohillejdmnghkpcjjpp
+        type: tool
+      - title: 5xRuby
+        category: 程式教育、課程網站
+        image: portfolio/5xruby.png
+        url: http://5xruby.tw
+        type: site
+      - title: Good Luck
+        category: Yahoo Hack Day 冠軍作品
+        image: portfolio/good_lock.jpg
+        url: http://www.youtube.com/embed/-mpy8yMunkc
+        type: tool
+        media: video
+      - title: exif
+        category: 高效率的 Ruby EXIF 工具
+        image: portfolio/exif.png
+        url: https://github.com/tonytonyjan/exif
+        type: code
+      - title: WebEP
+        category: 能源耗模擬平台
+        image: portfolio/webep.png
+        url: http://new.webep.me
+        type: site
+      - title: Sonycam
+        category: 操作 Sony 相機的 Ruby API
+        image: portfolio/sony.jpg
+        url: https://github.com/tonytonyjan/sonycam
+        type: code
+      - title: 善耕 365
+        category: 公益平台
+        image: portfolio/harvest365.png
+        url: http://harvest365.org/
+        type: site
+      - title: TJStamp 印章產生器
+        category: 支援 1 到 4 字的印章產生器
+        image: portfolio/tjstamp.jpg
+        url: http://tjstamp.tonytonyjan.net/
+        type: tool
+      - title: 交大防災中心
+        category: 學術網站
+        image: portfolio/dpwe.png
+        url: http://dpwe.nctu.edu.tw/
+        type: site
+      - title: jaro_winkler
+        category: Jaro-Winkler Ruby/C 實作
+        image: portfolio/jaro_winkler.png
+        url: https://github.com/tonytonyjan/jaro_winkler
+        type: code
