@@ -2,7 +2,8 @@
 title: "System V 與 Upstart"
 date: 2013-06-26 10:53 +0800
 comments: true
-category: Ubuntu
+category: 程式
+tags: Ubuntu
 ---
 [Upstart]: http://upstart.ubuntu.com
 [System V]: https://en.wikipedia.org/wiki/UNIX_System_V
