@@ -2,7 +2,8 @@
 title: "Java Telnet"
 date: 2010-04-30 02:05:37 +0800
 comments: true
-category: Java
+category: 程式
+tags: Java
 ---
 
 今天要來玩什麼好玩的呢？話說明天還有期中考，大兜竟然還有閒情逸致在這裡敲鍵盤（心虛中）……
