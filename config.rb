@@ -13,8 +13,8 @@ activate :blog do |blog|
   blog.layout   = 'blog'
   blog.sources  = 'posts/{year}-{month}-{day}-{title}.html'
   blog.paginate = true
-  blog.summary_separator = /<!-- more -->/
-  blog.summary_length    = 150
+  blog.summary_separator  = /<!-- more -->/
+  blog.summary_length     = 150
   blog.tag_template       = 'tag.html'
   blog.custom_collections = {
     category: {
@@ -24,6 +24,11 @@ activate :blog do |blog|
   }
 end
 activate :directory_indexes
+activate :deploy do |deploy|
+  deploy.method       = :git
+  deploy.branch       = :master
+  deploy.build_before = true
+end
 
 helpers do
   def condense str
