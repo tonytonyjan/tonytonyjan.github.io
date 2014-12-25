@@ -40,6 +40,14 @@
       </div>
       <!-- .project-action --><% end %>
     </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+      <% current_article.tags.each do |tag| %>
+        <%= link_to tag, tag_path(tag), rel: :tag %>
+      <% end %>
+    </footer>
+    <!-- .entry-meta -->
   </article>
   <!-- .hentry -->
   <!-- .about-author -->
