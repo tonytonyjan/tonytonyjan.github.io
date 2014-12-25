@@ -2,7 +2,7 @@
 title: "Concept of Java Thread and Socket"
 date: 2010-05-07 09:02:52 +0800
 comments: true
-categories: Java
+category: Java
 ---
 
 <iframe src="https://docs.google.com/present/embed?id=dfdphq6m_16gtjmk7hh&size=m" frameborder="0" width="555" height="451"></iframe>

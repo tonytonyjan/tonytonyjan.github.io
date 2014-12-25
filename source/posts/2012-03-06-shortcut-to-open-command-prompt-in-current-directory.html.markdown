@@ -2,7 +2,7 @@
 title: "在目錄下打開命令提示字元"
 date: 2012-03-06 23:03 +0800
 comments: true
-categories: Windows
+category: Windows
 ---
 
 這篇文章會告訴你在 windows 檔案總管，如何用右鍵快速在某個目錄下打開命令字元。

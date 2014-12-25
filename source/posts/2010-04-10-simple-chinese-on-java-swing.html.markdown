@@ -2,7 +2,7 @@
 title: "解決 Java Swing GUI 在 Un*x 的中文亂碼問題"
 date: 2010-04-10 02:54:01 +0800
 comments: true
-categories: Java FreeBSD
+category: Java FreeBSD
 ---
 
 換過作業系統後還沒有想到在Swing上顯示中文會有問題，只是因為幫別人寫一個小程式，很幸運的被我遇見了，尋求解決同時不忘研究過後把經驗貼出來分享～

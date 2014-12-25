@@ -2,7 +2,7 @@
 title: "在 Octopress 顯示目錄與標籤雲"
 date: 2012-02-13 00:34 +0800
 comments: true
-categories: Octopress
+category: Octopress
 ---
 
 正在苦惱 octopress 沒有可以顯示所有目錄地外掛時，在[高見龍前輩的網誌上取到西經](http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/)（看不懂的人，建議先閱讀過 [jekll plugin](https://github.com/mojombo/jekyll/wiki/Plugins)）。但由於這種解在 `rake preview` 時會失敗，於是我開始撰寫 tag 版本。

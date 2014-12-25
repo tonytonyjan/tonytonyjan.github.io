@@ -2,7 +2,7 @@
 title: "笑典 - 教育部國語辭典 Chrome 離線版"
 date: 2013-02-19 14:47 +0800
 comments: true
-categories: Works
+category: Works
 ---
 
 ![](/images/hahadict2.png)

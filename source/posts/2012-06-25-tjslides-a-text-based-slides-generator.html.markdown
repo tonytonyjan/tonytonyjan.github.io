@@ -2,7 +2,7 @@
 title: "TJSlides - a Text Based Slides Generator"
 date: 2012-06-25 00:17 +0800
 comments: true
-categories: Rails
+category: Rails
 ---
 
 [TJSlides]: http://tjslides.herokuapp.com

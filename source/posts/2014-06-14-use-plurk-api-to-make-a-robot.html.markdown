@@ -2,7 +2,8 @@
 title: "噗浪機器人製作"
 date: 2014-06-14 14:58:31 +0800
 comments: true
-categories: [Works, Ruby]
+tags: [Works, Ruby]
+category: 程式
 ---
 
 ## 回聲蟲示範

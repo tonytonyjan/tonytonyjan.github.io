@@ -2,7 +2,8 @@
 title: "將文章從 Wordpress 搬到 Octopress"
 date: 2012-02-25 01:36 +0800
 comments: true
-categories: [Octopress, Wordpress]
+tags: [Octopress, Wordpress]
+category: 程式
 ---
 
 [1]: http://cssula.twgg.org

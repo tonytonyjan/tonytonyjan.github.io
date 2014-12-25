@@ -2,7 +2,7 @@
 title: "用 Java 掃描閘道"
 date: 2010-04-29 00:27:15 +0800
 comments: true
-categories: Java
+category: Java
 ---
 這是一個用來掃描一台機器開放了哪些 port 的程式，主要用到了 Thread 與 Socket 兩個 Class。可能有人會說：「啥？這樣做可以幹麼呢？？」。嘿嘿，其實當一名駭客要試圖攻進一台機器時，掃描 port 是常見的第一步驟喔。這下不敢小看它了吧XD
 

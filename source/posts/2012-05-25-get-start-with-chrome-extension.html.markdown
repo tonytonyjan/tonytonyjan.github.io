@@ -2,7 +2,7 @@
 title: "大兜的 Chrome Extension 學習筆記"
 date: 2012-05-25 12:12 +0800
 comments: true
-categories: Chrome
+category: Chrome
 ---
 
 要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、Javascript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。

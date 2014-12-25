@@ -2,7 +2,7 @@
 title: "計算主題熱門度的演算法（上）"
 date: 2012-07-05 11:17 +0800
 comments: true
-categories: Algorithm
+category: Algorithm
 ---
 
 ![](/images/ranking.jpg)

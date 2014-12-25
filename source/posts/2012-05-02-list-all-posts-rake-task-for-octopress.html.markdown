@@ -2,7 +2,7 @@
 title: "List Published or Unpublished Posts in Octopress"
 date: 2012-05-02 13:36 +0800
 comments: true
-categories: Octopress
+category: Octopress
 ---
 
 ## What's the Problem?

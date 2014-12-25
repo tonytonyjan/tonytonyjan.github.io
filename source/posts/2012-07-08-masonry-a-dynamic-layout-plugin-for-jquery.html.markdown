@@ -2,7 +2,8 @@
 title: "Masonry - 好用的動態排版工具"
 date: 2012-07-08 14:12 +0800
 comments: true
-categories: [jQuery, JavaScript]
+tags: [jQuery, JavaScript]
+category: 程式
 ---
 
 ![](/images/masonry-demo.png)

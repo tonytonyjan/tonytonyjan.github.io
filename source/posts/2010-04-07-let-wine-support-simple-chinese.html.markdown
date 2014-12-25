@@ -2,7 +2,7 @@
 title: "讓 wine 再也不怕簡中"
 date: 2010-04-07 16:05:49 +0800
 comments: true
-categories: FreeBSD
+category: FreeBSD
 ---
 
 要安裝的一個簡中 win32 程式時出現了火星文……於是展開了爬文之旅，以下解決方式是更改登錄檔：

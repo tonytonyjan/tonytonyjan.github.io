@@ -2,7 +2,7 @@
 title: "～C語言程式設計～亂數不重複函數～"
 date: 2008-11-07 00:39:12 +0800
 comments: true
-categories: C
+category: C
 ---
 
 今天完成的XDD  還是熱的

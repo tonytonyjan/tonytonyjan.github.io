@@ -2,7 +2,7 @@
 title: "N-Gram 斷詞法實做"
 date: 2012-06-06 17:59 +0800
 comments: true
-categories: Ruby
+category: Ruby
 ---
 
 今天心血來潮在 RubyGems 搜尋了一下看有沒有可用的 N-Grams library，確實也給我找到幾個，但可惜的是他們只有針對英文做斷詞，沒有針對中日韓。我們可想像的到英文的斷詞和中文的斷詞是截然不同的，但現在許多文章卻又中英日混雜，面對這種文章，那些 library 起不了什麼作用。

@@ -2,7 +2,7 @@
 title: "CPUSK1.1-Beta"
 date: 2010-04-20 21:38:46 +0800
 comments: true
-categories: Java Swing
+category: Java Swing
 ---
 
 [cpusk]: http://www.cs.nctu.edu.tw/%7Ewhchien/CPUSK1.1-Beta.rar

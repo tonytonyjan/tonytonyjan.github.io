@@ -2,7 +2,7 @@
 title: "TJStamp 印章產生器"
 date: 2013-10-23 14:52 +0800
 comments: true
-categories: Works
+category: Works
 ---
 
 ![](/images/tjstamp.png)

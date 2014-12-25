@@ -2,7 +2,7 @@
 title: "Ruby Block, Proc and Lambda"
 date: 2011-08-12 16:44 +0800
 comments: true
-categories: Ruby
+category: Ruby
 ---
 
 Ruby 可將程式碼當參數傳遞，被參數化的程式碼稱為 Block。也就是呼叫方法時後面的 `{|| }`  符號，其中的 `||` 之間放置參數列宣告，若無參數則可省略。
