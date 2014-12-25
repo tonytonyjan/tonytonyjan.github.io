@@ -2,7 +2,8 @@
 title: "使用 Sinatra、HFS 在本地開發 Javascript"
 date: 2012-03-08 14:16 +0800
 comments: true
-category: Javascript
+category: 程式
+tags: JavaScript
 ---
 
 [HFS]: http://www.rejetto.com/hfs/
