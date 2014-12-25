@@ -14,6 +14,7 @@ activate :blog do |blog|
   blog.paginate = true
   blog.summary_separator = /<!-- more -->/
   blog.summary_length    = 150
+  blog.tag_template       = 'tag.html'
   blog.custom_collections = {
     category: {
       link: '/categories/{category}.html',
