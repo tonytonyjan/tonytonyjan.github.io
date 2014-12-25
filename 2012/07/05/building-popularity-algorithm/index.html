@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content=" 很多網站都會在文章主題上加上評分的功能（五星評分、喜歡不喜歡、加一減一），主要用於計算主題的熱門程度，並加以排序，評分越高表示這篇主題越熱門，能見度也越高。 評分實做很容易，但排序不簡單，在實做排序過程中會面臨不少問題： 經驗不足的工程師會重造輪子，套用自己的演算法，不懂得使用統計公式帶來的好處 必須防範那些會意圖使自己的文章排序在最上面的 spammer 複雜度太高的演算法導致系統負載過高 這篇文章會試著介紹一些排序演算法，從簡單到複雜，並介紹其優缺點，也會分享一些知名網站的排序演算法。就讓我們從最簡單的開始吧： ">
   <meta name="keywords" content="演算法, 熱門排序, 權重, SQL, Bayesian Average">
-  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta name="author" content="大兜">
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="不歸錄" />
   <meta property="og:title" content="計算主題熱門度的演算法（上） - 不歸錄" />
@@ -20,6 +20,7 @@
 <meta property="article:tag" content="SQL" />
 <meta property="article:tag" content="Bayesian Average" />
 <meta property="article:section" content="程式" />
+<meta property="article:author" content="大兜" >
 <meta property="article:published_time" content="2012-07-05T11:17:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml" />

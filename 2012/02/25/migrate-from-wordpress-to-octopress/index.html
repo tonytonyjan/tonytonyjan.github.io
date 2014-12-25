@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content=" 今天心血來潮的，把以前在 CSsula 機房寫的文章全部搬到現在的 Octopress 了。我覺得比較麻煩的地方在於文章標題出現中文的時候，又沒有設定 post_name 時，就會以 yyyy-mm-dd-中文字.markdown 的格式儲存。而這個當然無解，只好手動一個一個改檔名了Orz Wordpress 的的文章全部存在 wp_posts table 裡，如果要對應到，Octopress 的 yaml 設定的話，需要用到 post_title、post_date、post_content 這三個 column。其中 post_date 的資料型態是 datetime，我原本以為是字串導致運作時出了一點差錯:P 我寫了一個程式完成這項工作，他可以作到三件事情： ">
   <meta name="keywords" content="Octopress, Wordpress">
-  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta name="author" content="大兜">
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="不歸錄" />
   <meta property="og:title" content="將文章從 Wordpress 搬到 Octopress - 不歸錄" />
@@ -17,6 +17,7 @@
   <meta property="article:tag" content="Octopress" />
 <meta property="article:tag" content="Wordpress" />
 <meta property="article:section" content="程式" />
+<meta property="article:author" content="大兜" >
 <meta property="article:published_time" content="2012-02-25T01:36:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml" />
