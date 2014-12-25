@@ -2,12 +2,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="<%= site_description  %>">
-  <meta name="keywords" content="Rails, Ruby, C, Web Development, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴">
+  <meta name="keywords" content="<%= site_keywords %>">
   <meta name="author" content="<%= site_author %>">
+  <meta property="og:type" content="<%= current_page.data.og_type || :website %>" />
+  <meta property="og:site_name" content="不歸錄" />
   <meta property="og:title" content="<%= site_title %>" />
-  <meta property="og:type" content="article" />
+  <meta property="og:description" content="<%= site_description %>" />
   <meta property="og:url" content="<%= site_url + current_page.url %>" />
-  <% if current_page.data.image %><meta property="og:image" content="<%= site_url + image_path(current_page.data.image) %>" /><% end %>
+  <meta property="og:image" content="<%= site_image %>" />
+  <% if content_for? :open_graph %>
+  <%= yield_content :open_graph %>
+  <% end %>
   <title><%= site_title %></title>
   <!-- FAV and TOUCH ICONS -->
   <link rel="shortcut icon" href="/images/ico/favicon.ico">

@@ -1,6 +1,9 @@
 zh-TW:
+  me:
+    first_name: 煒航
+    last_name: 簡
   site:
-    description: 簡煒航的個人網站
+    description: 大兜的個人網站，本名簡煒航，網路代號 tonytonyjan
   header:
     name: 大兜
     tagline: 右手寫程式，左手寫音樂

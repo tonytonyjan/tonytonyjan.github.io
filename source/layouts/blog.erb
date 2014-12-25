@@ -1,3 +1,14 @@
+---
+og_type: article
+---
+<% content_for :open_graph do %>
+<% current_article.tags.each do |tag| %>
+<meta property="article:tag" content="<%= tag %>" />
+<% end %>
+<meta property="article:section" content="<%= current_article.data.category %>" />
+<meta property="article:published_time" content="<%= current_article.date.xmlschema %>" />
+<% end %>
+
 <% content_for :nav do %>
 <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
 <li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>

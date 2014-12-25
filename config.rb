@@ -37,10 +37,24 @@ helpers do
   end
 
   def site_title
-    "#{current_article.title} - 不歸錄" if current_article
+    title = current_page.data.title
+    title = "#{title} - " if title
+    "#{title}不歸錄"
+  end
+
+  def site_keywords
+    if current_article && !current_article.tags.empty?
+      current_article.tags.join(', '.freeze)
+    else
+      :'Rails, Ruby, C, Web Development, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴'
+    end
   end
 
   def site_description
-    current_page.data.description || condense(strip_tags(current_article.try(:summary))) || I18n.t('site.description')
+    current_page.data.description || condense(strip_tags(current_article.try(:summary))) || I18n.t('site.description'.freeze)
+  end
+
+  def site_image
+    site_url + image_path(current_page.data.image || 'site/avatar_big.png'.freeze)
   end
 end
