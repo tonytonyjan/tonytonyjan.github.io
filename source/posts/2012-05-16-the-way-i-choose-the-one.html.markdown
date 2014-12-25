@@ -2,7 +2,7 @@
 title: "怎麼挑"
 date: 2012-05-16 22:59 +0800
 comments: true
-category: Life
+category: 生命
 published: false
 ---
 

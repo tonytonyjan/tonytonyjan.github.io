@@ -2,7 +2,7 @@
 title: "把愛說出來 - 追求者心態"
 date: 2012-07-31 23:21 +0800
 comments: true
-category: Life
+category: 生命
 ---
 
 ![](/images/ring.jpg)

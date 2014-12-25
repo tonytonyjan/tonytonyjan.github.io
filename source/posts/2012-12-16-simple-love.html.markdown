@@ -2,7 +2,7 @@
 title: "交往沒這麼神聖 - 被追求者心態"
 date: 2012-12-16 14:53 +0800
 comments: true
-category: Life
+category: 生命
 ---
 
 ![](/images/ring2.jpg)

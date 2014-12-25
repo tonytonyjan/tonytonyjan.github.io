@@ -2,7 +2,7 @@
 title: 活的痛快點
 date: 2012-11-17 01:56 +0800
 comments: true
-category: Life
+category: 生命
 ---
 
 

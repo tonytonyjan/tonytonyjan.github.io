@@ -2,7 +2,7 @@
 title: "玩世哲學"
 date: 2011-12-13 00:43:46 +0800
 comments: true
-category: Life
+category: 生命
 ---
 ![](/images/slum-area/4_205446185_m.jpg)
 

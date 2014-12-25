@@ -2,7 +2,7 @@
 title: "寧靜之愛"
 date: 2012-07-05 01:29 +0800
 comments: true
-category: Life
+category: 生命
 ---
 
 ![](/images/love.jpg)
