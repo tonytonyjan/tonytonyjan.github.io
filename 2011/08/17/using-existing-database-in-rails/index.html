@@ -1,17 +1,25 @@
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# article: http://ogp.me/ns/article#">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大兜的個人網站，本名簡煒航，網路代號 tonytonyjan">
-  <meta name="keywords" content="Rails, Ruby, C, Web Development, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴">
+  <meta name="description" content="官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。 當使用 rails 指令產生新的 Model 時，這樣的寫法很常見： ">
+  <meta name="keywords" content="Ruby, Ruby on Rails">
   <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="不歸錄" />
   <meta property="og:title" content="將現有資料庫導入 Rails ActiveModel - 不歸錄" />
-  <meta property="og:description" content="大兜的個人網站，本名簡煒航，網路代號 tonytonyjan" />
-  <meta property="og:url" content="http://tonytonyjan.net/posts/2011-8-17-using-existing-database-in-rails/" />
+  <meta property="og:description" content="官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。 當使用 rails 指令產生新的 Model 時，這樣的寫法很常見： " />
+  <meta property="og:url" content="http://tonytonyjan.net/2011/08/17/using-existing-database-in-rails/" />
   <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+  <meta property="article:tag" content="Ruby" />
+<meta property="article:tag" content="Ruby on Rails" />
+<meta property="article:section" content="程式" />
+<meta property="article:published_time" content="2011-08-17T17:45:00+08:00" />
+
+  <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml" />
   <title>將現有資料庫導入 Rails ActiveModel - 不歸錄</title>
   <!-- FAV and TOUCH ICONS -->
   <link rel="shortcut icon" href="/images/ico/favicon.ico">
@@ -55,8 +63,9 @@
   <!-- NAV MENU -->
   <ul class="vs-nav">
     <!-- TemplateBeginEditable name="Menu-Content" -->
-    <li><a href="javascript:history.back()"><i title="上一頁" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
-    <li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
     <!-- TemplateEndEditable -->
   </ul>
   <!-- NAV MENU -->
@@ -72,11 +81,38 @@
 </header>
 <!-- HEADER -->
     <!-- WRAPPER -->
-    <div class="wrapper"><p>官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。</p>
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">將現有資料庫導入 Rails ActiveModel</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2011-08-17T17:45:00+08:00">2011 年 08 月 17 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。</p>
 
 <p>當使用 rails 指令產生新的 Model 時，這樣的寫法很常見：</p>
 
-<!-- more -->
+
 
 <pre><code>$ rails g model my_model
       invoke  active_record
@@ -205,6 +241,67 @@ end
 </code></pre>
 
 <p>然後你會免費被贈送一個 NoMethodError Exception。在你一邊擦螢幕時，請聽我說：既然RoR都說不支援了，哪有這麼簡單的事情讓你加個's'就解決呢？這個問題目前的解決方案是透過 plugin 來實現。你可以參考<a href="http://weblog.rubyonrails.org/2006/7/30/composite-primary-keys-for-active-record">這一頁</a>。你會發現，裝完這個 plugin 之後，確實就只要加上一個 <code>s</code>。XD</p>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/ruby/">Ruby</a>
+        <a rel="tag" href="/tags/ruby-on-rails/">Ruby on Rails</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2011/08/12/ruby-block-proc-lambda/" rel="prev"><span class="meta-nav">←</span> Ruby Block, Proc and Lambda</a>
+  </div>
+  <div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="/2011/08/22/16/" rel="next">好久不見，親愛的嘉中 <span class="meta-nav">→</span></a>
+</div>
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
 </div>
     <!-- WRAPPER -->
   </div>
