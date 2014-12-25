@@ -1,5 +1,5 @@
 set :site_url, 'http://tonytonyjan.net'
-set :site_author, '大兜, 簡煒航, tonytonyjan, Jian Weihang'
+set :site_author, '大兜'
 
 set :markdown_engine, :kramdown
 set :markdown, input: :GFM, parse_block_html: true
