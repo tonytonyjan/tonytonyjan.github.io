@@ -2,6 +2,7 @@
 title: "7200 秒學會版本控制 - 使用 mercurial"
 date: 2011-11-12 00:40:16 +0800
 comments: true
-category: Mercurial
+category: 程式
+tags: Mercurial, VCS
 ---
 <h2><a href="https://docs.google.com/presentation/pub?id=1B1RqZAHUoo2klVbuPMUSLqDiwDFwYNCQOzd1ZBBEVNc&amp;start=false&amp;loop=false&amp;delayms=3000" target="_blank">投影片 &larr; 點我瀏覽</a></h2><p><iframe width="480" height="389" src="https://docs.google.com/presentation/embed?id=1B1RqZAHUoo2klVbuPMUSLqDiwDFwYNCQOzd1ZBBEVNc&amp;start=false&amp;loop=false&amp;delayms=3000" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true"></iframe></p><h2><a href="https://docs.google.com/document/pub?id=1uEcnH9M-8k_iGzFx8nwF2tS3xieynlKvUGULKXAtRjY" target="_blank">講義 &larr; 點我瀏覽</a></h2><p><iframe width="500" height="500" src="https://docs.google.com/document/pub?id=1uEcnH9M-8k_iGzFx8nwF2tS3xieynlKvUGULKXAtRjY&amp;embedded=true"></iframe></p><p>感謝各位的捧場，能看到各位真的很開心！</p><p>想不到一上就是三個小時中間沒休息&hellip;&hellip;Orz（看來我有當 SA 助教的資質？）</p><p>另外可能太久沒有說這麼多話了，喉嚨好乾啊XD</p>
