@@ -2,7 +2,8 @@
 title: "漫畫下載器"
 date: 2014-06-26 16:50:00 +0800
 comments: true
-category: Ruby
+category: 程式
+tags: Ruby
 thumb: thumbs/comic.jpg
 download: http://rubygems.org/gems/sfacg
 github: https://github.com/tonytonyjan/sfacg_downloader
