@@ -2,7 +2,7 @@
 title: "新光計畫"
 date: 2012-03-18 13:52 +0800
 comments: true
-categories: 閒聊
+category: 閒聊
 ---
 
 ![](/images/scenery.jpg)

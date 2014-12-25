@@ -2,7 +2,7 @@
 title: "築夢"
 date: 2014-03-30 22:46:29 +0800
 comments: true
-categories: 閒聊
+category: 閒聊
 ---
 
 ![](/images/house-moving.jpg)

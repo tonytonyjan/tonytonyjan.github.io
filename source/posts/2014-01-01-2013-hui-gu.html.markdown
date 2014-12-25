@@ -2,7 +2,7 @@
 title: "2013 回顧"
 date: 2014-01-01 01:35 +0800
 comments: true
-categories: 閒聊
+category: 閒聊
 ---
 
 ![](/images/firework.jpg)

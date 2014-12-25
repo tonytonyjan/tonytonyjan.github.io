@@ -2,7 +2,7 @@
 title: "CSsula機房部落格，推一下XD"
 date: 2010-04-24 00:28:54 +0800
 comments: true
-categories: 閒聊
+category: 閒聊
 ---
 
 <p><a target="_blank" href="http://cssula.twgg.org">![](/images/slum-area/70_0.png)</a></p><p>他有個很好記的網址：</p><p><a target="_blank" href="http://cssula.twgg.org">http://cssula.twgg.org</a></p><p>2010/4/6/23:02&hellip;在一個月黑風高的夜晚&hellip;</p><p><span id="more-3">&nbsp;</span></p><p>四名交大資工的學生在自己寢室成立了一個網路電腦學習日誌</p><p>主題將涵蓋FreeBSD, Linux, C/C++, Java, PHP, ASP, JSP, JavaScript&hellip;&hellip;etc</p><p>目的只是分享所學所知，以供日後有需要的人查閱～</p><p>&nbsp;</p>
