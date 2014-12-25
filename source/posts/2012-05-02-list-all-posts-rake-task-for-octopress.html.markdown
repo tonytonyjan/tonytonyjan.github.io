@@ -2,7 +2,8 @@
 title: "List Published or Unpublished Posts in Octopress"
 date: 2012-05-02 13:36 +0800
 comments: true
-category: Octopress
+category: 程式
+tags: Octopress, Plugin
 ---
 
 ## What's the Problem?
