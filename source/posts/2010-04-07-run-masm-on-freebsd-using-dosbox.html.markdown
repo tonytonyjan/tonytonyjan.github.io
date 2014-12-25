@@ -2,7 +2,8 @@
 title: "用 dosbox 在 FreeBSD上寫 masm"
 date: 2010-04-07 16:49:30 +0800
 comments: true
-category: FreeBSD ASM
+category: 程式
+tags: FreeBSD, ASM
 ---
 課上要用 masm 交作業，然而我的系統是FreeBSD，由於不想灌windows，而有了這個替代方案。在開始之前可以先來<a href="http://zh.wikipedia.org/zh-tw/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80%E5%88%97%E8%A1%A8" target="_blank">這裡</a>看看組語言到底有哪些種類<br />
 （唯一一個有標注 FreeBSD 的是 HLA……QQ）
