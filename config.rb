@@ -57,4 +57,11 @@ helpers do
   def site_image
     site_url + image_path(current_page.data.image || 'site/avatar_big.png'.freeze)
   end
+
+  def site_og_type
+    if current_page.data.og_type then current_page.data.og_type
+    elsif current_page.path.start_with?('posts') then :article
+    else :website
+    end
+  end
 end
