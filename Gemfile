@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'middleman', '~>3.3.7'
-gem 'middleman-blog'
+gem 'middleman-blog', github: 'middleman/middleman-blog'
 gem 'nokogiri'
 gem 'kramdown'
 gem 'builder'

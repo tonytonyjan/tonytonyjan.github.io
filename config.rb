@@ -7,18 +7,24 @@ set :time_zone, 'Taipei'
 
 page 'feed.xml', layout: false
 
-activate :i18n, mount_at_root: :'zh-TW'
+activate :i18n, langs: %i[zh-TW en]
 activate :blog do |blog|
   blog.layout   = 'blog'
   blog.sources  = 'posts/{year}-{month}-{day}-{title}.html'
   blog.paginate = true
   blog.summary_separator = /<!-- more -->/
   blog.summary_length    = 150
+  blog.custom_collections = {
+    category: {
+      link: '/categories/{category}.html',
+      template: 'category.html'
+    }
+  }
 end
 activate :directory_indexes
 
 helpers do
- def condense str
-  str.gsub(/[\s\n]+/, ' ') if str
- end
+  def condense str
+    str.gsub(/[\s\n]+/, ' ') if str
+  end
 end

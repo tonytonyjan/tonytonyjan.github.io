@@ -25,7 +25,7 @@
       </span>
       <span class="posted-in">
         發表於
-        <% Array(current_article.data.categories).each do |category| %><a href="#" title="瀏覽所有 <%= category %> 分類的文章"><%= category %></a><% end %> 分類
+        <%= link_to current_article.data.category, category_path(current_article.data.category), title: "瀏覽所有 #{current_article.data.category} 的文章" %>
       </span>
     </div>
     <!-- .entry-meta -->
