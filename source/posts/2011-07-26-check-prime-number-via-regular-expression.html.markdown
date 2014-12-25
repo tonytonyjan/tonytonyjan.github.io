@@ -2,7 +2,8 @@
 title: "正規表達式檢查質數"
 date: 2011-07-26 17:57 +0800
 comments: true
-category: Regex
+category: 程式
+tags: 正規表達式, Regex, 質數, Regular Expression
 ---
 
 ``` plain The regex that can check if a number is prime

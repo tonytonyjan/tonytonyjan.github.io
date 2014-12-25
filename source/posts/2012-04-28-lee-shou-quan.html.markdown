@@ -2,7 +2,7 @@
 title: "李壽全與他的音樂"
 date: 2012-04-28 02:08 +0800
 comments: true
-category: Music
+category: 音樂
 ---
 
 ![](/images/lee-shou-quan.jpg)

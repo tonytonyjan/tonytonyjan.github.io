@@ -2,7 +2,8 @@
 title: "大兜 VM 下的六個OS"
 date: 2010-06-22 03:01:15 +0800
 comments: true
-category: System
+category: 程式
+tags: 作業系統, Linux, Chromium, Unix
 ---
 
 <p>![](/images/cssula-blog/0.png)</p>
