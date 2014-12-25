@@ -37,8 +37,8 @@ pageable: true
     <% end %>
     <!-- post nav -->
     <nav class="navigation" role="navigation">
-        <% if next_page %><div class="nav-previous"><a href="<%= next_page %>"><span class="meta-nav">←</span> 更舊</a></div><% end %>
-        <% if prev_page %><div class="nav-next"><a href="<%= prev_page %>">更新<span class="meta-nav">→</span></a></div><% end %>
+        <% if next_page %><div class="nav-previous"><a href="<%= next_page.url %>"><span class="meta-nav">←</span> 更舊</a></div><% end %>
+        <% if prev_page %><div class="nav-next"><a href="<%= prev_page.url %>">更新<span class="meta-nav">→</span></a></div><% end %>
     </nav>
     <!-- post nav -->
     <!-- post pagination -->
