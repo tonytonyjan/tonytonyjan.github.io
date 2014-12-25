@@ -2,6 +2,6 @@
 title: "無聊時隨便做的東西，看過就好"
 date: 2006-11-16 00:40:31 +0800
 comments: true
-category: Works
+category: 閒聊
 ---
 <p>![](/images/slum-area/208_0.jpg)</p>

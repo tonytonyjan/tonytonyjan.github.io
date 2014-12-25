@@ -2,7 +2,8 @@
 title: "～C語言程式設計～數字大戰～"
 date: 2008-11-08 00:29:20 +0800
 comments: true
-category: C
+category: 程式
+tags: C
 ---
 
 下載執行檔請<a href="http://www.cs.nctu.edu.tw/~whchien/coding/BatNum.exe">點我</a>
