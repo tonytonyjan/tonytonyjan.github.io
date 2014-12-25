@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Rails 團隊終於要在聖誕節的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目： Active Job Asynchronous mails Adequate Record Web Console Foreign key support ">
+  <meta name="keywords" content="Ruby on Rails, Ruby">
+  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="不歸錄" />
+  <meta property="og:title" content="Rails 4.2 重點介紹 - 不歸錄" />
+  <meta property="og:site_description" content="Rails 團隊終於要在聖誕節的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目： Active Job Asynchronous mails Adequate Record Web Console Foreign key support " />
+  <meta property="og:url" content="http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/" />
+  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar.png" />
+  <meta property="article:tag" content="Ruby on Rails" />
+<meta property="article:tag" content="Ruby" />
+<meta property="article:section" content="程式" />
+<meta property="article:published_time" content="2014-12-20T09:46:11+08:00" />
+
+  <title>Rails 4.2 重點介紹 - 不歸錄</title>
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH --> 
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="#">
+      <input type="text" value="" name="s" id="search" placeholder="ENTER KEYWORD">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">Rails 4.2 重點介紹</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2014-12-20T09:46:11+08:00">2014 年 12 月 20 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>Rails 團隊終於要在<a href="http://weblog.rubyonrails.org/2014/12/19/Rails-4-2-final">聖誕節</a>的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目：</p>
+
+<ul>
+  <li>Active Job</li>
+  <li>Asynchronous mails</li>
+  <li>Adequate Record</li>
+  <li>Web Console</li>
+  <li>Foreign key support</li>
+</ul>
+
+
+
+<h2 id="active-job">Active Job</h2>
+
+<p>一個網站常有些較繁重的工作，並不希望在使用者提出請求時立即執行，以寄出一萬封信為例，這也許需要幾分鐘的時間，當使用者點下寄信按鈕時如果還需要等個幾分鐘才可以看到回傳頁面，這將造成糟糕的使用者體驗。</p>
+
+<p>正規的作法是將這類需要長時間的工作丟到工作佇列去排程，並在背景中執行多個 worker 程序，每個 worker 都會不斷重複從佇列中取得新的工作去執行。</p>
+
+<p>Rails 已經有許多 gem 可以解決這個問題，著名項目包括 <a href="https://github.com/resque/resque">Resque</a>、<a href="http://sidekiq.org/">Sidekiq</a> 與 <a href="https://github.com/collectiveidea/delayed_job">DelayedJob</a>，其中 Resque 與 Sidekiq 使用 Redis 存放工作住列，DelayedJob 則用關聯式資料庫。</p>
+
+<p>Active Job 並不是提出了一個新的實作，換句話說，使用 Rails 4.2 並不代表未來就不用安裝 Resque 之類的 gem。</p>
+
+<p>它的真正意義在於統一使用介面，讓開發者在不同的 gem 之間切換時，可以不用受到 gem 的不同 API 而影響，因而降低重新改寫的成本。</p>
+
+<p>看到這裡是否覺得這種作法很熟悉？它其實就是適配器模式（Adapter pattern），早在 Active Record 誕生的時候就已經使用相同的技巧，Rails 之所以能以相同的 API 介面在不同的資料庫之間遊走也是拜此所賜。</p>
+
+<p>目前支援的 gem 有：</p>
+
+<pre><code>$ ls -1 activejob/lib/active_job/queue_adapters
+backburner_adapter.rb
+delayed_job_adapter.rb
+inline_adapter.rb
+qu_adapter.rb
+que_adapter.rb
+queue_classic_adapter.rb
+resque_adapter.rb
+sidekiq_adapter.rb
+sneakers_adapter.rb
+sucker_punch_adapter.rb
+test_adapter.rb
+</code></pre>
+
+<p>除了 <code>test_adapter.rb</code> 僅用於測試，以及 <code>inline_adapter.rb</code> 為預設（立即執行，不會丟入背景），以外都有相對的 gem 需要安裝。</p>
+
+<h3 id="section">使用方式</h3>
+
+<p>工作的內容必須定義在 <code>app/jobs/</code> 下，並繼承自 <code>ActiveJob::Base</code>，不過 Rails 4.2 提供了產生器，並不一定要手動新增：</p>
+
+<pre><code>$ rails g job execute_simulate
+      invoke  test_unit
+      create    test/jobs/execute_simulate_job_test.rb
+      create  app/jobs/execute_simulate_job.rb
+</code></pre>
+
+<pre><code class="language-ruby"># app/jobs/execute_simulate_job.rb
+class ExecuteSimulateJob &lt; ActiveJob::Base
+  queue_as :default
+
+  def perform(*args)
+    # Do something later
+  end
+end
+</code></pre>
+
+<p><code>queue_as</code> 可以設定將此工作排進特定的佇列，預設是 <code>default</code>，可以透過 <code>--queue</code><br />
+參數修改：</p>
+
+<pre><code>$ rails g job execute_simulate --queue urgent
+</code></pre>
+
+<p>使用起來像是這樣：</p>
+
+<pre><code class="language-ruby"># 將工作丟進佇列
+ExecuteSimulateJob.perform_later record
+
+# 排程明天中午再執行
+ExecuteSimulateJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
+
+# 排程一週後執行
+ExecuteSimulateJob.set(wait: 1.week).perform_later(record)
+
+# 指定特定的佇列
+ExecuteSimulateJob.set(queue: :important).perform_later(record)
+</code></pre>
+
+<p>設定要使用的 gem：</p>
+
+<pre><code class="language-ruby"># config/application.rb
+module YourApp
+  class Application &lt; Rails::Application
+    # 請確保 Gemfile 已經有安裝所要使用的 gem
+    config.active_job.queue_adapter = :resque
+  end
+end
+</code></pre>
+
+<h3 id="callback">回呼（Callback）</h3>
+
+<p>共有以下 6 個註冊點：</p>
+
+<ul>
+  <li>before_enqueue</li>
+  <li>around_enqueue</li>
+  <li>after_enqueue</li>
+  <li>before_perform</li>
+  <li>around_perform</li>
+  <li>after_perform</li>
+</ul>
+
+<p>使用方式與 controller、model 中的回呼寫法是一樣的：</p>
+
+<pre><code class="language-ruby">class ExecuteSimulateJob &lt; ActiveJob::Base
+  queue_as :default
+ 
+  before_enqueue do |job|
+    # 在佇列前執行
+  end
+ 
+  around_perform do |job, block|
+    # 在工作開始前執行
+    block.call
+    # 在工作完成後執行
+  end
+ 
+  def perform
+    # Do something later
+  end
+end
+</code></pre>
+
+<h2 id="asynchronous-mails">Asynchronous Mails</h2>
+
+<p>如果寄信工作也要丟到工作佇列，先別急著寫工作檔，Rails 4.2 的 Action Mailer 內建了 <code>DeliveryJob</code> 類別，並提供 <code>deliver_later</code> 方法將寄信工作推進佇列。</p>
+
+<p>你可以像這樣使用：</p>
+
+<pre><code class="language-ruby"># 使用 #deliver_later 透過 DeliveryJob 來寄信
+MyMailer.welcome(@user).deliver_later
+
+# 若不想丟到工作住列，也有 #deliver_now 可以使用
+MyMailer.welcome(@user).deliver_now
+</code></pre>
+
+<h2 id="adequate-record">Adequate Record</h2>
+
+<p>由 Aaron Patterson 所作，用於提高 <code>#find</code>、<code>#find_by</code> 等一些常用查詢指令的速度，可以提升 Active Record 約莫兩倍的效能。</p>
+
+<p>主要是因為 Active Record 在產生 SQL 過程有很多重複的片段不斷被重新製造，這其實可利用快取將重複的片段保存起來。細節請參考 <a href="http://tenderlovemaking.com/2014/02/19/adequaterecord-pro-like-activerecord.html">Aaron Patterson 的網誌</a>。</p>
+
+<h2 id="web-console">Web Console</h2>
+
+<p>如果你有用過 <code>better_errors</code> gem，那麼這就是類似的東西了。Rails 4.2 在開發環境下的錯誤頁面會多出一個 rails console 命令窗可以使用，除了一般 irb 的功能以外，也可以存取到該次請求中定義的實體與區域變數。</p>
+
+<p><img alt="Rails 4.2 Web Console" src="/images/web-console.png" /></p>
+
+<p>但不只有錯誤頁面才有命令窗可以使用，也可以在任何 view 的檔案中的任何位置加入 <code>&lt;%= console %&gt;</code>，只要渲染到該檔案，就有命令窗可以使用。</p>
+
+<h2 id="foreign-keys">外鍵（Foreign Keys）</h2>
+
+<p>Rails 4.2 遷移指令支援了 SQL 的外鍵定義功能，目前只有 mysql、mysql2 與 postgresql 可用。</p>
+
+<pre><code class="language-ruby"># 將 `articles.author_id` 定義為參考 `authors.id` 的外鍵
+add_foreign_key :articles, :authors
+
+# 若命名沒有按照慣例，也可以透過設定達到
+# 例如將 `articles.author_id` 定義為參考 `users.lng_id` 的外鍵
+add_foreign_key :articles, :users, column: :author_id, primary_key: "lng_id"
+
+# 刪除 `accounts.branch_id` 外鍵
+remove_foreign_key :accounts, :branches
+ 
+# 刪除 `accounts.owner_id` 外鍵
+remove_foreign_key :accounts, column: :owner_id
+</code></pre>
+
+<p>這個功能在 migration 與 model 等會產生遷移檔的產生器，當使用到 <code>references</code> 型別時也會自動的被使用，例如：</p>
+
+<pre><code>$ rails g migration add_user_to_posts user:references
+      invoke  active_record
+      create    db/migrate/20141222180048_add_user_to_posts.rb
+</code></pre>
+
+<pre><code class="language-ruby">class AddUserToPosts &lt; ActiveRecord::Migration
+  def change
+    add_reference :posts, :user, index: true
+    add_foreign_key :posts, :users # Rails 4.2 功能
+  end
+end
+</code></pre>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/ruby-on-rails/">Ruby on Rails</a>
+        <a rel="tag" href="/tags/ruby/">Ruby</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2014/10/10/rubykaigi-2014-feedback/" rel="prev"><span class="meta-nav">←</span> RubyKaigi 2014 攻略心得</a>
+  </div>
+  
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+</body>
+</html>

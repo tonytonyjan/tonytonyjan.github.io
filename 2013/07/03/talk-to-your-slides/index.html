@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=" 起源 昨晚參加了 Ruby Tuesday #24，地點在老樹咖啡 B1 休閒區，聽著講者不斷講著「下一頁」，然後協助換頁的人就會按一下鍵盤。身為一個程式設計師，我突然有個想把這個步驟交給電腦做的衝動，於是開始試著找一些 library 來完成。 找可用軟體（放棄） 起初不想自幹，因為...">
+  <meta name="keywords" content="JavaScript">
+  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="不歸錄" />
+  <meta property="og:title" content="跟簡報說話 - 不歸錄" />
+  <meta property="og:site_description" content=" 起源 昨晚參加了 Ruby Tuesday #24，地點在老樹咖啡 B1 休閒區，聽著講者不斷講著「下一頁」，然後協助換頁的人就會按一下鍵盤。身為一個程式設計師，我突然有個想把這個步驟交給電腦做的衝動，於是開始試著找一些 library 來完成。 找可用軟體（放棄） 起初不想自幹，因為..." />
+  <meta property="og:url" content="http://tonytonyjan.net/2013/07/03/talk-to-your-slides/" />
+  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar.png" />
+  <meta property="article:tag" content="JavaScript" />
+<meta property="article:section" content="程式" />
+<meta property="article:published_time" content="2013-07-03T14:12:00+08:00" />
+
+  <title>跟簡報說話 - 不歸錄</title>
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH --> 
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="#">
+      <input type="text" value="" name="s" id="search" placeholder="ENTER KEYWORD">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">跟簡報說話</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2013-07-03T14:12:00+08:00">2013 年 07 月 03 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      
+<h2 id="section">起源</h2>
+
+<p>昨晚參加了 Ruby Tuesday #24，地點在<a href="http://www.oldtree.com.tw/">老樹咖啡</a> B1 休閒區，聽著講者不斷講著「下一頁」，然後協助換頁的人就會按一下鍵盤。身為一個程式設計師，我突然有個想把這個步驟交給電腦做的衝動，於是開始試著找一些 library 來完成。</p>
+
+<h2 id="section-1">找可用軟體（放棄）</h2>
+
+<p>起初不想自幹，因為語音控制設備的軟體感覺頗容易想到的，在 google 之下找到兩個 <a href="https://wiki.gnome.org/GnomeVoiceControl">gnome-voice-controle</a> 和 <a href="http://www.simon-listens.org/">Simon</a>，只是前者不但安裝麻煩且已經不再開發，後者則是 KDE 專用。只好另闢新逕。</p>
+
+<h2 id="section-2">自幹軟體（放棄）</h2>
+
+<p>心想用 Qt 寫成 system tray 之類的，然後可以送 keyboard event，例如 page up、page down 等，如此無論簡報是網頁、ptt 或 pdf，全部都可以用。至於語音辨識的部份則是用李開復的開源項目 <a href="http://cmusphinx.sourceforge.net/">Sphinx</a>，但後來放棄的原因是此途徑更加「厚工」（但只要是可以完成，功力能夠大增應該是確定的）。由於筆者是個懶人，所以只好再找其他方法。</p>
+
+<h2 id="web-speech-recognition-api">Web Speech Recognition API</h2>
+
+<p>沒辦法了，那就退一步使用 <a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech API</a>，優點是簡單易用，開發快速，缺點就是必須限制在瀏覽器，且目前只有所有瀏覽器中，只有 Chrome 25 以上有支援，對於我的願景相比之下，這簡直是致命傷。</p>
+
+<h2 id="section-3">動手做</h2>
+
+<p>所以我就不管了，反正只是做個玩具，堪用就好。第一個玩具就用 <a href="https://github.com/hakimel/reveal.js/">Reveal.js</a> 來實驗效果：</p>
+
+<p><a href="/demo/speech/">點我觀看</a></p>
+
+<h2 id="section-4">後記</h2>
+
+<p>我的 plugin 會在 console 留下 log，下午賊魚來我家，就在電腦前面一邊聊天，不過麥克風並沒有關，等我們話題結束之後，結果長這樣：</p>
+
+<pre><code>沒能從前明月光
+michael
+崇仁崇賢珉宇美人重建院有些事兒感染飛行車委員
+神學士
+電子時報中原風邪惡美人重建院遊學社子文學友 1 樓
+門號至正腔圓融合購網電子時鐘原數學人
+個人申請
+行船人
+各類型 es 任
+20 集 google
+自由欄人開放任用
+下一頁
+兒子對了
+42 43 20 歲 hello 49 死神 h 仁慈醫院內科 face 血壓高到底怎麼用成人網
+血壓高
+next page
+下載 facebook 40 hc 仁和路 169 號為了 13 17 樓仁慈醫院
+sf 人的危險
+沒有
+個人年
+死神 h 死神科嘻哈高手禮劉大哥大溪鞋遊戲只有一個月了十萬元有人會所地球人在
+什麼時候高雄人兒子吃人你明天是 11 月圓 google h
+高雄
+奇摩 google 人的鞋子
+時間分解了
+手
+很壞的時候看看好了
+人才是有什麼看看好了
+熱學的大姊姊姊
+</code></pre>
+
+<p>什麼「熱學的大姊姊」，chrome 真是神空耳啊XD</p>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/javascript/">JavaScript</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2013/06/26/system-v-and-upstart/" rel="prev"><span class="meta-nav">←</span> System V 與 Upstart</a>
+  </div>
+  <div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="/2013/07/07/soho-life-the-first-year/" rel="next">自由業之路 <span class="meta-nav">→</span></a>
+</div>
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+</body>
+</html>

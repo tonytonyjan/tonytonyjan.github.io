@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天要來玩什麼好玩的呢？話說明天還有期中考，大兜竟然還有閒情逸致在這裡敲鍵盤（心虛中）…… 不知道各位有沒有用過 telnet 的經驗，至少也打過類似 telnet ptt.cc 23 的指令吧？其實 telnet 不只可以拿來打B而已，他還可以拿來做很多事情喔～ 想要一起DIY的人快快來喔～～ ">
+  <meta name="keywords" content="Java">
+  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="不歸錄" />
+  <meta property="og:title" content="Java Telnet - 不歸錄" />
+  <meta property="og:site_description" content="今天要來玩什麼好玩的呢？話說明天還有期中考，大兜竟然還有閒情逸致在這裡敲鍵盤（心虛中）…… 不知道各位有沒有用過 telnet 的經驗，至少也打過類似 telnet ptt.cc 23 的指令吧？其實 telnet 不只可以拿來打B而已，他還可以拿來做很多事情喔～ 想要一起DIY的人快快來喔～～ " />
+  <meta property="og:url" content="http://tonytonyjan.net/2010/04/30/java-telnet/" />
+  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar.png" />
+  <meta property="article:tag" content="Java" />
+<meta property="article:section" content="程式" />
+<meta property="article:published_time" content="2010-04-30T02:05:37+08:00" />
+
+  <title>Java Telnet - 不歸錄</title>
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH --> 
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="#">
+      <input type="text" value="" name="s" id="search" placeholder="ENTER KEYWORD">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">Java Telnet</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2010-04-30T02:05:37+08:00">2010 年 04 月 30 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>今天要來玩什麼好玩的呢？話說明天還有期中考，大兜竟然還有閒情逸致在這裡敲鍵盤（心虛中）……</p>
+
+<p>不知道各位有沒有用過 telnet 的經驗，至少也打過類似 <code>telnet ptt.cc 23</code> 的指令吧？其實 telnet 不只可以拿來打B而已，他還可以拿來做很多事情喔～</p>
+
+<p><a href="http://cssula.twgg.org/wp-content/uploads/2010/04/duke-waving.gif"><img alt="" src="/images/cssula-blog/duke-waving.gif" /></a>想要一起DIY的人快快來喔～～</p>
+
+
+
+<p>telnet 也是 tcp/ip 協議的一員，有許多應用層的服務用的是 TCP 協定，拿 HTTP 為例子，如果懂得 HTTP 的 Header 的話，可以透過 telnet 建立連線發送 HTTP 要求，又例如 SMTP 協定用的也是 TCP 來傳訊，如果懂得 SMTP 的 Header，一樣可以用 telnet 來寄信。</p>
+
+<p>什麼！？沒有試過？好吧，大兜勉強示範一下怎麼用XD</p>
+
+<p>首先，要確認電腦有 telnet 可以用。（如果已經確認有 telnet 則可跳過此段）</p>
+
+<p>但如果閣下用的電腦是 Vista 或 Windows 7，會在執行 <code>telnet</code> 時看到「'telnet' 不是內部或外部命令、可執行的程式或批次檔。」</p>
+
+<p>很多人以為 Windows 在 Vista 以後的版本沒有 telnet，其實不然，只是沒有啟動而已，只要做到如下步驟即可：</p>
+
+<p>開始-&gt;控制台-&gt;程式集-&gt;程式和功能-&gt;開啟或關閉windows功能，找到「telnet用戶端」溝選並確認。</p>
+
+<p><img alt="" src="/images/cssula-blog/Screenshot-21.png" /></p>
+
+<p>這下可以試試看輸入 <code>telnet bs2.to</code> 看看～</p>
+
+<p><img alt="" src="/images/cssula-blog/Screenshot-22.png" /></p>
+
+<p>打 B 人人會，下面示範怎麼發送 HTTP Request 給 google 搜尋 「tonytonyjan」。</p>
+
+<p>進入 telnet：</p>
+
+<p><img alt="" src="/images/cssula-blog/Screenshot-23.png" /></p>
+
+<p>為了不要在連線後讓你的字打不出來，請在 open 之前打開 localecho。</p>
+
+<p>輸入 <code>GET /search?q=tonytonyjan HTTP/1.1</code>，加上兩次 Enter：</p>
+
+<p><img alt="" src="/images/cssula-blog/Screenshot-24.png" /></p>
+
+<p>哇～～～～啥鬼！！</p>
+
+<p>嘿～別慌別慌，仔細一看，會發現這些是熟悉的 html 標籤，隱約可以找到一些熟悉的網址，看到我的網誌了嗎XD，各位可以觀察一下在 google 首頁搜尋 tonytonyjan 得到的結果頁面，他的原始碼正和這個一樣。瀏覽器的工作，其實就是發送一大堆類似我們剛剛打的 GET 要求，以及這裡沒有提到的 POST 要求。</p>
+
+<p>也就是說…如果你想要讓自己的部落格的搜尋次數上升的話……嘿嘿，= =+（我可是什麼也沒說喔～～XD）</p>
+
+<p>該是回題的時候了，在 Java 裡面該怎麼寫一個 telnet 呢？其實只要理解下面的程式碼就可以達到我上一句話沒有說的事情^^"</p>
+
+<p>下面這是個簡單的 Java Telnet 程式，Java 的 Socket 讓我們可以很方便的建立起 TCP 連線。我們所要做的就只是打造兩條穩定的管子，一條是從 stdin 到 socket，把鍵盤的輸入送出去；一條是 socket 到 stdout，把收到的訊息印出來。這兩件事情要同步做，所以各開一個 Thread，在此大兜將這兩條管子分別打造成兩個 Class（SocketToOut和InToSocket），並且皆繼承自 Thread。</p>
+
+<p>這支陽春的程式提供參考，歡迎改良～～各位慢慢品嚐吧XD</p>
+
+<h3 id="section">碎碎念</h3>
+
+<ol>
+	<li>Telnet是許多駭……喔不……我是說是許多優良程式師的最愛</li>
+	<li>Windows Vista和7並不是沒有telnet程式，只是沒有打開</li>
+	<li>telnet屬於TCP/IP協議的一員，提供本機完成遠端工作的能力</li>
+	<li><a href="http://zh.wikipedia.org/zh-tw/Http#.E4.BE.8B.E5.AD.90" target="_blank">這是</a>發送Http Request的例子</li>
+	<li><a href="http://www.backup.idv.tw/viewtopic.php?=&amp;p=645" target="_blank">這是</a>發送SMTP Request來寄信的例子</li>
+</ol>
+
+<pre><code class="language-java">/*
+ * Copyright 2010 CSsula.twgg.org. All Rights Reserved.
+ * Author: Tony Jian
+ */
+import java.io.*;
+import java.net.*;
+
+public class JavaTelnet{
+	public static void main(String[] args) {
+        String hostName;
+        int port;
+        InetAddress address;
+
+        if(args.length == 2) {
+            hostName = args[0];
+            port = Integer.parseInt(args[1]);
+        }else{
+			System.out.println("Usage: java JavaTelnet address port");
+			return;
+		}
+
+        try {
+            address = InetAddress.getByName(hostName);
+            try {
+                Socket socket = new Socket(address, port);
+                new SocketToOut(socket).start();
+                new InToSocket(socket).start();
+            } catch (IOException e) {
+				System.err.println("Connection failed");
+            }
+        }
+        catch(UnknownHostException e) {
+			System.err.println("Unknown host");
+        }
+    }
+}
+
+class SocketToOut extends Thread {
+    private Socket socket;
+	private BufferedReader socketIn;
+
+    public SocketToOut(Socket socket) throws IOException{
+        this.socket = socket;
+		socketIn = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+    }
+
+	@Override
+    public void run() {
+        try {
+            String line = null;
+            while((line = socketIn.readLine()) != null) System.out.println(line);
+            socket.close();
+        } catch(IOException e) {
+            System.out.println(e.toString());
+        }
+    }
+}
+
+class InToSocket extends Thread {
+    private Socket socket;
+	private PrintStream socketOut;
+	private BufferedReader in;
+
+    public InToSocket(Socket socket) throws IOException{
+        this.socket = socket;
+		socketOut = new PrintStream(socket.getOutputStream());
+		in = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+	@Override
+    public void run(){
+        try {
+            while(!socket.isClosed()) socketOut.println(in.readLine());
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<p><img alt="" src="/images/cssula-blog/Screenshot-19.png" /><br />
+<img alt="" src="/images/cssula-blog/Screenshot-20.png" /></p>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/java/">Java</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2010/04/29/java-ports-scanning/" rel="prev"><span class="meta-nav">←</span> 用 Java 掃描閘道</a>
+  </div>
+  <div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="/2010/05/02/68/" rel="next">麵包真是好吃～～ <span class="meta-nav">→</span></a>
+</div>
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+</body>
+</html>

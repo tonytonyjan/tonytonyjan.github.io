@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上次參加了 Ruby Tuesday #29，由 Ruby 圈的 JoJo，Joseph Ku（范范范瑋琪的概念），分享 WWDC 參加心得與 Swift 的簡介。 其中 Swift 的問號用法（Optional Chaining）引起了我的好奇： if let johnsStreet =...">
+  <meta name="keywords" content="Ruby, Swift">
+  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="不歸錄" />
+  <meta property="og:title" content="Swift Optional Chaining in Ruby - 不歸錄" />
+  <meta property="og:site_description" content="上次參加了 Ruby Tuesday #29，由 Ruby 圈的 JoJo，Joseph Ku（范范范瑋琪的概念），分享 WWDC 參加心得與 Swift 的簡介。 其中 Swift 的問號用法（Optional Chaining）引起了我的好奇： if let johnsStreet =..." />
+  <meta property="og:url" content="http://tonytonyjan.net/2014/06/20/swift-optional-chaining-on-ruby/" />
+  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar.png" />
+  <meta property="article:tag" content="Ruby" />
+<meta property="article:tag" content="Swift" />
+<meta property="article:section" content="程式" />
+<meta property="article:published_time" content="2014-06-20T15:49:35+08:00" />
+
+  <title>Swift Optional Chaining in Ruby - 不歸錄</title>
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH --> 
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="#">
+      <input type="text" value="" name="s" id="search" placeholder="ENTER KEYWORD">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">Swift Optional Chaining in Ruby</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2014-06-20T15:49:35+08:00">2014 年 06 月 20 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>上次參加了 <a href="http://rubytaiwan.kktix.cc/events/ruby-tuesday-29">Ruby Tuesday #29</a>，由 Ruby 圈的 JoJo，<a href="https://twitter.com/josephku">Joseph Ku</a>（<del>范范范瑋琪的概念</del>），分享 WWDC 參加心得與 Swift 的簡介。</p>
+
+<p>其中 Swift 的問號用法（<a href="https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-XID_312">Optional Chaining</a>）引起了我的好奇：</p>
+
+<pre><code>if let johnsStreet = john.residence?.address?.street {
+  println("John's street name is \(johnsStreet).")
+} else {
+  println("Unable to retrieve the address.")
+}
+</code></pre>
+
+<p>身為一個 Rubist，看到問號結尾的方法名想必是不陌生的。依照 Ruby 方法命名的慣例，問號結尾的方法只會回傳 <code>true</code> 或 <code>false</code>。但在 Swift 就不太一樣了，<code>john.residence?.address?.street</code> 的意思和 <code>john.residence.address.street</code> 一樣，可是萬一 <code>john.residence</code> 是 <code>nil</code>，後者會出錯。</p>
+
+<p>再看一次上面優雅的寫法，只要印出 <code>Unable to retrieve the address.</code>，我們就知道 <code>john.residence?.address?.street</code> 在 chainging 的時候被其中一個回傳值 <code>nil</code> 斷法，可能是 <code>residence</code>，或是 <code>address</code>。</p>
+
+<h2 id="ruby-">Ruby 也可以嗎？</h2>
+
+<p>乍看覺得這好像也可以在魔法 Ruby 中實現，於是我開始了我的實驗：</p>
+
+<pre><code>.
+├── lib
+│   └── taylor_swift.rb
+└── spec
+    ├── taylor_swift_spec.rb
+    └── spec_helper.rb
+</code></pre>
+
+<p>先寫測試是好習慣，我希望我的 Ruby 以後可以這樣寫：</p>
+
+<pre><code class="language-ruby">require 'taylor_swift'
+name = 'tonytonyjan'
+name.length?            # =&gt; 11
+name.length?.gcd?(1331) # =&gt; 11
+name.length?.asdf?      # =&gt; nil
+name.asdf?              # =&gt; nil
+name.asdf               # =&gt; NoMethodError
+</code></pre>
+
+<p>變成 Rspec 後：</p>
+
+<pre><code class="language-ruby">require 'taylor_swift'
+
+describe '"tonytonyjan"' do
+  before(:all){ @name = 'tonytonyjan' }
+  it('.length?')             { expect(@name.length?).to             eql(11) }
+  it('.length?.gcd?(1331)')  { expect(@name.length?.gcd?(1331)).to  eql(11) }
+  it('.length?.asdf?(1331)') { expect(@name.length?.asdf?(1331)).to be_nil }
+  it('.asdf?')               { expect(@name.asdf?).to               be_nil }
+  it('.asdf')                { expect{@name.asdf}.to                raise_error(NoMethodError) }
+end
+</code></pre>
+
+<p>接下來就是 <code>taylor_swift.rb</code>：</p>
+
+<pre><code class="language-ruby">def method_missing name, *args
+  name_to_s = name.to_s
+  if name_to_s.end_with?('?')
+    method = name_to_s.chop
+    respond_to?(method) ? send(method, *args) : nil
+  else
+    super
+  end
+end
+</code></pre>
+
+<p>乍看好像可以 work，讓我們測測看：</p>
+
+<pre><code class="language-bash">$ rspec
+.....
+
+Finished in 0.00393 seconds (files took 0.19131 seconds to load)
+5 examples, 0 failures
+</code></pre>
+
+<p>喔喔！不錯，看起來確實可以運作，可以收工了呢XD（Ruby 真的是很好惡搞的語言）</p>
+
+<h2 id="section">注意</h2>
+
+<p>看起來很酷，但是已經違反了 Ruby 設計問號的初衷，正如上述所提，問號結尾的方法名在 Ruby 的功用就是回傳 <code>true</code> 或 <code>false</code>，同樣的慣例還有驚嘆號（bang method），用於會產生副作用的方法。</p>
+
+<p>鑑於此若真要應用在實務上，建議不要用 <code>?</code>，改用像是 <code>??</code> 或是其他符號來代替，但 <code>??</code> 其實有點醜陋，應該有更漂亮的符號，因為這不是 Ruby 官方的慣例，所以依照個人喜好而定就好。當然最後也可以自己打一個 Gem 給自己用。但若還是堅持希望用 <code>?</code> 怎麼辦？</p>
+
+<p>學 Swift XD</p>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/ruby/">Ruby</a>
+        <a rel="tag" href="/tags/swift/">Swift</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2014/06/14/use-plurk-api-to-make-a-robot/" rel="prev"><span class="meta-nav">←</span> 噗浪機器人製作</a>
+  </div>
+  <div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="/2014/06/26/sfacg-comic-downloader/" rel="next">漫畫下載器 <span class="meta-nav">→</span></a>
+</div>
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+</body>
+</html>

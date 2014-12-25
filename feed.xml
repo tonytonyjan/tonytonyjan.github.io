@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>不歸路</title>
+  <subtitle>簡煒航的個人部落格</subtitle>
+  <id>http://tonytonyjan.net</id>
+  <link href="http://tonytonyjan.net"/>
+  <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
+  <updated>2014-12-20T09:46:11+08:00</updated>
+  <author>
+    <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+  </author>
+  <entry>
+    <title>Rails 4.2 重點介紹</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/"/>
+    <id>http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/</id>
+    <published>2014-12-20T09:46:11+08:00</published>
+    <updated>2014-12-25T20:45:11+08:00</updated>
+    <author>
+      <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+    </author>
+    <summary type="html">&lt;p&gt;Rails 團隊終於要在&lt;a href="http://weblog.rubyonrails.org/2014/12/19/Rails-4-2-final"&gt;聖誕節&lt;/a&gt;的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Active Job&lt;/li&gt;
+  &lt;li&gt;Asynchronous mails&lt;/li&gt;
+  &lt;li&gt;Adequate Record&lt;/li&gt;
+  &lt;li&gt;Web Console&lt;/li&gt;
+  &lt;li&gt;Foreign key support&lt;/li&gt;
+&lt;/ul&gt;
+
+</summary>
+    <content type="html">&lt;p&gt;Rails 團隊終於要在&lt;a href="http://weblog.rubyonrails.org/2014/12/19/Rails-4-2-final"&gt;聖誕節&lt;/a&gt;的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Active Job&lt;/li&gt;
+  &lt;li&gt;Asynchronous mails&lt;/li&gt;
+  &lt;li&gt;Adequate Record&lt;/li&gt;
+  &lt;li&gt;Web Console&lt;/li&gt;
+  &lt;li&gt;Foreign key support&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;h2 id="active-job"&gt;Active Job&lt;/h2&gt;
+
+&lt;p&gt;一個網站常有些較繁重的工作，並不希望在使用者提出請求時立即執行，以寄出一萬封信為例，這也許需要幾分鐘的時間，當使用者點下寄信按鈕時如果還需要等個幾分鐘才可以看到回傳頁面，這將造成糟糕的使用者體驗。&lt;/p&gt;
+
+&lt;p&gt;正規的作法是將這類需要長時間的工作丟到工作佇列去排程，並在背景中執行多個 worker 程序，每個 worker 都會不斷重複從佇列中取得新的工作去執行。&lt;/p&gt;
+
+&lt;p&gt;Rails 已經有許多 gem 可以解決這個問題，著名項目包括 &lt;a href="https://github.com/resque/resque"&gt;Resque&lt;/a&gt;、&lt;a href="http://sidekiq.org/"&gt;Sidekiq&lt;/a&gt; 與 &lt;a href="https://github.com/collectiveidea/delayed_job"&gt;DelayedJob&lt;/a&gt;，其中 Resque 與 Sidekiq 使用 Redis 存放工作住列，DelayedJob 則用關聯式資料庫。&lt;/p&gt;
+
+&lt;p&gt;Active Job 並不是提出了一個新的實作，換句話說，使用 Rails 4.2 並不代表未來就不用安裝 Resque 之類的 gem。&lt;/p&gt;
+
+&lt;p&gt;它的真正意義在於統一使用介面，讓開發者在不同的 gem 之間切換時，可以不用受到 gem 的不同 API 而影響，因而降低重新改寫的成本。&lt;/p&gt;
+
+&lt;p&gt;看到這裡是否覺得這種作法很熟悉？它其實就是適配器模式（Adapter pattern），早在 Active Record 誕生的時候就已經使用相同的技巧，Rails 之所以能以相同的 API 介面在不同的資料庫之間遊走也是拜此所賜。&lt;/p&gt;
+
+&lt;p&gt;目前支援的 gem 有：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -1 activejob/lib/active_job/queue_adapters
+backburner_adapter.rb
+delayed_job_adapter.rb
+inline_adapter.rb
+qu_adapter.rb
+que_adapter.rb
+queue_classic_adapter.rb
+resque_adapter.rb
+sidekiq_adapter.rb
+sneakers_adapter.rb
+sucker_punch_adapter.rb
+test_adapter.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;除了 &lt;code&gt;test_adapter.rb&lt;/code&gt; 僅用於測試，以及 &lt;code&gt;inline_adapter.rb&lt;/code&gt; 為預設（立即執行，不會丟入背景），以外都有相對的 gem 需要安裝。&lt;/p&gt;
+
+&lt;h3 id="section"&gt;使用方式&lt;/h3&gt;
+
+&lt;p&gt;工作的內容必須定義在 &lt;code&gt;app/jobs/&lt;/code&gt; 下，並繼承自 &lt;code&gt;ActiveJob::Base&lt;/code&gt;，不過 Rails 4.2 提供了產生器，並不一定要手動新增：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rails g job execute_simulate
+      invoke  test_unit
+      create    test/jobs/execute_simulate_job_test.rb
+      create  app/jobs/execute_simulate_job.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# app/jobs/execute_simulate_job.rb
+class ExecuteSimulateJob &amp;lt; ActiveJob::Base
+  queue_as :default
+
+  def perform(*args)
+    # Do something later
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;queue_as&lt;/code&gt; 可以設定將此工作排進特定的佇列，預設是 &lt;code&gt;default&lt;/code&gt;，可以透過 &lt;code&gt;--queue&lt;/code&gt;&lt;br /&gt;
+參數修改：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rails g job execute_simulate --queue urgent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用起來像是這樣：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# 將工作丟進佇列
+ExecuteSimulateJob.perform_later record
+
+# 排程明天中午再執行
+ExecuteSimulateJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
+
+# 排程一週後執行
+ExecuteSimulateJob.set(wait: 1.week).perform_later(record)
+
+# 指定特定的佇列
+ExecuteSimulateJob.set(queue: :important).perform_later(record)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;設定要使用的 gem：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# config/application.rb
+module YourApp
+  class Application &amp;lt; Rails::Application
+    # 請確保 Gemfile 已經有安裝所要使用的 gem
+    config.active_job.queue_adapter = :resque
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="callback"&gt;回呼（Callback）&lt;/h3&gt;
+
+&lt;p&gt;共有以下 6 個註冊點：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;before_enqueue&lt;/li&gt;
+  &lt;li&gt;around_enqueue&lt;/li&gt;
+  &lt;li&gt;after_enqueue&lt;/li&gt;
+  &lt;li&gt;before_perform&lt;/li&gt;
+  &lt;li&gt;around_perform&lt;/li&gt;
+  &lt;li&gt;after_perform&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用方式與 controller、model 中的回呼寫法是一樣的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;class ExecuteSimulateJob &amp;lt; ActiveJob::Base
+  queue_as :default
+ 
+  before_enqueue do |job|
+    # 在佇列前執行
+  end
+ 
+  around_perform do |job, block|
+    # 在工作開始前執行
+    block.call
+    # 在工作完成後執行
+  end
+ 
+  def perform
+    # Do something later
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="asynchronous-mails"&gt;Asynchronous Mails&lt;/h2&gt;
+
+&lt;p&gt;如果寄信工作也要丟到工作佇列，先別急著寫工作檔，Rails 4.2 的 Action Mailer 內建了 &lt;code&gt;DeliveryJob&lt;/code&gt; 類別，並提供 &lt;code&gt;deliver_later&lt;/code&gt; 方法將寄信工作推進佇列。&lt;/p&gt;
+
+&lt;p&gt;你可以像這樣使用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# 使用 #deliver_later 透過 DeliveryJob 來寄信
+MyMailer.welcome(@user).deliver_later
+
+# 若不想丟到工作住列，也有 #deliver_now 可以使用
+MyMailer.welcome(@user).deliver_now
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="adequate-record"&gt;Adequate Record&lt;/h2&gt;
+
+&lt;p&gt;由 Aaron Patterson 所作，用於提高 &lt;code&gt;#find&lt;/code&gt;、&lt;code&gt;#find_by&lt;/code&gt; 等一些常用查詢指令的速度，可以提升 Active Record 約莫兩倍的效能。&lt;/p&gt;
+
+&lt;p&gt;主要是因為 Active Record 在產生 SQL 過程有很多重複的片段不斷被重新製造，這其實可利用快取將重複的片段保存起來。細節請參考 &lt;a href="http://tenderlovemaking.com/2014/02/19/adequaterecord-pro-like-activerecord.html"&gt;Aaron Patterson 的網誌&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id="web-console"&gt;Web Console&lt;/h2&gt;
+
+&lt;p&gt;如果你有用過 &lt;code&gt;better_errors&lt;/code&gt; gem，那麼這就是類似的東西了。Rails 4.2 在開發環境下的錯誤頁面會多出一個 rails console 命令窗可以使用，除了一般 irb 的功能以外，也可以存取到該次請求中定義的實體與區域變數。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Rails 4.2 Web Console" src="/images/web-console.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;但不只有錯誤頁面才有命令窗可以使用，也可以在任何 view 的檔案中的任何位置加入 &lt;code&gt;&amp;lt;%= console %&amp;gt;&lt;/code&gt;，只要渲染到該檔案，就有命令窗可以使用。&lt;/p&gt;
+
+&lt;h2 id="foreign-keys"&gt;外鍵（Foreign Keys）&lt;/h2&gt;
+
+&lt;p&gt;Rails 4.2 遷移指令支援了 SQL 的外鍵定義功能，目前只有 mysql、mysql2 與 postgresql 可用。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# 將 `articles.author_id` 定義為參考 `authors.id` 的外鍵
+add_foreign_key :articles, :authors
+
+# 若命名沒有按照慣例，也可以透過設定達到
+# 例如將 `articles.author_id` 定義為參考 `users.lng_id` 的外鍵
+add_foreign_key :articles, :users, column: :author_id, primary_key: "lng_id"
+
+# 刪除 `accounts.branch_id` 外鍵
+remove_foreign_key :accounts, :branches
+ 
+# 刪除 `accounts.owner_id` 外鍵
+remove_foreign_key :accounts, column: :owner_id
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;這個功能在 migration 與 model 等會產生遷移檔的產生器，當使用到 &lt;code&gt;references&lt;/code&gt; 型別時也會自動的被使用，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rails g migration add_user_to_posts user:references
+      invoke  active_record
+      create    db/migrate/20141222180048_add_user_to_posts.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;class AddUserToPosts &amp;lt; ActiveRecord::Migration
+  def change
+    add_reference :posts, :user, index: true
+    add_foreign_key :posts, :users # Rails 4.2 功能
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>RubyKaigi 2014 攻略心得</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2014/10/10/rubykaigi-2014-feedback/"/>
+    <id>http://tonytonyjan.net/2014/10/10/rubykaigi-2014-feedback/</id>
+    <published>2014-10-10T10:29:04+08:00</published>
+    <updated>2014-12-25T20:44:34+08:00</updated>
+    <author>
+      <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img alt="Ruby Kaigi 2014" src="/images/rubykaigi.png"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;這輩子截至目前為止出國好像都還不是為了玩，不知幸也不幸。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;若說去年是接案維生的一年，今年就是演說生涯的起點吧？自四月的 Ruby Conference Taiwan 擔任講者之後，投稿了日本的 Ruby Kaigi，最後幸運的被錄取了，遂有了這次的出國經驗。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;官方網站&lt;/h2&gt;
+
+&lt;p&gt;大會的&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;img alt="Ruby Kaigi 2014" src="/images/rubykaigi.png" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;這輩子截至目前為止出國好像都還不是為了玩，不知幸也不幸。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;若說去年是接案維生的一年，今年就是演說生涯的起點吧？自四月的 Ruby Conference Taiwan 擔任講者之後，投稿了日本的 Ruby Kaigi，最後幸運的被錄取了，遂有了這次的出國經驗。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;官方網站&lt;/h2&gt;
+
+&lt;p&gt;大會的&lt;a href="http://rubykaigi.org/2014/"&gt;官方網站&lt;/a&gt;是用 &lt;a href="http://middlemanapp.com/"&gt;Middleman&lt;/a&gt; 架設的，不忍說就連本屆的 Logo 也跟 Middleman 長得有點像。筆者因為是講者的緣故被加入了 Ruby Kaigi 官方網站的 GitHub repository，在議程開始的前一個禮拜，那段日子只要訪問 GitHub 就會看到滿滿的日文，且有人發了新的 pull request 我都會收到通知。&lt;/p&gt;
+
+&lt;p&gt;有趣的是，不少 commit message 寫著「fix grammar」。&lt;/p&gt;
+
+&lt;h2 id="section-1"&gt;票價&lt;/h2&gt;
+
+&lt;p&gt;一般會眾 28,000 日幣（相當於 8,000 台幣），覺得貴嗎？貴不貴要看跟什麼比了。畢竟國際上的的研討會票價大約就是落在 5,000 到 10,000 左右。台灣的研討會特色是票價相對便宜，且這麼便宜的情況下竟然還有提供點心與網路，應該也算是一種台灣之光？&lt;/p&gt;
+
+&lt;p&gt;台灣怎麼不拉高價格呢？我覺得是在台灣這樣的票價的研討會是活不下去的，且沒有下午茶點心與網路還會被公幹，自然沒有人敢把票價提升到國際水平。所以 HIT 可以說是台灣的奇蹟研討會。&lt;/p&gt;
+
+&lt;h2 id="section-2"&gt;研討會&lt;/h2&gt;
+
+&lt;p&gt;Ruby Kaigi 的即時口譯做的非常的好，即便台上是日文演講，但透過無線電耳機，幾乎可以聽得懂台上的內容。另外轉場用的背景音樂筆者也非常喜歡，甚至為此整理了 &lt;a href="http://grooveshark.com/#!/playlist/Ruby+Kaigi+2014+Soundtrack/101045969"&gt;Ruby Kaigi 的歌單&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;這幾天我一直被誤認為是日本人，不過似乎也因為這樣得到了不少社交機會，也認識許多朋友。&lt;/p&gt;
+
+&lt;p&gt;特別感謝 Yohei Yasukawa 的幫忙，由於我的演說需要用到有線網路，而這是他幫我溝通處理的，我才有一次完整的演說。這一切都發生在信件的往來，而我是意外在某次午餐與他共桌才與他相認，只能說緣份真是奇妙。&lt;/p&gt;
+
+&lt;h2 id="section-3"&gt;社群生態圈&lt;/h2&gt;
+
+&lt;p&gt;日本的 Ruby 社群相當蓬勃，幾乎每一個都市都有一個社群，光是利用主持人在晚會唱名每一個社群名字的時間，筆者還多吃 3 盤生魚片外加一瓶啤酒。&lt;/p&gt;
+
+&lt;p&gt;台灣的 Ruby 社群我想只有一個 Ruby Taipei 吧？也因為只有一個，所以 Ruby Taiwan 通常也代表 Ruby Taipei。而 Rails 社群就比較多一點，除了台北之外，尚有台南、高雄的社群。&lt;/p&gt;
+
+&lt;p&gt;Rails 是用 Ruby 所建構的，但前者社群明顯比後者蓬勃的多，雖然不是很明白其中所以，但這或許也證明了 Rails 開發者未必會對 Ruby 有興趣吧？&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>C 語言之多行巨集</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2014/10/07/multi-line-c-macros/"/>
+    <id>http://tonytonyjan.net/2014/10/07/multi-line-c-macros/</id>
+    <published>2014-10-07T02:19:13+08:00</published>
+    <updated>2014-12-25T21:18:37+08:00</updated>
+    <author>
+      <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+    </author>
+    <summary type="html">&lt;p&gt;有時候我們在翻閱原始碼的時候會看到類似這樣的寫法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;#define FOO(x, y)    \
+do {                 \
+  typeof(x) tmp = x; \
+  x = y;             \
+  y = tmp;           \
+} while...&lt;/code&gt;&lt;/pre&gt;</summary>
+    <content type="html">&lt;p&gt;有時候我們在翻閱原始碼的時候會看到類似這樣的寫法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;#define FOO(x, y)    \
+do {                 \
+  typeof(x) tmp = x; \
+  x = y;             \
+  y = tmp;           \
+} while (0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;當然有的人會提出質疑，並且習慣使用邊界區塊（scope block）的寫法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;#define FOO(x, y)    \
+{                    \
+  typeof(x) tmp = x; \
+  x = y;             \
+  y = tmp;           \
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;乍看之下比較漂亮，但事實上後者的寫法有潛在的問題。其實 do/while 的風格只有一個目的，就是將展開的內容變成一個敘述（statement）。讓我們舉個例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
+  foo(x, y);
+else
+  bar(x, y);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;目前 &lt;code&gt;foo()&lt;/code&gt; 與 &lt;code&gt;bar()&lt;/code&gt; 都是一個標準的 C 函式，可以正常編譯。但如果現在把 &lt;code&gt;foo()&lt;/code&gt; 換成了巨集之後，狀況就不一樣了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
+  FOO(x, y);
+else
+  bar(x, y);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果我們使用的是後者的寫法，經過預編步驟展開之後：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
+  {
+    typeof(x) tmp = x;
+    x = y;
+    y = tmp;
+  };
+else
+  bar(x, y);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;if&lt;/code&gt; 因為 &lt;code&gt;FOO(x, y);&lt;/code&gt; 後面的分號，提早終結了，事實上這段程式碼也無法編譯。其中一個解法是把分號拿掉：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
+  FOO(x, y)
+else
+  bar(x, y);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;這樣產生的程式碼就可以符合 if/else 的正確語法，可是 &lt;code&gt;FOO(x, y)&lt;/code&gt; 後面沒有分號卻又破壞了程式設計的一致性。所以最後才會出現 do/while 風格的寫法，要注意的是 &lt;code&gt;while(0)&lt;/code&gt; 的後方沒有分號，如果加上了分號，那麼會因為這個分號終結的是 do/while 敘述，導致 &lt;code&gt;FOO(x, y);&lt;/code&gt; 會展開出兩個分號，又出現了剛剛的問題。&lt;/p&gt;
+
+&lt;p&gt;當然，如果你覺得每次多行的巨集都要加個 do/while 其醜無比且又可能會打錯字，筆者建議可以再包裹一層巨集去處理這件事情，別忘了巨集可以當樣板使用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-c"&gt;#define STMT( stuff )  do { stuff } while (0)
+
+#define SWAP(x, y)     \
+  STMT(                \
+    typeof(x) tmp = x; \
+    x = y;             \
+    y = tmp;           \
+  )
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>|=(2 影片下載器</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/"/>
+    <id>http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/</id>
+    <published>2014-06-28T01:04:26+08:00</published>
+    <updated>2014-12-25T20:56:25+08:00</updated>
+    <author>
+      <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+    </author>
+    <summary type="html">&lt;p&gt;標題已用 1337 低調處理XD，筆者很喜歡到某站看影片，由於篩選、排序功能需要付費，筆者甚至為此製作了一些工具達到一樣的目的，例如依照收藏次數、評價排序等。不過這次是要分享如何從網站下載一部影片。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;瀏覽器下載法&lt;/h2&gt;
+
+&lt;p&gt;其實有一招不用寫程式就可以下載影片，而且適用在所有影音網站。首先在點選播放影...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;標題已用 1337 低調處理XD，筆者很喜歡到某站看影片，由於篩選、排序功能需要付費，筆者甚至為此製作了一些工具達到一樣的目的，例如依照收藏次數、評價排序等。不過這次是要分享如何從網站下載一部影片。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;瀏覽器下載法&lt;/h2&gt;
+
+&lt;p&gt;其實有一招不用寫程式就可以下載影片，而且適用在所有影音網站。首先在點選播放影片以前，先把瀏覽器的開發者工具打開，接著點下播放，同時觀看 HTTP 的封包狀況，找到一個下載時間最長的請求，就是影片網址。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/xxx-1.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;如圖所示，影片下載網址是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv?mid=023358550acbb0cadcf93f50edcfaf5a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="section-1"&gt;大量下載&lt;/h2&gt;
+
+&lt;p&gt;但如果要大量下載影片的話，瀏覽器這招還是得徒手一個一個把影片點開，這是一件很累的事情，要是有個爬蟲可以幫我做這件事情豈不是很方便嗎？再回顧一下剛剛的網址，可以知道前半段並不難產生，而下載影片的最大重點就在後面的 &lt;code&gt;mid&lt;/code&gt; 到底怎麼來。&lt;/p&gt;
+
+&lt;p&gt;只是這段 &lt;code&gt;023358550acbb0cadcf93f50edcfaf5a&lt;/code&gt; 並沒有在頁面原始碼出現，所以我猜應該是透過網路取得的，幸運的是，沿著影片網址的請求往上找，確實給我找到了一個用來取得網址資訊的請求：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/xxx-2.png" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://video.fc2.com/ginfo.php?from=28&amp;amp;otag=0&amp;amp;fversion=MAC%2014%2C0%2C0%2C125&amp;amp;mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;lang=tw&amp;amp;gk=uMuxgWhewb&amp;amp;tk=TlRBeU1qUTNNREE9&amp;amp;href=http%3A%2F%2Fvideo%2Efc2%2Ecom%2Ftw%2Fcontent%2F20140528bpRKSJWR&amp;amp;v=20140528bpRKSJWR&amp;amp;upid=20140528bpRKSJWR
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;得到的回應：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/xxx-3.png" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;filepath=http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv&amp;amp;mid=023358550acbb0cadcf93f50edcfaf5a&amp;amp;sec=71&amp;amp;oref=0&amp;amp;charger=0&amp;amp;charge_second=&amp;amp;err_code=&amp;amp;isadult=0&amp;amp;count=&amp;amp;adreopen=600&amp;amp;cm=1&amp;amp;payment=0&amp;amp;mb_id=60283252&amp;amp;chk_ns=60_256&amp;amp;ci=&amp;amp;play_min=1&amp;amp;play_query=i:0;c:5;f:28;o:0;p:0;u:20140528bpRKSJWR;m:60283252;l:11&amp;amp;test=&amp;amp;ad=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中我要的東西就在這個回應裡面，只要把 &lt;code&gt;filepath&lt;/code&gt; 和 &lt;code&gt;mid&lt;/code&gt; 組起來就可以取得影片網址了。&lt;/p&gt;
+
+&lt;h2 id="section-2"&gt;分析變數&lt;/h2&gt;
+
+&lt;p&gt;眼看就要成功了，接下來只要分析出 &lt;code&gt;/ginfo.php&lt;/code&gt; 的變數怎麼製造即可。筆者是用 &lt;code&gt;curl&lt;/code&gt; 做測試，發現上述的請求可以簡化，只保留 &lt;code&gt;mimi&lt;/code&gt; 與 &lt;code&gt;upid&lt;/code&gt; 這兩個變數：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl "http://video.fc2.com/ginfo.php?mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;upid=20140528bpRKSJWR"
+filepath=http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv&amp;amp;mid=bd8bf22fae4cba798ae0b028dabc4784&amp;amp;sec=71&amp;amp;oref=1&amp;amp;charger=0&amp;amp;charge_second=&amp;amp;err_code=&amp;amp;isadult=0&amp;amp;count=&amp;amp;adreopen=600&amp;amp;cm=0&amp;amp;payment=0&amp;amp;mb_id=&amp;amp;chk_ns=60_256&amp;amp;title=ブラッシングされたいの？&amp;amp;seek_image=3&amp;amp;play_min=1&amp;amp;play_query=i:0;c:5;f:;o:;p:0;u:20140528bpRKSJWR;m:;l:0&amp;amp;test=&amp;amp;ad=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但這回用 &lt;code&gt;curl&lt;/code&gt; 得到的 &lt;code&gt;mid&lt;/code&gt; 不太一樣，且 &lt;code&gt;filepath&lt;/code&gt; 與 &lt;code&gt;mid&lt;/code&gt; 組起來的網址也無法丟到瀏覽器，&lt;br /&gt;
+但是直接用 &lt;code&gt;curl&lt;/code&gt; 是可以下載的，所以猜測 &lt;code&gt;mid&lt;/code&gt; 的產生有用到 &lt;code&gt;User-Agent&lt;/code&gt; 去做雜湊，於是筆者實驗性用了自己瀏覽器的 &lt;code&gt;User-Agent&lt;/code&gt; 丟進 &lt;code&gt;curl&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl "http://video.fc2.com/ginfo.php?mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;upid=20140528bpRKSJWR" -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36'
+filepath=http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv&amp;amp;mid=023358550acbb0cadcf93f50edcfaf5a&amp;amp;sec=71&amp;amp;oref=1&amp;amp;charger=0&amp;amp;charge_second=&amp;amp;err_code=&amp;amp;isadult=0&amp;amp;count=&amp;amp;adreopen=600&amp;amp;cm=0&amp;amp;payment=0&amp;amp;mb_id=&amp;amp;chk_ns=60_256&amp;amp;title=ブラッシングされたいの？&amp;amp;seek_image=3&amp;amp;play_min=1&amp;amp;play_query=i:0;c:5;f:;o:;p:0;u:20140528bpRKSJWR;m:;l:0&amp;amp;test=&amp;amp;ad=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;賓果，這下 &lt;code&gt;mid&lt;/code&gt; 變數已經一樣了（&lt;code&gt;mid=023358550acbb0cadcf93f50edcfaf5a&lt;/code&gt;），所以由此更可以確定，&lt;code&gt;mid&lt;/code&gt; 的產生完全只有用到，&lt;code&gt;User-Agent&lt;/code&gt; 而已，只要確保下載影片時候送出去的請求，其 &lt;code&gt;User-Agent&lt;/code&gt; 保持一致就沒問題，至此可先鬆一口氣。&lt;/p&gt;
+
+&lt;h2 id="hacking"&gt;Hacking&lt;/h2&gt;
+
+&lt;p&gt;回到剛剛化簡的網址：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://video.fc2.com/ginfo.php?mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;upid=20140528bpRKSJWR
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;upid&lt;/code&gt; 是很好產生的，不過 &lt;code&gt;mimi&lt;/code&gt; 並沒有在網站原始碼出現過，且筆者也沒有在任何 HTTP 封包上找到線索。猜測剩下一種可能：這段變數是由 Flash 產生的。然後我翻翻，找到這個：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-as"&gt;public static function makeMimiLocal(_arg1:String):String{
+  var _local2:String = "dEgEGrrGeegfe";
+  var _local3:String = "gGddgPfeaf_gzyr";
+  var _local4:String = "e_egeDEgggEfe";
+  return (MD5(((_arg1 + "_") + _local3)));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看來這就是製造變數「咪咪」的配方了，試寫一下 Ruby 版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;def make_mimi(movie_id) # ex. 20140528bpRKSJWR
+  # local2 = 'dEgEGrrGeegfe'
+  local3 = 'gGddgPfeaf_gzyr'
+  # local4 = 'e_egeDEgggEfe'
+  Digest::MD5.hexdigest movie_id + '_' + local3
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中有兩個區域變數不知道要幹嘛，順手註解掉了。如果這段程式正確，那麼輸入 &lt;code&gt;20140528bpRKSJWR&lt;/code&gt; 應該會得到一個 &lt;code&gt;c5e51ed4de1f4e6246b851bef4a210de&lt;/code&gt; 才對：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;make_mimi '20140528bpRKSJWR' # =&amp;gt; c5e51ed4de1f4e6246b851bef4a210de
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;做了一個下載器：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ruby mimi.rb 20140528bpRKSJWR
+$ ls
+20140528bpRKSJWR.flv mimi.rb
+$ open 20140528bpRKSJWR.flv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/xxx-4.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;收工，以後可以不用瀏覽器下載這個網站的影片了XD&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>臉書打卡集氣棒</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2014/06/27/fb-page-countdown/"/>
+    <id>http://tonytonyjan.net/2014/06/27/fb-page-countdown/</id>
+    <published>2014-06-27T23:51:38+08:00</published>
+    <updated>2014-12-25T20:56:25+08:00</updated>
+    <author>
+      <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/fb-page-countdown.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;本棒會在指定 FB 粉絲頁或打卡點，其按讚數量與打卡數總和超過指定數量時，放出慶祝特效。&lt;/p&gt;
+
+&lt;p&gt;這是當初為了&lt;a href="https://www.facebook.com/5xruby"&gt;五倍紅寶石&lt;/a&gt;說明會做出來的東西，此外也被用在 &lt;a href="https://www.facebook.com/wwacimwaffle"&gt;I'M Waffle 現烤鬆餅&lt;/a&gt;，為了可以重複利用，特此放到了 &lt;a href="http://5xruby.github.io/FB-checkin"&gt;Github Page&lt;/a&gt;，並且改版為可透過網址變數去設定頁面內容。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;產生器&lt;/h2&gt;
+
+&lt;form action="http://5xruby.github.io/FB-checkin" target="_blank"&gt;
+...&lt;/form&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/fb-page-countdown.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;本棒會在指定 FB 粉絲頁或打卡點，其按讚數量與打卡數總和超過指定數量時，放出慶祝特效。&lt;/p&gt;
+
+&lt;p&gt;這是當初為了&lt;a href="https://www.facebook.com/5xruby"&gt;五倍紅寶石&lt;/a&gt;說明會做出來的東西，此外也被用在 &lt;a href="https://www.facebook.com/wwacimwaffle"&gt;I'M Waffle 現烤鬆餅&lt;/a&gt;，為了可以重複利用，特此放到了 &lt;a href="http://5xruby.github.io/FB-checkin"&gt;Github Page&lt;/a&gt;，並且改版為可透過網址變數去設定頁面內容。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;產生器&lt;/h2&gt;
+
+&lt;form action="http://5xruby.github.io/FB-checkin" target="_blank"&gt;
+  &lt;p&gt;&lt;label for="obj_id"&gt;粉絲頁 ID&lt;/label&gt;
+  &lt;input id="obj_id" type="text" name="obj_id" /&gt;
+  &lt;label for="max_count"&gt;讚、打卡最大值&lt;/label&gt;
+  &lt;input id="max_count" type="number" name="max_count" value="500" /&gt;
+  &lt;label for="auto_fire"&gt;自動放煙火&lt;/label&gt;
+  &lt;input id="auto_fire" type="checkbox" name="auto_fire" /&gt;
+  &lt;input type="submit" value="送出" /&gt;&lt;br /&gt;
+  &lt;b&gt;進階設定：&lt;/b&gt;&lt;br /&gt;
+  &lt;label for="font_size"&gt;倒數數字大小&lt;/label&gt;
+  &lt;input id="font_size" type="number" name="font_size" value="0.5" step="any" /&gt;&lt;br /&gt;
+  &lt;label for="btn_size"&gt;啟動煙火按鈕大小（px）&lt;/label&gt;
+  &lt;input id="btn_size" type="number" name="btn_size" value="100" /&gt;&lt;br /&gt;
+  &lt;label for="qr_code_size"&gt;QRCode 圖片大小（px）&lt;/label&gt;
+  &lt;input id="qr_code_size" type="number" name="qr_code_size" value="600" /&gt;&lt;br /&gt;
+  &lt;label for="cycle"&gt;更新週期（千分之秒）&lt;/label&gt;
+  &lt;input id="cycle" type="number" name="cycle" value="1000" /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Github：https://github.com/5xRuby/FB-checkin&lt;/p&gt;
+
+&lt;h2 id="section-1"&gt;變數說明&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;變數&lt;/th&gt;
+      &lt;th&gt;預設值&lt;/th&gt;
+      &lt;th&gt;說明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;obj_id&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;5xruby&lt;/td&gt;
+      &lt;td&gt;粉絲頁 ID&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;font_size&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;0.5&lt;/td&gt;
+      &lt;td&gt;倒數數字大小&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;auto_fire&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;自動放煙火&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;btn_size&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+      &lt;td&gt;啟動煙火按大小&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;qr_code_size&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;600&lt;/td&gt;
+      &lt;td&gt;QRCode 圖片大小&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;max_count&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;500&lt;/td&gt;
+      &lt;td&gt;讚、打卡最大值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;cycle&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;更新週期&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+  </entry>
+  <entry>
+    <title>漫畫下載器</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2014/06/26/sfacg-comic-downloader/"/>
+    <id>http://tonytonyjan.net/2014/06/26/sfacg-comic-downloader/</id>
+    <published>2014-06-26T16:50:00+08:00</published>
+    <updated>2014-12-25T20:56:25+08:00</updated>
+    <author>
+      <name>大兜, 簡煒航, tonytonyjan, Jian Weihang</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;a href="https://github.com/tonytonyjan/sfacg_downloader"&gt;Github 傳送門&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;筆者是個漫畫迷，其中最喜歡拜訪的網站莫過於&lt;a href="http://comic.sfacg.com/"&gt;這家&lt;/a&gt;，但因為是網頁，在離線狀態就無法看了，加上最近的 Ruby 課程常放網頁爬蟲程式給學生當練習，於是這個 gem 就誕生了。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;安裝&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ gem install sfacg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="section-1"&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;下載海賊王 751 話&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sfacg...&lt;/code&gt;&lt;/pre&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;a href="https://github.com/tonytonyjan/sfacg_downloader"&gt;Github 傳送門&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;筆者是個漫畫迷，其中最喜歡拜訪的網站莫過於&lt;a href="http://comic.sfacg.com/"&gt;這家&lt;/a&gt;，但因為是網頁，在離線狀態就無法看了，加上最近的 Ruby 課程常放網頁爬蟲程式給學生當練習，於是這個 gem 就誕生了。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;安裝&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ gem install sfacg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="section-1"&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;下載海賊王 751 話&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sfacg chapter http://comic.sfacg.com/HTML/OnePiece/751/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下載整部海賊王&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sfacg comic http://comic.sfacg.com/HTML/OnePiece/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/sfacg.png" /&gt;&lt;br /&gt;
+&lt;img alt="" src="/images/sfacg-2.png" /&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>

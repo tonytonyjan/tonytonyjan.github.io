@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=" （左邊是Java的Logo，右邊則是可愛的Java吉祥物，Duke&gt;///&lt;） 學習一個語言，有"愛"很重要 這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，維基可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java...">
+  <meta name="keywords" content="Java">
+  <meta name="author" content="大兜, 簡煒航, tonytonyjan, Jian Weihang">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="不歸錄" />
+  <meta property="og:title" content="第一次喝 Java 就上癮-計畫序 - 不歸錄" />
+  <meta property="og:site_description" content=" （左邊是Java的Logo，右邊則是可愛的Java吉祥物，Duke&gt;///&lt;） 學習一個語言，有"愛"很重要 這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，維基可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java..." />
+  <meta property="og:url" content="http://tonytonyjan.net/2010/04/24/java-introduction/" />
+  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar.png" />
+  <meta property="article:tag" content="Java" />
+<meta property="article:section" content="程式" />
+<meta property="article:published_time" content="2010-04-24T01:14:40+08:00" />
+
+  <title>第一次喝 Java 就上癮-計畫序 - 不歸錄</title>
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH --> 
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="#">
+      <input type="text" value="" name="s" id="search" placeholder="ENTER KEYWORD">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">第一次喝 Java 就上癮-計畫序</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2010-04-24T01:14:40+08:00">2010 年 04 月 24 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p><img alt="" src="/images/cssula-blog/javaLogo.png" /><br />
+<img alt="" src="/images/cssula-blog/duke.png" /></p>
+
+<p>（左邊是Java的Logo，右邊則是可愛的Java吉祥物，Duke&gt;///&lt;）</p>
+
+<!--more-->
+
+<p><span style="font-size: medium;"><strong>學習一個語言，有"<span style="font-size: large;"><span style="color: #ff0000;">愛</span></span>"很重要</strong></span></p>
+
+<p><span style="font-size: medium;"><strong> </strong></span>這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，<a href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">維基</a>可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java, Fortran……等等，至今仍屹立不搖；2009年11月，新的語言<a href="http://www.zimbu.org/" target="_blank">Zimbu</a>問世，同時Google也發布了<a href="http://golang.org/" target="_blank">go</a>。另外呢，這個月TIOBE軟體公司公佈了最新的<a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" target="_blank">程式語言使用率統計</a>（這東西每個月都會更新一次），這個月C又再次奪回了第一名寶座，Java被C領先位居第二。語言的數目是多到數不清，關係與地位又瞬息萬變。然而儘管語言的種類是如此龐大，對於到底該學哪一個，大兜認為不是最重要的議題，於此大兜想分享一些建議：</p>
+
+<ul>
+  <li>
+    <p>尋找一個您對它有"<span style="font-size: medium;"><strong><span style="color: #ff0000;">愛</span></strong></span>"的程式語言，並且持續不懈的了解它、發展它、熟悉它，不斷探索其背後原理、實做、理論根基、應用…等等，別急著什麼都學，等到根扎實、夠穩了，有時間再慢慢發展旁邊的枝葉。</p>
+  </li>
+  <li>
+    <p>大兜不會把您綁起來要脅去學Java，這只是我個人的因緣遭遇導致我選擇了 Java 當做我的樹根。除了Java之外您仍有很多選擇。</p>
+  </li>
+</ul>
+
+<p>重要的還是"<span style="font-size: medium;"><span style="color: #ff0000;"><strong>愛</strong></span></span>"啊～～～～<span style="font-size: medium;"><strong> </strong></span></p>
+
+<p><span style="font-size: medium;"><strong>Java 的魅力</strong></span></p>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+  <param name="allowFullScreen" value="true" />
+  <param name="allowscriptaccess" value="always" />
+  <param name="src" value="http://www.youtube.com/v/SRLU1bJSLVg&amp;hl=zh_TW&amp;fs=1&amp;rel=0" />
+  <param name="allowfullscreen" value="true" />
+  <embed type="application/x-shockwave-flash" width="480" height="385" src="http://www.youtube.com/v/SRLU1bJSLVg&amp;hl=zh_TW&amp;fs=1&amp;rel=0" allowscriptaccess="always" allowfullscreen="true" />
+  <p>&lt;/embed&gt;&lt;/object&gt;</p>
+
+  <p>其實不妨試著在 Google 上搜尋一下"<a href="http://www.google.com.tw/search?source=ig&amp;hl=zh-TW&amp;rlz=&amp;=&amp;q=java+%E7%89%B9%E8%89%B2&amp;meta=lr%3D&amp;aq=f&amp;aqi=g1&amp;aql=&amp;oq=&amp;gs_rfai=" target="_blank">Java 特色</a>"，會得到數量可觀的筆數。意思是如果我把它們全部列出來，可能會被批佔頁面。而由於每個Java 控喜愛 Java 的並理由不一樣，在此大兜只舉出一些自己之所以選擇 Java 的主要理由。</p>
+
+  <p>整個程式設計個過程可以說是一種對複雜度的控管，包括底層機器的複雜度、問題的複雜度。但也有許多語言如 VB、C++、Perl、SmallTalk 對於複雜度議題的解決有相當的成效，Python 更是以「降低程式開發與維護過程的複雜度」為目標而生。</p>
+
+  <p>話說將大兜引入程式設計這調不歸路的程式語言的並不是 Java，而是 C。正當我已經玩過 C 有一段時間，接觸 C++ 之際，被這所謂的「物件導向」式程式語言所吸引，C++能夠大大簡化以往C解決問題時所需要的複雜度。然而有些美中不足的是 C++ 脫離不了歷史的包袱，正因 C++ 正是承襲 C 而來，這原本為了物件導向而生的語言，卻因秉持「向下相容」的原則，在語法上及架構上徒增了不少特例。</p>
+
+  <p>當我漸漸的了解 Java 後，我發現 Java 其中一個深深吸引我的特性就是「簡單」，這除了因為它是一個號稱「純」的物件導向式程式語言外，還有替 name space 的控管有了 package 這個觀念。另外還有 javadoc 可以幫助編寫好的自文件化的程式碼立即轉換成網頁，能以最清楚明瞭的方式呈現給用戶端，利其使用。</p>
+
+  <p>Java 的另一項著名特色：「跨平台」亦是大兜喜愛的特性之一，也就是所謂的「Write once, run anywhere」（WORA）。這麼說是誇張了點，但實際上方法就是在每個用戶端裝上一個 Virtual Machine，讓所有的 java byte code可以運行其上。即使速度慢了點（真的是慢了一點點點點點點），但由於跨平台在很多應用上都很吃香，犧牲一些速度換取這樣優勢有其划算之處。</p>
+
+  <p>另外 Java 也簡化了網路程式設計的複雜度，同時也提高了安全性。以往對於撰寫各個不同作業系統的網路程式，必須費心思弄清楚各個作業系統上與網路相關的系統呼叫，然而 Java 因為其「寫一次跑各地」的特性而讓程式員得以免於這樣的煩惱。</p>
+
+  <p>Applet 是讓 Java 一舉成名的一項關鍵，它讓 Java 程式可以跑在網頁上，只要用戶端有裝瀏覽器與 JRE 便可以透過 html 中的 applet 標籤，執行遠地的 Java 程式， Java 標準函式庫提供了許多好用的繪圖函式，可以寫出如 flash 般動畫、遊戲，而 Java OpenGL 更是一項令人振奮的領域，使其配合 applet 可以在網頁順暢的玩起 3D 遊戲，不需要安裝任何東西，用戶只需要瀏覽器就足夠。</p>
+
+  <p>下面一些官方的 Applet 展示：</p>
+
+  <p><a href="http://java.sun.com/products/java-media/2D/samples/java2demo/Java2Demo.html" target="_blank">Java2D</a></p>
+
+  <p><a href="http://java.sun.com/products/java-media/2D/samples/java2demo/Java2Demo.html" target="_blank"><img alt="" src="/images/cssula-blog/Screenshot-17.png" /></a></p>
+
+  <p><a href="https://jogl-demos.dev.java.net/applettest.html" target="_blank">JOGL</a></p>
+
+  <p><br class="spacer_" /></p>
+
+  <p><span style="font-size: medium;"><strong>關於本計畫</strong></span></p>
+
+  <p>本文件的誕生是一個出自<span style="text-decoration: line-through;">吃飽太閒的死</span>大學生的學習分享計畫，在這之前並沒有任何技術文件的撰文經驗，任何訪客如對於之後的內容有任何疑問，歡迎切磋指教，如果能糾正我那就更好了。希望藉此計畫學習教學文件的杜撰與章法風格，另外雖知道網路上存在許多人跟我做著同樣的事，大兜只是想單純的<strong>分享自己所學的一點微薄知識，以及發現與發明的喜悅</strong>。這是這個計畫的唯一目的。</p>
+
+  <p><br class="spacer_" /></p>
+
+  <p><span style="font-size: medium;"><strong>給讀者</strong></span></p>
+
+  <p>很歡迎很歡迎有讀者可以給予迴響、建議與指正，甚至一起討論，因為討論往往可以激盪出美麗火花，我很喜歡。只是萬一我哪裡錯了盡量不要大聲嗆我，拜託了，我是很脆弱的……QQ</p>
+
+  <p><br class="spacer_" /></p>
+
+  <p>參考資料：</p>
+
+  <p>http://java.sun.com</p>
+
+  <p>Thinking in Java 4/e</p>
+</object>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/java/">Java</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2010/04/24/69/" rel="prev"><span class="meta-nav">←</span> CSsula機房部落格，推一下XD</a>
+  </div>
+  <div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="/2010/04/29/java-ports-scanning/" rel="next">用 Java 掃描閘道 <span class="meta-nav">→</span></a>
+</div>
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+</body>
+</html>
