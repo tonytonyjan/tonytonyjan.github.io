@@ -2,7 +2,8 @@
 title: "params[\"key\"] 和 params[:key]"
 date: 2012-03-03 15:31 +0800
 comments: true
-category: Rails
+category: 程式
+tags: Ruby, Ruby on Rails
 ---
 
 今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 `params[:id]` 和 `params["id"]` 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。

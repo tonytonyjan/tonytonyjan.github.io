@@ -2,7 +2,8 @@
 title: "將現有資料庫導入 Rails ActiveModel"
 date: 2011-8-17 17:45 +0800
 comments: true
-category: Rails
+category: 程式
+tags: Ruby, Ruby on Rails
 ---
 
 官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。
