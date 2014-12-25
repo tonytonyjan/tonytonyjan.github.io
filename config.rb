@@ -29,4 +29,12 @@ helpers do
   def condense str
     str.gsub(/[\s\n]+/, ' ') if str
   end
+
+  def site_title
+    "#{current_article.title} - 不歸錄" if current_article
+  end
+
+  def site_description
+    current_page.data.description || condense(strip_tags(current_article.try(:summary))) || I18n.t('site.description')
+  end
 end
