@@ -2,7 +2,7 @@
 title: "Ruby Tuesday Taiwan #22 初體驗"
 date: 2013-04-22 21:45 +0800
 comments: true
-categories: Chatting
+categories: 閒聊
 ---
 
 這是我第一次參加 Ruby Tuesday，雖然在幾年前就知道這場聚會，但因為地點總是在台北，又都辦在晚上，即便心裡頭想去，也因麻煩如此而作罷。

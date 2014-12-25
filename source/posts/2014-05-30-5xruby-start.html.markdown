@@ -2,7 +2,7 @@
 title: "五倍的祝福，五倍紅寶石"
 date: 2014-05-30 15:28:11 +0800
 comments: true
-categories: Chatting
+categories: 閒聊
 ---
 
 ![](/images/5xruby_logo.png)

@@ -2,7 +2,7 @@
 title: "搬到 Octopress"
 date: 2012-02-11 22:22 +0800
 comments: true
-categories: Chatting
+categories: 閒聊
 ---
 
 ![](/images/octopress.png)

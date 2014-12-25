@@ -2,7 +2,7 @@
 title: "Potluck"
 date: 2013-04-03 12:18 +0800
 comments: true
-categories: Chatting
+categories: 閒聊
 ---
 
 ![](/images/potluck/19.jpg)

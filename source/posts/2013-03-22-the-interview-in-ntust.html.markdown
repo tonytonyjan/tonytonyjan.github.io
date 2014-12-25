@@ -2,7 +2,7 @@
 title: "台科面試遊記"
 date: 2013-03-22 13:34 +0800
 comments: true
-categories: Chatting
+categories: 閒聊
 ---
 
 ## 來龍去脈

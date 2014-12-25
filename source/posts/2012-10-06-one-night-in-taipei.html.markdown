@@ -2,7 +2,7 @@
 title: "台北一夜"
 date: 2012-10-06 23:34 +0800
 comments: true
-categories: Chatting
+categories: 閒聊
 ---
 
 ![](/images/snow.jpg)
