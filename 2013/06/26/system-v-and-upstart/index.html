@@ -5,22 +5,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=" 最近剛好將某個過去架設的 Heroku-like server，用 Upstart 將傳統的 System V 替換掉，在此做個筆記，這篇文章不會教你怎麼寫啟動腳本，就只是個簡介。 Upstart 早在 Ubuntu 6.10 的時候首次出現，以取代傳統的 sysvinit。結果因為好評不...">
-  <meta name="keywords" content="Ubuntu">
   <meta name="author" content="大兜">
-  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="不歸錄" />
-  <meta property="og:title" content="System V 與 Upstart - 不歸錄" />
-  <meta property="og:description" content=" 最近剛好將某個過去架設的 Heroku-like server，用 Upstart 將傳統的 System V 替換掉，在此做個筆記，這篇文章不會教你怎麼寫啟動腳本，就只是個簡介。 Upstart 早在 Ubuntu 6.10 的時候首次出現，以取代傳統的 sysvinit。結果因為好評不..." />
   <meta property="og:url" content="http://tonytonyjan.net/2013/06/26/system-v-and-upstart/" />
-  <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
-  <meta property="article:tag" content="Ubuntu" />
+  <title>System V 與 Upstart - 不歸錄</title>
+<meta name="description" content=" 最近剛好將某個過去架設的 Heroku-like server，用 Upstart 將傳統的 System V 替換掉，在此做個筆記，這篇文章不會教你怎麼寫啟動腳本，就只是個簡介。 Upstart 早在 Ubuntu 6.10 的時候首次出現，以取代傳統的 sysvinit。結果因為好評不...">
+<meta name="keywords" content="Ubuntu, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="System V 與 Upstart - 不歸錄" />
+<meta property="og:description" content=" 最近剛好將某個過去架設的 Heroku-like server，用 Upstart 將傳統的 System V 替換掉，在此做個筆記，這篇文章不會教你怎麼寫啟動腳本，就只是個簡介。 Upstart 早在 Ubuntu 6.10 的時候首次出現，以取代傳統的 sysvinit。結果因為好評不..." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="article:tag" content="Ubuntu" />
 <meta property="article:section" content="程式" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
 <meta property="article:published_time" content="2013-06-26T10:53:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml" />
-  <title>System V 與 Upstart - 不歸錄</title>
   <!-- FAV and TOUCH ICONS -->
   <link rel="shortcut icon" href="/images/ico/favicon.ico">
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png"/>
