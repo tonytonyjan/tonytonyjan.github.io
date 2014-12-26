@@ -1,13 +1,21 @@
 ---
-og_type: profile
 page_layout: one
 ---
-<% content_for :open_graph do %>
+
+<% content_for :meta do %>
+<title><%= site_name %></title>
+<meta name="description" content="<%= I18n.t 'site.description'  %>">
+<meta name="keywords" content="<%= I18n.t 'site.keywords' %>">
+<meta property="og:title" content="<%= site_name %>" />
+<meta property="og:description" content="<%= I18n.t 'site.description' %>" />
+<meta property="og:type" content="profile" />
+<meta property="og:image" content="<%= site_image %>" />
 <meta property="profile:first_name" content="<%= I18n.t 'me.first_name' %>">
 <meta property="profile:last_name" content="<%= I18n.t 'me.last_name' %>">
 <meta property="profile:username" content="tonytonyjan">
 <meta property="profile:gender" content="male">
 <% end %>
+
 <% content_for :nav do %>
 <li><a href="#/about"><%= I18n.t('nav.about_me') %></a></li>
 <li><a href="#/portfolio"><%= I18n.t('nav.portfolio') %></a></li>

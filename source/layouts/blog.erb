@@ -1,4 +1,11 @@
-<% content_for :open_graph do %>
+<% content_for :meta do %>
+<title><%= article_title %></title>
+<meta name="description" content="<%= article_description  %>">
+<meta name="keywords" content="<%= current_article.tags.join(', ') %><%= :', ' unless current_article.tags.empty? %><%= I18n.t 'site.keywords' %>">
+<meta property="og:title" content="<%= article_title %>" />
+<meta property="og:description" content="<%= article_description %>" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<%= site_url + image_path(current_page.data.image || 'site/avatar_big.png') %>" />
 <% current_article.tags.each do |tag| %>
 <meta property="article:tag" content="<%= tag %>" />
 <% end %>

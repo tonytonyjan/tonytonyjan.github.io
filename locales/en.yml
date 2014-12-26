@@ -3,6 +3,8 @@ en:
     first_name: Weihang
     last_name: Jian
   site:
+    author: Jian Weihang
+    keywords: Rails, Ruby, C, Web Development, Programming, Piano, Composing, tonyotnyjan, Jian Weihang
     description: tonyotnyjan's personal site.
   header:
     name: Jian Weihang

@@ -3,6 +3,8 @@ zh-TW:
     first_name: 煒航
     last_name: 簡
   site:
+    author: 大兜
+    keywords: Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan
     description: 大兜的個人網站，本名簡煒航，網路代號 tonytonyjan
   header:
     name: 大兜

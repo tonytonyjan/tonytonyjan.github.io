@@ -2,6 +2,16 @@
 pageable: true
 ---
 
+<% content_for :meta do %>
+<title>分類：<%= category %> - <%= site_name %></title>
+<meta name="description" content="<%= blog_description %>">
+<meta name="keywords" content="<%= category %>, <%= I18n.t 'site.keywords' %>">
+<meta property="og:title" content="分類：<%= category %> - <%= site_name %>" />
+<meta property="og:description" content="<%= blog_description %>" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="<%= site_image %>" />
+<% end %>
+
 <!-- .blog-posts -->
 <div class="blog-posts readable-content">
   <article class="post hentry">

@@ -1,5 +1,7 @@
+set :site_name, '不歸錄'
 set :site_url, 'http://tonytonyjan.net'
-set :site_author, '大兜'
+set :site_image, site_url + image_path('site/avatar_big.png')
+set :blog_description, '大兜的個人部落格，本名簡煒航，網路代號 tonytonyjan。內容包括程式設計、音樂創作與生活雜記。'.freeze
 
 set :markdown_engine, :kramdown
 set :markdown, input: :GFM, parse_block_html: true
@@ -36,32 +38,11 @@ helpers do
     str.gsub(/[\s\n]+/, ' ') if str
   end
 
-  def site_title
-    title = current_page.data.title
-    title = "#{title} - " if title
-    "#{title}不歸錄"
+  def article_title
+    "#{current_article.title} - #{site_name}"
   end
 
-  def site_keywords
-    if current_article && !current_article.tags.empty?
-      current_article.tags.join(', '.freeze)
-    else
-      :'Rails, Ruby, C, Web Development, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴'
-    end
-  end
-
-  def site_description
-    current_page.data.description || condense(strip_tags(current_article.try(:summary))) || I18n.t('site.description'.freeze)
-  end
-
-  def site_image
-    site_url + image_path(current_page.data.image || 'site/avatar_big.png'.freeze)
-  end
-
-  def site_og_type
-    if current_page.data.og_type then current_page.data.og_type
-    elsif current_page.path.start_with?('posts') then :article
-    else :website
-    end
+  def article_description
+    current_article.data.article_description || condense(strip_tags(current_article.summary))
   end
 end
