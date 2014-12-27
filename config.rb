@@ -32,21 +32,6 @@ end
 page 'feed.xml', layout: false
 page "google7bd685dfb8300eb0.html", directory_index: false
 
-
-helpers do
-  def condense str
-    str.gsub(/[\s\n]+/, ' ') if str
-  end
-
-  def article_title
-    "#{current_article.title} - #{site_name}"
-  end
-
-  def article_description
-    current_article.data.article_description || condense(strip_tags(current_article.summary))
-  end
-end
-
 ignore 'slides/*'
 after_build do
   `cp -R source/slides build`
