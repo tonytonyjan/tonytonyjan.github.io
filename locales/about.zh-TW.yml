@@ -18,7 +18,7 @@ zh-TW:
         description: 喜歡四處投稿國內外會議，擔任過台灣、日本 Ruby 會議的講者，或以業師身分在學校進行程式教學與講座。
     fun_fact: 有趣事蹟
     fun_facts:
-      - title: 25 場演講
+      - title: 25 場<a href="/slides/">演講</a>
         icon_class: fa fa-microphone
       - title: 15000+ <a href="https://chrome.google.com/webstore/detail/tjdict/caafmojgjlbflohillejdmnghkpcjjpp" target="_blank">TJDict</a> 使用者
         icon_class: fa fa-users
