@@ -46,3 +46,8 @@ helpers do
     current_article.data.article_description || condense(strip_tags(current_article.summary))
   end
 end
+
+ignore 'slides/*'
+after_build do
+  `cp -R source/slides build`
+end
