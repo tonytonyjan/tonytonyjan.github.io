@@ -1,0 +1,28 @@
+<% content_for :meta do %>
+<title><%= current_page.data.title %> - <%= site_name %></title>
+<meta name="description" content="<%= current_page.data.description %>">
+<meta name="keywords" content="<%= I18n.t 'site.keywords' %>">
+<meta property="og:title" content="<%= current_page.data.title %> - <%= site_name %>">
+<meta property="og:description" content="<%= current_page.data.description %>">
+<meta property="og:type" content="website">
+<meta property="og:image" content="<%= site_image %>">
+<% end %>
+
+<% wrap_layout :layout do %>
+<!-- .readable-content -->
+<div class="readable-content">
+  <!-- .hentry -->
+  <article class="post hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+       <h1 class="entry-title"><%= current_page.data.title %></h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->
+    <div class="entry-content"><%= yield %></div>
+    <!-- .entry-content -->
+  </article>
+  <!-- .hentry -->
+</div>
+<!-- .readable-content -->
+<% end %>

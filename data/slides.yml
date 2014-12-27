@@ -1,0 +1,81 @@
+- date: 2014-09-20
+  topic: Streaming Processing in Camera Remote API
+  event: Ruby Kaigi
+  event_url: http://goo.gl/T3RIXR
+  links:
+    - url: /slides/2014-09-18-ruby-kaigi-sonycam/sonycam.pdf
+    - type: fa fa-film
+      url: https://www.youtube.com/watch?v=mdJ0mZCTlJc
+- date: 2014-08-12
+  topic: Ruby 入門
+  event: 臺北護理健康大學資管系
+  links:
+    - url: /slides/2014-08-ntunhs/
+- date: 2014-07-03
+  topic: 輕輕鬆鬆做個 Ruby 爬蟲機器人
+  event: KSDG（高雄開發者聚會)
+  event_url: http://ksdg.kktix.cc/events/railsgirls-x-ksdg-ruby-vs-swift
+  links:
+    - url: /slides/2014-07-03-simple-crawler/
+- date: 2014-04-25
+  topic: Markdown Based Blogging System
+  event: RubyConf Taiwan Lighting Talk
+  links:
+    - url: /slides/2014-04-26-lagdown/
+- date: 2014-04-25
+  topic: 打造漂亮的 Rails 後台
+  event: RubyConf Taiwan
+  event_url: 'http://rubyconf.tw/2014/#speaker-tonytony'
+  links:
+    - url: /slides/2014-04-25-better-rails-backstage/
+    - type: fa fa-film
+      url: https://www.youtube.com/watch?v=UsHVlfcU5sg
+- date: 2014-04-10
+  topic: 管理你的程式碼
+  event: 萬能科技大學資工系
+  links:
+    - url: /slides/2014-04-10-revision-control/
+- date: 2014-04-08
+  topic: 駭客攻防
+  event: 臺北護理健康大學資管系
+  links:
+    - url: /slides/2014-04-08-hack/
+- date: 2013-04-16
+  topic: Dom-based Routing in Rails
+  event: 'Ruby Tuesday #22'
+  event_url: http://rubytaiwan.kktix.cc/events/ruby-tuesday-22
+  links:
+    - url: http://goo.gl/lkspDi
+- date: 2012-05-25
+  topic: Chrome 擴展教學
+  event: 交通大學網路福利社
+  links:
+    - url: http://goo.gl/9ISzgg
+      title: 2012-05-25 投影片
+    - url: http://goo.gl/8XQhU9
+      title: 2012-06-01 投影片
+    - url: http://goo.gl/yc3dqf
+      title: 2012-06-08 投影片
+- date: 2011-11-11
+  topic: 7200 秒學會版本控制 - 使用 Mercurial
+  event: 交通大學網路福利社
+  links:
+    - url: http://goo.gl/Kn1pdz
+    - url: http://goo.gl/UeibIC
+      title: 小抄
+
+- date: 2011-03-09
+  topic: 第一次做噗浪機器人就上手
+  event: 交通大學網路福利社
+  links:
+    - url: http://goo.gl/gP80Av
+      title: 2011-03-09 談談 Plurk API
+    - url: http://goo.gl/NNsuxf
+      title: 2011-03-16 Ruby 入門
+    - url: http://goo.gl/zb7jCM
+      title: 2011-03-23 打造 Ruby Plurk 機器人
+    - url: http://goo.gl/U5KnQM
+      title: 2011-03-30 透過 Ruby 使用 Plurk API
+- date: 2010-12-28
+  topic: 五分鐘快速架
+  event: 交通大學網路福利社

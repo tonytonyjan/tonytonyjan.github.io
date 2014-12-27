@@ -8,6 +8,6 @@ module CustomHelpers
   end
 
   def article_description
-    current_article.data.article_description || condense(strip_tags(current_article.summary))
+    current_article.data.description || condense(strip_tags(current_article.summary))
   end
 end

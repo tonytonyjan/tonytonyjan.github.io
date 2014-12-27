@@ -1,0 +1,21 @@
+---
+layout: single
+title: 演講紀錄
+description: 大兜的演講紀錄與投影片，本名簡煒航，網路代號 tonytonyjan
+---
+
+
+<table>
+  <thead>
+    <tr><th>時間</th><th>主題</th><th>地點</th></tr>
+  </thead>
+  <tbody>
+    <% data.slides.each do |slide| %>
+    <tr>
+      <td><%= slide.date %></td>
+      <td align="left"><%= slide.topic %> <% Array(slide.links).each do |link| %><%= link_to content_tag(:i, nil, class: link.type || :'fa fa-file'), link.url, title: link.title || :投影片, target: :_blank %> <% end %></td>
+      <td align="right"><%= slide.event_url ? link_to(slide.event, slide.event_url, target: :_blank) : slide.event %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
