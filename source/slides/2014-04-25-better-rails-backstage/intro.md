@@ -1,0 +1,4 @@
+<h2>打造<span class="fragment fade-out" data-fragment-index="1">漂亮的</span><span style="position:absolute;right:439px;" class="fragment current-visible" data-fragment-index="1"><del>漂亮的</del></span><span class="fragment fade-in" style="position:absolute;right:470px;" data-fragment-index="2">我的</span> Rails 後台</h2>  
+<h2><span class="fragment fade-out" data-fragment-index="1">Better</span><span style="position:absolute;right:603px;" class="fragment current-visible" data-fragment-index="1"><del>Better</del></span><span class="fragment fade-in" style="position:absolute;right:600px;" data-fragment-index="2">My</span> Rails Backstage</h2>
+
+note: 回到今天的主題，與其說漂亮的後台，不如說是我的後台建制的經驗分享。

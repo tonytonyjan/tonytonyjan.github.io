@@ -1,0 +1,10 @@
+require 'fileutils'
+desc 'New slide'
+task :new, :name do |task, args|
+  if name = args[:name]
+    FileUtils.mkdir_p args[:name]
+    FileUtils.cp File.expand_path('../sample.html', __FILE__), File.expand_path(File.join('..', args[:name], 'index.html'), __FILE__)
+  else
+    puts 'Usage: rake new["slide name"]'
+  end
+end
