@@ -76,11 +76,19 @@
 
   <!-- SEARCH --> 
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="#">
-      <input type="text" value="" name="s" id="search" placeholder="ENTER KEYWORD">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search">
+      <input type="text" value="" name="q" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
     </form>
   </div>
+  <script>
+    var search_form = document.getElementById('search-form');
+    function search_handle(e){document.getElementById('search').value += ' site:tonytonyjan.net';}
+    if(search_form.addEventListener)
+      search_form.addEventListener("submit", search_handle, false); //Modern browsers
+    else if(search_form.attachEvent)
+      search_form.attachEvent('onsubmit', search_handle); //Old IE
+  </script>
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
