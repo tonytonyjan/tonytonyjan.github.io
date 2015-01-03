@@ -8,7 +8,7 @@
       <!-- post -->
       <article class="hentry media-cell">
         <div class="media-box">
-          <%= image_tag (article.data.thumb || "thumbs/兜-#{i % 3 + 1}.png"), alt: :'post-image' %>
+          <%= image_tag article_thumb_path(article), alt: :'post-image' %>
           <div class="mask"></div>
           <a href="<%= article.url %>"></a>
         </div>
