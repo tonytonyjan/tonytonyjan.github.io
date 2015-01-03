@@ -5,10 +5,210 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2014-12-20T09:46:11+08:00</updated>
+  <updated>2015-01-03T00:00:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title/>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/01/03/2014-review/"/>
+    <id>http://tonytonyjan.net/2015/01/03/2014-review/</id>
+    <published>2015-01-03T00:00:00+08:00</published>
+    <updated>2015-01-04T00:03:27+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;hr /&gt;
+&lt;p&gt;title: 2014 回顧&lt;br /&gt;
+date: 2015-01-03 21:28 +0800&lt;br /&gt;
+category: 閒聊&lt;br /&gt;
+tags: "2015, 跨年, 回顧"&lt;br /&gt;
+image: 2015-firework.jpg&lt;br /&gt;
+description: |&lt;br /&gt;
+感覺今年沒什麼在工作，只有在玩樂啊XD，不過確實自從有客廳和客房之後，家裡三不五時會有聚會。雖然遠了點，至少有一個同樂地方可以吵再晚都沒有人管，且從家徒四壁到現在有電視機、遊戲機、桌遊 6 款、烤箱、沙發床等，明明只有一個人住，室內拖鞋也莫名其妙增加到 4 雙，平時沒去注意，但突然想起來真的覺得頗誇張的XD&lt;br /&gt;
+—&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/2015-firework.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;好漂亮的雞毛撢子&lt;/del&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;時間&lt;/th&gt;
+      &lt;th&gt;工作&lt;/th&gt;
+      &lt;th&gt;成就&lt;/th&gt;
+      &lt;th&gt;日常&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;四月&lt;/td&gt;
+      &lt;td&gt;成立&lt;a href="/2014/05/30/5xruby-start/"&gt;五倍紅寶石股份有限公司&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;擔任 &lt;a href="http://rubyconf.tw/2014/#speaker-tonytony"&gt;RubyConf Taiwan&lt;/a&gt; 講者、與 Matz 合影&lt;/td&gt;
+      &lt;td&gt;&lt;a href="/2014/03/30/house-moving/"&gt;住的地方從 8 坪進化到 30 坪&lt;/a&gt;、&lt;a href="https://www.facebook.com/photo.php?fbid=10152088697477620"&gt;第一次組衣櫃&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;五月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;六月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;買了這輩子看過最大的電視（55 吋）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;七月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;花蓮五日遊，實驗白天旅行，晚上工作的可行性&lt;/td&gt;
+      &lt;td&gt;世足通宵派對&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;八月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;九月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;擔任 &lt;a href="http://rubykaigi.org/2014/presentation/S-JianWeihang"&gt;Ruby Kaigi&lt;/a&gt; 講者、第一次搭飛機、第一次去日本&lt;/td&gt;
+      &lt;td&gt;烤肉團&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十一月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;25 歲慶生會、開始留鬍子&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十二月&lt;/td&gt;
+      &lt;td&gt;與五倍紅寶石拆夥&lt;/td&gt;
+      &lt;td&gt;TJDict 上了 &lt;a href="http://free.com.tw/tjdict/"&gt;freeGROUP&lt;/a&gt;，使用人書衝破 17k&lt;/td&gt;
+      &lt;td&gt;湯圓大會、聖誕晚會、跨年派對、PS4 派對&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;感覺今年沒什麼在工作，只有在玩樂啊XD&lt;/p&gt;
+
+&lt;p&gt;不過確實自從有客廳和客房之後，家裡三不五時會有聚會。雖然遠了點，至少有一個同樂地方可以吵再晚都沒有人管，且從家徒四壁到現在有電視機、遊戲機、桌遊 6 款、烤箱、沙發床等，明明只有一個人住，室內拖鞋也莫名其妙增加到 4 雙，平時沒去注意，但突然想起來真的覺得頗誇張的XD&lt;/p&gt;
+
+</summary>
+    <content type="html">&lt;hr /&gt;
+&lt;p&gt;title: 2014 回顧&lt;br /&gt;
+date: 2015-01-03 21:28 +0800&lt;br /&gt;
+category: 閒聊&lt;br /&gt;
+tags: "2015, 跨年, 回顧"&lt;br /&gt;
+image: 2015-firework.jpg&lt;br /&gt;
+description: |&lt;br /&gt;
+感覺今年沒什麼在工作，只有在玩樂啊XD，不過確實自從有客廳和客房之後，家裡三不五時會有聚會。雖然遠了點，至少有一個同樂地方可以吵再晚都沒有人管，且從家徒四壁到現在有電視機、遊戲機、桌遊 6 款、烤箱、沙發床等，明明只有一個人住，室內拖鞋也莫名其妙增加到 4 雙，平時沒去注意，但突然想起來真的覺得頗誇張的XD&lt;br /&gt;
+—&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/2015-firework.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;好漂亮的雞毛撢子&lt;/del&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;時間&lt;/th&gt;
+      &lt;th&gt;工作&lt;/th&gt;
+      &lt;th&gt;成就&lt;/th&gt;
+      &lt;th&gt;日常&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;四月&lt;/td&gt;
+      &lt;td&gt;成立&lt;a href="/2014/05/30/5xruby-start/"&gt;五倍紅寶石股份有限公司&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;擔任 &lt;a href="http://rubyconf.tw/2014/#speaker-tonytony"&gt;RubyConf Taiwan&lt;/a&gt; 講者、與 Matz 合影&lt;/td&gt;
+      &lt;td&gt;&lt;a href="/2014/03/30/house-moving/"&gt;住的地方從 8 坪進化到 30 坪&lt;/a&gt;、&lt;a href="https://www.facebook.com/photo.php?fbid=10152088697477620"&gt;第一次組衣櫃&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;五月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;六月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;買了這輩子看過最大的電視（55 吋）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;七月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;花蓮五日遊，實驗白天旅行，晚上工作的可行性&lt;/td&gt;
+      &lt;td&gt;世足通宵派對&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;八月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;九月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;擔任 &lt;a href="http://rubykaigi.org/2014/presentation/S-JianWeihang"&gt;Ruby Kaigi&lt;/a&gt; 講者、第一次搭飛機、第一次去日本&lt;/td&gt;
+      &lt;td&gt;烤肉團&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十一月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;25 歲慶生會、開始留鬍子&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十二月&lt;/td&gt;
+      &lt;td&gt;與五倍紅寶石拆夥&lt;/td&gt;
+      &lt;td&gt;TJDict 上了 &lt;a href="http://free.com.tw/tjdict/"&gt;freeGROUP&lt;/a&gt;，使用人書衝破 17k&lt;/td&gt;
+      &lt;td&gt;湯圓大會、聖誕晚會、跨年派對、PS4 派對&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;感覺今年沒什麼在工作，只有在玩樂啊XD&lt;/p&gt;
+
+&lt;p&gt;不過確實自從有客廳和客房之後，家裡三不五時會有聚會。雖然遠了點，至少有一個同樂地方可以吵再晚都沒有人管，且從家徒四壁到現在有電視機、遊戲機、桌遊 6 款、烤箱、沙發床等，明明只有一個人住，室內拖鞋也莫名其妙增加到 4 雙，平時沒去注意，但突然想起來真的覺得頗誇張的XD&lt;/p&gt;
+
+
+
+&lt;p&gt;來看一下去年的 &lt;a href="/2014/01/01/2013-hui-gu/"&gt;2013 回顧&lt;/a&gt;的沒有完成的目標：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;帶全家出國玩&lt;/li&gt;
+  &lt;li&gt;寫書&lt;/li&gt;
+  &lt;li&gt;投稿，並且錄用至少一個研討會&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;沒有錢和時間帶全家出國去玩，但有投稿了 RubyConf Taiwan 與 Ruby Kaigi，並且幸運的錄取了，且 2015 的加拿大 ConFoo 也錄取了筆者兩篇講題，雖然今年業績只有一半，但投稿的目標比預期多出了數倍的績效。&lt;/p&gt;
+
+&lt;p&gt;寫書方面還是沒有完成，不過筆者在 2014 最後一天交出了兩百頁的內容到出版社，以為可以告一段落，想不到還有很多需要修改。但運氣好的話，應該 2015 可以出版吧？&lt;/p&gt;
+
+&lt;p&gt;最近因為與五倍紅寶石拆夥，又回到找外包的生活。目前規劃今年把兵役搞定，然後 2016 可以準備出國工作，至於順利與否，且看老天爺XD&lt;/p&gt;
+
+&lt;p&gt;2015 我來了 :)&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Rails 4.2 重點介紹</title>
     <link rel="alternate" href="http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/"/>
@@ -570,54 +770,6 @@ $ open 20140528bpRKSJWR.flv
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-</content>
-  </entry>
-  <entry>
-    <title>漫畫下載器</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2014/06/26/sfacg-comic-downloader/"/>
-    <id>http://tonytonyjan.net/2014/06/26/sfacg-comic-downloader/</id>
-    <published>2014-06-26T16:50:00+08:00</published>
-    <updated>2014-12-25T20:56:25+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;a href="https://github.com/tonytonyjan/sfacg_downloader"&gt;Github 傳送門&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;筆者是個漫畫迷，其中最喜歡拜訪的網站莫過於&lt;a href="http://comic.sfacg.com/"&gt;這家&lt;/a&gt;，但因為是網頁，在離線狀態就無法看了，加上最近的 Ruby 課程常放網頁爬蟲程式給學生當練習，於是這個 gem 就誕生了。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;安裝&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class="language-bash"&gt;$ gem install sfacg
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="section-1"&gt;使用&lt;/h2&gt;
-
-&lt;p&gt;下載海賊王 751 話&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sfacg...&lt;/code&gt;&lt;/pre&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;a href="https://github.com/tonytonyjan/sfacg_downloader"&gt;Github 傳送門&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;筆者是個漫畫迷，其中最喜歡拜訪的網站莫過於&lt;a href="http://comic.sfacg.com/"&gt;這家&lt;/a&gt;，但因為是網頁，在離線狀態就無法看了，加上最近的 Ruby 課程常放網頁爬蟲程式給學生當練習，於是這個 gem 就誕生了。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;安裝&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class="language-bash"&gt;$ gem install sfacg
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="section-1"&gt;使用&lt;/h2&gt;
-
-&lt;p&gt;下載海賊王 751 話&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sfacg chapter http://comic.sfacg.com/HTML/OnePiece/751/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下載整部海賊王&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sfacg comic http://comic.sfacg.com/HTML/OnePiece/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/sfacg.png" /&gt;&lt;br /&gt;
-&lt;img alt="" src="/images/sfacg-2.png" /&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>
