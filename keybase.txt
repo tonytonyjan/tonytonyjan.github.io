@@ -1,0 +1,83 @@
+==================================================================
+https://keybase.io/tonytonyjan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://tonytonyjan.net
+  * I am tonytonyjan (https://keybase.io/tonytonyjan) on keybase.
+  * I have a public key with fingerprint F30B 53C9 A9CC B71C A034  4E2A 055A F90B C74E 4F4C
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.3"
+        },
+        "key": {
+            "fingerprint": "f30b53c9a9ccb71ca0344e2a055af90bc74e4f4c",
+            "host": "keybase.io",
+            "key_id": "055AF90BC74E4F4C",
+            "uid": "30afcc7177dbf8fbf560c44e163dde00",
+            "username": "tonytonyjan"
+        },
+        "merkle_root": {
+            "ctime": 1421612422,
+            "hash": "46f3f4679ca224693c6a2fa2f4ee77124461174896b98c3151adc525445d3c0c04bc83423745de84dfd2fb4377cbcb3af3876baf4f32407d834e1779055126bc",
+            "seqno": 134416
+        },
+        "service": {
+            "hostname": "tonytonyjan.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1421612518,
+    "expire_in": 157680000,
+    "prev": "65d2e5829429b4b0e53ab8849e9ad442ea85750bee9b1fad3a2853fd704dc695",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owFlUgtMVlUc/xDFAVOJSiZ8m3B1Qx5j93Hu65uQPIuHEKgU4IB77j0XLo/vwv0u
+HyCyHovJS+VVCsqSpsEqymVBG0WGmiMYCS5TUdhKEVzUrCQkte5ltHLdnbvde/6/
+83v8/6dpnavFw2VN5gPPi8kpSS4jc9Cy+/NnZ6owqEqVmK0KE4sUZNfNL7tQjDAb
+VogqoeBAYYrqb1clFFbg8F/BhGJOpDkU1W6g8DA2jMKqQ024eVhW7HlIK9EUkwuT
+KRzSlMgLvChClhAFnAIAkQJO04LM41BkAQIyEA3KfNWhP6GKLXPmKJKpQtORcTwe
+Fc2CWBAHoo1a2XKBwgVZFFmCZSUoczKUaQYXDQmCoSQJ4bgJdCBtJZKu2ivNt0Cw
+m5aLkVZYhHI0VV3OLeqKiSIASTAECUjSMCU48o1zgJEpGTAsLwokCRieEhmBlI0F
+EGJZAwsYgmABxzOQ50SKoAlBEmmSBoCWKBEXcQBFjgIkxRobiAOSLJEyBBTLilCE
+lCBTHMtAQQYyRQKclQwsMiLxRmyCZKDZHgcqtauGOaN/BFNt/mtORUSmb7Nz/w8Y
+ZkfmpEo0VVdFtcgo5ut6ic3MrVeWIOyMDStHMGeFJwcqdskY3X9nSxjQJ3tCE1wo
+hipKFA3lKCaCZhkONx5TBzkNDYaWSERzJA9IHgKII5oSIMcBHvGCBACJBI5maRwi
+xENCFiRKIDmakiUWB5LI8PS/SRnDp5BnUDqUPLugl2kIq65bZV1tcfGwuK1ZZV5e
+i4e71z83OtDmZek/HDC9cS/R5rUrDe/3Wp9s/TFjlqO7Ty6eHow6/Yh/P7PVGjzR
+nDM/d3X1ue0FRzp+4W9MyYGeIyl68dr0uvEeLGLiw4Gxv36C+/Jec2tjE6rfq3+7
+pv/UM57nCreN/xGR8ekbZZuEzpYG7drSoecW6gqvHfDMyq6617HlcdvxvEn9sqXW
+Wk9PBSQuJnQ97KvZ1hrQit1PIj+oHl1s3F1ZFnYdv3TjZNCVA74+O69FbZhJju99
+OX2shx5KjGBf6IzUz9IBLh9n+D74+bDyfaB1bLJ807q5E4MN8E4SdWZvKltz1DUk
+0aWvsf1u97gWVPuN7daFY6ne+z8bbR/2f70ld9o5uecTbeile7mvZI2BqMD7T82W
+1B3cWXfh8iNV3bLD9XZ3YlcndjOlqiOkJarR2hz0Z3hqcmw98Xyg5eLWeZ/abr+e
+Bq+Bje5vuj2kduQ6R8ZCSod+dxG8Hc3+D9GG8YrSzIWm2zHeEZt8jx9ZisH4Y/lr
+v/w1LeHuMLs1Yzajb/DFcFtTGtPSQbavLXu32zfAa/rrb93jZxyXnFfv3AxZvxDU
+/91vFTD5VK4tff7x9r3R1xvmvwopfadqf9WVhoChiamYRi7yh96CE9ajw01+zrT+
+1QeDfcKrB/S43s1d53cFScGv3nLdPPD0zuyzttErH4Hs8+V+rm99EbtnaSk/39XP
+N8s/dl/83w==
+=p2KZ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tonytonyjan
+
+==================================================================
