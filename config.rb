@@ -7,6 +7,7 @@ set :markdown_engine, :kramdown
 set :markdown, input: :GFM, parse_block_html: true
 set :time_zone, 'Taipei'
 
+activate :livereload
 activate :i18n, langs: %i[zh-TW en]
 activate :blog do |blog|
   blog.layout   = 'blog'
