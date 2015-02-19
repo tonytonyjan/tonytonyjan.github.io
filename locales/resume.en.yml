@@ -1,0 +1,27 @@
+en:
+  resume:
+    download_my_cv: DOWNLOAD MY CV
+    download_cv: DOWNLOAD CV
+    download_cv_desc: You can download my CV in pdf format if you like. I currently work for Pixelwars creative studio. I create usable web interfaces, front end coding stuff and almost anything. But i love what i do.
+    view_my_linkedin_profile: VIEW MY LINKEDIN PROFILE
+    view_my_linkedin_profile_desc: You can view my LinkedIn profile. I currently work for Pixelwars creative studio. I create usable web interfaces, front end coding stuff and almost anything. But i love what i do.
+    my_linkedin_profile: MY LINKEDIN PROFILE
+    skills:
+      - genre: Programming Languages
+        icon: icon-cog-1
+        items:
+          - name: Ruby
+            score: 100
+          - name: C
+            score: 66
+          - name: Java
+            score: 33
+      - genre: Languages
+        icon: icon-chat
+        items:
+          - name: Traditional Chinese
+            score: 100
+          - name: English
+            score: 66
+          - name: Japanese
+            score: 33

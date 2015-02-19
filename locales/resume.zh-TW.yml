@@ -1,0 +1,27 @@
+zh-TW:
+  resume:
+    download_my_cv: 我的履歷
+    download_cv: 下載履歷
+    download_cv_desc: 這裡有 PDF 格式履歷，請歡迎取用。
+    view_my_linkedin_profile: 我的 LinkedIn
+    view_my_linkedin_profile_desc: 歡迎拜訪我的 LinkedIn 檔案。
+    my_linkedin_profile: 我的 LinkedIn 檔案
+    skills:
+      - genre: 程式語言
+        icon: icon-cog-1
+        items:
+          - name: Ruby
+            score: 100
+          - name: C
+            score: 66
+          - name: Java
+            score: 33
+      - genre: 人類語言
+        icon: icon-chat
+        items:
+          - name: 中文
+            score: 100
+          - name: 英文
+            score: 66
+          - name: 日文
+            score: 33

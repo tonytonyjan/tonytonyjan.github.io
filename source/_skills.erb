@@ -1,0 +1,15 @@
+<% t('resume.skills').each do |skill| %>
+<h2 class="section-title"><span><i class="<%= skill[:icon] %>"></i><%= skill[:genre] %></span></h2>
+<div class="skillset">
+<% skill[:items].each do |item| %>
+  <!-- .skill-unit -->
+  <div class="skill-unit">
+    <h4><%= item[:name] %></h4>
+    <div class="bar" data-percent="<%= item[:score] %>">
+      <div class="progress"></div>
+    </div>
+  </div>
+  <!-- .skill-unit -->
+  <% end %>
+</div>
+<% end %>
