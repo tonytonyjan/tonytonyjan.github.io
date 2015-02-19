@@ -15,10 +15,10 @@ zh-TW:
         description: 從國中開始經營部落格，內容雜亂，主要是程式筆記與生活雜記，偶會發表音樂作品或介紹適合工作的咖啡廳。
       - title: 演講
         icon_class: fa fa-microphone
-        description: 喜歡四處投稿國內外會議，擔任過台灣、日本 Ruby 會議的講者，或以業師身分在學校進行程式教學與講座。
+        description: 喜歡投稿國內外議程，擔任過台灣、日本 Ruby Conference 的講者，或以業師身分在學校進行程式教學與講座。
     fun_fact: 有趣事蹟
     fun_facts:
-      - title: 25 場<a href="/slides/">演講</a>
+      - title: 26 場<a href="/slides/">演講</a>
         icon_class: fa fa-microphone
       - title: 15000+ <a href="https://chrome.google.com/webstore/detail/tjdict/caafmojgjlbflohillejdmnghkpcjjpp" target="_blank">TJDict</a> 使用者
         icon_class: fa fa-users
