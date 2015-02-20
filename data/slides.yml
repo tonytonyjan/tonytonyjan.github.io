@@ -1,4 +1,10 @@
 - date: 2015-02-19
+  topic: Ruby Meets Camera Remote API
+  event: ConFoo.CA
+  event_url: https://confoo.ca/en/speaker/weihang-jian
+  links:
+    - url: /slides/2015-02-19-sonycam/slides.pdf
+- date: 2015-02-19
   topic: Write Your C Extension for Ruby
   event: ConFoo.CA
   event_url: https://confoo.ca/en/speaker/weihang-jian
