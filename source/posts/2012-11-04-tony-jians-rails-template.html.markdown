@@ -1,9 +1,10 @@
 ---
-title: "My Rails Template"
+title: My Rails Template
 date: 2012-11-04 16:24 +0800
 comments: true
-tags: [Ruby, Rails]
+tags: Ruby on Rails, Ruby
 category: 程式
+draft: true
 ---
 
 ## Why
