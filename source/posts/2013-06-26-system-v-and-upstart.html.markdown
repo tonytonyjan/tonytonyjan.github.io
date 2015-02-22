@@ -1,7 +1,6 @@
 ---
 title: "System V 與 Upstart"
 date: 2013-06-26 10:53 +0800
-comments: true
 category: 程式
 tags: Ubuntu
 ---

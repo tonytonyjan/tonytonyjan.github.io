@@ -1,7 +1,6 @@
 ---
 title: "音樂創作 - 三更半夜"
 date: 2011-08-31 00:03:07 +0800
-comments: true
 category: 音樂
 ---
 <p><iframe width="500" height="345" src="http://www.youtube.com/embed/dZGiWv2k_ig" frameborder="0" allowfullscreen=""></iframe></p><p>為什麼這個曲子叫三更半夜，那是因為&hellip;&hellip;</p><p>因為我已經沒有梗了，只好拿我作曲的時間當曲名（逃</p><p>這還是我第一次用Redrum的功能，另外那笛子我沒有到會這麼大聲(艸)</p>

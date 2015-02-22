@@ -1,7 +1,6 @@
 ---
 title: "台灣加油 ! Taiwanese hero !"
 date: 2007-10-13 00:22:00 +0800
-comments: true
 category: 閒聊
 ---
 

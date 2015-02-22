@@ -1,7 +1,6 @@
 ---
 title: "用 Java 掃描閘道"
 date: 2010-04-29 00:27:15 +0800
-comments: true
 category: 程式
 tags: Java
 ---

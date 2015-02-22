@@ -1,7 +1,6 @@
 ---
 title: "台北一夜"
 date: 2012-10-06 23:34 +0800
-comments: true
 category: 閒聊
 ---
 

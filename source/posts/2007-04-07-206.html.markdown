@@ -1,7 +1,6 @@
 ---
 title: "長大"
 date: 2007-04-07 00:57:09 +0800
-comments: true
 category: 閒聊
 ---
 <object classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" codebase="http://www.microsoft.com/ntserver/netshow/download/en/nsmp2inf.cab#Version=5,1,51,415" id="msplayer" type="application/x-oleobject" standby="Loading Microsoft Media Player components..." name="msplayer" width="320" height="240"> <param name="AllowChangeDisplaySize" value="1"> <param name="AutoStart" value="1"> <param name="AutoSize" value="0"> <param name="AnimationAtStart" value="1"> <param name="ClickToPlay" value="1"> <param name="EnableContextMenu" value="0"> <param name="EnablePositionControls" value="1"> <param name="EnableFullScreenControls" value="1"> <param name="URL" value="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/10942929/10942929.mp3"> <param name="ShowControls" value="1"> <param name="ShowAudioControls" value="1"> <param name="ShowDisplay" value="0"> <param name="ShowGotoBar" value="0"> <param name="ShowPositionControls" value="1"> <param name="ShowStatusBar" value="1"> <param name="ShowTracker" value="1"> <embed src="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/10942929/10942929.mp3" type="video/x-ms-wmv" width="320" height="240" autostart="1" showcontrols="0" autosize="0" animationatstart="1" clicktoplay="1" enablecontextmenu="0" enablepositioncontrols="1" enablefullscreencontrols="1" showaudiocontrols="1" showdisplay="0" showgotobar="0" showpositioncontrols="1" showstatusbar="1" showtracker="1"> </object>

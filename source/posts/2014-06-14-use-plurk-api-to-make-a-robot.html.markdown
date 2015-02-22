@@ -1,7 +1,6 @@
 ---
 title: "噗浪機器人製作"
 date: 2014-06-14 14:58:31 +0800
-comments: true
 tags: Ruby, 噗浪, 回聲蟲
 category: 程式
 ---

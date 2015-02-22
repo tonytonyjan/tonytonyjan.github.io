@@ -1,7 +1,6 @@
 ---
 title: "Potluck"
 date: 2013-04-03 12:18 +0800
-comments: true
 category: 閒聊
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "～C語言程式設計～猜數字遊戲Ver1.1～"
 date: 2008-11-05 00:05:39 +0800
-comments: true
 category: 程式
 tags: C
 ---

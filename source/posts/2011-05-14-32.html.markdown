@@ -1,7 +1,6 @@
 ---
 title: "給妳"
 date: 2011-05-14 00:02:35 +0800
-comments: true
 category: 閒聊
 ---
 

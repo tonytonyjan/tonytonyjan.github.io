@@ -1,7 +1,6 @@
 ---
 title: "兜翔工作室出品 - CPUSK1.1-Beta"
 date: 2010-04-24 00:23:46 +0800
-comments: true
 category: 程式
 tags: Java, Swing, 樂譜, 警大
 ---

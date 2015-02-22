@@ -1,7 +1,6 @@
 ---
 title: "WebConf 2013 會場志工心得"
 date: 2013-01-15 23:06 +0800
-comments: true
 category: 閒聊
 ---
 

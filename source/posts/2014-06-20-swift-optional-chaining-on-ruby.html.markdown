@@ -1,7 +1,6 @@
 ---
 title: "Swift Optional Chaining in Ruby"
 date: 2014-06-20 15:49:35 +0800
-comments: true
 tags: [Ruby,Swift]
 category: 程式
 ---

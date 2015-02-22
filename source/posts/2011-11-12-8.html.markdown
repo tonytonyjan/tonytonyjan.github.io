@@ -1,7 +1,6 @@
 ---
 title: "7200 秒學會版本控制 - 使用 mercurial"
 date: 2011-11-12 00:40:16 +0800
-comments: true
 category: 程式
 tags: Mercurial, VCS
 ---

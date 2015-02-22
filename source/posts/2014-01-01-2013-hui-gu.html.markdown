@@ -1,7 +1,6 @@
 ---
 title: "2013 回顧"
 date: 2014-01-01 01:35 +0800
-comments: true
 category: 閒聊
 tags: "2014, 跨年, 回顧"
 ---

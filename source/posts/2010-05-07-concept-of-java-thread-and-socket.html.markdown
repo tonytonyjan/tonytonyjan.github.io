@@ -1,7 +1,6 @@
 ---
 title: "Concept of Java Thread and Socket"
 date: 2010-05-07 09:02:52 +0800
-comments: true
 category: 程式
 tags: Java
 ---

@@ -1,7 +1,6 @@
 ---
 title: "人類的必要思考- Part 2"
 date: 2008-03-08 00:10:41 +0800
-comments: true
 category: 生命
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Virtualbox for Freebsd"
 date: 2010-03-04 00:15:18 +0800
-comments: true
 category: 程式
 tags: FreeBSD
 ---

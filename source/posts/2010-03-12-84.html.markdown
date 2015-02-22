@@ -1,7 +1,6 @@
 ---
 title: "CSRPG2.14版"
 date: 2010-03-12 00:44:35 +0800
-comments: true
 category: 程式
 tags: 交大, 資工, CSSULA, 鍾翔, kvchung, 遊戲, 角色扮演, Windows, C
 ---

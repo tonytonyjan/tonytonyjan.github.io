@@ -1,7 +1,6 @@
 ---
 title: "Ruby Tuesday Taiwan #26"
 date: 2013-09-10 20:07 +0800
-comments: true
 category: 閒聊
 ---
 

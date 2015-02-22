@@ -1,7 +1,6 @@
 ---
 title: "笑話一小則"
 date: 2005-11-26 00:24:05 +0800
-comments: true
 category: 閒聊
 ---
 

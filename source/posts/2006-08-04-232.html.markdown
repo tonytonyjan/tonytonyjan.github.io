@@ -1,7 +1,6 @@
 ---
 title: "網誌點名遊戲？！"
 date: 2006-08-04 00:17:08 +0800
-comments: true
 category: 閒聊
 ---
 

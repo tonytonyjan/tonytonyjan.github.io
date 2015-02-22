@@ -1,7 +1,6 @@
 ---
 title: "|=(2 影片下載器"
 date: 2014-06-28 01:04:26 +0800
-comments: true
 category: 程式
 tags: Ruby
 image: xxx-4.png

@@ -1,7 +1,6 @@
 ---
 title: "將文章從 Wordpress 搬到 Octopress"
 date: 2012-02-25 01:36 +0800
-comments: true
 tags: [Octopress, Wordpress]
 category: 程式
 ---
@@ -35,7 +34,6 @@ def create_post datetime, title, content
 ---
 title: "#{title}"
 date: #{date} #{time}
-comments: true
 categories:
 ---
 

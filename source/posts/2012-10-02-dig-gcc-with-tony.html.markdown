@@ -1,7 +1,6 @@
 ---
 title: "大兜的 gcc 歷險記"
 date: 2012-10-02 13:13 +0800
-comments: true
 tags: [C, C++, gcc]
 category: 程式
 ---

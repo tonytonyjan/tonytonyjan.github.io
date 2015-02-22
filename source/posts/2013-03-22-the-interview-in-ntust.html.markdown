@@ -1,7 +1,6 @@
 ---
 title: "台科面試遊記"
 date: 2013-03-22 13:34 +0800
-comments: true
 category: 閒聊
 ---
 

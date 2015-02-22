@@ -1,7 +1,6 @@
 ---
 title: "冰冰涼涼的 Ju-Ju"
 date: 2012-05-04 13:40 +0800
-comments: true
 category: 閒聊
 tags: 蛋蛋
 ---

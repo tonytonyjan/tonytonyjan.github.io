@@ -1,7 +1,6 @@
 ---
 title: "糟蹋者死......"
 date: 2006-02-01 00:48:09 +0800
-comments: true
 category: 生命
 ---
 

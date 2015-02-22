@@ -1,7 +1,6 @@
 ---
 title: "Ruby 2.0 重點介紹"
 date: 2013-02-18 22:46 +0800
-comments: true
 category: 程式
 tags: Ruby
 ---

@@ -1,7 +1,6 @@
 ---
 title: "最近迷上程式設計......"
 date: 2007-01-27 00:23:13 +0800
-comments: true
 category: 閒聊
 ---
 <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" height="371" width="495" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" style="display: block !important; "><param name="movie" value="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/9896632/9896632.swf"> <param name="quality" value="high"> <embed height="371" width="495" src="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/9896632/9896632.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" style="display: block !important; "></object>

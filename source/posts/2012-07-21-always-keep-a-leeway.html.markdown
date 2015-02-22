@@ -1,7 +1,6 @@
 ---
 title: "先放下，再拿起"
 date: 2012-07-21 01:55 +0800
-comments: true
 category: 生命
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "N-Gram 斷詞法實做"
 date: 2012-06-06 17:59 +0800
-comments: true
 category: 程式
 tags: Ruby
 ---

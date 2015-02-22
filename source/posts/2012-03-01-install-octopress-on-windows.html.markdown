@@ -1,7 +1,6 @@
 ---
 title: "在 Windows 使用 Octopress"
 date: 2012-03-01 15:47 +0800
-comments: true
 category: 程式
 tags: Octopress, Jekyll, Windows
 ---
