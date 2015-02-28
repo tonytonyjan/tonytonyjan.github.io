@@ -5,16 +5,83 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-01-03T08:28:00-05:00</updated>
+  <updated>2015-02-23T02:34:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
   <entry>
+    <title>ConFoo 2015 心得</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/02/23/feedback-to-confoo-2015/"/>
+    <id>http://tonytonyjan.net/2015/02/23/feedback-to-confoo-2015/</id>
+    <published>2015-02-23T02:34:00+08:00</published>
+    <updated>2015-02-28T13:09:05+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">
+&lt;p&gt;&lt;a href="http://confoo.ca"&gt;&lt;img alt="ConFoo.CA 2015" src="/images/confoo-2015.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;到頭來出國從不為了玩的黃金紀錄仍然保持住了，真傷腦筋啊。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;去年，筆者在 Ruby 官方網站看到了加拿大 ConFoo 在徵 Ruby 的稿件，雖然蒙特婁有些遙遠，不過講者享有交通與食宿全免的福利（住在希爾頓酒店），筆者遂小投三篇，結果運氣不錯地&lt;a href="http://confoo.ca/en/speaker/weihang-jian"&gt;上了兩篇&lt;/a&gt;。按照上一篇 Ruby Kaigi 的慣例，先來秀個徽章吧 =)&lt;/p&gt;
+
+</summary>
+    <content type="html">
+&lt;p&gt;&lt;a href="http://confoo.ca"&gt;&lt;img alt="ConFoo.CA 2015" src="/images/confoo-2015.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;到頭來出國從不為了玩的黃金紀錄仍然保持住了，真傷腦筋啊。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;去年，筆者在 Ruby 官方網站看到了加拿大 ConFoo 在徵 Ruby 的稿件，雖然蒙特婁有些遙遠，不過講者享有交通與食宿全免的福利（住在希爾頓酒店），筆者遂小投三篇，結果運氣不錯地&lt;a href="http://confoo.ca/en/speaker/weihang-jian"&gt;上了兩篇&lt;/a&gt;。按照上一篇 Ruby Kaigi 的慣例，先來秀個徽章吧 =)&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;a href="http://confoo.ca/en/speaker/weihang-jian"&gt;&lt;img alt="ConFoo 2015 Speaker" src="/images/confoo-speaker.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這次的旅程對筆者來說有需多值得紀念意義，並且刷了許多「第一次」成就：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;路過北京、上海&lt;/li&gt;
+  &lt;li&gt;轉機經驗&lt;/li&gt;
+  &lt;li&gt;到西方國家&lt;/li&gt;
+  &lt;li&gt;自己規劃出國&lt;/li&gt;
+  &lt;li&gt;體驗零下 -15 度、下雪、堆雪人&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;但要說收穫最多的，是筆者終於在死前克服了搭飛機的恐懼，非指懼高症，而是對於流程的不安與緊張感，就像小時候時第一次自己搭火車一樣，從月台買票到進入月台到上對火車，即便去年有去日本的經驗，筆者仍然對於流程非常陌生，而這次來回總共搭了六台飛機，不想熟悉也難。&lt;/p&gt;
+
+&lt;p&gt;另外此趟只有損失零錢包與手機，比預料中的情況要好很多，希望下次出國可以挑戰無損歸國。只是不知道三月當了上班族後，是否還有時間可以參與議程，有點可惜。&lt;/p&gt;
+
+&lt;h2 id="confooca"&gt;ConFoo.CA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://confoo.ca"&gt;ConFoo&lt;/a&gt; 是加拿大蒙特婁每年冬天的大型研討會之一，慣例辦在希爾頓酒店，主題以 Web 技術為主，前身是 PHP 研討會，這幾年才轉為綜合的研討會，這也是為何筆者有機會赴加拿大講 Ruby。&lt;/p&gt;
+
+&lt;p&gt;此外門票約 3 萬台幣左右，3 天 9 軌，141 場講題，88 位講者，且每晚有免費的派對。即便門票如此，還是有接近千位聽眾報名，且無論從講題安排、派對活動、場地、飲食都是個品質很高的研討會。&lt;/p&gt;
+
+&lt;p&gt;建議有興趣的人可以明年投稿看看，大會主辦這幾年開始想將研討會轉型為國際研討會，很歡迎外國人，例如今年除了筆者為台灣代之外，也有來自沙烏地阿拉伯的講者。至於聽眾除了北美，也有南美與歐洲各國的人來參與，你可以很容易的與世界各地的工程師們交流、分享彼此的知識。且大多人都相當友善又樂於交友，氣氛很融洽。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;跟台灣的研討會比較&lt;/h2&gt;
+
+&lt;p&gt;比較筆者過去在台灣參與的研討會，ConFoo 的設計有些很有趣的巧思，例如在名牌上加上 QR code，如果會眾沒有攜帶名片，可以讓別人的手機掃條碼，而條碼內容就是當初會中報名研討會時所輸入的社交網址。即便筆者沒有際會行手機，這個功能還是很吸引人。&lt;/p&gt;
+
+&lt;p&gt;此外除了 9 個講聽以外，有一間最大的會場是預留給社交之用，內有很多桌椅，而每張桌子上面會標有某種特別的技術或領域，例如 PHP、Ruby、Maching Learning、AWS 等，會眾可以透過入座該位子，輕易找到與自己有相同興趣的人交流。&lt;/p&gt;
+
+&lt;h2 id="section-1"&gt;會後小心得&lt;/h2&gt;
+
+&lt;p&gt;筆者這次的主題是 Ruby 上的 C 擴展以及去年在 Ruby Kaigi 講的 Sony Remove Camera API，但可能是個 Web 技術研討會，來聽我的講題的人沒有很多。整個研討會中，光是 PHP 與 Java 的網站應用主題就超過了 7 成，而 C 的主題看過去也只有一場（就是我的），所以看來 ConFoo 要真正從 PHP 研討會歷史中脫出，還需要幾年的時間。&lt;/p&gt;
+
+&lt;p&gt;此外不免小感嘆一下，在台灣不知道除了 godfat 以外，是否有寫 Ruby 的人是拿來做 Rails 以外的應用的，很想認識與交流一下。這年頭就連 PTT 上的 Ruby 版也淪為了 Rails 版，Ruby 論壇成了 Rails 論壇，有些小可惜呢。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>2014 回顧</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/01/03/2014-review/"/>
     <id>http://tonytonyjan.net/2015/01/03/2014-review/</id>
-    <published>2015-01-03T08:28:00-05:00</published>
-    <updated>2015-01-03T11:12:57-05:00</updated>
+    <published>2015-01-03T21:28:00+08:00</published>
+    <updated>2015-02-23T02:43:03+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -193,8 +260,8 @@
     <title>Rails 4.2 重點介紹</title>
     <link rel="alternate" href="http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/"/>
     <id>http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/</id>
-    <published>2014-12-19T20:46:11-05:00</published>
-    <updated>2014-12-25T07:45:11-05:00</updated>
+    <published>2014-12-20T09:46:11+08:00</published>
+    <updated>2014-12-25T20:45:11+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -404,8 +471,8 @@ end
     <title>RubyKaigi 2014 攻略心得</title>
     <link rel="alternate" href="http://tonytonyjan.net/2014/10/10/rubykaigi-2014-feedback/"/>
     <id>http://tonytonyjan.net/2014/10/10/rubykaigi-2014-feedback/</id>
-    <published>2014-10-09T22:29:04-04:00</published>
-    <updated>2014-12-25T07:44:34-05:00</updated>
+    <published>2014-10-10T10:29:04+08:00</published>
+    <updated>2015-02-23T02:43:54+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -461,8 +528,8 @@ end
     <title>C 語言之多行巨集</title>
     <link rel="alternate" href="http://tonytonyjan.net/2014/10/07/multi-line-c-macros/"/>
     <id>http://tonytonyjan.net/2014/10/07/multi-line-c-macros/</id>
-    <published>2014-10-06T14:19:13-04:00</published>
-    <updated>2014-12-25T08:18:37-05:00</updated>
+    <published>2014-10-07T02:19:13+08:00</published>
+    <updated>2015-02-23T02:52:12+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -549,8 +616,8 @@ else
     <title>|=(2 影片下載器</title>
     <link rel="alternate" href="http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/"/>
     <id>http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/</id>
-    <published>2014-06-27T13:04:26-04:00</published>
-    <updated>2014-12-25T07:56:25-05:00</updated>
+    <published>2014-06-28T01:04:26+08:00</published>
+    <updated>2015-02-23T02:52:12+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -652,104 +719,6 @@ $ open 20140528bpRKSJWR.flv
 &lt;p&gt;&lt;img alt="" src="/images/xxx-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;收工，以後可以不用瀏覽器下載這個網站的影片了XD&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>臉書打卡集氣棒</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2014/06/27/fb-page-countdown/"/>
-    <id>http://tonytonyjan.net/2014/06/27/fb-page-countdown/</id>
-    <published>2014-06-27T11:51:38-04:00</published>
-    <updated>2014-12-25T07:56:25-05:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/fb-page-countdown.png"&gt;&lt;/p&gt;
-
-&lt;p&gt;本棒會在指定 FB 粉絲頁或打卡點，其按讚數量與打卡數總和超過指定數量時，放出慶祝特效。&lt;/p&gt;
-
-&lt;p&gt;這是當初為了&lt;a href="https://www.facebook.com/5xruby"&gt;五倍紅寶石&lt;/a&gt;說明會做出來的東西，此外也被用在 &lt;a href="https://www.facebook.com/wwacimwaffle"&gt;I'M Waffle 現烤鬆餅&lt;/a&gt;，為了可以重複利用，特此放到了 &lt;a href="http://5xruby.github.io/FB-checkin"&gt;Github Page&lt;/a&gt;，並且改版為可透過網址變數去設定頁面內容。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;產生器&lt;/h2&gt;
-
-&lt;form action="http://5xruby.github.io/FB-checkin" target="_blank"&gt;
-...&lt;/form&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/fb-page-countdown.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;本棒會在指定 FB 粉絲頁或打卡點，其按讚數量與打卡數總和超過指定數量時，放出慶祝特效。&lt;/p&gt;
-
-&lt;p&gt;這是當初為了&lt;a href="https://www.facebook.com/5xruby"&gt;五倍紅寶石&lt;/a&gt;說明會做出來的東西，此外也被用在 &lt;a href="https://www.facebook.com/wwacimwaffle"&gt;I'M Waffle 現烤鬆餅&lt;/a&gt;，為了可以重複利用，特此放到了 &lt;a href="http://5xruby.github.io/FB-checkin"&gt;Github Page&lt;/a&gt;，並且改版為可透過網址變數去設定頁面內容。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;產生器&lt;/h2&gt;
-
-&lt;form action="http://5xruby.github.io/FB-checkin" target="_blank"&gt;
-  &lt;p&gt;&lt;label for="obj_id"&gt;粉絲頁 ID&lt;/label&gt;
-  &lt;input id="obj_id" type="text" name="obj_id" /&gt;
-  &lt;label for="max_count"&gt;讚、打卡最大值&lt;/label&gt;
-  &lt;input id="max_count" type="number" name="max_count" value="500" /&gt;
-  &lt;label for="auto_fire"&gt;自動放煙火&lt;/label&gt;
-  &lt;input id="auto_fire" type="checkbox" name="auto_fire" /&gt;
-  &lt;input type="submit" value="送出" /&gt;&lt;br /&gt;
-  &lt;b&gt;進階設定：&lt;/b&gt;&lt;br /&gt;
-  &lt;label for="font_size"&gt;倒數數字大小&lt;/label&gt;
-  &lt;input id="font_size" type="number" name="font_size" value="0.5" step="any" /&gt;&lt;br /&gt;
-  &lt;label for="btn_size"&gt;啟動煙火按鈕大小（px）&lt;/label&gt;
-  &lt;input id="btn_size" type="number" name="btn_size" value="100" /&gt;&lt;br /&gt;
-  &lt;label for="qr_code_size"&gt;QRCode 圖片大小（px）&lt;/label&gt;
-  &lt;input id="qr_code_size" type="number" name="qr_code_size" value="600" /&gt;&lt;br /&gt;
-  &lt;label for="cycle"&gt;更新週期（千分之秒）&lt;/label&gt;
-  &lt;input id="cycle" type="number" name="cycle" value="1000" /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;/form&gt;
-
-&lt;p&gt;Github：https://github.com/5xRuby/FB-checkin&lt;/p&gt;
-
-&lt;h2 id="section-1"&gt;變數說明&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;變數&lt;/th&gt;
-      &lt;th&gt;預設值&lt;/th&gt;
-      &lt;th&gt;說明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;obj_id&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;5xruby&lt;/td&gt;
-      &lt;td&gt;粉絲頁 ID&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;font_size&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.5&lt;/td&gt;
-      &lt;td&gt;倒數數字大小&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;auto_fire&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;自動放煙火&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;btn_size&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;100&lt;/td&gt;
-      &lt;td&gt;啟動煙火按大小&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;qr_code_size&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;600&lt;/td&gt;
-      &lt;td&gt;QRCode 圖片大小&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;max_count&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;500&lt;/td&gt;
-      &lt;td&gt;讚、打卡最大值&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;cycle&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;1000&lt;/td&gt;
-      &lt;td&gt;更新週期&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
 </content>
   </entry>
 </feed>
