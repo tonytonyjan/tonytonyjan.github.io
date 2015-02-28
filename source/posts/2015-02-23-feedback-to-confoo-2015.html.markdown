@@ -49,6 +49,6 @@ description: 去年，筆者在 Ruby 官方網站看到了加拿大 ConFoo 在�
 
 ## 會後小心得
 
-筆者這次的主題是 Ruby 上的 C 擴展以及去年在 Ruby Kaigi 講的 Sony Remove Camera API，但可能是個 Web 技術研討會，來聽我的講題的人沒有很多。整個研討會中，光是 PHP 與 Java 的網站應用主題就超過了 7 成，而 C 的主題看過去也只有一場（就是我的），所以看來 ConFoo 要真正從 PHP 研討會歷史中脫出，還需要幾年的時間。
+筆者這次的主題是 Ruby 上的 C 擴展以及去年在 Ruby Kaigi 講的 Sony Remote Camera API，但可能是個 Web 技術研討會，來聽我的講題的人沒有很多。整個研討會中，光是 PHP 與 Java 的網站應用主題就超過了 7 成，而 C 的主題看過去也只有一場（就是我的），所以看來 ConFoo 要真正從 PHP 研討會歷史中脫出，還需要幾年的時間。
 
 此外不免小感嘆一下，在台灣不知道除了 godfat 以外，是否有寫 Ruby 的人是拿來做 Rails 以外的應用的，很想認識與交流一下。這年頭就連 PTT 上的 Ruby 版也淪為了 Rails 版，Ruby 論壇成了 Rails 論壇，有些小可惜呢。
