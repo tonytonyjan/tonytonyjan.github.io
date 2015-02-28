@@ -12,7 +12,7 @@ zh-TW:
         description: 我同時也是個業餘的譜盲音樂創作者，喜歡彈琴，偶爾用 Reason 進行編曲。你可以在 <a href="https://www.youtube.com/user/tonytonyjan" target="_blank">Youtube</a> 上找到我的創作。
       - title: 作文
         icon_class: fa fa-edit
-        description: 出過一本書，也是個部落客，從國中開始經營，內容從程式筆記到生活雜記都有。
+        description: <a href="http://www.drmaster.com.tw/Bookinfo.asp?BookID=MP21504" target="_blank">我寫書</a>，是部落客，從國中開始經營，內容從程式筆記到生活雜記都有。
       - title: 演講
         icon_class: fa fa-microphone
         description: 喜歡投稿國內外議程，台灣以外也去過日本、加拿大演講 Ruby 的相關主題，或以業師身分在學校進行程式教學與講座。
