@@ -18,14 +18,14 @@ zh-TW:
           company: 工業技術研究院
           summary: 負責能消模擬平台的開發，與 EnergyPlus 能源耗軟體做整合。
       educations:
-        - year: 2008
-          department: 資訊工程系
-          school: 交通大學
-          summary: 主修網路、副修多媒體。擅長網路程式設計，在學期間有開發 POSIX 與 Winsock 的經驗。大四後對資訊擷取與搜尋引擎有興趣，對網路爬蟲與熱門排序也有初步的了解。
         - year: 2013
           department: 電機所
           school: 台灣科技大學
           summary: 逃兵專用，每年繳交學費（保護費）以辦理緩徵，此方案預計可以持續到 2017，此所以「職業學生」稱號的由來。
+        - year: 2008
+          department: 資訊工程系
+          school: 交通大學
+          summary: 主修網路、副修多媒體。擅長網路程式設計，在學期間有開發 POSIX 與 Winsock 的經驗。大四後對資訊擷取與搜尋引擎有興趣，對網路爬蟲與熱門排序也有初步的了解。
     skills:
       - genre: 程式語言
         icon: icon-cog-1
