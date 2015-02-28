@@ -6,16 +6,16 @@ zh-TW:
     specialties:
       - title: 網站開發
         icon_class: fa fa-html5
-        description: 熟悉 Ruby on Rails，著重後端開發、資料庫規劃、測試、部屬以及效能的增進，會寫給 Ruby 使用的 C 擴展。
+        description: 略懂 Ruby on Rails，著重後端開發、資料庫規劃、測試、部屬以及效能的增進，也有寫 C 擴展的經驗。
       - title: 作曲
         icon_class: fa fa-music
         description: 我同時也是個業餘的譜盲音樂創作者，喜歡彈琴，偶爾用 Reason 進行編曲。你可以在 <a href="https://www.youtube.com/user/tonytonyjan" target="_blank">Youtube</a> 上找到我的創作。
       - title: 作文
         icon_class: fa fa-edit
-        description: 從國中開始經營部落格，內容雜亂，主要是程式筆記與生活雜記，偶會發表音樂作品或介紹適合工作的咖啡廳。
+        description: 出過一本書，也是個部落客，從國中開始經營，內容從程式筆記到生活雜記都有。
       - title: 演講
         icon_class: fa fa-microphone
-        description: 喜歡投稿國內外議程，擔任過台灣、日本 Ruby Conference 的講者，或以業師身分在學校進行程式教學與講座。
+        description: 喜歡投稿國內外議程，台灣以外也去過日本、加拿大演講 Ruby 的相關主題，或以業師身分在學校進行程式教學與講座。
     fun_fact: 有趣事蹟
     fun_facts:
       - title: 26 場<a href="/slides/">演講</a>
