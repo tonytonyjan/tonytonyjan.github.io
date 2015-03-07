@@ -13,6 +13,7 @@
     <!-- PORTFOLIO -->
     <div class="portfolio-items media-grid" data-layout="masonry">
       <% I18n.t('portfolio.works').each do |work| %>
+      <% next if work[:disable] %>
       <!-- portfolio-item -->
       <div class="media-cell <%= work[:type] %> <%= work[:media] if work[:media] %> hentry <%= :x2 if work[:big] %>">
         <div class="media-box">

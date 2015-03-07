@@ -33,6 +33,7 @@ zh-TW:
         image: portfolio/webep.png
         url: http://new.webep.me
         type: site
+        disable: true
       - title: Sonycam
         category: 操作 Sony 相機的 Ruby API
         image: portfolio/sony.jpg
