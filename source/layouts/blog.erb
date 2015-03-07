@@ -5,7 +5,7 @@
 <meta property="og:title" content="<%= article_title %>" />
 <meta property="og:description" content="<%= article_description %>" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="<%= site_url + image_path(current_page.data.image || 'site/avatar_big.png') %>" />
+<meta property="og:image" content="<%= page_image %>" />
 <% current_article.tags.each do |tag| %>
 <meta property="article:tag" content="<%= tag %>" />
 <% end %>

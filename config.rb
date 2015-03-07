@@ -1,10 +1,9 @@
 set :site_name, '不歸錄'
 set :site_url, 'http://tonytonyjan.net'
-set :site_image, site_url + image_path('site/avatar_big.png')
 set :blog_description, '大兜的個人部落格，本名簡煒航，網路代號 tonytonyjan。內容包括程式設計、音樂創作與生活雜記。'.freeze
 
 set :markdown_engine, :kramdown
-set :markdown, input: :GFM, parse_block_html: true
+set :markdown, input: :GFM
 set :time_zone, 'Taipei'
 
 activate :livereload

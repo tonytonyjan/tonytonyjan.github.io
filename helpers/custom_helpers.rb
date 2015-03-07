@@ -1,4 +1,8 @@
 module CustomHelpers
+  def page_image
+    site_url + image_path(current_page.data.image || 'site/avatar_big.png')
+  end
+
   def condense str
     str.gsub(/[\s\n]+/, ' ') if str
   end

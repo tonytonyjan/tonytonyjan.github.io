@@ -5,7 +5,7 @@
 <meta property="og:title" content="<%= current_page.data.title %> - <%= site_name %>">
 <meta property="og:description" content="<%= current_page.data.description %>">
 <meta property="og:type" content="website">
-<meta property="og:image" content="<%= site_image %>">
+<meta property="og:image" content="<%= page_image %>">
 <% end %>
 
 <% wrap_layout :layout do %>
@@ -15,7 +15,11 @@
   <article class="post hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-       <h1 class="entry-title"><%= current_page.data.title %></h1>
+        <h1 class="entry-title"><%= current_page.data.title %>
+          <% if current_page.data.subtitle %>
+            <br><small><%= current_page.data.subtitle %></small>
+          <% end %>
+        </h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-content -->
@@ -23,6 +27,7 @@
     <!-- .entry-content -->
   </article>
   <!-- .hentry -->
+  <% if current_page.data.comment %><%= partial 'disqus' %><% end %>
 </div>
 <!-- .readable-content -->
 <% end %>
