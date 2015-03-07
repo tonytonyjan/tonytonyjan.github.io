@@ -2,6 +2,7 @@ en:
   about:
     a_little_about_me: A LITTLE ABOUT ME
     latest_news: LATEST NEWS
+    my_book: MY BOOK
     specialty: SPECIALTIES
     specialties:
       - title: WEB DESIGN

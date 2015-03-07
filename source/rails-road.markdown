@@ -8,7 +8,7 @@ description: 這裡是「Ruby on Rails 自習手冊：邁向鐵道工人之路�
 ---
 
 <div class="row">
-  <div class="col-md-6"><img src="/images/rails_road.jpg" alt=""></div>
+  <div class="col-md-6"><img src="/images/rails_road.jpg" alt="Ruby on Rails 自習手冊：邁向鐵道工人之路"></div>
   <div class="col-md-6">
     <h3>你可以在這裡……</h3>
     <ul>
