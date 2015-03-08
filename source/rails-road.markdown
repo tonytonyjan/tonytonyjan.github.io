@@ -43,4 +43,6 @@ description: 這裡是「Ruby on Rails 自習手冊：邁向鐵道工人之路�
   <dd>本書鎖定的對象是已經略懂一點網頁、資料庫和 Ruby，但對 Rails 想要有初步了解的人。</dd>
   <dt>會有簽書會嗎？</dt>
   <dd>羞恥之餘萬一辦起來無人到場就糗了，但若不嫌棄，<a href="http://fb.me/tonytonyjan" target="_blank">抓筆者出來</a>吃頓飯交個朋友無妨 =)</dd>
+  <dt>使用的 Ruby 與 Rails 版本？</dt>
+  <dd>Ruby 2.2 + Rails 4.2</dd>
 </dl>
