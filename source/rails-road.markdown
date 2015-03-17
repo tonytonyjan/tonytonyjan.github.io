@@ -31,12 +31,13 @@ description: 這裡是「Ruby on Rails 自習手冊：邁向鐵道工人之路�
 
 ## 勘誤表
 
-頁碼 | 原文             | 修正              | 讀者
----  | ---              | ---               | ---
-序   | 2014 年 2 月     | 2015 年 2 月      | 蘇介吾
-4    | 傳入的多少個參數 | 傳入了多少個參數  | @ask
+頁碼 | 原文                                        | 修正                                                    | 讀者
+---  | ---                                         | ---                                                     | ---
+序   | 2014 年 2 月                                | 2015 年 2 月                                            | 蘇介吾
+4    | 傳入的多少個參數                            | 傳入了多少個參數                                        | @ask
 27   | app/views/homt.html 與 app/views/about.html | app/views/pages/homt.html 與 app/views/pages/about.html | @frank.pon
-51   | ireapp.kkbox.com | fireapp.kkbox.com | @juanitofatas
+51   | ireapp.kkbox.com                            | fireapp.kkbox.com                                       | @juanitofatas
+60   | math_path # => "http://..."                 | math_url # => "http://..."                              | @frank.pon
 
 ## 常見問題
 
