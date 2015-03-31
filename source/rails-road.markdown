@@ -38,6 +38,23 @@ description: 這裡是「Ruby on Rails 自習手冊：邁向鐵道工人之路�
 27   | app/views/homt.html 與 app/views/about.html | app/views/pages/homt.html 與 app/views/pages/about.html | @frank.pon
 51   | ireapp.kkbox.com                            | fireapp.kkbox.com                                       | @juanitofatas
 60   | math_path # => "http://..."                 | math_url # => "http://..."                              | @frank.pon
+66   | `hot_calss`                                 | `hot_class`                                             | Kevin Wu
+76   | 正如一開始提到的的寫法一樣                  | 正如一開始提到的寫法一樣                                | Kevin Wu
+94   | 物件關聯對應物件關聯對映                    | 物件關聯對映                                            | Kevin Wu
+114  | 嘗試儲存空的 Posot 物件                     | 嘗試儲存空的 Post 物件                                  | Kevin Wu
+116  | `#updat`                                    | `#update`                                               | Kevin Wu
+119  | `rails g migraiton`                         | `rails g migration`                                     | Kevin Wu
+121  | 倒數第三行 tony.psots                       | 倒數第三行 tony.posts                                   | Kevin Wu
+134  | `'posts#edit' # 新增文章表單頁`             | `'posts#edit' # 編輯文章表單頁`                         | Kevin Wu
+139  | `link_to post.title "/posts#{post.id}"`     | `link_to post.title "/posts/#{post.id}"`                | Kevin Wu
+147  | form_tag 會根據判斷 model                   | form_for 會根據判斷 model                               | Kevin Wu
+151  | `@post = Post.find(params[:id])`            | `@post.destroy`                                         | Kevin Wu
+153  | 且 Rials 提供了 notice 與 alert 兩個捷徑    | 且 Rails 提供了 notice 與 alert 兩個捷徑                | Kevin Wu
+153  | `flast[:notice] # 等於直接寫 notice`        | `flash[:notice] # 等於直接寫 notice`                    | Kevin Wu
+153  | `flast[:alert] # 等於直接寫 alert`          | `flash[:alert] # 等於直接寫 alert`                      | Kevin Wu
+156  | 得額外讓 usre_id                            | 得額外讓 user_id                                        | Kevin Wu
+
+
 
 ## 常見問題
 
