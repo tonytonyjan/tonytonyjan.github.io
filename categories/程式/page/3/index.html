@@ -88,6 +88,44 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">5</span>七月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/07/05/building-popularity-algorithm/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/07/05/building-popularity-algorithm/" rel="bookmark">計算主題熱門度的演算法（上）</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p><img alt="" src="/images/ranking.jpg" /></p>
+
+<p>很多網站都會在文章主題上加上評分的功能（五星評分、喜歡不喜歡、加一減一），主要用於計算主題的熱門程度，並加以排序，評分越高表示這篇主題越熱門，能見度也越高。</p>
+
+<p>評分實做很容易，但排序不簡單，在實做排序過程中會面臨不少問題：</p>
+
+<ul>
+  <li>經驗不足的工程師會重造輪子，套用自己的演算法，不懂得使用統計公式帶來的好處</li>
+  <li>必須防範那些會意圖使自己的文章排序在最上面的 spammer</li>
+  <li>複雜度太高的演算法導致系統負載過高</li>
+</ul>
+
+<p>這篇文章會試著介紹一些排序演算法，從簡單到複雜，並介紹其優缺點，也會分享一些知名網站的排序演算法。就讓我們從最簡單的開始吧：</p>
+
+
+        <a href="/2012/07/05/building-popularity-algorithm/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">25</span>六月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/06/25/tjslides-a-text-based-slides-generator/#disqus_thread"></span>留言</span>
     </footer>
@@ -379,46 +417,6 @@ set_trace_func nil<br />
 ```<br />
 
         <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">1</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/01/install-octopress-on-windows/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/03/01/install-octopress-on-windows/" rel="bookmark">在 Windows 使用 Octopress</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p>
-<h2 id="ruby">安裝 Ruby</h2>
-
-<p>雖然你也可以安裝 <a href="http://www.ruby-lang.org/en/downloads">RVM</a> 或者自行編譯，但既然是在 Windows 下，建議直接使用 <a href="http://rubyinstaller.org/downloads">Ruby Installer</a> 最省事。在此要下載兩個東西，一就是 ruby ，另一個則是 development kit。之所以要後者是因為屆時在安裝 Octopress 時，所需要用到的 ruby gems 會需要在本地編譯（例如 <a href="https://github.com/rtomayko/rdiscount">rdiscount</a>）。而 development kit 是一套基於 <a href="http://www.mingw.org/wiki/MSYS">MSYS/MinGW</a> 下的 C/C++ 編譯環境工具組，安裝時請跟著<a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">官網上的指示</a>即可，你大概會輸入以下指令：</p>
-
-<pre><code>cd C:\Devkit
-ruby dk.rb init :: 產生 config.yaml，裡面有你的 ruby 路徑，一般會幫你設好
-ruby dk.rb install
-</code></pre>
-
-<p>為了保險起見，安裝之後先更新一下 gem 是個好習慣。</p>
-
-<pre><code>gem update --system
-gem update
-</code></pre>
-
-
-        <a href="/2012/03/01/install-octopress-on-windows/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
