@@ -85,6 +85,68 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">1</span>五月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/01/indexer-for-octopress/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/05/01/indexer-for-octopress/" rel="bookmark">將 Octopress Page 依照標題自動索引</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><ul>
+  <li><a href="/projects/octopress-indexer">範例展示、文件</a></li>
+  <li><a href="https://gist.github.com/2565249/6151c81f7af333d5c1d9dd0b2bdcba2c7a966dca">gist</a></li>
+</ul>
+
+<h2 id="section">用法懶人包</h2>
+
+<ol>
+  <li>下載 <a href="https://gist.github.com/gists/2565249/download">Indexer for Octopress</a>。</li>
+  <li>將 <code>indexer.rb</code> 複製到 <code>plugins</code> 目錄下。</li>
+  <li>
+    <p>新增 <code>source\_includes\custom\asides\indexer.html</code>。</p>
+
+    <pre><code>{% if page.indexer == true %}
+  &lt;section&gt;
+  &lt;h1&gt;Catalog&lt;/h1&gt;
+  {{ page.indexer_aside }}
+  &lt;/section&gt;
+{% else %}
+  {% if site.page_asides.size %}
+    {% include_array default_asides %}
+  {% endif %}
+{% endif %}
+</code></pre>
+  </li>
+  <li>
+    <p>編輯 <code>_config.yml</code>。</p>
+
+    <pre><code># Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+# post_asides:
+page_asides: [custom/asides/indexer.html] # 加上這個
+</code></pre>
+  </li>
+  <li>完成！之後只要在你需要索引的 page 上方 YAML 區塊加上 <code>indexer: true</code>，右方欄位就會自己索引了。</li>
+</ol>
+
+
+        <a href="/2012/05/01/indexer-for-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">28</span>四月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/04/28/sleeping-and-eating/#disqus_thread"></span>留言</span>
     </footer>
@@ -355,46 +417,6 @@ set_trace_func nil<br />
 ```<br />
 
         <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">1</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/01/install-octopress-on-windows/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/03/01/install-octopress-on-windows/" rel="bookmark">在 Windows 使用 Octopress</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p>
-<h2 id="ruby">安裝 Ruby</h2>
-
-<p>雖然你也可以安裝 <a href="http://www.ruby-lang.org/en/downloads">RVM</a> 或者自行編譯，但既然是在 Windows 下，建議直接使用 <a href="http://rubyinstaller.org/downloads">Ruby Installer</a> 最省事。在此要下載兩個東西，一就是 ruby ，另一個則是 development kit。之所以要後者是因為屆時在安裝 Octopress 時，所需要用到的 ruby gems 會需要在本地編譯（例如 <a href="https://github.com/rtomayko/rdiscount">rdiscount</a>）。而 development kit 是一套基於 <a href="http://www.mingw.org/wiki/MSYS">MSYS/MinGW</a> 下的 C/C++ 編譯環境工具組，安裝時請跟著<a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">官網上的指示</a>即可，你大概會輸入以下指令：</p>
-
-<pre><code>cd C:\Devkit
-ruby dk.rb init :: 產生 config.yaml，裡面有你的 ruby 路徑，一般會幫你設好
-ruby dk.rb install
-</code></pre>
-
-<p>為了保險起見，安裝之後先更新一下 gem 是個好習慣。</p>
-
-<pre><code>gem update --system
-gem update
-</code></pre>
-
-
-        <a href="/2012/03/01/install-octopress-on-windows/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>

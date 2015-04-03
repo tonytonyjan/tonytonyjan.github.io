@@ -5,10 +5,79 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-02-23T02:34:00+08:00</updated>
+  <updated>2015-04-03T23:35:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>TJDict 兩週年紀念</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/04/03/tjdict-second-anniversary/"/>
+    <id>http://tonytonyjan.net/2015/04/03/tjdict-second-anniversary/</id>
+    <published>2015-04-03T23:35:00+08:00</published>
+    <updated>2015-04-04T01:13:15+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/tjdict.png"&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp?hl=zh-TW"&gt;點我下載&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://tjdict.me"&gt;開發者日誌&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其實算起來兩週年是去年八月，現在發這篇有些晚，筆者寫此文前已先懺悔一番。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;說來那話兒也不長⋯⋯&lt;/h2&gt;
+
+&lt;p&gt;2012 八月，筆者還是個飽受英文論文所苦的死大學生，總是開一堆字典交叉查詢覺得很不方便，索性做了一個工具幫助自己，本來是自用，但在朋友慫恿下放上了 Google...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/tjdict.png" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp?hl=zh-TW"&gt;點我下載&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://tjdict.me"&gt;開發者日誌&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其實算起來兩週年是去年八月，現在發這篇有些晚，筆者寫此文前已先懺悔一番。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;說來那話兒也不長⋯⋯&lt;/h2&gt;
+
+&lt;p&gt;2012 八月，筆者還是個飽受英文論文所苦的死大學生，總是開一堆字典交叉查詢覺得很不方便，索性做了一個工具幫助自己，本來是自用，但在朋友慫恿下放上了 Google 應用程式商店。同時在自己的&lt;a href="http://www.plurk.com/p/h2o8zi"&gt;噗浪&lt;/a&gt;和&lt;a href="/2012/08/17/tjdict-english-chinese-dictionary-for-chrome/"&gt;部落格&lt;/a&gt;發表了作品，不料一週內發現有幾十人在使用，心喜之下又在 &lt;a href="https://plus.google.com/+%E7%B0%A1%E7%85%92%E8%88%AATJ/posts/jY9trCpqas9"&gt;G+ 發表了心情&lt;/a&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/tjdict_plus.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="tjdict-"&gt;看看我，我體內的 TJDict 已經長這麼大了。&lt;/h2&gt;
+
+&lt;p&gt;現在回頭看起來，那時自己覺得 39 人就開心成這樣實在可愛，因為現在 TJDict 現在已經成長到每個禮拜有 17,000 個不同的使用者在查單字。沒有粉絲專頁、沒有行銷策略之下竟然也能長這麼大，完全是出乎意料之外。&lt;/p&gt;
+
+&lt;p&gt;遙想當初沒沒無聞到現在有人喜歡、100+ 多個使用者回饋、在熱鬧的提問區、甚至有時用戶之間會有所互動、推上一個新功能過幾天就有網友的聲音。老實說身為一個一人開發者，能做出一個作品並且服務這麼多人，足堪告慰。&lt;/p&gt;
+
+&lt;p&gt;究竟這兩年發生了什麼事情呢？筆者整理了一份清單：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://books.google.com.tw/books?id=YpCYBAAAQBAJ&amp;amp;pg=PA142&amp;amp;dq=TJDict&amp;amp;hl=en&amp;amp;sa=X&amp;amp;ei=98QeVZb6FsLvmAWNvoCgAg&amp;amp;ved=0CCoQ6AEwAQ#v=onepage&amp;amp;q=TJDict&amp;amp;f=false"&gt;在書上被提及&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="http://www.books.com.tw/products/0010648438"&gt;Google活用技巧大解密&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.techbang.com/posts/16612-dictionary-of-core-cloud"&gt;T 客邦&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.bnext.com.tw/article/view/id/31079"&gt;數位時代&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://free.com.tw/tjdict/"&gt;免費資源網路社群&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.computerdiy.com.tw/all-articles/download-search/2927-tjdict"&gt;ComputerDIY&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="tjdict--1"&gt;TJDict 未來&lt;/h2&gt;
+
+&lt;p&gt;筆者是用工作之餘的時間開發，有時一忙起來就會不小心放置 play 好幾個月，也不確定會開發到什麼時候，不過這軟體筆者幾乎每天使用，基於這個動機開發下去是很合理的，所以估計未來哪天筆者英文已經進步到不需要查字，也許就是終止開發的時候，雖然這可能性微乎其微（如果學新的人類語言跟學新的程式語言一樣容易就好了）。&lt;/p&gt;
+
+&lt;p&gt;只是筆者畢竟與喝熱血就飽的創業家不太一樣，還是要吃飯喝水的，所以最近又在 TJDict 上面多放上了贊助功能，也許有慈善家願意樂捐一些銀兩幫助筆者繼續開發也說不定。&lt;/p&gt;
+
+&lt;p&gt;對於 TJDict 的未來大致如上述，看起來還是有許多未知數，不過起碼有一件事情是確定的，且筆者能篤定的保證：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;TJDict 免費，且會永遠免費下去 =)&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
   <entry>
     <title>ConFoo 2015 心得</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/02/23/feedback-to-confoo-2015/"/>
@@ -610,115 +679,6 @@ else
     y = tmp;           \
   )
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>|=(2 影片下載器</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/"/>
-    <id>http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/</id>
-    <published>2014-06-28T01:04:26+08:00</published>
-    <updated>2015-02-23T02:52:12+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;標題已用 1337 低調處理XD，筆者很喜歡到某站看影片，由於篩選、排序功能需要付費，筆者甚至為此製作了一些工具達到一樣的目的，例如依照收藏次數、評價排序等。不過這次是要分享如何從網站下載一部影片。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;瀏覽器下載法&lt;/h2&gt;
-
-&lt;p&gt;其實有一招不用寫程式就可以下載影片，而且適用在所有影音網站。首先在點選播放影...&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;標題已用 1337 低調處理XD，筆者很喜歡到某站看影片，由於篩選、排序功能需要付費，筆者甚至為此製作了一些工具達到一樣的目的，例如依照收藏次數、評價排序等。不過這次是要分享如何從網站下載一部影片。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;瀏覽器下載法&lt;/h2&gt;
-
-&lt;p&gt;其實有一招不用寫程式就可以下載影片，而且適用在所有影音網站。首先在點選播放影片以前，先把瀏覽器的開發者工具打開，接著點下播放，同時觀看 HTTP 的封包狀況，找到一個下載時間最長的請求，就是影片網址。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/xxx-1.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;如圖所示，影片下載網址是：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv?mid=023358550acbb0cadcf93f50edcfaf5a
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="section-1"&gt;大量下載&lt;/h2&gt;
-
-&lt;p&gt;但如果要大量下載影片的話，瀏覽器這招還是得徒手一個一個把影片點開，這是一件很累的事情，要是有個爬蟲可以幫我做這件事情豈不是很方便嗎？再回顧一下剛剛的網址，可以知道前半段並不難產生，而下載影片的最大重點就在後面的 &lt;code&gt;mid&lt;/code&gt; 到底怎麼來。&lt;/p&gt;
-
-&lt;p&gt;只是這段 &lt;code&gt;023358550acbb0cadcf93f50edcfaf5a&lt;/code&gt; 並沒有在頁面原始碼出現，所以我猜應該是透過網路取得的，幸運的是，沿著影片網址的請求往上找，確實給我找到了一個用來取得網址資訊的請求：&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/xxx-2.png" /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://video.fc2.com/ginfo.php?from=28&amp;amp;otag=0&amp;amp;fversion=MAC%2014%2C0%2C0%2C125&amp;amp;mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;lang=tw&amp;amp;gk=uMuxgWhewb&amp;amp;tk=TlRBeU1qUTNNREE9&amp;amp;href=http%3A%2F%2Fvideo%2Efc2%2Ecom%2Ftw%2Fcontent%2F20140528bpRKSJWR&amp;amp;v=20140528bpRKSJWR&amp;amp;upid=20140528bpRKSJWR
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;得到的回應：&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/xxx-3.png" /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;filepath=http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv&amp;amp;mid=023358550acbb0cadcf93f50edcfaf5a&amp;amp;sec=71&amp;amp;oref=0&amp;amp;charger=0&amp;amp;charge_second=&amp;amp;err_code=&amp;amp;isadult=0&amp;amp;count=&amp;amp;adreopen=600&amp;amp;cm=1&amp;amp;payment=0&amp;amp;mb_id=60283252&amp;amp;chk_ns=60_256&amp;amp;ci=&amp;amp;play_min=1&amp;amp;play_query=i:0;c:5;f:28;o:0;p:0;u:20140528bpRKSJWR;m:60283252;l:11&amp;amp;test=&amp;amp;ad=1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其中我要的東西就在這個回應裡面，只要把 &lt;code&gt;filepath&lt;/code&gt; 和 &lt;code&gt;mid&lt;/code&gt; 組起來就可以取得影片網址了。&lt;/p&gt;
-
-&lt;h2 id="section-2"&gt;分析變數&lt;/h2&gt;
-
-&lt;p&gt;眼看就要成功了，接下來只要分析出 &lt;code&gt;/ginfo.php&lt;/code&gt; 的變數怎麼製造即可。筆者是用 &lt;code&gt;curl&lt;/code&gt; 做測試，發現上述的請求可以簡化，只保留 &lt;code&gt;mimi&lt;/code&gt; 與 &lt;code&gt;upid&lt;/code&gt; 這兩個變數：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ curl "http://video.fc2.com/ginfo.php?mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;upid=20140528bpRKSJWR"
-filepath=http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv&amp;amp;mid=bd8bf22fae4cba798ae0b028dabc4784&amp;amp;sec=71&amp;amp;oref=1&amp;amp;charger=0&amp;amp;charge_second=&amp;amp;err_code=&amp;amp;isadult=0&amp;amp;count=&amp;amp;adreopen=600&amp;amp;cm=0&amp;amp;payment=0&amp;amp;mb_id=&amp;amp;chk_ns=60_256&amp;amp;title=ブラッシングされたいの？&amp;amp;seek_image=3&amp;amp;play_min=1&amp;amp;play_query=i:0;c:5;f:;o:;p:0;u:20140528bpRKSJWR;m:;l:0&amp;amp;test=&amp;amp;ad=1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;但這回用 &lt;code&gt;curl&lt;/code&gt; 得到的 &lt;code&gt;mid&lt;/code&gt; 不太一樣，且 &lt;code&gt;filepath&lt;/code&gt; 與 &lt;code&gt;mid&lt;/code&gt; 組起來的網址也無法丟到瀏覽器，&lt;br /&gt;
-但是直接用 &lt;code&gt;curl&lt;/code&gt; 是可以下載的，所以猜測 &lt;code&gt;mid&lt;/code&gt; 的產生有用到 &lt;code&gt;User-Agent&lt;/code&gt; 去做雜湊，於是筆者實驗性用了自己瀏覽器的 &lt;code&gt;User-Agent&lt;/code&gt; 丟進 &lt;code&gt;curl&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ curl "http://video.fc2.com/ginfo.php?mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;upid=20140528bpRKSJWR" -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36'
-filepath=http://vip.video54000.fc2.com/up/flv/201405/28/b/20140528bpRKSJWR.flv&amp;amp;mid=023358550acbb0cadcf93f50edcfaf5a&amp;amp;sec=71&amp;amp;oref=1&amp;amp;charger=0&amp;amp;charge_second=&amp;amp;err_code=&amp;amp;isadult=0&amp;amp;count=&amp;amp;adreopen=600&amp;amp;cm=0&amp;amp;payment=0&amp;amp;mb_id=&amp;amp;chk_ns=60_256&amp;amp;title=ブラッシングされたいの？&amp;amp;seek_image=3&amp;amp;play_min=1&amp;amp;play_query=i:0;c:5;f:;o:;p:0;u:20140528bpRKSJWR;m:;l:0&amp;amp;test=&amp;amp;ad=1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;賓果，這下 &lt;code&gt;mid&lt;/code&gt; 變數已經一樣了（&lt;code&gt;mid=023358550acbb0cadcf93f50edcfaf5a&lt;/code&gt;），所以由此更可以確定，&lt;code&gt;mid&lt;/code&gt; 的產生完全只有用到，&lt;code&gt;User-Agent&lt;/code&gt; 而已，只要確保下載影片時候送出去的請求，其 &lt;code&gt;User-Agent&lt;/code&gt; 保持一致就沒問題，至此可先鬆一口氣。&lt;/p&gt;
-
-&lt;h2 id="hacking"&gt;Hacking&lt;/h2&gt;
-
-&lt;p&gt;回到剛剛化簡的網址：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://video.fc2.com/ginfo.php?mimi=c5e51ed4de1f4e6246b851bef4a210de&amp;amp;upid=20140528bpRKSJWR
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;upid&lt;/code&gt; 是很好產生的，不過 &lt;code&gt;mimi&lt;/code&gt; 並沒有在網站原始碼出現過，且筆者也沒有在任何 HTTP 封包上找到線索。猜測剩下一種可能：這段變數是由 Flash 產生的。然後我翻翻，找到這個：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-as"&gt;public static function makeMimiLocal(_arg1:String):String{
-  var _local2:String = "dEgEGrrGeegfe";
-  var _local3:String = "gGddgPfeaf_gzyr";
-  var _local4:String = "e_egeDEgggEfe";
-  return (MD5(((_arg1 + "_") + _local3)));
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看來這就是製造變數「咪咪」的配方了，試寫一下 Ruby 版本：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;def make_mimi(movie_id) # ex. 20140528bpRKSJWR
-  # local2 = 'dEgEGrrGeegfe'
-  local3 = 'gGddgPfeaf_gzyr'
-  # local4 = 'e_egeDEgggEfe'
-  Digest::MD5.hexdigest movie_id + '_' + local3
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其中有兩個區域變數不知道要幹嘛，順手註解掉了。如果這段程式正確，那麼輸入 &lt;code&gt;20140528bpRKSJWR&lt;/code&gt; 應該會得到一個 &lt;code&gt;c5e51ed4de1f4e6246b851bef4a210de&lt;/code&gt; 才對：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;make_mimi '20140528bpRKSJWR' # =&amp;gt; c5e51ed4de1f4e6246b851bef4a210de
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;做了一個下載器：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ruby mimi.rb 20140528bpRKSJWR
-$ ls
-20140528bpRKSJWR.flv mimi.rb
-$ open 20140528bpRKSJWR.flv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/xxx-4.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;收工，以後可以不用瀏覽器下載這個網站的影片了XD&lt;/p&gt;
 </content>
   </entry>
 </feed>
