@@ -16,11 +16,12 @@ module CustomHelpers
   end
 
   def article_thumb_path article
-    return article.data.thumb if article.data.thumb
-
-    default_thumb_path = "thumbs/#{article.data.image}"
-    return default_thumb_path if File.exist?(File.join(source_dir, "images/#{default_thumb_path}"))
-
-    return "thumbs/兜-1.png"
+    if article.data.thumb
+      article.data.thumb 
+    elsif article.data.image && File.exist?(File.join(source_dir, "images/thumbs/#{article.data.image}"))
+      "thumbs/#{article.data.image}"
+    else
+      "thumbs/兜-1.png"
+    end
   end
 end
