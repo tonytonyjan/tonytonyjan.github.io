@@ -5,10 +5,119 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-04-03T23:35:00+08:00</updated>
+  <updated>2015-04-15T18:30:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>台灣身份證字號驗證器</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/04/15/national-identification-card-validator-of-taiwan/"/>
+    <id>http://tonytonyjan.net/2015/04/15/national-identification-card-validator-of-taiwan/</id>
+    <published>2015-04-15T18:30:00+08:00</published>
+    <updated>2015-04-15T20:15:30+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;今天在 Ruby Taiwan 的 &lt;a href="https://www.facebook.com/groups/142197385837507/permalink/888110727912832/"&gt;FB 社團上&lt;/a&gt;看到 adz 大大在問是否有身份證字號驗證的 gem 可以用。&lt;/p&gt;
+
+&lt;p&gt;這東西記得在大一時用 C、Java 各寫過一次，程式碼已遺失，反正今天寫了一天程式也累了，只好寫別的程式來放鬆一下（啥？），不過這次會用 Ruby 來寫，同樣的程式碼我也放在 &lt;a href="https://gist.github.com/tonytonyjan/361282d5b6771660b88c"&gt;Gist&lt;/a&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;今天在 Ruby Taiwan 的 &lt;a href="https://www.facebook.com/groups/142197385837507/permalink/888110727912832/"&gt;FB 社團上&lt;/a&gt;看到 adz 大大在問是否有身份證字號驗證的 gem 可以用。&lt;/p&gt;
+
+&lt;p&gt;這東西記得在大一時用 C、Java 各寫過一次，程式碼已遺失，反正今天寫了一天程式也累了，只好寫別的程式來放鬆一下（啥？），不過這次會用 Ruby 來寫，同樣的程式碼我也放在 &lt;a href="https://gist.github.com/tonytonyjan/361282d5b6771660b88c"&gt;Gist&lt;/a&gt; 上面&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;MAP = {
+  'A' =&amp;gt; [1, 0], 'B' =&amp;gt; [1, 1], 'C' =&amp;gt; [1, 2], 'D' =&amp;gt; [1, 3], 'E' =&amp;gt; [1, 4], 'F' =&amp;gt; [1, 5], 'G' =&amp;gt; [1, 6], 'H' =&amp;gt; [1, 7], 'I' =&amp;gt; [3, 4],
+  'J' =&amp;gt; [1, 8], 'K' =&amp;gt; [1, 9], 'L' =&amp;gt; [2, 0], 'M' =&amp;gt; [2, 1], 'N' =&amp;gt; [2, 2], 'O' =&amp;gt; [3, 5], 'P' =&amp;gt; [2, 3], 'Q' =&amp;gt; [2, 4], 'R' =&amp;gt; [2, 5],
+  'S' =&amp;gt; [2, 6], 'T' =&amp;gt; [2, 7], 'U' =&amp;gt; [2, 8], 'V' =&amp;gt; [2, 9], 'W' =&amp;gt; [3, 2], 'X' =&amp;gt; [3, 0], 'Y' =&amp;gt; [3, 1], 'Z' =&amp;gt; [3, 3]
+}
+ 
+MULTIPLIER = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1]
+ 
+def id_check id
+  return false unless id =~ /\A[A-Z]\d{9}\z/
+  chars = id.chars
+  numbers = MAP[chars.shift] + chars.map!(&amp;amp;:to_i)
+ 
+  sum, i = 0, 0
+  while i &amp;lt; 11
+    sum += numbers[i] * MULTIPLIER[i]
+    i += 1
+  end
+  sum % 10 == 0
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;寫完後還不免想要比較一下別人的 code，不料也能意外的比網路上僅存的兩個 gem 快兩倍以上：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;require 'benchmark'
+require 'id_check'
+require 'taiwanese_id_builder'
+require 'TaiwanUserID'
+ 
+n = 100000
+Benchmark.bmbm do |x|
+  x.report('wayne5540  '){ n.times{ TaiwaneseIdBuilder.valid?('A123456789') } }
+  dummy = Object.new.extend(TaiwanUserID)
+  x.report('kaochenlong'){ n.times{ dummy.is_valid?('A123456789') } }
+  x.report('tonytonyjan'){ n.times{ id_check('A123456789') } }
+end
+ 
+# wayne5540     1.080000   0.230000   1.310000 (  1.319509)
+# kaochenlong   1.860000   0.010000   1.870000 (  1.879476)
+# tonytonyjan   0.550000   0.000000   0.550000 (  0.557314)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="while-"&gt;while 無敵&lt;/h2&gt;
+
+&lt;p&gt;筆者只知道 Ruby 中的迭代方法，無論用 &lt;code&gt;#each&lt;/code&gt; 還是 &lt;code&gt;#times&lt;/code&gt;，沒有一個比 &lt;code&gt;while&lt;/code&gt; 還要快的，所以果斷用了 &lt;code&gt;while&lt;/code&gt; 來解題，但這題其實要幾兩個陣列相乘再做加總，其實可以用 &lt;code&gt;#zip&lt;/code&gt; 甚至是 Ruby 內建的 &lt;code&gt;Matrix&lt;/code&gt; 來做。&lt;/p&gt;
+
+&lt;p&gt;正想做 benchmark 時就搜尋到&lt;a href="http://stackoverflow.com/questions/7372489/whats-the-efficient-way-to-multiply-two-arrays-and-get-sum-of-multiplied-values"&gt;這篇文章&lt;/a&gt;，所以果然還是 &lt;code&gt;while&lt;/code&gt; 無敵啊XD。&lt;/p&gt;
+
+&lt;p&gt;對高效能的 Ruby 有興趣的人可以參考 Juanito Fatas 的 &lt;a href="https://github.com/JuanitoFatas/fast-ruby"&gt;fast-ruby&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;其他人怎麼寫&lt;/h2&gt;
+
+&lt;p&gt;在&lt;a href="https://github.com/wayne5540/taiwanese_id_builder/blob/master/lib/taiwanese_id_builder.rb"&gt;這裡&lt;/a&gt;可以找到 wayne5540 的程式碼，其中最令人糾結的是有一個 &lt;code&gt;puts&lt;/code&gt; 沒有拿掉，所以在執行 &lt;code&gt;#valid?&lt;/code&gt; 時會把結果印到螢幕上。所以要是像筆者一樣寫了 benchmark，自然是噴的整個螢幕都是。&lt;/p&gt;
+
+&lt;p&gt;有趣的是筆者意外在 rubygems.org 找到高見龍的 &lt;a href="https://rubygems.org/gems/TaiwanUserID"&gt;gem&lt;/a&gt;，從時間上看是 2013 年 2 月推上來的，且 GitHub 上面找不到，也許是用在教學時寫的。&lt;/p&gt;
+
+&lt;p&gt;裡面只有一個 32 行的檔案，比起 wayne5540 的 gem 要輕巧許多，但也不難看出是效能是怎麼被影響的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;require "TaiwanUserID/version"
+
+module TaiwanUserID
+  def is_valid?(id)
+    cities = {
+      :A =&amp;gt; '10', :B =&amp;gt; '11', :C =&amp;gt; '12', :D =&amp;gt; '13',
+      :E =&amp;gt; '14', :F =&amp;gt; '15', :G =&amp;gt; '16', :H =&amp;gt; '17',
+      :I =&amp;gt; '34', :J =&amp;gt; '18', :K =&amp;gt; '19', :L =&amp;gt; '20',
+      :M =&amp;gt; '21', :N =&amp;gt; '22', :O =&amp;gt; '35', :P =&amp;gt; '23',
+      :Q =&amp;gt; '24', :R =&amp;gt; '25', :S =&amp;gt; '26', :T =&amp;gt; '27',
+      :U =&amp;gt; '28', :V =&amp;gt; '29', :W =&amp;gt; '32', :X =&amp;gt; '30',
+      :Y =&amp;gt; '31', :Z =&amp;gt; '33',
+    }
+
+    id_array = id.upcase.split('')
+
+    special = cities[id_array.first.to_sym][0].to_i * 1 + cities[id_array.first.to_sym][1].to_i * 9
+    sum =
+      special +
+      id_array[1].to_i * 8 +
+      id_array[2].to_i * 7 +
+      id_array[3].to_i * 6 +
+      id_array[4].to_i * 5 +
+      id_array[5].to_i * 4 +
+      id_array[6].to_i * 3 +
+      id_array[7].to_i * 2 +
+      id_array[8].to_i * 1 +
+      id_array[9].to_i
+
+    return sum % 10 == 0
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>TJDict 兩週年紀念</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/04/03/tjdict-second-anniversary/"/>
@@ -587,94 +696,6 @@ end
 &lt;p&gt;台灣的 Ruby 社群我想只有一個 Ruby Taipei 吧？也因為只有一個，所以 Ruby Taiwan 通常也代表 Ruby Taipei。而 Rails 社群就比較多一點，除了台北之外，尚有台南、高雄的社群。&lt;/p&gt;
 
 &lt;p&gt;Rails 是用 Ruby 所建構的，但前者社群明顯比後者蓬勃的多，雖然不是很明白其中所以，但這或許也證明了 Rails 開發者未必會對 Ruby 有興趣吧？&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>C 語言之多行巨集</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2014/10/07/multi-line-c-macros/"/>
-    <id>http://tonytonyjan.net/2014/10/07/multi-line-c-macros/</id>
-    <published>2014-10-07T02:19:13+08:00</published>
-    <updated>2015-02-23T02:52:12+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;有時候我們在翻閱原始碼的時候會看到類似這樣的寫法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;#define FOO(x, y)    \
-do {                 \
-  typeof(x) tmp = x; \
-  x = y;             \
-  y = tmp;           \
-} while...&lt;/code&gt;&lt;/pre&gt;</summary>
-    <content type="html">&lt;p&gt;有時候我們在翻閱原始碼的時候會看到類似這樣的寫法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;#define FOO(x, y)    \
-do {                 \
-  typeof(x) tmp = x; \
-  x = y;             \
-  y = tmp;           \
-} while (0)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;當然有的人會提出質疑，並且習慣使用邊界區塊（scope block）的寫法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;#define FOO(x, y)    \
-{                    \
-  typeof(x) tmp = x; \
-  x = y;             \
-  y = tmp;           \
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;乍看之下比較漂亮，但事實上後者的寫法有潛在的問題。其實 do/while 的風格只有一個目的，就是將展開的內容變成一個敘述（statement）。讓我們舉個例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
-  foo(x, y);
-else
-  bar(x, y);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;目前 &lt;code&gt;foo()&lt;/code&gt; 與 &lt;code&gt;bar()&lt;/code&gt; 都是一個標準的 C 函式，可以正常編譯。但如果現在把 &lt;code&gt;foo()&lt;/code&gt; 換成了巨集之後，狀況就不一樣了：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
-  FOO(x, y);
-else
-  bar(x, y);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果我們使用的是後者的寫法，經過預編步驟展開之後：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
-  {
-    typeof(x) tmp = x;
-    x = y;
-    y = tmp;
-  };
-else
-  bar(x, y);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;if&lt;/code&gt; 因為 &lt;code&gt;FOO(x, y);&lt;/code&gt; 後面的分號，提早終結了，事實上這段程式碼也無法編譯。其中一個解法是把分號拿掉：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;if(condition)
-  FOO(x, y)
-else
-  bar(x, y);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;這樣產生的程式碼就可以符合 if/else 的正確語法，可是 &lt;code&gt;FOO(x, y)&lt;/code&gt; 後面沒有分號卻又破壞了程式設計的一致性。所以最後才會出現 do/while 風格的寫法，要注意的是 &lt;code&gt;while(0)&lt;/code&gt; 的後方沒有分號，如果加上了分號，那麼會因為這個分號終結的是 do/while 敘述，導致 &lt;code&gt;FOO(x, y);&lt;/code&gt; 會展開出兩個分號，又出現了剛剛的問題。&lt;/p&gt;
-
-&lt;p&gt;當然，如果你覺得每次多行的巨集都要加個 do/while 其醜無比且又可能會打錯字，筆者建議可以再包裹一層巨集去處理這件事情，別忘了巨集可以當樣板使用：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-c"&gt;#define STMT( stuff )  do { stuff } while (0)
-
-#define SWAP(x, y)     \
-  STMT(                \
-    typeof(x) tmp = x; \
-    x = y;             \
-    y = tmp;           \
-  )
-&lt;/code&gt;&lt;/pre&gt;
 </content>
   </entry>
 </feed>

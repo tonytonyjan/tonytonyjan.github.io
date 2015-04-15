@@ -88,6 +88,49 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">3</span>三月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/03/03/string-and-symbol-in-controller/" rel="bookmark">params["key"] 和 params[:key]</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 <code>params[:id]</code> 和 <code>params["id"]</code> 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。</p>
+
+<p>我臨時寫了一個程式，先 trace <code>params[:id]</code>，再 trace <code>params["id"]</code>，並用等於符號分隔，看他們之間的不同：</p>
+
+<p>``` ruby Experiment in controller<br />
+set_trace_func proc { |event, file, line, id, binding, classname|<br />
+   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
+}<br />
+params[:id]<br />
+set_trace_func nil</p>
+
+<p>puts "=====================" # 我不希望 trace 到 puts method</p>
+
+<p>set_trace_func proc { |event, file, line, id, binding, classname|<br />
+   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
+}<br />
+params["id"]<br />
+set_trace_func nil<br />
+```<br />
+
+        <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">1</span>三月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/01/install-octopress-on-windows/#disqus_thread"></span>留言</span>
     </footer>
@@ -355,38 +398,6 @@ gem update
 void fun(int);
 int main(void...</code></pre>
         <a href="/2010/10/27/44/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2010" class="entry-date"><span class="day">22</span>六月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2010/06/22/my-six-os/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2010/06/22/my-six-os/" rel="bookmark">大兜 VM 下的六個OS</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>![](/images/cssula-blog/0.png)</p>
-
-<p>上個禮拜心血來潮多裝了三個作業系統來玩……目前總計六個了＠＠</p>
-
-<p><!--more-->---------</p>
-
-<p>Chromium</p>
-
-<p>記得上學期裝的Google Chrome OS，雖然還沒有發布，可是Google一向是搞開原的，就有些人佛心來著，把他編譯完...</p>
-        <a href="/2010/06/22/my-six-os/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>

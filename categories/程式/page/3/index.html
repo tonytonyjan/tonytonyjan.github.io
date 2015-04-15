@@ -88,6 +88,38 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">8</span>七月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/07/08/masonry-a-dynamic-layout-plugin-for-jquery/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/07/08/masonry-a-dynamic-layout-plugin-for-jquery/" rel="bookmark">Masonry - 好用的動態排版工具</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p><img alt="" src="/images/masonry-demo.png" /></p>
+
+<p><a href="http://masonry.desandro.com">官網</a></p>
+
+<p>昨天看到社上 JS 大神<a href="http://www.facebook.com/photo.php?fbid=4451976741683&amp;set=a.1753065630592.2102379.1357466415&amp;type=1&amp;theater&amp;notif_t=photo_reply">喔哩</a>正在寫類似 <a href="https://chrome.google.com/webstore">Google Web Store</a> 首頁那樣的圖形排版（雖然他說不太一樣）。但我想這麼常見的東西應該有可用的函式庫，果然餵狗之後被我找到了一個好用工具 <a href="http://masonry.desandro.com">Masonry</a>。</p>
+
+<p>如果還不太懂這東西是幹麼的，不如先看看我做的簡單<a href="/demo/masonry/">示範</a>，瀏覽時不妨試著調整瀏覽器視窗大小，圖片的排版會隨著視窗可視範圍而改變。</p>
+
+
+        <a href="/2012/07/08/masonry-a-dynamic-layout-plugin-for-jquery/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">5</span>七月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/07/05/building-popularity-algorithm/#disqus_thread"></span>留言</span>
     </footer>
@@ -374,49 +406,6 @@ page_asides: [custom/asides/indexer.html] # 加上這個
 
 <p>因為我發現周遭有很多習慣於命令列工作的人，仍傻呼呼的執行 <code>cmd.exe</code> 之後，一次又一次的 <code>cd</code>、<code>dir</code>，直到抵敵目的地。抑或先打開檔案總管，到目的地之後再複製目錄，貼到命令列，然後在前面再加個 <code>cd</code>。...</p>
         <a href="/2012/03/06/shortcut-to-open-command-prompt-in-current-directory/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">3</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/03/03/string-and-symbol-in-controller/" rel="bookmark">params["key"] 和 params[:key]</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 <code>params[:id]</code> 和 <code>params["id"]</code> 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。</p>
-
-<p>我臨時寫了一個程式，先 trace <code>params[:id]</code>，再 trace <code>params["id"]</code>，並用等於符號分隔，看他們之間的不同：</p>
-
-<p>``` ruby Experiment in controller<br />
-set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params[:id]<br />
-set_trace_func nil</p>
-
-<p>puts "=====================" # 我不希望 trace 到 puts method</p>
-
-<p>set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params["id"]<br />
-set_trace_func nil<br />
-```<br />
-
-        <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
