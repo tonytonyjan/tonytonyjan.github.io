@@ -137,9 +137,9 @@ randNum = getRand(1,42,6);
 
 <p>下面是原碼：</p>
 
-<pre><code class="language-c">#include&amp;amp;lt;stdio.h&amp;amp;gt;
-#include&amp;amp;lt;stdlib.h&amp;amp;gt;
-#include&amp;amp;lt;time.h&amp;amp;gt;
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define MIN 1  //代表不重複亂數的最小值 
 #define MAX 42  //代表不重複亂數的最大值 
 #define NUM 6  //代表需要幾個不重複亂數的個數
@@ -149,7 +149,7 @@ int main(void){
     int *randNum;  //這個等等要拿來指向getRand傳回的東西 
     int i;  //迴圈專用 
     randNum = getRand(MIN,MAX,NUM);  //randNum指向getRand回傳的指標
-    for(i=0;i&amp;amp;lt;NUM;i++){  //印出來
+    for(i=0;i&lt;NUM;i++){  //印出來
         printf("%d\n",*(randNum+i));
     }
     getchar();
@@ -160,15 +160,15 @@ int* getRand(int min, int max, int num){
     int a[30000];  //放min~max的所有數字 
     static int b[30000];  //放取出的亂數 
     int i,j;
-    for(i=0;i&amp;amp;lt;tol;i++){  //跟電腦要記憶格放數字，從小排到大放進a[0]~a[tol-1] 
+    for(i=0;i&lt;tol;i++){  //跟電腦要記憶格放數字，從小排到大放進a[0]~a[tol-1] 
         *(a+i) = min+i;
     }
     srand(time(0));
     int ctr;  //這只是個容器，拿來裝a[n]裡的n，而這個n是用亂數製造的 
-    for(i=0;i&amp;amp;lt;num;i++){
+    for(i=0;i&lt;num;i++){
         ctr = rand()%(tol-i);
         b[i] = a[ctr];  //把抓好的亂數丟到b裡面 
-        for(j=ctr;j&amp;amp;lt;(tol-1-i);j++){  //這是整個不重複亂數函數的經髓所在！
+        for(j=ctr;j&lt;(tol-1-i);j++){  //這是整個不重複亂數函數的經髓所在！
             a[j] = a[j+1];  //很微妙的通通往前移動一格 
         }
     }
