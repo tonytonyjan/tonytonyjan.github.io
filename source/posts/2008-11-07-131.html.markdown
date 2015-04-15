@@ -74,3 +74,26 @@ int* getRand(int min, int max, int num){
     return b;
 }
 ```
+
+## 2015-04-15 更新
+
+這篇是是筆者大一的時候寫的呢，想不到那時候還會加上無謂的表情符號，根本小屁孩啊XD
+
+事隔多年，如果還是要做同樣的功能，可能就會用洗牌的方式了吧：
+
+```c
+#include <stdlib.h>
+#include <time.h>
+#define SWAP(x, y) do{ typeof(x) tmp = x; x = y; y = tmp; } while(0)
+
+int* shuffle(int *ary, int length){
+  srand(time(NULL));
+  for(int i = length - 1; i; i--){
+    int idx = rand() % i;
+    SWAP(ary[idx], ary[i]);
+  }
+  return ary;
+}
+```
+
+洗完後只要依序拿前 n 個或是後 n 個就可以得到亂數不重複的陣列。當然更進一步的做法是 `SWAP` n 次以後就可以停下了，不需要全洗乾淨。
