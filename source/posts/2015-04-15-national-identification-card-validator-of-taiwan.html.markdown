@@ -7,7 +7,7 @@ category: 程式
 
 今天在 Ruby Taiwan 的 [FB 社團上](https://www.facebook.com/groups/142197385837507/permalink/888110727912832/)看到 adz 大大在問是否有身份證字號驗證的 gem 可以用。
 
-這東西記得在大一時用 C、Java 各寫過一次，程式碼已遺失，反正今天寫了一天程式也累了，只好寫別的程式來放鬆一下（啥？），不過這次會用 Ruby 來寫，同樣的程式碼我也放在 [Gist](https://gist.github.com/tonytonyjan/361282d5b6771660b88c) 上面
+這東西記得在大一時用 C、Java 各寫過一次，程式碼已遺失，反正今天寫了一天程式也累了，只好寫別的程式來放鬆一下（啥？），不過這次會用 Ruby 來寫，同樣的程式碼我也放在 [Gist](https://gist.github.com/tonytonyjan/361282d5b6771660b88c) 上面：
 
 ```ruby
 MAP = {
