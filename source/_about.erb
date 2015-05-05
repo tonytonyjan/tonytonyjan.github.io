@@ -26,7 +26,7 @@
       <div class="col-sm-6 col-md-3">
         <!-- service -->
         <div class="service color<%= i + 1 %>">
-          <i class="<%= specialty[:icon_class] %>"></i>
+          <a href="<%= specialty[:url] %>" target="_blank"><i class="<%= specialty[:icon_class] %>"></i></a>
           <h4><%= specialty[:title] %></h4>
           <p><%= specialty[:description] %></p>
         </div>

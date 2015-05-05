@@ -1,6 +1,7 @@
 - date: 2015-05-04
   topic: Ruby on Rails 金流實戰 - 使用歐付寶
   event: AlphaCamp
+  event_url: https://www.alphacamp.co
   links:
     - url: /slides/2015-05-04-allpay-cart/1.pdf
     - url: /slides/2015-05-04-allpay-cart/2.pdf
