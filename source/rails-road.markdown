@@ -35,10 +35,16 @@ description: 這裡是「Ruby on Rails 自習手冊：邁向鐵道工人之路�
 ---  | ---                                         | ---                                                     | ---
 序   | 2014 年 2 月                                | 2015 年 2 月                                            | 蘇介吾
 4    | 傳入的多少個參數                            | 傳入了多少個參數                                        | @ask
+6    | http://www.aptana.com/products/radrails     | http://www.aptana.com/products/radrails.html            | 蘇介吾
+25   | `rails -D`                                  | `rake -D`                                               | 蘇介吾
+25   | 註 6、7、8 消失                             | 分別為 vendor、routing、Rack                            | 蘇介吾
 27   | app/views/homt.html 與 app/views/about.html | app/views/pages/homt.html 與 app/views/pages/about.html | @frank.pon
+46   | `(1..46)`                                   | 大樂透應該是 `(1..49)` XD                               | 蘇介吾
 51   | ireapp.kkbox.com                            | fireapp.kkbox.com                                       | @juanitofatas
 60   | math_path # => "http://..."                 | math_url # => "http://..."                              | @frank.pon
 66   | `hot_calss`                                 | `hot_class`                                             | Kevin Wu
+67   | 缺圖： `images/fake_mail.png`               | http://i.imgur.com/BEp413I.png                          | 蘇介吾
+69   | 缺圖：`images/form_post_error.png`          | http://i.imgur.com/W1H3hVP.png                          | 蘇介吾
 76   | 正如一開始提到的的寫法一樣                  | 正如一開始提到的寫法一樣                                | Kevin Wu
 94   | 物件關聯對應物件關聯對映                    | 物件關聯對映                                            | Kevin Wu
 114  | 嘗試儲存空的 Posot 物件                     | 嘗試儲存空的 Post 物件                                  | Kevin Wu
