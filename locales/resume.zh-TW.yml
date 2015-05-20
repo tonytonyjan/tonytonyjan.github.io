@@ -5,10 +5,14 @@ zh-TW:
       work_history: 工作經歷
       education_history: 教育經歷
       works:
+        - year: 2015
+          title: CTO
+          company: 微廣科技
+          summary: 決策公司技術走向、解決方案與負責實作核心系統。
         - year: 2014
           title: 合夥創辦人
           company: 五倍紅寶石股份有限公司
-          summary: 與台灣 Ruby 社群的人合開的公司，主要業務為 Ruby/Rails 教育訓練，興辦各種課程講座以及提供企業技術顧問。
+          summary: 與台灣 Ruby 社群的人合開的公司，主要業務為 Ruby/Rails 教育訓練，興辦各種課程講座以及提供企業技術顧問。負責官網架設、影片錄製、教材、課程、出版內容的編寫。
         - year: 2013
           title: 創辦人
           company: 腦袋有動工作室
