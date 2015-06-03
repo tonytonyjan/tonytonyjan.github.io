@@ -21,6 +21,10 @@ comment: true
 - CSS 與 JS 處理 - Assets Pipeline
 - ORM 與關聯式資料庫
 
+# 報名連結
+
+即將公布
+
 ## 時間
 
 即將公布
@@ -79,9 +83,8 @@ comment: true
 
 ## 課前準備
 
-- 開發環境準備
-  - 編輯器（若沒有慣用編輯器，推薦 [Sublime Text](http://www.sublimetext.com/)）
-  - Ruby on Rails 環境
-    - Mac 使用者可參考教學影片：[Mac OS X 上配置 Ruby on Rails 開發環境](http://5xruby.tw/videos/1)
-    - Linux 使用者可參考教學影片：[Linux 上配置 Ruby on Rails 開發環境](http://5xruby.tw/videos/2)
-    - Windows 使用者請安裝 [VirtulBox](https://www.virtualbox.org/)，並[下載虛擬硬碟](https://www.dropbox.com/s/7cbvuwu6bl0qohx/rails.vdi?dl=0)掛載到 VirtualBox。
+- 編輯器（若沒有慣用編輯器，推薦 [Sublime Text](http://www.sublimetext.com/)）
+- Ruby on Rails 環境
+  - Mac 使用者可參考教學影片：[Mac OS X 上配置 Ruby on Rails 開發環境](http://5xruby.tw/videos/1)
+  - Linux 使用者可參考教學影片：[Linux 上配置 Ruby on Rails 開發環境](http://5xruby.tw/videos/2)
+  - Windows 使用者請安裝 [VirtulBox](https://www.virtualbox.org/)，並[下載虛擬硬碟](https://www.dropbox.com/s/7cbvuwu6bl0qohx/rails.vdi?dl=0)掛載到 VirtualBox。
