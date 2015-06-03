@@ -2,6 +2,7 @@
 layout: single
 title: "Ruby on Rails 30 小時基礎班"
 subtitle: 2015 年 7 月桃園場
+description: 講師大兜將透過 30 小時完整的 Ruby 與 Rails 課程，從 Ruby 程式語言、到親手打造一個 Rails 網站，在短短五天內，帶領你深入了解這套世界知名的網站開發框架。
 comment: true
 ---
 
