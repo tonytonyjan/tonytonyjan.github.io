@@ -6,7 +6,7 @@ description: 講師大兜將透過 30 小時完整的 Ruby 與 Rails 課程，�
 comment: true
 ---
 
-[Ruby on Rails](http://rubyonrails.org/) 是當紅的 Web 開發框架，因其優良的架構與開發速度，吸引不少知名公司如 GitHub、Twitter 使用，國內亦有 iCook、GoodLife 等使用者，同時也使許多新創公司的選擇。
+[Ruby on Rails](http://rubyonrails.org/) 是當紅的 Web 開發框架，因其優良的架構與開發速度，吸引不少知名公司如 GitHub、Twitter 使用，國內亦有 iCook、GoodLife 等使用者，同時也是許多新創公司的選擇。
 
 而活躍的社群也是促使生態圈得以蓬勃發展的主因，世界各地每天都有大大小小的 Ruby 社群活動，而在台灣亦有 Ruby Conference、Rails Girls、Rails Bridge 等聚會。
 
