@@ -22,9 +22,9 @@ comment: true
 - CSS 與 JS 處理 - Assets Pipeline
 - ORM 與關聯式資料庫
 
-# 報名連結
+# 報名連結/方式
 
-即將公布
+詳細請洽主辦單位：[桃園 Ruby on Rails 讀書會](https://www.facebook.com/groups/tyror/)
 
 ## 時間
 
@@ -34,7 +34,7 @@ comment: true
 
 ## 地點
 
-即將公布
+中壢市中北路 200 號（中原大學真知教學大樓電腦教室）
 
 ## 講師介紹
 
