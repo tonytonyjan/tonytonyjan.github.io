@@ -57,24 +57,24 @@ comment: true
   - Ruby 基本語法
   - bundler 與 Gemfile
   - rake
-- Rails 概論
+2. Rails 概論
   - 基本指令操作
   - HTTP 簡介
   - MVC 架構
   - CoC 與 DRY 原則
   - routing、controller、view 與 REST
-- Rails 前端
+3. Rails 前端
   - ERB 基礎教學
   - layout、partial
   - Assets Pipeline
   - CoffeeScript 與 JavaScript
   - SASS 與 CSS
-- Rails 資料庫
+4. Rails 資料庫
   - ORM 與 ActiveRecord
   - 資料庫遷移
   - 資料驗證（Validation）
   - 回呼（callback）
-- Rails 後端
+5. Rails 後端
   - E-R Model
   - 資料關聯（Association）
   - 後台製作技巧
