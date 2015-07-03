@@ -17,6 +17,11 @@ zh-TW:
         image: portfolio/5xruby.png
         url: http://5xruby.tw
         type: site
+      - title: Open Calendar
+        category: 2015 台北市政府資料黑客松作品
+        image: portfolio/opencalendar.png
+        url: http://opencalendar.herokuapp.com/
+        type: tool
       - title: Good Luck
         category: Yahoo Hack Day 冠軍作品
         image: portfolio/good_lock.jpg
@@ -58,4 +63,9 @@ zh-TW:
         category: Jaro-Winkler Ruby/C 實作
         image: portfolio/jaro_winkler.png
         url: https://github.com/tonytonyjan/jaro_winkler
+        type: code
+      - title: libpuzzle
+        category: libpuzzle Ruby Wrapper
+        image: portfolio/libpuzzle.png
+        url: https://github.com/tonytonyjan/libpuzzle_ruby
         type: code
