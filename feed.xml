@@ -5,10 +5,41 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-04-15T18:30:00+08:00</updated>
+  <updated>2015-07-03T16:43:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>平凡人出國夢</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/"/>
+    <id>http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/</id>
+    <published>2015-07-03T16:43:00+08:00</published>
+    <updated>2015-07-03T16:55:15+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/okinawa.jpg"&gt;&lt;/p&gt;
+
+&lt;p&gt;六月去了一趟沖繩，這是第一次不是因為工作或是演講而出國，保持多年的「從沒出國玩過」的紀錄就這麼被破除了，高興之餘卻有些小可惜，畢竟再不能以炫耀式的語氣聲稱自己出國從沒有花過錢了。&lt;/p&gt;
+
+&lt;p&gt;遙想兒時出國對筆者而言曾是高不可攀的夢想呢，那時全家都沒有人出過國，畢竟這種娛樂對家裡來說是個不小的負擔。幸...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/okinawa.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;六月去了一趟沖繩，這是第一次不是因為工作或是演講而出國，保持多年的「從沒出國玩過」的紀錄就這麼被破除了，高興之餘卻有些小可惜，畢竟再不能以炫耀式的語氣聲稱自己出國從沒有花過錢了。&lt;/p&gt;
+
+&lt;p&gt;遙想兒時出國對筆者而言曾是高不可攀的夢想呢，那時全家都沒有人出過國，畢竟這種娛樂對家裡來說是個不小的負擔。幸運的是筆者在高二時投入了台北一個基金會的培訓計劃，紀錄一年以來所做的社區關懷服務，且得到了前往新加坡與萊佛士書院（聽說是新加坡的建中）學生交流的機會。那是筆者的第一次，也是整個家裡第一次有個人可以飛出台灣島看看外面的世界，那時心裡真的覺得可以光宗耀祖了。&lt;/p&gt;
+
+&lt;p&gt;後來上了大學，因有幸得以回去基金會幫忙，又一次以小領隊的身份，帶著相隔幾屆的學弟妹飛往新加坡做交流。在此之後就沒有什麼出去的機會，加上大四開始成了家裡的經濟支柱，實在不敢有什麼昂貴的娛樂。這四年一度很羨慕身旁同學寒暑假可以四處出國玩，同時無奈自己成績在競爭激烈的校園中無法申請交換學生。&lt;/p&gt;
+
+&lt;p&gt;現在出社會也有幾年，收入漸趨穩定，但也許是舊習所遷，即便過去所認為的昂貴在現在看似平價，心裡頭仍有幾分疙瘩，畢竟過去省習慣了，這錢實在花不下去，就連國內的著名景點也沒去過幾個，有駕照卻也沒車，由此斷定筆者是休閒界的麻瓜不為過。&lt;/p&gt;
+
+&lt;p&gt;倒是這幾年透過投搞國際議程，筆者出國的機會漸漸變多，由於旅費、住宿大多由大會支出，筆者不用負擔太多經費，也省下不少錢，這似乎是個不錯的出國方式。缺點是機票可能是由大會決定，所以無法安排太彈性的旅程，且大多時間其實要做演講的準備，並不會花太多時間在娛樂上，實在難以放開心去玩。&lt;/p&gt;
+
+&lt;p&gt;直到因緣際會之下認識了一位人氣探險家，帶著麻瓜筆者去沖繩玩，才首次體驗到放開心情去玩的感覺，整趟旅程真的很開心。雖然途中筆者曾出現些&lt;del&gt;可能屬於工程師的&lt;/del&gt;脫線的舉動，現在回憶起來還是非常感謝這位體貼耐心的探險家，陪我共度美好的時光。&lt;/p&gt;
+
+&lt;p&gt;同時此程也解除了許多第一次成就，包括潛水（這輩子沒潛過水，第一次就是日本）、參加 Okinawa.rb、觀賞海豚秀等。想必是永生難忘，特以此文紀念，至於出遊照片與遊記之類的內容，且看筆者心情了XD&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>台灣身份證字號驗證器</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/04/15/national-identification-card-validator-of-taiwan/"/>
@@ -639,63 +670,6 @@ remove_foreign_key :accounts, column: :owner_id
   end
 end
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>RubyKaigi 2014 攻略心得</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2014/10/10/rubykaigi-2014-feedback/"/>
-    <id>http://tonytonyjan.net/2014/10/10/rubykaigi-2014-feedback/</id>
-    <published>2014-10-10T10:29:04+08:00</published>
-    <updated>2015-02-23T02:43:54+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;img alt="Ruby Kaigi 2014" src="/images/rubykaigi.png"&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;這輩子截至目前為止出國好像都還不是為了玩，不知幸也不幸。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;若說去年是接案維生的一年，今年就是演說生涯的起點吧？自四月的 Ruby Conference Taiwan 擔任講者之後，投稿了日本的 Ruby Kaigi，最後幸運的被錄取了，遂有了這次的出國經驗。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;官方網站&lt;/h2&gt;
-
-&lt;p&gt;大會的&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;img alt="Ruby Kaigi 2014" src="/images/rubykaigi.png" /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;這輩子截至目前為止出國好像都還不是為了玩，不知幸也不幸。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;若說去年是接案維生的一年，今年就是演說生涯的起點吧？自四月的 Ruby Conference Taiwan 擔任講者之後，投稿了日本的 Ruby Kaigi，最後幸運的被錄取了，遂有了這次的出國經驗。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;官方網站&lt;/h2&gt;
-
-&lt;p&gt;大會的&lt;a href="http://rubykaigi.org/2014/"&gt;官方網站&lt;/a&gt;是用 &lt;a href="http://middlemanapp.com/"&gt;Middleman&lt;/a&gt; 架設的，不忍說就連本屆的 Logo 也跟 Middleman 長得有點像。筆者因為是講者的緣故被加入了 Ruby Kaigi 官方網站的 GitHub repository，在議程開始的前一個禮拜，那段日子只要訪問 GitHub 就會看到滿滿的日文，且有人發了新的 pull request 我都會收到通知。&lt;/p&gt;
-
-&lt;p&gt;有趣的是，不少 commit message 寫著「fix grammar」。&lt;/p&gt;
-
-&lt;h2 id="section-1"&gt;票價&lt;/h2&gt;
-
-&lt;p&gt;一般會眾 28,000 日幣（相當於 8,000 台幣），覺得貴嗎？貴不貴要看跟什麼比了。畢竟國際上的的研討會票價大約就是落在 5,000 到 10,000 左右。台灣的研討會特色是票價相對便宜，且這麼便宜的情況下竟然還有提供點心與網路，應該也算是一種台灣之光？&lt;/p&gt;
-
-&lt;p&gt;台灣怎麼不拉高價格呢？我覺得是在台灣這樣的票價的研討會是活不下去的，且沒有下午茶點心與網路還會被公幹，自然沒有人敢把票價提升到國際水平。所以 HIT 可以說是台灣的奇蹟研討會。&lt;/p&gt;
-
-&lt;h2 id="section-2"&gt;研討會&lt;/h2&gt;
-
-&lt;p&gt;Ruby Kaigi 的即時口譯做的非常的好，即便台上是日文演講，但透過無線電耳機，幾乎可以聽得懂台上的內容。另外轉場用的背景音樂筆者也非常喜歡，甚至為此整理了 &lt;a href="http://grooveshark.com/#!/playlist/Ruby+Kaigi+2014+Soundtrack/101045969"&gt;Ruby Kaigi 的歌單&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;這幾天我一直被誤認為是日本人，不過似乎也因為這樣得到了不少社交機會，也認識許多朋友。&lt;/p&gt;
-
-&lt;p&gt;特別感謝 Yohei Yasukawa 的幫忙，由於我的演說需要用到有線網路，而這是他幫我溝通處理的，我才有一次完整的演說。這一切都發生在信件的往來，而我是意外在某次午餐與他共桌才與他相認，只能說緣份真是奇妙。&lt;/p&gt;
-
-&lt;h2 id="section-3"&gt;社群生態圈&lt;/h2&gt;
-
-&lt;p&gt;日本的 Ruby 社群相當蓬勃，幾乎每一個都市都有一個社群，光是利用主持人在晚會唱名每一個社群名字的時間，筆者還多吃 3 盤生魚片外加一瓶啤酒。&lt;/p&gt;
-
-&lt;p&gt;台灣的 Ruby 社群我想只有一個 Ruby Taipei 吧？也因為只有一個，所以 Ruby Taiwan 通常也代表 Ruby Taipei。而 Rails 社群就比較多一點，除了台北之外，尚有台南、高雄的社群。&lt;/p&gt;
-
-&lt;p&gt;Rails 是用 Ruby 所建構的，但前者社群明顯比後者蓬勃的多，雖然不是很明白其中所以，但這或許也證明了 Rails 開發者未必會對 Ruby 有興趣吧？&lt;/p&gt;
 </content>
   </entry>
 </feed>

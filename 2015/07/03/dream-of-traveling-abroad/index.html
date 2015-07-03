@@ -7,19 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2011/08/17/using-existing-database-in-rails/">
-  <title>將現有資料庫導入 Rails ActiveModel - 不歸錄</title>
-<meta name="description" content="官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。 當使用 rails 指令產生新的 Model 時，這樣的寫法很常見： ">
-<meta name="keywords" content="Ruby, Ruby on Rails, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="將現有資料庫導入 Rails ActiveModel - 不歸錄" />
-<meta property="og:description" content="官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。 當使用 rails 指令產生新的 Model 時，這樣的寫法很常見： " />
+  <meta property="og:url" content="http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/">
+  <title>平凡人出國夢 - 不歸錄</title>
+<meta name="description" content="六月去了一趟沖繩，這是第一次不是因為工作或是演講而出國，保持多年的「從沒出國玩過」的紀錄就這麼被破除了，高興之餘卻有些小可惜，畢竟再不能以炫耀式的語氣聲稱自己出國從沒有花過錢了。遙想兒時出國對筆者而言曾是高不可攀的夢想呢，那時全家都沒有人出過國，畢竟這種娛樂對家裡來說是個不小的負擔。">
+<meta name="keywords" content="Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="平凡人出國夢 - 不歸錄" />
+<meta property="og:description" content="六月去了一趟沖繩，這是第一次不是因為工作或是演講而出國，保持多年的「從沒出國玩過」的紀錄就這麼被破除了，高興之餘卻有些小可惜，畢竟再不能以炫耀式的語氣聲稱自己出國從沒有花過錢了。遙想兒時出國對筆者而言曾是高不可攀的夢想呢，那時全家都沒有人出過國，畢竟這種娛樂對家裡來說是個不小的負擔。" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
-<meta property="article:tag" content="Ruby" />
-<meta property="article:tag" content="Ruby on Rails" />
-<meta property="article:section" content="程式" />
+<meta property="og:image" content="http://tonytonyjan.net/images/okinawa.jpg" />
+<meta property="article:section" content="閒聊" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
-<meta property="article:published_time" content="2011-08-17T17:45:00+08:00" />
+<meta property="article:published_time" content="2015-07-03T16:43:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -89,7 +87,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">將現有資料庫導入 Rails ActiveModel</h1>
+      <h1 class="entry-title">平凡人出國夢</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -100,159 +98,35 @@
       </span>
       <span class="posted-on">
         在
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2011-08-17T17:45:00+08:00">2011 年 08 月 17 日</time></a>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2015-07-03T16:43:00+08:00">2015 年 07 月 03 日</time></a>
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a title="瀏覽所有 閒聊 的文章" href="/categories/閒聊/">閒聊</a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p>官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。</p>
+      <p><img alt="" src="/images/okinawa.jpg" /></p>
 
-<p>當使用 rails 指令產生新的 Model 時，這樣的寫法很常見：</p>
+<p>六月去了一趟沖繩，這是第一次不是因為工作或是演講而出國，保持多年的「從沒出國玩過」的紀錄就這麼被破除了，高興之餘卻有些小可惜，畢竟再不能以炫耀式的語氣聲稱自己出國從沒有花過錢了。</p>
 
+<p>遙想兒時出國對筆者而言曾是高不可攀的夢想呢，那時全家都沒有人出過國，畢竟這種娛樂對家裡來說是個不小的負擔。幸運的是筆者在高二時投入了台北一個基金會的培訓計劃，紀錄一年以來所做的社區關懷服務，且得到了前往新加坡與萊佛士書院（聽說是新加坡的建中）學生交流的機會。那是筆者的第一次，也是整個家裡第一次有個人可以飛出台灣島看看外面的世界，那時心裡真的覺得可以光宗耀祖了。</p>
 
+<p>後來上了大學，因有幸得以回去基金會幫忙，又一次以小領隊的身份，帶著相隔幾屆的學弟妹飛往新加坡做交流。在此之後就沒有什麼出去的機會，加上大四開始成了家裡的經濟支柱，實在不敢有什麼昂貴的娛樂。這四年一度很羨慕身旁同學寒暑假可以四處出國玩，同時無奈自己成績在競爭激烈的校園中無法申請交換學生。</p>
 
-<pre><code>$ rails g model my_model
-      invoke  active_record
-      create    db/migrate/yyyymmddhhMMss_create_my_models.rb
-      create    app/models/my_model.rb
-      invoke    test_unit
-      create      test/unit/my_model_test.rb
-      create      test/fixtures/my_models.yml
-</code></pre>
+<p>現在出社會也有幾年，收入漸趨穩定，但也許是舊習所遷，即便過去所認為的昂貴在現在看似平價，心裡頭仍有幾分疙瘩，畢竟過去省習慣了，這錢實在花不下去，就連國內的著名景點也沒去過幾個，有駕照卻也沒車，由此斷定筆者是休閒界的麻瓜不為過。</p>
 
-<pre><code class="language-ruby">class CreateMyModels &lt; ActiveRecord::Migration
-  def self.up
-    create_table :my_models do |t|
-      t.timestamps
-    end
-  end
- 
-  def self.down
-    drop_table :my_models
-  end
-end
-</code></pre>
+<p>倒是這幾年透過投搞國際議程，筆者出國的機會漸漸變多，由於旅費、住宿大多由大會支出，筆者不用負擔太多經費，也省下不少錢，這似乎是個不錯的出國方式。缺點是機票可能是由大會決定，所以無法安排太彈性的旅程，且大多時間其實要做演講的準備，並不會花太多時間在娛樂上，實在難以放開心去玩。</p>
 
-<pre><code class="language-ruby"># app/models/my_model.rb
-class MyModel &lt; ActiveRecord::Base
-end
-</code></pre>
+<p>直到因緣際會之下認識了一位人氣探險家，帶著麻瓜筆者去沖繩玩，才首次體驗到放開心情去玩的感覺，整趟旅程真的很開心。雖然途中筆者曾出現些<del>可能屬於工程師的</del>脫線的舉動，現在回憶起來還是非常感謝這位體貼耐心的探險家，陪我共度美好的時光。</p>
 
-<p>當然，如果對於要產生新的 schema 來說，這的確是個好方法。但有有時候我們需要使用資料庫上既有的 table（例如接管某個 legacy database，尤其是這個 database 原先不是架構在 RoR 之上），如此 migratoin 顯得多餘，如果只是單純想要有個 model 介面來撈資料，可能需要解決以下問題：</p>
-
-<ol>
-  <li>
-    <p>不要產生 migration</p>
-
-    <p>因為我們只是想去撈資料，而非更動 table，自然不需要 migrate</p>
-  </li>
-  <li>
-    <p>並非所有 table 都是複數</p>
-
-    <p>指令產生的 migration 可見 table name 預設為 model name 的複數型，但我們的 table 未必如此</p>
-  </li>
-  <li>
-    <p>並非所有的 primary key 都叫 id</p>
-
-    <p>schema 裡頭除了定義使用者自訂的 column 之外，rails 預設會加上 id 和時間戳記（created_at 和 updated_at），而 id 同時也是 primary key 且 預設為 auto_increment，此外 primary key 也有可能是字串</p>
-  </li>
-  <li>
-    <p>有些 primary key 包涵多個 column（composite primary key）</p>
-
-    <p>又稱「組合鍵」，即主鍵由多個欄位組成。遺憾的，RoR 並沒有支援 composite primary key</p>
-  </li>
-</ol>
-
-<p>以下聽我娓娓道來。</p>
-
-<h2 id="migration">不要產生 Migration</h2>
-
-<p>那就是直接建立 <code>app/models/my_model.rb</code></p>
-
-<pre><code class="language-ruby"># app/models/my_model.rb
-class MyModel &lt; ActiveRecord::Base
-end
-</code></pre>
-
-<p>但是建議最好還是以指令方式產生比較省時，記得加上 –skip-migration 參數即可，除此還可以得到 test unit。</p>
-
-<pre><code>$ rails g model my_model --skip-migration
-      invoke  active_record
-      create    app/models/my_model.rb
-      invoke    test_unit
-      create      test/unit/my_model_test.rb
-      create      test/fixtures/my_models.yml
-</code></pre>
-
-<h2 id="table-name">設定 Table Name</h2>
-
-<p>第一步已經完成了，假設我們想撈資料的 table name 為 my_table，我們產生的 model name 為 my_model，按照 Rails convention 法則，應該要有 table 名為 my_models 才是。但假設我們卻想掛羊頭賣狗肉地把 my_model 裝在 my_table 上：</p>
-
-<pre><code class="language-ruby">app/models/my_model.rb
-class MyModel &lt; ActiveRecord::Base
-  set_table_name :my_table
-end
-</code></pre>
-
-<p>試試看，成功了：</p>
-
-<pre><code>$ rails c
-Loading development environment (Rails 3.0.9)
-irb(main):001:0&gt; MyModel
-=&gt; MyModel(id: integer, title: string, description: text)
-</code></pre>
-
-<p>但這只有在 id column 跟好是 primary key 才會這麼順利，萬一 primary key 是別的 column，光這樣這定還不夠。</p>
-
-<h2 id="primary-key">設定 Primary Key</h2>
-
-<p>假設 primary key 是 title：</p>
-
-<pre><code class="language-ruby"># app/models/my_model.rb
-class MyModel &lt; ActiveRecord::Base
-  set_table_name :my_table
-  set_primary_key :title # or 'self.primary_key = :title'
-  # This method is also aliased as primary_key=
-end
-</code></pre>
-
-<p>正常情況下，Active Record 會在我們產生新的 record 時自動產生 primary key，名為 id ，且是會遞增的整數。然而，如果我們在 table 上使用其他 column name 做為 primary key 的名字，我們同時有責任要重新定義該 record 上的 primary key，正如上方展示的程式碼。</p>
-
-<p>神奇的事發生了，我們仍可以透過 id 方法去存取的 primary key。這是因為 Active Record 慣於將 primary key 的操作綁在 id 和 id= 等方法，而 set_primary_key 只是投射 id 會指向的 column name。下方程式碼展示了在 primary key 是 "title" 的情況下用 id 去存取 primary key：</p>
-
-<pre><code>irb(main):010:0&gt; MyModel.first.stuid
-=&gt; "A Title"
-irb(main):011:0&gt; MyModel.first.id # same as MyModel.first.title
-=&gt; "A Title"
-irb(main):012:0&gt; MyModel.find("A Title")
-=&gt; #&lt;MyModel id: "A Title", title: "A Title", description: "A Description"&gt;
-irb(main):013:0&gt;
-</code></pre>
-
-<p>相當乾淨俐落地解決了第三個問題，至於第四個問題，composite primary key，該怎麼辦？假設該 composite primary keys 分別為 title 和 description。恩，加個's'：</p>
-
-<pre><code class="language-ruby">class MyModel &lt; ActiveRecord::Base
-  set_table_name :my_table
-  set_primary_keys :title, :description
-end
-</code></pre>
-
-<p>然後你會免費被贈送一個 NoMethodError Exception。在你一邊擦螢幕時，請聽我說：既然RoR都說不支援了，哪有這麼簡單的事情讓你加個's'就解決呢？這個問題目前的解決方案是透過 plugin 來實現。你可以參考<a href="http://weblog.rubyonrails.org/2006/7/30/composite-primary-keys-for-active-record">這一頁</a>。你會發現，裝完這個 plugin 之後，確實就只要加上一個 <code>s</code>。XD</p>
+<p>同時此程也解除了許多第一次成就，包括潛水（這輩子沒潛過水，第一次就是日本）、參加 Okinawa.rb、觀賞海豚秀等。想必是永生難忘，特以此文紀念，至於出遊照片與遊記之類的內容，且看筆者心情了XD</p>
 
       
     </div>
-    <!-- .entry-meta -->
-    <footer class="entry-meta">
-      <h3>標籤</h3>
-        <a rel="tag" href="/tags/ruby/">Ruby</a>
-        <a rel="tag" href="/tags/ruby-on-rails/">Ruby on Rails</a>
-    </footer>
-    <!-- .entry-meta -->
+    
   </article>
   <!-- .hentry -->
   <!-- .about-author -->
@@ -279,12 +153,9 @@ end
   <nav class="nav-single row">
     <div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="/2011/08/12/ruby-block-proc-lambda/" rel="prev"><span class="meta-nav">←</span> Ruby Block, Proc and Lambda</a>
+    <a href="/2015/04/15/national-identification-card-validator-of-taiwan/" rel="prev"><span class="meta-nav">←</span> 台灣身份證字號驗證器</a>
   </div>
-  <div class="nav-next col-sm-6">
-  <h4>下一篇</h4>
-  <a href="/2011/08/22/16/" rel="next">好久不見，親愛的嘉中 <span class="meta-nav">→</span></a>
-</div>
+  
 </nav>
 <!-- .nav-single --> 
 <!-- #comments -->

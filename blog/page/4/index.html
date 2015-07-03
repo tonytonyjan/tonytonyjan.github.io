@@ -85,6 +85,34 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2013" class="entry-date"><span class="day">20</span>三月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2013/03/20/tj-caesar-cipher/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2013/03/20/tj-caesar-cipher/" rel="bookmark">凱薩密碼中文版</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>靈感是受到凱薩密碼的影響，且英文論壇中為了避免髒話或敏感詞彙被擋，有 rot13 的出現（其實就是凱薩加密，key 設定成 13，所以 rot13 兩次會等於原來的句子）。想說中文也可這樣玩，所以決定寫一個全世界最沒用的玩具。</p>
+
+<h2 id="section">安裝</h2>
+
+<pre><code>gem install tj_caesar_cipher...</code></pre>
+        <a href="/2013/03/20/tj-caesar-cipher/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2013" class="entry-date"><span class="day">19</span>二月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2013/02/19/hahadict/#disqus_thread"></span>留言</span>
     </footer>
@@ -403,106 +431,6 @@
 
 
         <a href="/2012/10/06/one-night-in-taipei/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">2</span>十月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/10/02/dig-gcc-with-tony/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/10/02/dig-gcc-with-tony/" rel="bookmark">大兜的 gcc 歷險記</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>由於不是很清楚 gcc 在編譯 c 文件時到底做了什麼事情，於是展開了深入理解的旅程。從最簡單的 <code>hello.c</code> 開始：</p>
-
-<p>``` c hello.c<br />
-#include <stdio.h></stdio.h></p>
-
-<p>int main(int argc, char* args[]){<br />
-  printf("Hello, world!");<br />
-}<br />
-```</p>
-
-<p>在編譯之前，讓我們回顧一下編譯的步驟：</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>步驟</th>
-      <th>指令</th>
-      <th>中出檔</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>原始碼</td>
-    </tr>
-    <tr>
-      <td>前處理（preprocessing）</td>
-      <td>gcc -E hello.c -o hello.i</td>
-      <td>↓↓</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>原始碼（標頭被展開）</td>
-    </tr>
-    <tr>
-      <td>編譯（compiling）</td>
-      <td>gcc -S hello.i -o hello.s</td>
-      <td>↓↓</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>組合語言</td>
-    </tr>
-    <tr>
-      <td>組譯（assembling）</td>
-      <td>gcc -c hello.s -o hello.o</td>
-      <td>↓↓</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>機器碼</td>
-    </tr>
-    <tr>
-      <td>連結（linking）</td>
-      <td>ld … （暫略）</td>
-      <td>↓↓</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>可執行機器碼</td>
-    </tr>
-  </tbody>
-</table>
-
-<pre><code>-E 僅作預先處理，不進行編譯、組譯和連結
--S 編譯到組合語言，不進行組譯和連結
--c 編譯、組譯到目的程式碼，不進行連結
-</code></pre>
-
-<p>看到鍵盤上的 <code>Esc</code> 了嗎？那正是編譯步驟，是不是超好記的。</p>
-
-
-        <a href="/2012/10/02/dig-gcc-with-tony/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
