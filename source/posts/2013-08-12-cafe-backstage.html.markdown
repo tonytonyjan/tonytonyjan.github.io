@@ -1,7 +1,7 @@
 ---
 title: "[台北] 後門咖啡 Cafe Backstage"
 date: 2013-08-12 13:31 +0800
-category: 行動辦公室
+category: SOHO
 ---
 
 ![](/images/cafe-backstage.jpg)
@@ -34,6 +34,7 @@ SOHO 評價：★★★★☆
 
 
 ![](/images/cafe-backstage-7.jpg)
+
 ### 食物
 
 遺憾筆者只懂一點茶和酒，不敢亂評咖啡，不過有幾次他們在店內會研磨起咖啡豆，整間店裡面都是咖啡的香味，頗讚的。
