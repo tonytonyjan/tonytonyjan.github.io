@@ -1,5 +1,7 @@
 ---
 title: "[台北] 艾斯糖 S Don"
+image: /images/s-don.png
+thumb: /images/thumbs/s-don.png
 date: 2015-07-14 17:19 +0800
 category: SOHO
 ---
