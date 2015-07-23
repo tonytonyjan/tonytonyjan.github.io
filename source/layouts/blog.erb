@@ -99,7 +99,7 @@
 </nav>
 <!-- .nav-single --> 
 <!-- #comments -->
-<%= partial 'disqus' %>
+<%= partial 'disqus' if current_article.data.comment || current_article.data.comment.nil? %>
 </div>
 <!-- .blog-single --> 
 <% end %>
