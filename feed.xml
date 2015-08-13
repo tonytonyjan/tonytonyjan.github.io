@@ -5,10 +5,28 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-07-14T17:19:00+08:00</updated>
+  <updated>2015-08-06T03:34:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>Ruby Conference Taiwan 2015</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/"/>
+    <id>http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/</id>
+    <published>2015-08-06T03:34:00+08:00</published>
+    <updated>2015-08-12T15:09:34+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img src="/images/ruby-conf-tw-2015.png" width="100%" /&gt;&lt;/p&gt;
+
+&lt;p&gt;一年一度的 Ruby Conference 又來啦，筆者小頭一篇，又上了。&lt;/p&gt;
+</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/ruby-conf-tw-2015.png" width="100%" /&gt;&lt;/p&gt;
+
+&lt;p&gt;一年一度的 Ruby Conference 又來啦，筆者小頭一篇，又上了。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>[台北] 艾斯糖 S Don</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/07/14/s-don/"/>
@@ -349,186 +367,6 @@ end
 &lt;p&gt;筆者這次的主題是 Ruby 上的 C 擴展以及去年在 Ruby Kaigi 講的 Sony Remote Camera API，但可能是個 Web 技術研討會，來聽我的講題的人沒有很多。整個研討會中，光是 PHP 與 Java 的網站應用主題就超過了 7 成，而 C 的主題看過去也只有一場（就是我的），所以看來 ConFoo 要真正從 PHP 研討會歷史中脫出，還需要幾年的時間。&lt;/p&gt;
 
 &lt;p&gt;此外不免小感嘆一下，在台灣不知道除了 godfat 以外，是否有寫 Ruby 的人是拿來做 Rails 以外的應用的，很想認識與交流一下。這年頭就連 PTT 上的 Ruby 版也淪為了 Rails 版，Ruby 論壇成了 Rails 論壇，有些小可惜呢。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>2014 回顧</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2015/01/03/2014-review/"/>
-    <id>http://tonytonyjan.net/2015/01/03/2014-review/</id>
-    <published>2015-01-03T21:28:00+08:00</published>
-    <updated>2015-02-23T02:43:03+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/2015-firework.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;好漂亮的雞毛撢子&lt;/del&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;時間&lt;/th&gt;
-      &lt;th&gt;工作&lt;/th&gt;
-      &lt;th&gt;成就&lt;/th&gt;
-      &lt;th&gt;日常&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;四月&lt;/td&gt;
-      &lt;td&gt;成立&lt;a href="/2014/05/30/5xruby-start/"&gt;五倍紅寶石股份有限公司&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;擔任 &lt;a href="http://rubyconf.tw/2014/#speaker-tonytony"&gt;RubyConf Taiwan&lt;/a&gt; 講者、與 Matz 合影&lt;/td&gt;
-      &lt;td&gt;&lt;a href="/2014/03/30/house-moving/"&gt;住的地方從 8 坪進化到 30 坪&lt;/a&gt;、&lt;a href="https://www.facebook.com/photo.php?fbid=10152088697477620"&gt;第一次組衣櫃&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;五月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;六月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;買了這輩子看過最大的電視（55 吋）&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;七月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;花蓮五日遊，實驗白天旅行，晚上工作的可行性&lt;/td&gt;
-      &lt;td&gt;世足通宵派對&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;八月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;九月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;擔任 &lt;a href="http://rubykaigi.org/2014/presentation/S-JianWeihang"&gt;Ruby Kaigi&lt;/a&gt; 講者、第一次搭飛機、第一次去日本&lt;/td&gt;
-      &lt;td&gt;烤肉團&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;十月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;十一月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;25 歲慶生會、開始留鬍子&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;十二月&lt;/td&gt;
-      &lt;td&gt;與五倍紅寶石拆夥&lt;/td&gt;
-      &lt;td&gt;TJDict 上了 &lt;a href="http://free.com.tw/tjdict/"&gt;freeGROUP&lt;/a&gt;，使用人數衝破 17k&lt;/td&gt;
-      &lt;td&gt;湯圓大會、聖誕晚會、跨年派對、PS4 派對&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;感覺今年沒什麼在工作，只有在玩樂啊XD&lt;/p&gt;
-
-&lt;p&gt;不過確實自從有客廳和客房之後，家裡三不五時會有聚會。雖然遠了點，至少有一個同樂地方可以吵再晚都沒有人管，且從家徒四壁到現在有電視機、遊戲機、桌遊 6 款、烤箱、沙發床等，明明只有一個人住，室內拖鞋也莫名其妙增加到 4 雙，平時沒去注意，但突然想起來真的覺得頗誇張的XD&lt;/p&gt;
-
-</summary>
-    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/2015-firework.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;好漂亮的雞毛撢子&lt;/del&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;時間&lt;/th&gt;
-      &lt;th&gt;工作&lt;/th&gt;
-      &lt;th&gt;成就&lt;/th&gt;
-      &lt;th&gt;日常&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;四月&lt;/td&gt;
-      &lt;td&gt;成立&lt;a href="/2014/05/30/5xruby-start/"&gt;五倍紅寶石股份有限公司&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;擔任 &lt;a href="http://rubyconf.tw/2014/#speaker-tonytony"&gt;RubyConf Taiwan&lt;/a&gt; 講者、與 Matz 合影&lt;/td&gt;
-      &lt;td&gt;&lt;a href="/2014/03/30/house-moving/"&gt;住的地方從 8 坪進化到 30 坪&lt;/a&gt;、&lt;a href="https://www.facebook.com/photo.php?fbid=10152088697477620"&gt;第一次組衣櫃&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;五月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;六月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;買了這輩子看過最大的電視（55 吋）&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;七月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;花蓮五日遊，實驗白天旅行，晚上工作的可行性&lt;/td&gt;
-      &lt;td&gt;世足通宵派對&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;八月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;九月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;擔任 &lt;a href="http://rubykaigi.org/2014/presentation/S-JianWeihang"&gt;Ruby Kaigi&lt;/a&gt; 講者、第一次搭飛機、第一次去日本&lt;/td&gt;
-      &lt;td&gt;烤肉團&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;十月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;十一月&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;25 歲慶生會、開始留鬍子&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;十二月&lt;/td&gt;
-      &lt;td&gt;與五倍紅寶石拆夥&lt;/td&gt;
-      &lt;td&gt;TJDict 上了 &lt;a href="http://free.com.tw/tjdict/"&gt;freeGROUP&lt;/a&gt;，使用人數衝破 17k&lt;/td&gt;
-      &lt;td&gt;湯圓大會、聖誕晚會、跨年派對、PS4 派對&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;感覺今年沒什麼在工作，只有在玩樂啊XD&lt;/p&gt;
-
-&lt;p&gt;不過確實自從有客廳和客房之後，家裡三不五時會有聚會。雖然遠了點，至少有一個同樂地方可以吵再晚都沒有人管，且從家徒四壁到現在有電視機、遊戲機、桌遊 6 款、烤箱、沙發床等，明明只有一個人住，室內拖鞋也莫名其妙增加到 4 雙，平時沒去注意，但突然想起來真的覺得頗誇張的XD&lt;/p&gt;
-
-
-
-&lt;p&gt;來看一下去年的 &lt;a href="/2014/01/01/2013-hui-gu/"&gt;2013 回顧&lt;/a&gt;的沒有完成的目標：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;帶全家出國玩&lt;/li&gt;
-  &lt;li&gt;寫書&lt;/li&gt;
-  &lt;li&gt;投稿，並且錄用至少一個研討會&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;沒有錢和時間帶全家出國去玩，但有投稿了 RubyConf Taiwan 與 Ruby Kaigi，並且幸運的錄取了，且 2015 的加拿大 ConFoo 也錄取了筆者兩篇講題，雖然今年業績只有一半，但投稿的目標比預期多出了數倍的績效。&lt;/p&gt;
-
-&lt;p&gt;寫書方面還是沒有完成，不過筆者在 2014 最後一天交出了兩百頁的內容到出版社，以為可以告一段落，想不到還有很多需要修改。但運氣好的話，應該 2015 可以出版吧？&lt;/p&gt;
-
-&lt;p&gt;最近因為與五倍紅寶石拆夥，又回到找外包的生活。目前規劃今年把兵役搞定，然後 2016 可以準備出國工作，至於順利與否，且看老天爺XD&lt;/p&gt;
-
-&lt;p&gt;2015 我來了 :)&lt;/p&gt;
-
 </content>
   </entry>
 </feed>
