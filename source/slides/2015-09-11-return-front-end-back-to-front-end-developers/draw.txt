@@ -1,0 +1,11 @@
+aaa.coffee ┐                 ┌> aaa.js
+bbb.coffee ┼> (transformers) ┼> bbb.js
+ccc.coffee ┘                 └> ccc.js
+
+aaa.js ┐
+bbb.js ┼> (concat) ─> app.js ─> (compressor) ─> app.min.js
+ccc.js ┘
+
+app.min.js ─> (digest) ─> app-{etag-string}.js
+
+
