@@ -1,3 +1,9 @@
+- date: 2015-09-11
+  topic: 還給前端工程師一片天空
+  event: RubyConf Taiwan
+  event_url: http://2015.rubyconf.tw
+  links:
+    - url: /slides/2015-09-11-return-front-end-back-to-front-end-developers/slides.pdf
 - date: 2015-05-04
   topic: Ruby on Rails 金流實戰 - 使用歐付寶
   event: AlphaCamp
