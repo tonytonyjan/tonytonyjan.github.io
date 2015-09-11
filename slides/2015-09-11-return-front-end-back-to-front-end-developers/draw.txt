@@ -9,3 +9,11 @@ ccc.js ┘
 app.min.js ─> (digest) ─> app-{etag-string}.js
 
 
+what/ever/path/*.{js,coffee}     ────┐
+what/ever/path/*.{css,scss,sass} ────┤
+                                         │
+┌───── (gulp) <──────────┘
+│
+├> app/assets/javascripts/application.js
+└> app/assets/javascripts/application.css
+
