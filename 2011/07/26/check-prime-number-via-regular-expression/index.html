@@ -9,10 +9,10 @@
   <meta property="og:site_name" content="不歸錄">
   <meta property="og:url" content="http://tonytonyjan.net/2011/07/26/check-prime-number-via-regular-expression/">
   <title>正規表達式檢查質數 - 不歸錄</title>
-<meta name="description" content="plain The regex that can check if a number is prime /^1?$|^(11+?)\1+?$/ Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。 這是我在網路上看到這一頁，他竟然簡短的用 Regular Expression來檢查一個數字是否為質數，我覺得很有意思，於是放上來與大家分享。 ">
+<meta name="description" content="/^1?$|^(11+?)\1+?$/ Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。 這是我在網路上看到這一頁，他竟然簡短的用 Regular Expression來檢查一個數字是否為質數，我覺得很有意思，於是放上來與大家分享。 ">
 <meta name="keywords" content="正規表達式, Regex, 質數, Regular Expression, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="正規表達式檢查質數 - 不歸錄" />
-<meta property="og:description" content="plain The regex that can check if a number is prime /^1?$|^(11+?)\1+?$/ Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。 這是我在網路上看到這一頁，他竟然簡短的用 Regular Expression來檢查一個數字是否為質數，我覺得很有意思，於是放上來與大家分享。 " />
+<meta property="og:description" content="/^1?$|^(11+?)\1+?$/ Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。 這是我在網路上看到這一頁，他竟然簡短的用 Regular Expression來檢查一個數字是否為質數，我覺得很有意思，於是放上來與大家分享。 " />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="正規表達式" />
@@ -112,9 +112,8 @@
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p><code>plain The regex that can check if a number is prime
-/^1?$|^(11+?)\1+?$/
-</code></p>
+      <pre><code>/^1?$|^(11+?)\1+?$/
+</code></pre>
 
 <p>Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。</p>
 
@@ -122,9 +121,8 @@
 
 
 
-<p><code>perl Using perl
-perl -wle 'print "Prime" if (1 x shift) !~ /^1?$|^(11+?)\1+$/' [number]
-</code></p>
+<pre><code>$ perl -wle 'print "Prime" if (1 x shift) !~ /^1?$|^(11+?)\1+$/' [number]
+</code></pre>
 
 <p>這個正規表達式的使用必須先把欲檢查的數字n，轉換成n個1，例如3換成111，5換成11111，再進行比對。</p>
 
