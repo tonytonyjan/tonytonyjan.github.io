@@ -6,7 +6,7 @@ tags: 正規表達式, Regex, 質數, Regular Expression
 ---
 
 ```
-/^1?$|^(11+?)\1+?$/
+/^1?$|^(11+?)\1+$/
 ```
 
 Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。
