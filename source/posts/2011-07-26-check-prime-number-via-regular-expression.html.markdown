@@ -5,7 +5,7 @@ category: 程式
 tags: 正規表達式, Regex, 質數, Regular Expression
 ---
 
-``` plain The regex that can check if a number is prime
+```
 /^1?$|^(11+?)\1+?$/
 ```
 
@@ -15,8 +15,8 @@ Regular Expession 真的很強大，但是我還不曉得可以強大到用來�
 
 <!-- more -->
 
-``` perl Using perl
-perl -wle 'print "Prime" if (1 x shift) !~ /^1?$|^(11+?)\1+$/' [number]
+```
+$ perl -wle 'print "Prime" if (1 x shift) !~ /^1?$|^(11+?)\1+$/' [number]
 ```
 
 這個正規表達式的使用必須先把欲檢查的數字n，轉換成n個1，例如3換成111，5換成11111，再進行比對。
