@@ -48,6 +48,7 @@
     <!-- .entry-content -->
     <div class="entry-content">
       <%= yield %>
+      <script src="//staging.ziltag.com/plugin.js" data-ziltag="8ba610"></script>
       <% if current_article.data.download || current_article.data.preview || current_article.data.github %><!-- .project-action -->
       <div class="project-action">
         <% if current_article.data.download %><a href="<%= current_article.data.download %>" class="button button-icon big blue"><i class="fa fa-cloud-download"></i>DOWNLOAD</a><% end %>
