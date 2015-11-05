@@ -1,7 +1,10 @@
 ---
 title: Ruby SSE Server 動手做
+image: /images/push_server.jpg
+thumb: /images/thumbs/push_server.jpg
 date: 2015-11-05 01:10 +0800
 category: Ruby
+description: 最近要蓋個 SSE 服務，筆者因貪一時方便就暫時使用 puma 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 select()，少了 epoll()、kqueue() 很不方便，好在 eventmachine 背後使用的是 libev 和 libevent，有用到上述兩個系統調用，但筆者其實是最希望使用 libuv 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 celluloid 替代 eventmachine，但前者在 I/O 的處理上[仍然使用 Kernel.select()，筆者也就作罷。
 ---
 
 [SSE]: http://www.wikiwand.com/en/Server-sent_events
@@ -18,6 +21,12 @@ category: Ruby
 [The C10K Problem]: http://www.kegel.com/c10k.html
 [celluloid-io]: https://github.com/celluloid/celluloid-io
 [actioncable]: https://github.com/rails/actioncable
+
+**本篇文章同時也發表於 [CodeTengu](http://weekly.codetengu.com/)**
+
+![](/images/push_server.jpg)
+
+> 照片是日本硬體製造商 Speedlink 在東京舉辦的 server 投擲大賽，誰能把 server 推得最遠，可以得到最高的分數，圖片中的機器值 50 萬日幣，這也是名符其實的 push server，[影片在此](https://www.youtube.com/watch?v=A_j_iBH6wTI)。
 
 最近要蓋個 [SSE] 服務，筆者因貪一時方便就暫時使用 [puma] 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 `select()`，少了 `epoll()`、`kqueue()` 很不方便，好在 [eventmachine] 背後使用的是 [libev] 和 [libevent]，有用到上述兩個系統調用，但筆者其實是最希望使用 [libuv] 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 [celluloid] 替代 [eventmachine]，但前者在 I/O 的處理上[仍然使用 `Kernel.select()`](https://github.com/celluloid/celluloid-io/blob/5e96845e68fdcd406717e3ab543b0099168a1c15/lib/celluloid/io.rb)，筆者也就作罷。
 
