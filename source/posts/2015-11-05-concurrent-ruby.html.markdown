@@ -19,8 +19,6 @@ category: Ruby
 [celluloid-io]: https://github.com/celluloid/celluloid-io
 [actioncable]: https://github.com/rails/actioncable
 
-# 前言
-
 最近要蓋個 [SSE] 服務，筆者因貪一時方便就暫時使用 [puma] 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 `select()`，少了 `epoll()`、`kqueue()` 很不方便，好在 [eventmachine] 背後使用的是 [libev] 和 [libevent]，有用到上述兩個系統調用，但筆者其實是最希望使用 [libuv] 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 [celluloid] 替代 [eventmachine]，但前者在 I/O 的處理上[仍然使用 `Kernel.select()`](https://github.com/celluloid/celluloid-io/blob/5e96845e68fdcd406717e3ab543b0099168a1c15/lib/celluloid/io.rb)，筆者也就作罷。
 
 # Rails 即時串流
@@ -222,11 +220,11 @@ celluloid 是為了解決 concurrent 問題而存在的，比起 eventmachine，
 
 # 結論
 
-Rails 不是萬靈丹，即便支援了串流功能，仍不適合做 I/O 密集的應用，不過 Rails 5 的 Action Cable 是可以期待一下，因為這東西使用的是 eventmachine 和執行緒，很適合用來維持大量的連線，不過這是為了 websocket 而寫，如果是要做 comet 的應用（長請求），最好另尋方法，使用 Rails 肯定是繞遠路，以 Ruby 的方案來看，著名的專案就屬 eventmachine 與 celluloid。
+Rails 不是萬靈丹，即便支援了串流功能，仍不適合做 I/O 密集的應用，不過 Rails 5 的 Action Cable 是可以期待一下，因為這東西使用的是 eventmachine 和執行緒，很適合用來維持大量的連線，不過這是為了 websocket 而寫，如果是要做 comet 的應用（長請求），最好另尋方法，使用 Rails 恐怕是繞遠路，以 Ruby 的方案來看，著名的專案就屬 eventmachine 與 celluloid。
 
-<em>或者叛逃到 node 或 go 也行啦</em>
+<del>或者叛逃到 node 或 go 也行啦</del>
 
-# 本文中的連結
+# 本文出現的連結
 
 ## 好文
 
