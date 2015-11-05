@@ -99,7 +99,15 @@
     <!-- .entry-content -->     
     <div class="entry-content">
       <p>
-<p>最近要蓋個 <a href="http://www.wikiwand.com/en/Server-sent_events">SSE</a> 服務，筆者因貪一時方便就暫時使用 <a href="https://github.com/puma/puma">puma</a> 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 <code>select()</code>，少了 <code>epoll()</code>、</p>
+<p><strong>本篇文章同時也發表於 <a href="http://weekly.codetengu.com/">CodeTengu</a></strong></p>
+
+<p><img alt="" src="/images/push_server.jpg"></p>
+
+<blockquote>
+  <p>照片是日本硬體製造商 Speedlink 在東京舉辦的 server 投擲大賽，誰能把 server 推得最遠，可以得到最高的分數，圖片中的機器值 50 萬日幣，這也是名符其實的 push server，<a href="https://www.youtube.com/watch?v=A_j_iBH6wTI">影片在此</a>。</p>
+</blockquote>
+
+<p>最近要蓋個 <a href="http://www.wikiwand.com/en/Server-sent_events">SSE</a></p>
         <a href="/2015/11/05/concurrent-ruby/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->

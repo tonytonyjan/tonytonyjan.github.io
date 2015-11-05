@@ -14,13 +14,29 @@
     <link rel="alternate" href="http://tonytonyjan.net/2015/11/05/concurrent-ruby/"/>
     <id>http://tonytonyjan.net/2015/11/05/concurrent-ruby/</id>
     <published>2015-11-05T01:10:00+08:00</published>
-    <updated>2015-11-05T18:19:02+08:00</updated>
+    <updated>2015-11-05T22:50:39+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
     <summary type="html">
-&lt;p&gt;最近要蓋個 &lt;a href="http://www.wikiwand.com/en/Server-sent_events"&gt;SSE&lt;/a&gt; 服務，筆者因貪一時方便就暫時使用 &lt;a href="https://github.com/puma/puma"&gt;puma&lt;/a&gt; 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 &lt;code&gt;select()&lt;/code&gt;，少了 &lt;code&gt;epoll()&lt;/code&gt;、&lt;/p&gt;</summary>
+&lt;p&gt;&lt;strong&gt;本篇文章同時也發表於 &lt;a href="http://weekly.codetengu.com/"&gt;CodeTengu&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/push_server.jpg"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;照片是日本硬體製造商 Speedlink 在東京舉辦的 server 投擲大賽，誰能把 server 推得最遠，可以得到最高的分數，圖片中的機器值 50 萬日幣，這也是名符其實的 push server，&lt;a href="https://www.youtube.com/watch?v=A_j_iBH6wTI"&gt;影片在此&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近要蓋個 &lt;a href="http://www.wikiwand.com/en/Server-sent_events"&gt;SSE&lt;/a&gt;&lt;/p&gt;</summary>
     <content type="html">
+&lt;p&gt;&lt;strong&gt;本篇文章同時也發表於 &lt;a href="http://weekly.codetengu.com/"&gt;CodeTengu&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/push_server.jpg" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;照片是日本硬體製造商 Speedlink 在東京舉辦的 server 投擲大賽，誰能把 server 推得最遠，可以得到最高的分數，圖片中的機器值 50 萬日幣，這也是名符其實的 push server，&lt;a href="https://www.youtube.com/watch?v=A_j_iBH6wTI"&gt;影片在此&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;最近要蓋個 &lt;a href="http://www.wikiwand.com/en/Server-sent_events"&gt;SSE&lt;/a&gt; 服務，筆者因貪一時方便就暫時使用 &lt;a href="https://github.com/puma/puma"&gt;puma&lt;/a&gt; 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 &lt;code&gt;select()&lt;/code&gt;，少了 &lt;code&gt;epoll()&lt;/code&gt;、&lt;code&gt;kqueue()&lt;/code&gt; 很不方便，好在 &lt;a href="https://github.com/eventmachine/eventmachine"&gt;eventmachine&lt;/a&gt; 背後使用的是 &lt;a href="http://software.schmorp.de/pkg/libev.html"&gt;libev&lt;/a&gt; 和 &lt;a href="https://github.com/libevent/libevent"&gt;libevent&lt;/a&gt;，有用到上述兩個系統調用，但筆者其實是最希望使用 &lt;a href="https://github.com/libuv/libuv"&gt;libuv&lt;/a&gt; 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 &lt;a href="https://github.com/celluloid/celluloid"&gt;celluloid&lt;/a&gt; 替代 &lt;a href="https://github.com/eventmachine/eventmachine"&gt;eventmachine&lt;/a&gt;，但前者在 I/O 的處理上&lt;a href="https://github.com/celluloid/celluloid-io/blob/5e96845e68fdcd406717e3ab543b0099168a1c15/lib/celluloid/io.rb"&gt;仍然使用 &lt;code&gt;Kernel.select()&lt;/code&gt;&lt;/a&gt;，筆者也就作罷。&lt;/p&gt;
 
 &lt;h1 id="rails-"&gt;Rails 即時串流&lt;/h1&gt;
