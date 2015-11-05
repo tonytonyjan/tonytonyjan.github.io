@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# article: http://ogp.me/ns/article#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="大兜">
+  <meta property="og:site_name" content="不歸錄">
+  <meta property="og:url" content="http://tonytonyjan.net/2015/11/05/concurrent-ruby/">
+  <title>Ruby SSE Server 動手做 - 不歸錄</title>
+<meta name="description" content=" 最近要蓋個 SSE 服務，筆者因貪一時方便就暫時使用 puma 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 select()，少了 epoll()、">
+<meta name="keywords" content="Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="Ruby SSE Server 動手做 - 不歸錄" />
+<meta property="og:description" content=" 最近要蓋個 SSE 服務，筆者因貪一時方便就暫時使用 puma 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 select()，少了 epoll()、" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="article:section" content="Ruby" />
+<meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
+<meta property="article:published_time" content="2015-11-05T01:10:00+08:00" />
+
+  <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH --> 
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+      <input type="hidden" name="q" value="">
+      <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">Ruby SSE Server 動手做</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by"> 
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        在
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2015-11-05T01:10:00+08:00">2015 年 11 月 05 日</time></a>
+      </span>
+      <span class="posted-in">
+        發表於
+        <a title="瀏覽所有 Ruby 的文章" href="/categories/ruby/">Ruby</a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      
+<p>最近要蓋個 <a href="http://www.wikiwand.com/en/Server-sent_events">SSE</a> 服務，筆者因貪一時方便就暫時使用 <a href="https://github.com/puma/puma">puma</a> 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 <code>select()</code>，少了 <code>epoll()</code>、<code>kqueue()</code> 很不方便，好在 <a href="https://github.com/eventmachine/eventmachine">eventmachine</a> 背後使用的是 <a href="http://software.schmorp.de/pkg/libev.html">libev</a> 和 <a href="https://github.com/libevent/libevent">libevent</a>，有用到上述兩個系統調用，但筆者其實是最希望使用 <a href="https://github.com/libuv/libuv">libuv</a> 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 <a href="https://github.com/celluloid/celluloid">celluloid</a> 替代 <a href="https://github.com/eventmachine/eventmachine">eventmachine</a>，但前者在 I/O 的處理上<a href="https://github.com/celluloid/celluloid-io/blob/5e96845e68fdcd406717e3ab543b0099168a1c15/lib/celluloid/io.rb">仍然使用 <code>Kernel.select()</code></a>，筆者也就作罷。</p>
+
+<h1 id="rails-">Rails 即時串流</h1>
+
+<p>雖然以 Rails 時下的 HTTP server 方案，要做串流服務有點吃力，但要做也是可行的，串流功能在 Rails 4 後才開始支援，controller 需要 mix <code>ActionController::Live</code> 才可以使用 <code>response.stream</code>，建議可以參考 tenderlove 在 2012 寫的 <a href="http://tenderlovemaking.com/2012/07/30/is-it-live.html">Is it live?</a>。</p>
+
+<pre><code class="language-ruby">class MyController &lt; ActionController::Base
+  include ActionController::Live
+
+  def stream
+    response.headers['Content-Type'] = 'text/event-stream'
+    100.times {
+      response.stream.write "hello world\n"
+      sleep 1
+    }
+  ensure
+    response.stream.close
+  end
+end
+</code></pre>
+
+<p>上述程式碼不至於難以理解，頂多注意要記得關掉 stream，否則打開的 socket 會一直開著直到海枯石爛，導致最系統上的檔案描述符被一堆死掉的 socket 佔用。</p>
+
+<p>大家要更關注的應該是 HTML5 支援的 SSE 功能要怎麼在 Rails 上實現，當然我們可直接徒手寫：</p>
+
+<pre><code class="language-ruby">class MyController &lt; ActionController::Base
+  include ActionController::Live
+
+  def index
+    response.headers['Content-Type'] = 'text/event-stream'
+    3.times {
+      response.stream.write "event: time\ndata: #{Time.now}\n\n"
+    }
+  ensure
+    sse.close
+  end
+end
+</code></pre>
+
+<p>在 <code>data</code> 部分是任意的字串，不過大部分的案例我們會使用 JSON，好讓 client 端可以更輕易取得資料，但這樣新版本的寫法會用到許多 <code>Hash#to_json</code> 或 <code>Array#to_json</code>，且徒手送出符合 SSE 規格的字串也很不方便，好在 Rails 也有 <code>ActionController::Live::SSE</code> 可以用：</p>
+
+<pre><code class="language-ruby">class MyController &lt; ActionController::Base
+  include ActionController::Live
+
+  def index
+    response.headers['Content-Type'] = 'text/event-stream'
+    sse = SSE.new(response.stream, retry: 300, event: "event-name")
+    sse.write({ name: 'John'})
+    sse.write({ name: 'John'}, id: 10)
+    sse.write({ name: 'John'}, id: 10, event: "other-event")
+    sse.write({ name: 'John'}, id: 10, event: "other-event", retry: 500)
+  ensure
+    sse.close
+  end
+end
+</code></pre>
+
+<p><code>ActionController::Live::SSE</code> 跟 tenderlove 在 2012 寫的版本大同小異，即便是在 Rails 4 上，也是一段不到 40 行的類別，目的是將 <code>#write</code> 方法包裝，讓本來只能寫入字串的 <code>#write</code>，變得可以傳入物件（大多情況下是 Hash 或是 Array 物件），片段程式碼：</p>
+
+<pre><code class="language-ruby">def write(object, options = {})
+  case object
+  when String
+    perform_write(object, options)
+  else
+    perform_write(ActiveSupport::JSON.encode(object), options)
+  end
+end
+</code></pre>
+
+<h2 id="rails--http-">別用 Rails 做 HTTP 推送服務</h2>
+
+<p>從以前工程師就在苦思如何在有限的運算單位與記憶體之下服務更多的訪客，Rails 的並行性目前已有許多方案，做法不外乎是用執行緒（puma）、行程（unicorn）或者兩者並行（rainbows、puma clustered mode），無論何者，每個連線都會佔用至少一個行程或是執行緒，直到 action 方法執行結束才會釋放資源。</p>
+
+<p>這種架構適合運算密集的服務，通常一份 HTML 可以在 300ms 內傳輸完畢，I/O 佔用的時間很短，行程或執行緒可以很快被釋放；但如果是 I/O 密集的服務（例如串流服務），由於 I/O 佔用時間長，所以我們通常不會一些像是影片的大檔案放在 Rails 的 action 中去傳輸，而是丟到 public 目錄下或是 S3。</p>
+
+<p>舉例如果有個影片需要 1 分鐘的下載時間，我們交給 Rails 去處理，且 puma 設定支援 32 個執行緒，那麼同一分鐘內只能有最多 32 人可以看影片，如果你要蓋一個 YouTube 或 RedTube，同一時間只能服務最多 32 人，會很不方便。</p>
+
+<blockquote>
+  <p>把執行緒限制調高到十萬？</p>
+</blockquote>
+
+<p>調高到十萬並不是什麼好事，想像一下，一台機器有上萬個執行緒在跑，但是只有 4 顆處理器是個怎樣的情形，光是上下文交換就可以耗盡資源了，何況好不容易交換到某個執行緒，結果 I/O 太忙，連一個位元組也沒傳到就又被交換走了。</p>
+
+<p>所以即便在 Rails 做 SSE 是如此容易，筆者也不會建議用 Rails 做 SSE，理由是支援 Rails 的 HTTP 伺服器，無論是 unicorn 或 puma 等皆然，它們每服務一個連線會佔用一個行程或是執行緒造成阻塞，此架構下不適合實作提供長久連線的服務（例如 push server 網路遊戲、聊天室等）。</p>
+
+<h1 id="io-multiplexing-">I/O Multiplexing 動手做</h1>
+
+<p>Ruby 內建相關的系統調用只有 <code>select()</code>，沒有 <code>epoll()</code>、沒有 <code>kqueue</code>，在阻塞方面也只有提供 <code>IO#read_nonblock</code> 和 <code>IO#write_nonblock</code>，沒有支援 AIO，在這樣的資源下，選用非同步阻塞的策略也是很合理的，筆者先後用原生 Ruby 做了第一個版本，再用 eventmachine 做了另外一個，程式碼如下：</p>
+
+<h2 id="kernelselect">Kernel.select()</h2>
+
+<p>Ruby 有內建 <code>select()</code> 系統調用可以使用，但 <code>select()</code> 最大的弱點是受到 <code>FD_SETSIZE</code> 的限制，除非重新編譯內核，否則在許多 Linux 發行下預設是 1024，扣掉 server socket，只能服務 1023 個訪客，所以這段程式碼可用於學習，不建議用在產品中：</p>
+
+<pre><code class="language-ruby">require 'socket'
+
+SERVER_SOCKET = TCPServer.new 'localhost', 3310
+SOCKETS = [SERVER_SOCKET]
+
+Thread.new do
+  loop do
+    clients = SOCKETS - [SERVER_SOCKET]
+    clients.each do |socket|
+      socket.send "event: time\ndata: #{Time.now}\n\n", 0
+    end
+    sleep 1
+  end
+end
+
+# I/O loop
+loop do
+  # 這行是阻塞的，直到有任何一個檔案描述符狀態變成可讀或可寫，內核會主動通知
+  ready_to_read, ready_to_write, in_error = select(SOCKETS, [], [])
+  ready_to_read.each do |socket|
+    case socket
+    when SERVER_SOCKET
+      client_socket, client_addrinfo = SERVER_SOCKET.accept
+      SOCKETS &lt;&lt; client_socket
+      puts "connect: #{client_socket}"
+    else # 若非 server 即 client socket
+      begin
+        socket.recv(1024)
+        socket.send "HTTP/1.1 200 OK
+Server: Ziltag Push Server
+Content-Type: text/event-stream
+Connection: keep-alive
+Access-Control-Allow-Origin: *\n\n", 0
+      rescue
+        $stderr.puts $!, $@
+        SOCKETS.delete(socket)
+        puts "disconnect: #{socket}"
+      end
+    end
+  end
+end
+</code></pre>
+
+<p>如果你願意重編內核調高 <code>FD_SET_SIZE</code>，這個做法是滿足 C10K 的。</p>
+
+<h1 id="eventmachine">eventmachine</h1>
+
+<p>可惜 <code>select()</code> 有諸多問題讓人們漸漸放棄使用，好在 eventmachine 使用 libevent，會根據作業系統去支援相對的系統調用，在 Linux 選用 <code>epoll()</code>，在 FreeBSD 選用 <code>kqueue()</code>，且提供了抽象的介面讓使用者可以輕易實作出 I/O 事件驅動的程式：</p>
+
+<pre><code class="language-ruby">require 'eventmachine'
+
+class PushServer &lt; EM::Connection
+  @@clients = []
+
+  def self.clients
+    @@clients
+  end
+
+  def broadcast msg, slugs
+    @@clients.each do |client|
+      client.send_data msg
+    end
+  end
+
+  def post_init
+    @@clients &lt;&lt; self
+    puts "#{self} connected"
+  end
+
+  def receive_data data
+    send_data "HTTP/1.1 200 OK
+Server: Ziltag Push Server
+Content-Type: text/event-stream
+Connection: keep-alive
+Access-Control-Allow-Origin: *\n\n"
+  end
+
+  def unbind
+    @@clients.delete(self)
+    puts "#{self} disconnected"
+  end
+end
+
+EventMachine.run do
+  EventMachine.add_periodic_timer(1) do
+    PushServer.clients.each do |client|
+      client.send_data "event: time\ndata: #{Time.now}\n\n"
+    end
+  end
+  EventMachine.start_server '0.0.0.0', 3310, PushServer
+end
+</code></pre>
+
+<p>eventmachine 在連線產生時，會去監聽該 socket 描述符，收到資料時會觸發 <code>#receive_data</code>，比起剛剛的 <code>select()</code> 實作，使用 eventmachine 會更容易維護，且可以輕易在 I/O 策略上做切換（例如在 <code>EventMachine.run</code> 之前先執行 <code>EventMachine.epoll</code>），很方便。</p>
+
+<blockquote>
+  <p>為何不用 celluloid？</p>
+</blockquote>
+
+<p>celluloid 是為了解決 concurrent 問題而存在的，比起 eventmachine，他的應用層面更廣泛，因為在真實世界中遇到的問題不會只有 I/O 要處理，有些計算密集的程式用 thread 也許更有效率，所以 celluloid 的作者決定同時用了執行緒和 I/O multiplexing 兩種技巧去解決所有並行的問題，而 eventmachine 只是 celluloid 的其中一個擴展而已（<a href="https://github.com/celluloid/celluloid-io">celluloid-io</a>）。</p>
+
+<p>但筆者只是單純寫個 SSE 服務，用 eventmachine 就綽綽有餘了，即便 eventmachine 只用到一顆處理器，但多開幾個伺服器然後反向代理也是可以做到橫向擴展。</p>
+
+<h1 id="section">結論</h1>
+
+<p>Rails 不是萬靈丹，即便支援了串流功能，仍不適合做 I/O 密集的應用，不過 Rails 5 的 Action Cable 是可以期待一下，因為這東西使用的是 eventmachine 和執行緒，很適合用來維持大量的連線，不過這是為了 websocket 而寫，如果是要做 comet 的應用（長請求），最好另尋方法，使用 Rails 恐怕是繞遠路，以 Ruby 的方案來看，著名的專案就屬 eventmachine 與 celluloid。</p>
+
+<p><del>或者叛逃到 node 或 go 也行啦</del></p>
+
+<h1 id="section-1">本文出現的連結</h1>
+
+<h2 id="section-2">好文</h2>
+
+<ul>
+  <li><a href="http://www.wikiwand.com/en/Server-sent_events">SSE</a></li>
+  <li><a href="http://www.slideshare.net/KyleDrake/hybrid-concurrency-patterns">Hybrid Concurrency Patterns</a></li>
+  <li><a href="http://www.ibm.com/developerworks/cn/linux/l-async">使用异步 I/O 大大提高应用程序的性能</a></li>
+  <li><a href="http://tenderlovemaking.com/2012/07/30/is-it-live.html">Is it live?</a></li>
+  <li><a href="http://www.html5rocks.com/en/tutorials/eventsource/basics">Stream Updates with Server-Sent Events</a></li>
+</ul>
+
+<h2 id="section-3">開原專案</h2>
+
+<ul>
+  <li><a href="https://github.com/puma/puma">puma</a></li>
+  <li><a href="http://www.kegel.com/c10k.html">The C10K Problem</a></li>
+  <li><a href="http://software.schmorp.de/pkg/libev.html">libev</a></li>
+  <li><a href="https://github.com/eventmachine/eventmachine">eventmachine</a></li>
+  <li><a href="https://github.com/celluloid/celluloid">celluloid</a></li>
+  <li><a href="https://github.com/libevent/libevent">libevent</a></li>
+  <li><a href="https://github.com/libuv/libuv">libuv</a></li>
+  <li><a href="https://github.com/celluloid/celluloid-io">celluloid-io</a></li>
+  <li><a href="https://github.com/rails/actioncable">actioncable</a></li>
+</ul>
+
+      
+    </div>
+    
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio --> 
+    <div class="author-bio">
+      <!-- .author-img --> 
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio --> 
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2015/08/06/ruby-conference-taiwan-2015/" rel="prev"><span class="meta-nav">←</span> Ruby Conference Taiwan 2015</a>
+  </div>
+  
+</nav>
+<!-- .nav-single --> 
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single --> 
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <!-- <script src="/js/smoothscroll.js"></script> -->
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+  <script src="//staging.ziltag.com/plugin.js" data-ziltag="8ba610"></script>
+</body>
+</html>
