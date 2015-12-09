@@ -5,16 +5,85 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-11-05T01:10:00+08:00</updated>
+  <updated>2015-12-09T00:45:00+09:00</updated>
   <author>
     <name>大兜</name>
   </author>
   <entry>
+    <title>PTT 每天自動登入小程式</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2015/12/08/login-ptt-everyday-automatically/"/>
+    <id>http://tonytonyjan.net/2015/12/08/login-ptt-everyday-automatically/</id>
+    <published>2015-12-09T00:45:00+09:00</published>
+    <updated>2015-12-09T14:17:12+09:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/ptt.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;最近大選近了，八卦版似乎將發文門檻調高到了 1000 次，帶風向的黨工少了，頓時清新了許多（不過仍然影響不到筆者）。其實養 PTT 帳號不容易，因為同一天只算登入一次，我們得每天記得登入一次 PTT，否則就平白損失了24 小時，如果沒有 PTT 成癮症，其實很容易忘記。&lt;/p&gt;
+
+&lt;p&gt;而身為工程師如筆...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/ptt.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近大選近了，八卦版似乎將發文門檻調高到了 1000 次，帶風向的黨工少了，頓時清新了許多（不過仍然影響不到筆者）。其實養 PTT 帳號不容易，因為同一天只算登入一次，我們得每天記得登入一次 PTT，否則就平白損失了24 小時，如果沒有 PTT 成癮症，其實很容易忘記。&lt;/p&gt;
+
+&lt;p&gt;而身為工程師如筆者，為了遵守 DRY 原則，就應該寫個小程式去自動化這份工作才是。當然自己徒手寫程式建立 socket 與 PTT 做溝通是最直覺的想法，只不過 TCP 牽線容易，後續的 IO 處理則頗麻煩，為了模擬真實的操作，必須根據 socket 送來的字串判斷現在是要我們寫入帳號密碼還是按下回車。&lt;/p&gt;
+
+&lt;p&gt;所幸這個問題在 1994 年就已經有人做出了專門的工具 &lt;code&gt;expect&lt;/code&gt;，用來將互動式的 IO 介面自動化。例如 &lt;code&gt;apt-get install&lt;/code&gt; 有時會被詢問一些是否覆蓋檔案或是安裝額外套件的問題，進而卡住，如果不用 &lt;code&gt;-y&lt;/code&gt; 之類的旗標，也可以透過 &lt;code&gt;expect&lt;/code&gt; 來實現。&lt;/p&gt;
+
+&lt;p&gt;寫腳本之前先確認 &lt;code&gt;expect&lt;/code&gt; 的路徑：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which expect
+/usr/local/bin/expect
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;expect&lt;/code&gt; 是基於 Tcl 的工具，意即 &lt;code&gt;expect&lt;/code&gt; 腳本就是 Tcl 腳本，以下是用 &lt;code&gt;expect&lt;/code&gt; 寫的 PTT 自動登入程式：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-tcl"&gt;#!/usr/local/bin/expect -f
+set timeout 60
+log_file -noappend $env(HOME)/log/ptt.log
+spawn telnet ptt.cc
+expect "new"
+send "$env(PTT_ID)\r"
+expect ":"
+send "$env(PTT_PWD)\r"
+expect {
+  "您想刪除其他重複登入的連線嗎" {
+    send "n\r"
+    exp_continue
+  }
+  "請按任意鍵繼續" {
+    send "\r"
+    exp_continue
+  }
+  "批踢踢實業坊" {
+    exit
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;這裡要注意的是編碼問題，因為 PTT 是 BIG-5 編碼，直接在原始碼中放 UTF-8 的中文字串會導致誤判，筆者是先透過 &lt;code&gt;iconv -f UTF-8 -t BIG-5&lt;/code&gt; 處理原始碼。&lt;/p&gt;
+
+&lt;p&gt;假設腳本命名為 ptt，使用方式為：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PTT_ID=PTT_帳號 PTT_PWD=PTT_密碼 ptt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;至於每天都執行一次的任務，就交給 &lt;code&gt;crontab&lt;/code&gt; 即可：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PATH=/path/to/ptt/bin
+6 6 * * * LC_ALL=zh_TW.Big5 PTT_ID=帳號 PTT_PWD=密碼 ptt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大功告成！&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Ruby SSE Server 動手做</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/11/05/concurrent-ruby/"/>
     <id>http://tonytonyjan.net/2015/11/05/concurrent-ruby/</id>
-    <published>2015-11-05T01:10:00+08:00</published>
-    <updated>2015-11-05T22:50:39+08:00</updated>
+    <published>2015-11-05T02:10:00+09:00</published>
+    <updated>2015-11-05T23:50:39+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -270,8 +339,8 @@ end
     <title>Ruby Conference Taiwan 2015</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/"/>
     <id>http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/</id>
-    <published>2015-08-06T03:34:00+08:00</published>
-    <updated>2015-08-18T18:03:11+08:00</updated>
+    <published>2015-08-06T04:34:00+09:00</published>
+    <updated>2015-08-18T19:03:11+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -299,8 +368,8 @@ end
     <title>Rails 購物車設計</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/"/>
     <id>http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/</id>
-    <published>2015-08-05T21:14:00+08:00</published>
-    <updated>2015-10-08T22:24:11+08:00</updated>
+    <published>2015-08-05T22:14:00+09:00</published>
+    <updated>2015-10-08T23:24:11+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -400,8 +469,8 @@ end
     <title>[台北] 艾斯糖 S Don</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/07/14/s-don/"/>
     <id>http://tonytonyjan.net/2015/07/14/s-don/</id>
-    <published>2015-07-14T17:19:00+08:00</published>
-    <updated>2015-07-15T08:43:31+08:00</updated>
+    <published>2015-07-14T18:19:00+09:00</published>
+    <updated>2015-07-15T09:43:31+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -468,8 +537,8 @@ SOHO 評價：★★★★☆&lt;/p&gt;
     <title>平凡人出國夢</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/"/>
     <id>http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/</id>
-    <published>2015-07-03T16:43:00+08:00</published>
-    <updated>2015-07-03T17:02:18+08:00</updated>
+    <published>2015-07-03T17:43:00+09:00</published>
+    <updated>2015-07-03T18:02:18+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -495,115 +564,6 @@ SOHO 評價：★★★★☆&lt;/p&gt;
 &lt;p&gt;同時此程也解除了許多第一次成就呢，包括潛水（這輩子沒潛過水，第一次就是獻給日本）、參加 Okinawa.rb（整個會場的電腦都是 Google Translator 其實很有趣啊）、觀賞海豚秀等。想必是永生難忘，特以此文紀念。&lt;/p&gt;
 
 &lt;p&gt;至於出遊照片與遊記，且看筆者心情了XD&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>台灣身份證字號驗證器</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2015/04/15/national-identification-card-validator-of-taiwan/"/>
-    <id>http://tonytonyjan.net/2015/04/15/national-identification-card-validator-of-taiwan/</id>
-    <published>2015-04-15T18:30:00+08:00</published>
-    <updated>2015-04-15T20:21:22+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;今天在 Ruby Taiwan 的 &lt;a href="https://www.facebook.com/groups/142197385837507/permalink/888110727912832/"&gt;FB 社團上&lt;/a&gt;看到 adz 大大在問是否有身份證字號驗證的 gem 可以用。&lt;/p&gt;
-
-&lt;p&gt;這東西記得在大一時用 C、Java 各寫過一次，程式碼已遺失，反正今天寫了一天程式也累了，只好寫別的程式來放鬆一下（啥？），不過這次會用 Ruby 來寫，同樣的程式碼我也放在 &lt;a href="https://gist.github.com/tonytonyjan/361282d5b6771660b88c"&gt;Gist&lt;/a&gt;&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;今天在 Ruby Taiwan 的 &lt;a href="https://www.facebook.com/groups/142197385837507/permalink/888110727912832/"&gt;FB 社團上&lt;/a&gt;看到 adz 大大在問是否有身份證字號驗證的 gem 可以用。&lt;/p&gt;
-
-&lt;p&gt;這東西記得在大一時用 C、Java 各寫過一次，程式碼已遺失，反正今天寫了一天程式也累了，只好寫別的程式來放鬆一下（啥？），不過這次會用 Ruby 來寫，同樣的程式碼我也放在 &lt;a href="https://gist.github.com/tonytonyjan/361282d5b6771660b88c"&gt;Gist&lt;/a&gt; 上面：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;MAP = {
-  'A' =&amp;gt; [1, 0], 'B' =&amp;gt; [1, 1], 'C' =&amp;gt; [1, 2], 'D' =&amp;gt; [1, 3], 'E' =&amp;gt; [1, 4], 'F' =&amp;gt; [1, 5], 'G' =&amp;gt; [1, 6], 'H' =&amp;gt; [1, 7], 'I' =&amp;gt; [3, 4],
-  'J' =&amp;gt; [1, 8], 'K' =&amp;gt; [1, 9], 'L' =&amp;gt; [2, 0], 'M' =&amp;gt; [2, 1], 'N' =&amp;gt; [2, 2], 'O' =&amp;gt; [3, 5], 'P' =&amp;gt; [2, 3], 'Q' =&amp;gt; [2, 4], 'R' =&amp;gt; [2, 5],
-  'S' =&amp;gt; [2, 6], 'T' =&amp;gt; [2, 7], 'U' =&amp;gt; [2, 8], 'V' =&amp;gt; [2, 9], 'W' =&amp;gt; [3, 2], 'X' =&amp;gt; [3, 0], 'Y' =&amp;gt; [3, 1], 'Z' =&amp;gt; [3, 3]
-}
- 
-MULTIPLIER = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1]
- 
-def id_check id
-  return false unless id =~ /\A[A-Z]\d{9}\z/
-  chars = id.chars
-  numbers = MAP[chars.shift] + chars.map!(&amp;amp;:to_i)
- 
-  sum, i = 0, 0
-  while i &amp;lt; 11
-    sum += numbers[i] * MULTIPLIER[i]
-    i += 1
-  end
-  sum % 10 == 0
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;寫完後還不免想要比較一下別人的 code，不料也能意外的比網路上僅存的兩個 gem 快兩倍以上：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;require 'benchmark'
-require 'id_check'
-require 'taiwanese_id_builder'
-require 'TaiwanUserID'
- 
-n = 100000
-Benchmark.bmbm do |x|
-  x.report('wayne5540  '){ n.times{ TaiwaneseIdBuilder.valid?('A123456789') } }
-  dummy = Object.new.extend(TaiwanUserID)
-  x.report('kaochenlong'){ n.times{ dummy.is_valid?('A123456789') } }
-  x.report('tonytonyjan'){ n.times{ id_check('A123456789') } }
-end
- 
-# wayne5540     1.080000   0.230000   1.310000 (  1.319509)
-# kaochenlong   1.860000   0.010000   1.870000 (  1.879476)
-# tonytonyjan   0.550000   0.000000   0.550000 (  0.557314)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="while-"&gt;while 無敵&lt;/h2&gt;
-
-&lt;p&gt;筆者只知道 Ruby 中的迭代方法，無論用 &lt;code&gt;#each&lt;/code&gt; 還是 &lt;code&gt;#times&lt;/code&gt;，沒有一個比 &lt;code&gt;while&lt;/code&gt; 還要快的，所以果斷用了 &lt;code&gt;while&lt;/code&gt; 來解題，但這題其實要幾兩個陣列相乘再做加總，其實可以用 &lt;code&gt;#zip&lt;/code&gt; 甚至是 Ruby 內建的 &lt;code&gt;Matrix&lt;/code&gt; 來做。&lt;/p&gt;
-
-&lt;p&gt;正想做 benchmark 時就搜尋到&lt;a href="http://stackoverflow.com/questions/7372489/whats-the-efficient-way-to-multiply-two-arrays-and-get-sum-of-multiplied-values"&gt;這篇文章&lt;/a&gt;，所以果然還是 &lt;code&gt;while&lt;/code&gt; 無敵啊XD。&lt;/p&gt;
-
-&lt;p&gt;對高效能的 Ruby 有興趣的人可以參考 Juanito Fatas 的 &lt;a href="https://github.com/JuanitoFatas/fast-ruby"&gt;fast-ruby&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id="section"&gt;其他人怎麼寫&lt;/h2&gt;
-
-&lt;p&gt;在&lt;a href="https://github.com/wayne5540/taiwanese_id_builder/blob/master/lib/taiwanese_id_builder.rb"&gt;這裡&lt;/a&gt;可以找到 wayne5540 的程式碼，其中最令人糾結的是有一個 &lt;code&gt;puts&lt;/code&gt; 沒有拿掉，所以在執行 &lt;code&gt;#valid?&lt;/code&gt; 時會把結果印到螢幕上。所以要是像筆者一樣寫了 benchmark，自然是噴的整個螢幕都是。&lt;/p&gt;
-
-&lt;p&gt;有趣的是筆者意外在 rubygems.org 找到高見龍的 &lt;a href="https://rubygems.org/gems/TaiwanUserID"&gt;gem&lt;/a&gt;，從時間上看是 2013 年 2 月推上來的，且 GitHub 上面找不到，也許是用在教學時寫的。&lt;/p&gt;
-
-&lt;p&gt;裡面只有一個 32 行的檔案，比起 wayne5540 的 gem 要輕巧許多，但也不難看出是效能是怎麼被影響的：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;require "TaiwanUserID/version"
-
-module TaiwanUserID
-  def is_valid?(id)
-    cities = {
-      :A =&amp;gt; '10', :B =&amp;gt; '11', :C =&amp;gt; '12', :D =&amp;gt; '13',
-      :E =&amp;gt; '14', :F =&amp;gt; '15', :G =&amp;gt; '16', :H =&amp;gt; '17',
-      :I =&amp;gt; '34', :J =&amp;gt; '18', :K =&amp;gt; '19', :L =&amp;gt; '20',
-      :M =&amp;gt; '21', :N =&amp;gt; '22', :O =&amp;gt; '35', :P =&amp;gt; '23',
-      :Q =&amp;gt; '24', :R =&amp;gt; '25', :S =&amp;gt; '26', :T =&amp;gt; '27',
-      :U =&amp;gt; '28', :V =&amp;gt; '29', :W =&amp;gt; '32', :X =&amp;gt; '30',
-      :Y =&amp;gt; '31', :Z =&amp;gt; '33',
-    }
-
-    id_array = id.upcase.split('')
-
-    special = cities[id_array.first.to_sym][0].to_i * 1 + cities[id_array.first.to_sym][1].to_i * 9
-    sum =
-      special +
-      id_array[1].to_i * 8 +
-      id_array[2].to_i * 7 +
-      id_array[3].to_i * 6 +
-      id_array[4].to_i * 5 +
-      id_array[5].to_i * 4 +
-      id_array[6].to_i * 3 +
-      id_array[7].to_i * 2 +
-      id_array[8].to_i * 1 +
-      id_array[9].to_i
-
-    return sum % 10 == 0
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
 </content>
   </entry>
 </feed>
