@@ -59,7 +59,7 @@ PTT_ID=PTT_帳號 PTT_PWD=PTT_密碼 ptt
 
 
 ```
-PATH=/net/cs/97/9717175/bin:/usr/bin:/bin
+PATH=/path/to/ptt/bin
 6 6 * * * LC_ALL=zh_TW.Big5 PTT_ID=帳號 PTT_PWD=密碼 ptt
 ```
 
