@@ -5,7 +5,7 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2015-12-09T00:45:00+09:00</updated>
+  <updated>2015-12-08T23:45:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
@@ -13,8 +13,8 @@
     <title>PTT 每天自動登入小程式</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/12/08/login-ptt-everyday-automatically/"/>
     <id>http://tonytonyjan.net/2015/12/08/login-ptt-everyday-automatically/</id>
-    <published>2015-12-09T00:45:00+09:00</published>
-    <updated>2015-12-09T14:17:12+09:00</updated>
+    <published>2015-12-08T23:45:00+08:00</published>
+    <updated>2015-12-09T13:17:12+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -82,8 +82,8 @@ expect {
     <title>Ruby SSE Server 動手做</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/11/05/concurrent-ruby/"/>
     <id>http://tonytonyjan.net/2015/11/05/concurrent-ruby/</id>
-    <published>2015-11-05T02:10:00+09:00</published>
-    <updated>2015-11-05T23:50:39+09:00</updated>
+    <published>2015-11-05T01:10:00+08:00</published>
+    <updated>2015-11-05T22:50:39+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -339,8 +339,8 @@ end
     <title>Ruby Conference Taiwan 2015</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/"/>
     <id>http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/</id>
-    <published>2015-08-06T04:34:00+09:00</published>
-    <updated>2015-08-18T19:03:11+09:00</updated>
+    <published>2015-08-06T03:34:00+08:00</published>
+    <updated>2015-08-18T18:03:11+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -368,8 +368,8 @@ end
     <title>Rails 購物車設計</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/"/>
     <id>http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/</id>
-    <published>2015-08-05T22:14:00+09:00</published>
-    <updated>2015-10-08T23:24:11+09:00</updated>
+    <published>2015-08-05T21:14:00+08:00</published>
+    <updated>2015-10-08T22:24:11+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -469,8 +469,8 @@ end
     <title>[台北] 艾斯糖 S Don</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/07/14/s-don/"/>
     <id>http://tonytonyjan.net/2015/07/14/s-don/</id>
-    <published>2015-07-14T18:19:00+09:00</published>
-    <updated>2015-07-15T09:43:31+09:00</updated>
+    <published>2015-07-14T17:19:00+08:00</published>
+    <updated>2015-07-15T08:43:31+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -537,8 +537,8 @@ SOHO 評價：★★★★☆&lt;/p&gt;
     <title>平凡人出國夢</title>
     <link rel="alternate" href="http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/"/>
     <id>http://tonytonyjan.net/2015/07/03/dream-of-traveling-abroad/</id>
-    <published>2015-07-03T17:43:00+09:00</published>
-    <updated>2015-07-03T18:02:18+09:00</updated>
+    <published>2015-07-03T16:43:00+08:00</published>
+    <updated>2015-07-03T17:02:18+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
