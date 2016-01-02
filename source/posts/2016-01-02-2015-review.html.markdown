@@ -1,0 +1,45 @@
+---
+title: 2015 回顧
+date: 2016-01-02 01:09 +0800
+category: 閒聊
+tags: 2015, 跨年, 回顧
+image: /images/2016-firework.jpg
+thumb: /images/thumbs/2016-firework.jpg
+description: xxx
+---
+
+![](/images/2016-firework.jpg)
+
+> 原來是 101 煙火啊，我還以為是洗瓶刷呢。
+
+時間   | 工作                | 成就                                                               | 日常
+------ | ---                 | ---                                                                | ---
+二月   | 待業                | [赴加拿大 confoo.ca 演講]                                          |
+三月   | 進入索拉爾          | 上班一週就離職、[出了一本書]（衝上博客來新書排行 No.2，天瓏 No.9） |
+四月   | 進入 Ziltag         |                                                                    |
+五月   | Alpha Camp 客串講師 |                                                                    |
+六月   |                     | [第一次出國玩]                                                     |
+七月   | [Rails 桃園班]      | 課程在 1 週內 50 人額滿                                            |
+八月   |                     |                                                                    | 免役、從台科退學
+九月   |                     | [在 Ruby Conf Taiwan 演講]                                         |
+十月   |                     | 湊合了第三對情侶，可以自封為媒人了                                 | 養貓了，脫離六年的獨居生活
+十二月 |                     | [我的程式碼出現在 Ruby 2.3.0]、收到了 chef.io 的感謝函             | 湯圓大會、跨年晚會
+
+另外值得慶祝的是：[TJDict] 突破 22k 使用人次了 :)
+
+2015 也是充滿各種刺激的一年，不過最值得慶祝的還是成功免役了，除了省下一些納稅人的錢，也幫家裡一個大忙，畢竟當一年兵就是把一年的年薪賠下去。且年初的時候還有收到澳洲、矽谷的 offer，但筆者那時因尚未服役或免役，所以就婉拒了，頓時心中頗有「中華民國誤我一生」的感覺，所幸但這件事情不會再發生了。
+
+新年嘛，難免許新希望，不過筆者自從去年領悟了及時行樂的智慧以後，就沒有什麼夢想了，感覺許下目標也沒什麼意義，當下活得不錯、無憂無疾就謝天謝地了，真要說的話大概是希望三十歲以前移民吧，但這是目標，不希望，兩者有些差異，目標是將會發生的事情，希望是即便沒發生也無妨。筆者想移民到非華人主宰的國家，然後如果可以一輩子不說中文，就一輩子不說。
+
+2016 正要開始，也不知道會發生什麼事情，畢竟回首過往，自己的人生似乎老走在鋼索上，只是相較往昔的自己，今日的心態已經平靜許多且可以輕鬆看待生死與成敗了，即便是從鋼索到跳火圈我想也是沒什麼大不了的。
+
+就這樣吧，新年快樂 :)
+
+[出了一本書]: /rails-road
+[赴加拿大 confoo.ca 演講]: /2015/02/23/feedback-to-confoo-2015
+[第一次出國玩]: /2015/07/03/dream-of-traveling-abroad
+[Rails 桃園班]: /events/2015-07-ruby-on-rails-training
+[在 Ruby Conf Taiwan 演講]: https://youtu.be/0mphTtsekkI?t=3m13s
+[收到了 chef.io 的感謝函]: https://www.facebook.com/tonytonyjan/posts/10153405300657620
+[我的程式碼出現在 Ruby 2.3.0]: https://www.facebook.com/tonytonyjan/posts/10153377306582620
+[TJDict]: https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp
