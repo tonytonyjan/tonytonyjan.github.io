@@ -7,17 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2015/12/08/login-ptt-everyday-automatically/">
-  <title>PTT 每天自動登入小程式 - 不歸錄</title>
-<meta name="description" content=" 最近大選近了，八卦版似乎將發文門檻調高到了 1000 次，帶風向的黨工少了，頓時清新了許多（不過仍然影響不到筆者）。其實養 PTT 帳號不容易，因為同一天只算登入一次，我們得每天記得登入一次 PTT，否則就平白損失了24 小時，如果沒有 PTT 成癮症，其實很容易忘記。 而身為工程師如筆...">
-<meta name="keywords" content="Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="PTT 每天自動登入小程式 - 不歸錄" />
-<meta property="og:description" content=" 最近大選近了，八卦版似乎將發文門檻調高到了 1000 次，帶風向的黨工少了，頓時清新了許多（不過仍然影響不到筆者）。其實養 PTT 帳號不容易，因為同一天只算登入一次，我們得每天記得登入一次 PTT，否則就平白損失了24 小時，如果沒有 PTT 成癮症，其實很容易忘記。 而身為工程師如筆..." />
+  <meta property="og:url" content="http://tonytonyjan.net/2016/01/02/2015-review/">
+  <title>2015 回顧 - 不歸錄</title>
+<meta name="description" content="xxx">
+<meta name="keywords" content="2015, 跨年, 回顧, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="2015 回顧 - 不歸錄" />
+<meta property="og:description" content="xxx" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/ptt.png" />
-<meta property="article:section" content="程式" />
+<meta property="og:image" content="http://tonytonyjan.net/images/2016-firework.jpg" />
+<meta property="article:tag" content="2015" />
+<meta property="article:tag" content="跨年" />
+<meta property="article:tag" content="回顧" />
+<meta property="article:section" content="閒聊" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
-<meta property="article:published_time" content="2015-12-08T23:45:00+08:00" />
+<meta property="article:published_time" content="2016-01-02T01:09:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -87,7 +90,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">PTT 每天自動登入小程式</h1>
+      <h1 class="entry-title">2015 回顧</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -98,73 +101,116 @@
       </span>
       <span class="posted-on">
         在
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2015-12-08T23:45:00+08:00">2015 年 12 月 08 日</time></a>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2016-01-02T01:09:00+08:00">2016 年 01 月 02 日</time></a>
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a title="瀏覽所有 閒聊 的文章" href="/categories/閒聊/">閒聊</a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p><img alt="" src="/images/ptt.png" /></p>
+      <p><img alt="" src="/images/2016-firework.jpg" /></p>
 
-<p>最近大選近了，八卦版似乎將發文門檻調高到了 1000 次，帶風向的黨工少了，頓時清新了許多（不過仍然影響不到筆者）。其實養 PTT 帳號不容易，因為同一天只算登入一次，我們得每天記得登入一次 PTT，否則就平白損失了24 小時，如果沒有 PTT 成癮症，其實很容易忘記。</p>
+<blockquote>
+  <p>原來是 101 煙火啊，我還以為是洗瓶刷呢。</p>
+</blockquote>
 
-<p>而身為工程師如筆者，為了遵守 DRY 原則，就應該寫個小程式去自動化這份工作才是。當然自己徒手寫程式建立 socket 與 PTT 做溝通是最直覺的想法，只不過 TCP 牽線容易，後續的 IO 處理則頗麻煩，為了模擬真實的操作，必須根據 socket 送來的字串判斷現在是要我們寫入帳號密碼還是按下回車。</p>
+<table>
+  <thead>
+    <tr>
+      <th>時間</th>
+      <th>工作</th>
+      <th>成就</th>
+      <th>日常</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>二月</td>
+      <td>待業</td>
+      <td><a href="/2015/02/23/feedback-to-confoo-2015">赴加拿大 confoo.ca 演講</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>三月</td>
+      <td>進入索拉爾</td>
+      <td>上班一週就離職、<a href="/rails-road">出了一本書</a>（衝上博客來新書排行 No.2，天瓏 No.9）</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>四月</td>
+      <td>進入 Ziltag</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>五月</td>
+      <td>Alpha Camp 客串講師</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>六月</td>
+      <td> </td>
+      <td><a href="/2015/07/03/dream-of-traveling-abroad">第一次出國玩</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>七月</td>
+      <td><a href="/events/2015-07-ruby-on-rails-training">Rails 桃園班</a></td>
+      <td>課程在 1 週內 50 人額滿</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>八月</td>
+      <td> </td>
+      <td> </td>
+      <td>免役、從台科退學</td>
+    </tr>
+    <tr>
+      <td>九月</td>
+      <td> </td>
+      <td><a href="https://youtu.be/0mphTtsekkI?t=3m13s">在 Ruby Conf Taiwan 演講</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>十月</td>
+      <td> </td>
+      <td>湊合了第三對情侶，可以自封為媒人了</td>
+      <td>養貓了，脫離六年的獨居生活</td>
+    </tr>
+    <tr>
+      <td>十二月</td>
+      <td> </td>
+      <td><a href="https://www.facebook.com/tonytonyjan/posts/10153377306582620">我的程式碼出現在 Ruby 2.3.0</a>、收到了 chef.io 的感謝函</td>
+      <td>湯圓大會、跨年晚會</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>所幸這個問題在 1994 年就已經有人做出了專門的工具 <code>expect</code>，用來將互動式的 IO 介面自動化。例如 <code>apt-get install</code> 有時會被詢問一些是否覆蓋檔案或是安裝額外套件的問題，進而卡住，如果不用 <code>-y</code> 之類的旗標，也可以透過 <code>expect</code> 來實現。</p>
+<p>另外值得慶祝的是：<a href="https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp">TJDict</a> 突破 22k 使用人次了 :)</p>
 
-<p>寫腳本之前先確認 <code>expect</code> 的路徑：</p>
+<p>2015 也是充滿各種刺激的一年，不過最值得慶祝的還是成功免役了，除了省下一些納稅人的錢，也幫家裡一個大忙，畢竟當一年兵就是把一年的年薪賠下去。且年初的時候還有收到澳洲、矽谷的 offer，但筆者那時因尚未服役或免役，所以就婉拒了，頓時心中頗有「中華民國誤我一生」的感覺，所幸但這件事情不會再發生了。</p>
 
-<pre><code>$ which expect
-/usr/local/bin/expect
-</code></pre>
+<p>新年嘛，難免許新希望，不過筆者自從去年領悟了及時行樂的智慧以後，就沒有什麼夢想了，感覺許下目標也沒什麼意義，當下活得不錯、無憂無疾就謝天謝地了，真要說的話大概是希望三十歲以前移民吧，但這是目標，不希望，兩者有些差異，目標是將會發生的事情，希望是即便沒發生也無妨。筆者想移民到非華人主宰的國家，然後如果可以一輩子不說中文，就一輩子不說。</p>
 
-<p><code>expect</code> 是基於 Tcl 的工具，意即 <code>expect</code> 腳本就是 Tcl 腳本，以下是用 <code>expect</code> 寫的 PTT 自動登入程式：</p>
+<p>2016 正要開始，也不知道會發生什麼事情，畢竟回首過往，自己的人生似乎老走在鋼索上，只是相較往昔的自己，今日的心態已經平靜許多且可以輕鬆看待生死與成敗了，即便是從鋼索到跳火圈我想也是沒什麼大不了的。</p>
 
-<pre><code class="language-tcl">#!/usr/local/bin/expect -f
-set timeout 60
-log_file -noappend $env(HOME)/log/ptt.log
-spawn telnet ptt.cc
-expect "new"
-send "$env(PTT_ID)\r"
-expect ":"
-send "$env(PTT_PWD)\r"
-expect {
-  "您想刪除其他重複登入的連線嗎" {
-    send "n\r"
-    exp_continue
-  }
-  "請按任意鍵繼續" {
-    send "\r"
-    exp_continue
-  }
-  "批踢踢實業坊" {
-    exit
-  }
-}
-</code></pre>
+<p>就這樣吧，新年快樂 :)</p>
 
-<p>這裡要注意的是編碼問題，因為 PTT 是 BIG-5 編碼，直接在原始碼中放 UTF-8 的中文字串會導致誤判，筆者是先透過 <code>iconv -f UTF-8 -t BIG-5</code> 處理原始碼。</p>
-
-<p>假設腳本命名為 ptt，使用方式為：</p>
-
-<pre><code>PTT_ID=PTT_帳號 PTT_PWD=PTT_密碼 ptt
-</code></pre>
-
-<p>至於每天都執行一次的任務，就交給 <code>crontab</code> 即可：</p>
-
-<pre><code>PATH=/path/to/ptt/bin
-6 6 * * * LC_ALL=zh_TW.Big5 PTT_ID=帳號 PTT_PWD=密碼 ptt
-</code></pre>
-
-<p>大功告成！</p>
 
       
     </div>
-    
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a rel="tag" href="/tags/2015/">2015</a>
+        <a rel="tag" href="/tags/跨年/">跨年</a>
+        <a rel="tag" href="/tags/回顧/">回顧</a>
+    </footer>
+    <!-- .entry-meta -->
   </article>
   <!-- .hentry -->
   <!-- .about-author -->
@@ -191,12 +237,9 @@ expect {
   <nav class="nav-single row">
     <div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="/2015/11/05/concurrent-ruby/" rel="prev"><span class="meta-nav">←</span> Ruby SSE Server 動手做</a>
+    <a href="/2015/12/08/login-ptt-everyday-automatically/" rel="prev"><span class="meta-nav">←</span> PTT 每天自動登入小程式</a>
   </div>
-  <div class="nav-next col-sm-6">
-  <h4>下一篇</h4>
-  <a href="/2016/01/02/2015-review/" rel="next">2015 回顧 <span class="meta-nav">→</span></a>
-</div>
+  
 </nav>
 <!-- .nav-single --> 
 <!-- #comments -->
