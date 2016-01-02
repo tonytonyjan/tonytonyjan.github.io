@@ -5,7 +5,7 @@ category: 閒聊
 tags: 2015, 跨年, 回顧
 image: /images/2016-firework.jpg
 thumb: /images/thumbs/2016-firework.jpg
-description: xxx
+description: 2015 也是充滿各種刺激的一年，不過最值得慶祝的還是成功免役了，除了省下一些納稅人的錢，也幫家裡一個大忙，畢竟當一年兵就是把一年的年薪賠下去。且年初的時候還有收到澳洲、矽谷的 offer，但筆者那時因尚未服役或免役，所以就婉拒了，頓時心中頗有「中華民國誤我一生」的感覺，所幸但這件事情不會再發生了。
 ---
 
 ![](/images/2016-firework.jpg)
