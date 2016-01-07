@@ -78,11 +78,11 @@ buybug
     <link rel="alternate" href="http://tonytonyjan.net/2016/01/02/2015-review/"/>
     <id>http://tonytonyjan.net/2016/01/02/2015-review/</id>
     <published>2016-01-02T01:09:00+08:00</published>
-    <updated>2016-01-02T22:01:49+08:00</updated>
+    <updated>2016-01-08T01:41:56+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
-    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/2016-firework.jpg"&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/2016-firework.jpg" /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;原來是 101 煙火啊，我還以為是洗瓶刷呢。&lt;/p&gt;
@@ -104,8 +104,66 @@ buybug
       &lt;td&gt;&lt;a href="/2015/02/23/feedback-to-confoo-2015"&gt;赴加拿大 confoo.ca 演講&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
- ...&lt;/tbody&gt;
-&lt;/table&gt;</summary>
+    &lt;tr&gt;
+      &lt;td&gt;三月&lt;/td&gt;
+      &lt;td&gt;進入索拉爾&lt;/td&gt;
+      &lt;td&gt;上班一週就離職、&lt;a href="/rails-road"&gt;出了一本書&lt;/a&gt;（衝上博客來新書排行 No.2，天瓏 No.9）&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;四月&lt;/td&gt;
+      &lt;td&gt;進入 Ziltag&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;五月&lt;/td&gt;
+      &lt;td&gt;Alpha Camp 客串講師&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;六月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;a href="/2015/07/03/dream-of-traveling-abroad"&gt;第一次出國玩&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;七月&lt;/td&gt;
+      &lt;td&gt;&lt;a href="/events/2015-07-ruby-on-rails-training"&gt;Rails 桃園班&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;課程在 1 週內 50 人額滿&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;八月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;免役、從台科退學&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;九月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;a href="https://youtu.be/0mphTtsekkI?t=3m13s"&gt;在 Ruby Conf Taiwan 演講&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;湊合了第三對情侶，可以自封為媒人了&lt;/td&gt;
+      &lt;td&gt;養貓了，脫離六年的獨居生活&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;十二月&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;a href="https://www.facebook.com/tonytonyjan/posts/10153377306582620"&gt;我的程式碼出現在 Ruby 2.3.0&lt;/a&gt;、&lt;a href="https://www.facebook.com/tonytonyjan/posts/10153405300657620"&gt;收到了 chef.io 的感謝函&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;湯圓大會、跨年晚會&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;另外值得慶祝的是：&lt;a href="https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp"&gt;TJDict&lt;/a&gt; 突破 22k 使用人次了 :)&lt;/p&gt;
+
+</summary>
     <content type="html">&lt;p&gt;&lt;img alt="" src="/images/2016-firework.jpg" /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -186,6 +244,8 @@ buybug
 &lt;/table&gt;
 
 &lt;p&gt;另外值得慶祝的是：&lt;a href="https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp"&gt;TJDict&lt;/a&gt; 突破 22k 使用人次了 :)&lt;/p&gt;
+
+
 
 &lt;p&gt;2015 也是充滿各種刺激的一年，不過最值得慶祝的還是成功免役了，除了省下一些納稅人的錢，也幫家裡一個大忙，畢竟當一年兵就是把一年的年薪賠下去。且年初的時候還有收到澳洲、矽谷的 offer，但筆者那時因尚未服役或免役，所以就婉拒了，頓時心中頗有「中華民國誤我一生」的感覺，所幸但這件事情不會再發生了。&lt;/p&gt;
 
