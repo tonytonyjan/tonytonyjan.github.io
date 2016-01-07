@@ -5,10 +5,74 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2016-01-02T01:09:00+08:00</updated>
+  <updated>2016-01-07T23:27:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>對不起，我把馬英九放進 Ruby 2.3 了</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2016/01/07/there-are-politicians-in-ruby-2-3-0/"/>
+    <id>http://tonytonyjan.net/2016/01/07/there-are-politicians-in-ruby-2-3-0/</id>
+    <published>2016-01-07T23:27:00+08:00</published>
+    <updated>2016-01-08T01:39:55+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/ma.png"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;這世界所有升級到 Ruby 2.3 的伺服器，皆可以得到英九的庇佑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;身為一個 Ruby 語言的教徒，這個聖誕節最令人興奮的莫過於 &lt;a href="https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/"&gt;Ruby 2.3&lt;/a&gt; 的發表了，不過這次由於筆者的緣故，意外讓台灣的政治人物們走進了 Ruby 原始碼中，究竟是怎麼回事呢XD&lt;/p&gt;
+
+&lt;p&gt;百聞不如一見，各位不妨...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/ma.png" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;這世界所有升級到 Ruby 2.3 的伺服器，皆可以得到英九的庇佑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;身為一個 Ruby 語言的教徒，這個聖誕節最令人興奮的莫過於 &lt;a href="https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/"&gt;Ruby 2.3&lt;/a&gt; 的發表了，不過這次由於筆者的緣故，意外讓台灣的政治人物們走進了 Ruby 原始碼中，究竟是怎麼回事呢XD&lt;/p&gt;
+
+&lt;p&gt;百聞不如一見，各位不妨可以先自己找看看：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -s https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.0.tar.gz | tar -xz
+$ grep -hr -C 3 馬英九 ruby-2.3.0
+def test_jarowinkler_distance_with_utf8_strings
+  assert_distance 0.9818, '變形金剛4:絕跡重生', '變形金剛4: 絕跡重生'
+  assert_distance 0.8222, '連勝文',             '連勝丼'
+  assert_distance 0.8222, '馬英九',             '馬英丸'
+  assert_distance 0.6667, '良い',               'いい'
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id="did-you-mean"&gt;Did You Mean?&lt;/h1&gt;
+
+&lt;p&gt;Ruby 2.3 新增了錯字校正功能，會在我們打錯字的時候提醒我們，例如將 &lt;code&gt;#byebug&lt;/code&gt; 誤寫成 &lt;code&gt;#buybug&lt;/code&gt;。在過去 Ruby 只會擲出 &lt;code&gt;NameError&lt;/code&gt; 異常，並夾帶一串文字訊息，現在則除了擲出異常外，也會猜測你原本想輸入的文字：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;require 'byebug'
+buybug
+# NameError: undefined local variable or method `buybug' for main:Object
+# Did you mean?  byebug
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;簡（煒航）言之這就是 Ruby 的 spell check 功能，是來自 &lt;a href="https://twitter.com/yuki24"&gt;@yuki24&lt;/a&gt; 製作的 Ruby gem &lt;a href="https://github.com/yuki24/did_you_mean"&gt;did_you_mean&lt;/a&gt;，當 &lt;code&gt;NameError&lt;/code&gt; 發生時，該 gem  會嘗試找出其他相似的字。&lt;/p&gt;
+
+&lt;h1 id="jaro-winkler-"&gt;Jaro-Winkler 距離&lt;/h1&gt;
+
+&lt;p&gt;對於兩個字串之間的相似度的比對有許多相關的演算法，諸如 &lt;a href="https://www.wikiwand.com/en/Hamming_distance"&gt;Hamming&lt;/a&gt;、&lt;a href="https://www.wikiwand.com/en/Levenshtein_distance"&gt;Levenshtein&lt;/a&gt;、&lt;a href="https://www.wikiwand.com/en/Jaro%E2%80%93Winkler_distance"&gt;Jaro-Winkler&lt;/a&gt; 等，而對於短字串的比較尤以 Jaro-Winkler 普遍被認為較為精準。該演算法當初在醫療機構內，為了確認病患姓名而被發明出來的，如今卻已經在諸多領域中得到廣泛的使用，這也是 did_you_mean 所使用的核心算法。&lt;a href="https://github.com/yuki24/did_you_mean/commit/15f8b049ce2a04957d0975027f2cbf8e93b0ad59"&gt;在 Gemfile 中&lt;/a&gt;能找到一段 &lt;a href="https://github.com/tonytonyjan/jaro_winkler"&gt;jaro_winkler&lt;/a&gt; 的引用，這即是筆者的貢獻。&lt;/p&gt;
+
+&lt;p&gt;只是不料當 did_you_mean 被移植到 Ruby 時，連筆者寫下的支援 UTF-8 的測試也都&lt;a href="https://github.com/yuki24/did_you_mean/blob/b2e4b3c590a2fd1b08f37a9d976e4dfe97533c68/test/edit_distance/jaro_winkler_test.rb"&gt;一併被移植過去了&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h1 id="section"&gt;大選近矣&lt;/h1&gt;
+
+&lt;p&gt;話說最近正逢總統大選，也發生一些趣事，有些國民黨的支持者在國民黨候選人的廣告上貼上馬英九的貼紙，聽說&lt;a href="https://www.ptt.cc/bbs/Gossiping/M.1450328203.A.436.html"&gt;就被移送法辦了&lt;/a&gt;，後續如何筆者不是很清楚。但現在因為筆者的關係，讓世界上的許多人的伺服器硬碟的某處存著一個馬英九，希望筆者不會有什麼遭遇才是。萬一，哪天筆者再也沒有出現在臉書上，傳訊也沒回，請幫筆者轉達家母「我愛她」。另外不自殺聲明已經放在 Github 上了，萬一有不測，請幫筆者討回公道，萬分感謝！&lt;/p&gt;
+
+&lt;p&gt;話說回來，就算歐巴馬會寫程式好了，但不見得名字會在原始碼裡面呢，台灣是不是很厲害呢www&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>2015 回顧</title>
     <link rel="alternate" href="http://tonytonyjan.net/2016/01/02/2015-review/"/>
@@ -587,74 +651,6 @@ end
 &lt;p&gt;購物車系統沒有什麼「一定得這樣」的設計，不管是什麼架構的購物車，可以結帳的就是好的購物車。如果對於設計購物車仍有疑惑，也建議不妨多看看他人的開源項目怎麼設計，其實許多書中找不到的答案，都放在程式碼裡面，而優良的程式碼更是可以閱讀的。&lt;/p&gt;
 
 &lt;p&gt;筆者也有一份串接歐付寶的範例網站就放在 &lt;a href="https://github.com/tonytonyjan/brainana_shop"&gt;Github&lt;/a&gt; 上，有興趣的讀者可供參考，當然，也歡迎送 patch =)&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>[台北] 艾斯糖 S Don</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2015/07/14/s-don/"/>
-    <id>http://tonytonyjan.net/2015/07/14/s-don/</id>
-    <published>2015-07-14T17:19:00+08:00</published>
-    <updated>2015-07-15T08:43:31+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/s-don.png"&gt;&lt;/p&gt;
-
-&lt;p&gt;店名：艾斯糖（S Don）&lt;br&gt;
-地址：台北市大安區新生南路一段 97 巷 13 號&lt;br&gt;
-網址：&lt;a href="https://www.facebook.com/pages/%E8%89%BE%E6%96%AF%E7%B3%96-S-Don/678897485514918"&gt;https://www.facebook.com/pages/艾斯糖-S-Don/678897485514918&lt;/a&gt;&lt;br&gt;
-營業時間：周一 - 周四 10:15 - 20:00；周五 - 周六 10:15 - 21...&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/s-don.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;店名：艾斯糖（S Don）&lt;br /&gt;
-地址：台北市大安區新生南路一段 97 巷 13 號&lt;br /&gt;
-網址：&lt;a href="https://www.facebook.com/pages/%E8%89%BE%E6%96%AF%E7%B3%96-S-Don/678897485514918"&gt;https://www.facebook.com/pages/艾斯糖-S-Don/678897485514918&lt;/a&gt;&lt;br /&gt;
-營業時間：周一 - 周四 10:15 - 20:00；周五 - 周六 10:15 - 21：00；周日 10:15 - 18：00&lt;br /&gt;
-SOHO 評價：★★★★☆&lt;/p&gt;
-
-&lt;h2 id="section"&gt;簡介&lt;/h2&gt;
-
-&lt;p&gt;自從筆者把其中一間房間佈置成工作室之後，就已經鮮少在網誌上介紹適合工作的咖啡廳了。然而最近鄰居非常勤勞地在施工裝潢，且早上八點就開始鑽牆，弄的筆者除了被吵醒之外，也無法專心在家工作。只好外出尋覓避難所，所幸找到了這家咖啡廳「艾斯糖」。&lt;/p&gt;
-
-&lt;h2 id="wifi"&gt;WIFI、電源、安靜、不限時&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="/images/s-don-seats.jpg" width="100%" /&gt;&lt;/p&gt;
-
-&lt;p&gt;這家店就這麼低調的藏在捷運忠孝新生站附近的巷子裡，遠離人車的吵雜，比起鬧區的店要來的安靜許多，且店內除了提供免費的 WIFI 之外，每個座位附近都至少會鄰近一組插座，這讓習慣抱著筆電四處跑的網路工作者與 SOHO 族來說相當的方便，而桌子不至於太小，也適合與隊友們在此做些小討論或開會，除了上述的功能之外，以一個咖啡廳而言也適合平日與好友一起來下午茶。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/s-don-books.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;即便沒有自備讀物，書架上也有許多種類的閒書供取閱，其實不妨偶爾挑個悠閒的午後，在這裡隨機抽一本有緣的書來閱讀，配一杯咖啡，也可以愜意的在這裡度過半天。&lt;/p&gt;
-
-&lt;h2 id="section-1"&gt;貓奴的選擇&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/s-don-cat.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果你也愛貓，也許可以來和副店長「艾斯」做個朋友，記得筆者與他的第一次的邂逅時，他正慵懶的睡在書架的格子裡。雖然艾斯對於第一次見面的陌生人也許不太理會，但基本上也不太怕生。這天筆者整個下午在店裡寫程式，寫到一半艾斯就跳到腿上，本來應該很溫馨的，可惜寫程式需要非常專注的腦力，所以筆者是被嚇到的XD&lt;/p&gt;
-
-&lt;p&gt;這裡總共有兩隻貓，經店員解釋，在假日才有機會遇到另一隻野生的喵星人，好奇的朋友不妨可以挑假日來拜訪。&lt;/p&gt;
-
-&lt;h2 id="section-2"&gt;不定期的小活動&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/s-don-dolls.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;這家店的空間利用也頗多元，時有不定期的展演活動或手工藝教學，種類應有盡有，如上圖即是某次「週六小學堂」的主題：襪子娃娃。此外店裡也提供投影設備，經過預約即可使用，所以除了上述一般手工藝或是靜態的展覽之外，在此辦小講座、讀書會抑或電影欣賞也不會是問題。而筆者也考慮也許下一場 Taipei.rb 可以辦在這裡。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/s-don-represent.png" /&gt;&lt;/p&gt;
-
-&lt;h2 id="section-3"&gt;食物&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/s-don-food.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;價位方面，低消是一杯飲料，每個餐點無論飲品或食物大多落在 100 至 200 元之間。&lt;/p&gt;
-
-&lt;p&gt;食物方面，無奈筆者舌頭不太敏感，向來對食物不敢妄下點評，但經過筆者的強者朋友表示這裡的拿鐵非常好喝且順口，對咖啡有研究的人說不定可以來此驗證看看。&lt;/p&gt;
-
-&lt;p&gt;值得一提的是這家店的菜單是「活」的，有季節限定的限量的手工點心，看起來也有在推陳出新，所以無論你是常客還是過客，每次來訪並不至於失去新鮮感。&lt;/p&gt;
-
-&lt;h2 id="section-4"&gt;總評&lt;/h2&gt;
-
-&lt;p&gt;來就對了XD&lt;/p&gt;
 </content>
   </entry>
 </feed>
