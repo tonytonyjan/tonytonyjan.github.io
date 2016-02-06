@@ -3,7 +3,8 @@ title: Rails 購物車設計
 image: /images/cart.png
 thumb: /images/thumbs/cart.png
 date: 2015-08-05 21:14 +0800
-category: Rails
+category: 程式
+tags: Rails, Cart
 ---
 
 ![](/images/cart.png)
