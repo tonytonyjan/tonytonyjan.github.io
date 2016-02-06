@@ -88,6 +88,152 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">2</span>五月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/02/list-all-posts-rake-task-for-octopress/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/05/02/list-all-posts-rake-task-for-octopress/" rel="bookmark">List Published or Unpublished Posts in Octopress</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><h2 id="whats-the-problem">What's the Problem?</h2>
+
+<p>We may leave some draft posts in <code>_posts</code> directory, but it comes a problem when we are going to find whether the post is published...</p>
+        <a href="/2012/05/02/list-all-posts-rake-task-for-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">1</span>五月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/01/indexer-for-octopress/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/05/01/indexer-for-octopress/" rel="bookmark">將 Octopress Page 依照標題自動索引</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><ul>
+  <li><a href="/projects/octopress-indexer">範例展示、文件</a></li>
+  <li><a href="https://gist.github.com/2565249/6151c81f7af333d5c1d9dd0b2bdcba2c7a966dca">gist</a></li>
+</ul>
+
+<h2 id="section">用法懶人包</h2>
+
+<ol>
+  <li>下載 <a href="https://gist.github.com/gists/2565249/download">Indexer for Octopress</a>。</li>
+  <li>將 <code>indexer.rb</code> 複製到 <code>plugins</code> 目錄下。</li>
+  <li>
+    <p>新增 <code>source\_includes\custom\asides\indexer.html</code>。</p>
+
+    <pre><code>{% if page.indexer == true %}
+  &lt;section&gt;
+  &lt;h1&gt;Catalog&lt;/h1&gt;
+  {{ page.indexer_aside }}
+  &lt;/section&gt;
+{% else %}
+  {% if site.page_asides.size %}
+    {% include_array default_asides %}
+  {% endif %}
+{% endif %}
+</code></pre>
+  </li>
+  <li>
+    <p>編輯 <code>_config.yml</code>。</p>
+
+    <pre><code># Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+# post_asides:
+page_asides: [custom/asides/indexer.html] # 加上這個
+</code></pre>
+  </li>
+  <li>完成！之後只要在你需要索引的 page 上方 YAML 區塊加上 <code>indexer: true</code>，右方欄位就會自己索引了。</li>
+</ol>
+
+
+        <a href="/2012/05/01/indexer-for-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">27</span>四月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/04/27/display-recent-comments-in-octopress-2/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/04/27/display-recent-comments-in-octopress-2/" rel="bookmark">在 Octopress 加上近期回覆（二）</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>之前在有發過一篇<a href="/2012/02/12/display-recent-comments-in-octopress">在 Octopress 加上近期回覆</a>，我因為找不到有關顯示近期回應的程式碼（搜尋能力有待加強），所以自己徒手寫了一個。想不到今天在 Disqus 管理頁面發現有 widget 可以用，除此之外還有熱門回覆等其他 wedget。</p>
+
+<p>可惡啊……之前做了白工……</p>
+
+<p><img alt="" src="/images/disqus-admin-tools.png" /></p>
+
+        <a href="/2012/04/27/display-recent-comments-in-octopress-2/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">8</span>三月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/08/using-sinatra-for-local-javascript-development/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" rel="bookmark">使用 Sinatra、HFS 在本地開發 Javascript</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p>
+<p>寫 Javascript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 <code>http://</code> 以外協定的 AJAX request，其中當然包括 <code>file://</code>）。</p>
+
+<p>這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 <a href="http://www.rejetto.com/hfs/">HTTP File Server</a> ，另一個則是 <a href="http://www.sinatrarb.com/">Sinatra</a>。</p>
+
+
+        <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">6</span>三月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/06/shortcut-to-open-command-prompt-in-current-directory/#disqus_thread"></span>留言</span>
     </footer>
@@ -272,127 +418,6 @@ gem update
 
 <pre><code class="language-html">&lt;!-- source\_includes\custom\asides\recent_comments.html...</code></pre>
         <a href="/2012/02/12/display-recent-comments-in-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2011" class="entry-date"><span class="day">12</span>十一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/11/12/8/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2011/11/12/8/" rel="bookmark">7200 秒學會版本控制 - 使用 mercurial</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><h2><a href="https://docs.google.com/presentation/pub?id=1B1RqZAHUoo2klVbuPMUSLqDiwDFwYNCQOzd1ZBBEVNc&amp;start=false&amp;loop=false&amp;delayms=3000" target="_blank">投影片 &larr; 點我瀏覽</a></h2>
-<p><iframe width="480" height="389" src="https://docs.google.com/presentation/embed?id=1B1RqZAHUoo2klVbuPMUSLqDiwDFwYNCQOzd1ZBBEVNc&amp;start=false&amp;loop=false&amp;delayms=3000" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
-<h2><a href="https://docs.google.com/document/pub?id=1uEcnH9M-8k_iGzFx8nwF2tS3xieynlKvUGULKXAtRjY" target="_blank">講義 &larr; 點我瀏覽</a></h2>
-<p><iframe width="500" height="500" src="https://docs.google.com/document/pub?id=1uEcnH9M-8k_iGzFx8nwF2tS3xieynlKvUGULKXAtRjY&amp;embedded=true"></iframe></p>
-<p>感謝各位的捧場，能看到各位真的很開心！</p>
-<p>想不到一上就是三個小時中間沒休息&hellip;&hellip;Orz（看來我有當 SA 助教的資質？）</p>
-<p>另外可能太久沒有說這麼多話了，喉嚨好乾啊XD</p>
-
-        <a href="/2011/11/12/8/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2011" class="entry-date"><span class="day">17</span>八月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/08/17/using-existing-database-in-rails/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2011/08/17/using-existing-database-in-rails/" rel="bookmark">將現有資料庫導入 Rails ActiveModel</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。</p>
-
-<p>當使用 rails 指令產生新的 Model 時，這樣的寫法很常見：</p>
-
-
-        <a href="/2011/08/17/using-existing-database-in-rails/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2011" class="entry-date"><span class="day">12</span>八月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/08/12/ruby-block-proc-lambda/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2011/08/12/ruby-block-proc-lambda/" rel="bookmark">Ruby Block, Proc and Lambda</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>Ruby 可將程式碼當參數傳遞，被參數化的程式碼稱為 Block。也就是呼叫方法時後面的 <code>{|| }</code>  符號，其中的 <code>||</code> 之間放置參數列宣告，若無參數則可省略。</p>
-
-<p>Ruby 的 Proc 類似 ECMAScript 的 function。在 ECMAScript 中使用關鍵字 function 即可配置一個 Function 實例。Ruby 則使用 Kernel::proc、Kernel::lambda 方法（但兩者有些微差異），或是直接建構一個 Proc 實例（Proc.new）。</p>
-
-<h2 id="block-and-proc">Block and Proc</h2>
-<p>Ruby 會主動將 Block 參數化成 Proc，Block 無法單獨存在，只能作為 Ruby 指令或呼叫方法時的引數。程序員僅需利用流程指令 yield 即可將流程轉移到被參數化的 Block 中運行。我們可以用 Kernel::block_given? 判斷使用者有無傳遞 Block。</p>
-
-
-        <a href="/2011/08/12/ruby-block-proc-lambda/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2011" class="entry-date"><span class="day">26</span>七月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/07/26/check-prime-number-via-regular-expression/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2011/07/26/check-prime-number-via-regular-expression/" rel="bookmark">正規表達式檢查質數</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><pre><code>/^1?$|^(11+?)\1+$/
-</code></pre>
-
-<p>Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。</p>
-
-<p>這是我在網路上看到<a href="http://montreal.pm.org/tech/neil_kandalgaonkar.shtml">這一頁</a>，他竟然簡短的用 Regular Expression來檢查一個數字是否為質數，我覺得很有意思，於是放上來與大家分享。</p>
-
-
-        <a href="/2011/07/26/check-prime-number-via-regular-expression/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>

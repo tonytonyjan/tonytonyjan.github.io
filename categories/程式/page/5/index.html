@@ -88,6 +88,127 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2011" class="entry-date"><span class="day">12</span>十一月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/11/12/8/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2011/11/12/8/" rel="bookmark">7200 秒學會版本控制 - 使用 mercurial</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><h2><a href="https://docs.google.com/presentation/pub?id=1B1RqZAHUoo2klVbuPMUSLqDiwDFwYNCQOzd1ZBBEVNc&amp;start=false&amp;loop=false&amp;delayms=3000" target="_blank">投影片 &larr; 點我瀏覽</a></h2>
+<p><iframe width="480" height="389" src="https://docs.google.com/presentation/embed?id=1B1RqZAHUoo2klVbuPMUSLqDiwDFwYNCQOzd1ZBBEVNc&amp;start=false&amp;loop=false&amp;delayms=3000" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<h2><a href="https://docs.google.com/document/pub?id=1uEcnH9M-8k_iGzFx8nwF2tS3xieynlKvUGULKXAtRjY" target="_blank">講義 &larr; 點我瀏覽</a></h2>
+<p><iframe width="500" height="500" src="https://docs.google.com/document/pub?id=1uEcnH9M-8k_iGzFx8nwF2tS3xieynlKvUGULKXAtRjY&amp;embedded=true"></iframe></p>
+<p>感謝各位的捧場，能看到各位真的很開心！</p>
+<p>想不到一上就是三個小時中間沒休息&hellip;&hellip;Orz（看來我有當 SA 助教的資質？）</p>
+<p>另外可能太久沒有說這麼多話了，喉嚨好乾啊XD</p>
+
+        <a href="/2011/11/12/8/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2011" class="entry-date"><span class="day">17</span>八月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/08/17/using-existing-database-in-rails/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2011/08/17/using-existing-database-in-rails/" rel="bookmark">將現有資料庫導入 Rails ActiveModel</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>官方說明文件上沒有這方面的說明，網路上爬到的解大多過時，或者根本不正確，於是作此文分享我目前的方法。</p>
+
+<p>當使用 rails 指令產生新的 Model 時，這樣的寫法很常見：</p>
+
+
+        <a href="/2011/08/17/using-existing-database-in-rails/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2011" class="entry-date"><span class="day">12</span>八月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/08/12/ruby-block-proc-lambda/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2011/08/12/ruby-block-proc-lambda/" rel="bookmark">Ruby Block, Proc and Lambda</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>Ruby 可將程式碼當參數傳遞，被參數化的程式碼稱為 Block。也就是呼叫方法時後面的 <code>{|| }</code>  符號，其中的 <code>||</code> 之間放置參數列宣告，若無參數則可省略。</p>
+
+<p>Ruby 的 Proc 類似 ECMAScript 的 function。在 ECMAScript 中使用關鍵字 function 即可配置一個 Function 實例。Ruby 則使用 Kernel::proc、Kernel::lambda 方法（但兩者有些微差異），或是直接建構一個 Proc 實例（Proc.new）。</p>
+
+<h2 id="block-and-proc">Block and Proc</h2>
+<p>Ruby 會主動將 Block 參數化成 Proc，Block 無法單獨存在，只能作為 Ruby 指令或呼叫方法時的引數。程序員僅需利用流程指令 yield 即可將流程轉移到被參數化的 Block 中運行。我們可以用 Kernel::block_given? 判斷使用者有無傳遞 Block。</p>
+
+
+        <a href="/2011/08/12/ruby-block-proc-lambda/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2011" class="entry-date"><span class="day">26</span>七月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2011/07/26/check-prime-number-via-regular-expression/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2011/07/26/check-prime-number-via-regular-expression/" rel="bookmark">正規表達式檢查質數</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><pre><code>/^1?$|^(11+?)\1+$/
+</code></pre>
+
+<p>Regular Expession 真的很強大，但是我還不曉得可以強大到用來檢查質數。</p>
+
+<p>這是我在網路上看到<a href="http://montreal.pm.org/tech/neil_kandalgaonkar.shtml">這一頁</a>，他竟然簡短的用 Regular Expression來檢查一個數字是否為質數，我覺得很有意思，於是放上來與大家分享。</p>
+
+
+        <a href="/2011/07/26/check-prime-number-via-regular-expression/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2010" class="entry-date"><span class="day">27</span>十月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2010/10/27/44/#disqus_thread"></span>留言</span>
     </footer>
@@ -268,145 +389,6 @@ int main(void...</code></pre>
 
 <p><span style="font-size: medium;"><strong> </strong></span>這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，<a href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">維基</a>可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java...</p>
         <a href="/2010/04/24/java-introduction/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2010" class="entry-date"><span class="day">24</span>四月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2010/04/24/70/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2010/04/24/70/" rel="bookmark">兜翔工作室出品 - CPUSK1.1-Beta</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p><a href="http://cssula.twgg.org/wp-content/uploads/2010/04/Screenshot-15.png">![](/images/slum-area/71_Screenshot-15.png)</a></p>
-<p><a href="http://www.cs.nctu.edu.tw/~whchien/CPUSK-Beta.rar">載點</a></p>
-<p>2010/4/15 更新至ver1.1 Beta</p>
-<p>修正：</p>
-<ul>
-<li>預設樂器多一個空白的問題</li>
-<li>視窗大小可以調整</li>
-</ul>
-<p>追加：</p>
-<ul><li>Search -  關鍵字搜尋（僅支援標題搜索，搜索時可用方向鍵上下移動）</li></ul>
-<p>CPUSK的全名...</p>
-        <a href="/2010/04/24/70/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2010" class="entry-date"><span class="day">20</span>四月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2010/04/20/cpusk1.1-beta/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2010/04/20/cpusk1.1-beta/" rel="bookmark">CPUSK1.1-Beta</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p>
-<p>還在想到底這篇文章要歸類為「實用軟體推薦」嗎？XD（真好意思說）</p>
-
-<p><img alt="" src="/images/cssula-blog/Screenshot-15.png"></p>
-
-<p>（ver1.1 Beta）<a href="http://www.cs.nctu.edu.tw/%7Ewhchien/CPUSK1.1-Beta.rar">載點</a></p>
-
-<!--more-->
-
-<p><strong>2010/4/15 更新至ver1.1 Beta</strong></p>
-
-<h3 id="section">修正</h3>
-
-<ul>
-	<li>預設樂器多一個空白的問題</li>
-	<li>視窗大小可以調整</li>
-</ul>
-
-<p>追加：</p>
-
-<ul>
-	<li>Search -  關鍵字搜尋（僅支援標題搜索，搜索時...</li>
-</ul>
-        <a href="/2010/04/20/cpusk1.1-beta/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2010" class="entry-date"><span class="day">14</span>四月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2010/04/14/list-java-font/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2010/04/14/list-java-font/" rel="bookmark">列出系統中 Java 可用字型</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>由於 GUI 無論文字，都是用「畫」出來的，第一件事情就是要取得自身的圖形環境（GraphicaEnvironment）</p>
-
-<p>要取得它可以用 GraphicsEnvironment 類別中的 <code>static function getLocalGraphicsEnvironment()</code>，然後再呼叫 </p>
-        <a href="/2010/04/14/list-java-font/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2010" class="entry-date"><span class="day">10</span>四月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2010/04/10/simple-chinese-on-java-swing/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2010/04/10/simple-chinese-on-java-swing/" rel="bookmark">解決 Java Swing GUI 在 Un*x 的中文亂碼問題</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>換過作業系統後還沒有想到在Swing上顯示中文會有問題，只是因為幫別人寫一個小程式，很幸運的被我遇見了，尋求解決同時不忘研究過後把經驗貼出來分享～</p>
-
-<p><img alt="" src="/images/cssula-blog/Screenshot-10.png"><br>
-（顯示不出中文……）</p>
-
-<!--more-->
-
-<h3 id="section">環境</h3>
-
-<pre><code>$ uname -ai                                          ...</code></pre>
-        <a href="/2010/04/10/simple-chinese-on-java-swing/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>

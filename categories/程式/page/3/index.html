@@ -88,6 +88,231 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2013" class="entry-date"><span class="day">18</span>二月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2013/02/18/lets-preview-ruby-2-dot-0/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2013/02/18/lets-preview-ruby-2-dot-0/" rel="bookmark">Ruby 2.0 重點介紹</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p><img alt="" src="/images/ruby.jpg"></p>
+
+<p>終於也等到了 <a href="http://www.ruby-lang.org/en/news/2013/02/08/ruby-2-0-0-rc2-is-released/">Ruby 2.0 RC 釋出的消息</a>，看來正式版本也不遠了。而 Ruby 2.0 是什麼？又到底都參了啥好處？這裡整理一些我的筆記。</p>
+
+<p><strong>首先 Ruby 2.0 完全向下兼容</strong>，這是個好消息，意味之著你不用更改你的程式碼便可以從任何版本無痛升級 2.0（python 迷表示羨慕？）...</p>
+        <a href="/2013/02/18/lets-preview-ruby-2-dot-0/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">12</span>十二月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/12/12/tjmarkdownpaste-markdown-with-tex-code-highlight/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/12/12/tjmarkdownpaste-markdown-with-tex-code-highlight/" rel="bookmark">TJMarkdownPaste - Markdown with Tex and code highlight</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p>
+<p><img alt="" src="/images/tjmarkdownpaste.png"></p>
+
+<ul>
+  <li><a href="http://tj-markdown-paste.herokuapp.com">TJMarkdownPaste</a></li>
+  <li><a href="https://groups.google.com/forum/?fromgroups#!forum/tj-markdown-paste">Google Group</a></li>
+  <li><a href="https://github.com/tonytonyjan/tj-markdown-paste">Github</a></li>
+</ul>
+
+<p><a href="http://tj-markdown-paste.herokuapp.com">TJMarkdownPaste</a> is a Markdown bloggin service with Tex mathematical syntax and automatic code highlight...</p>
+        <a href="/2012/12/12/tjmarkdownpaste-markdown-with-tex-code-highlight/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">4</span>十一月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/11/04/tony-jians-rails-template/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/11/04/tony-jians-rails-template/" rel="bookmark">My Rails Template</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><h2 id="why">Why</h2>
+
+<p>We engineers always hate repeating doing the same thing.</p>
+
+<p>Take me for instance, everytime I create a new rails project, I edit <code>GemFile</code> to install lots of useful gems such as <code>devise</code>, <code>carrierwave</code>, etc, and then download <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> with newest version, extract it into <code>vendor/assets/images</code>, <code>vendor/assets/javascripts</code> and <code>vendor/assets/stylesheets</code>, finally, replace <code>../img/xxx.png</code> into <code>xxx.png</code> in <code>bootstrap.css</code> and <code>bootstrap.min.css</code>.</p>
+
+<h2 id="what">What</h2>
+
+<p>My template does two things:</p>
+
+<ol>
+  <li>
+    <p>Automatically install the following gems:</p>
+
+    <ul>
+      <li>devise</li>
+      <li>cancan</li>
+      <li>carrierwave</li>
+      <li>simple_form</li>
+      <li>dynamic_form</li>
+      <li>will_paginate</li>
+      <li>rdiscount</li>
+      <li>rails-i18n</li>
+    </ul>
+  </li>
+  <li>
+    <p>Download Twitter Boostrap with the newest version, and correspondingly extract files into <code>vendor/assets/</code></p>
+  </li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<pre><code>rails new myapp -m=https://raw.github.com/gist/4010690
+</code></pre>
+
+<p>Alternatively, if you encounter some SSL problem during the previous command, please download the file directly and run:</p>
+
+<pre><code>rails new myapp -m=filename
+</code></pre>
+
+
+        <a href="/2012/11/04/tony-jians-rails-template/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">2</span>十月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/10/02/dig-gcc-with-tony/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/10/02/dig-gcc-with-tony/" rel="bookmark">大兜的 gcc 歷險記</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>由於不是很清楚 gcc 在編譯 c 文件時到底做了什麼事情，於是展開了深入理解的旅程。從最簡單的 <code>hello.c</code> 開始：</p>
+
+<p>``` c hello.c<br />
+#include <stdio.h></stdio.h></p>
+
+<p>int main(int argc, char* args[]){<br />
+  printf("Hello, world!");<br />
+}<br />
+```</p>
+
+<p>在編譯之前，讓我們回顧一下編譯的步驟：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>步驟</th>
+      <th>指令</th>
+      <th>中出檔</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>原始碼</td>
+    </tr>
+    <tr>
+      <td>前處理（preprocessing）</td>
+      <td>gcc -E hello.c -o hello.i</td>
+      <td>↓↓</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>原始碼（標頭被展開）</td>
+    </tr>
+    <tr>
+      <td>編譯（compiling）</td>
+      <td>gcc -S hello.i -o hello.s</td>
+      <td>↓↓</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>組合語言</td>
+    </tr>
+    <tr>
+      <td>組譯（assembling）</td>
+      <td>gcc -c hello.s -o hello.o</td>
+      <td>↓↓</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>機器碼</td>
+    </tr>
+    <tr>
+      <td>連結（linking）</td>
+      <td>ld … （暫略）</td>
+      <td>↓↓</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>可執行機器碼</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code>-E 僅作預先處理，不進行編譯、組譯和連結
+-S 編譯到組合語言，不進行組譯和連結
+-c 編譯、組譯到目的程式碼，不進行連結
+</code></pre>
+
+<p>看到鍵盤上的 <code>Esc</code> 了嗎？那正是編譯步驟，是不是超好記的。</p>
+
+
+        <a href="/2012/10/02/dig-gcc-with-tony/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">17</span>八月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/08/17/tjdict-english-chinese-dictionary-for-chrome/#disqus_thread"></span>留言</span>
     </footer>
@@ -271,152 +496,6 @@
 
 
         <a href="/2012/05/25/get-start-with-chrome-extension/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">2</span>五月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/02/list-all-posts-rake-task-for-octopress/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/05/02/list-all-posts-rake-task-for-octopress/" rel="bookmark">List Published or Unpublished Posts in Octopress</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><h2 id="whats-the-problem">What's the Problem?</h2>
-
-<p>We may leave some draft posts in <code>_posts</code> directory, but it comes a problem when we are going to find whether the post is published...</p>
-        <a href="/2012/05/02/list-all-posts-rake-task-for-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">1</span>五月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/01/indexer-for-octopress/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/05/01/indexer-for-octopress/" rel="bookmark">將 Octopress Page 依照標題自動索引</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><ul>
-  <li><a href="/projects/octopress-indexer">範例展示、文件</a></li>
-  <li><a href="https://gist.github.com/2565249/6151c81f7af333d5c1d9dd0b2bdcba2c7a966dca">gist</a></li>
-</ul>
-
-<h2 id="section">用法懶人包</h2>
-
-<ol>
-  <li>下載 <a href="https://gist.github.com/gists/2565249/download">Indexer for Octopress</a>。</li>
-  <li>將 <code>indexer.rb</code> 複製到 <code>plugins</code> 目錄下。</li>
-  <li>
-    <p>新增 <code>source\_includes\custom\asides\indexer.html</code>。</p>
-
-    <pre><code>{% if page.indexer == true %}
-  &lt;section&gt;
-  &lt;h1&gt;Catalog&lt;/h1&gt;
-  {{ page.indexer_aside }}
-  &lt;/section&gt;
-{% else %}
-  {% if site.page_asides.size %}
-    {% include_array default_asides %}
-  {% endif %}
-{% endif %}
-</code></pre>
-  </li>
-  <li>
-    <p>編輯 <code>_config.yml</code>。</p>
-
-    <pre><code># Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
-# and add an array with the asides you want to use.
-# blog_index_asides:
-# post_asides:
-page_asides: [custom/asides/indexer.html] # 加上這個
-</code></pre>
-  </li>
-  <li>完成！之後只要在你需要索引的 page 上方 YAML 區塊加上 <code>indexer: true</code>，右方欄位就會自己索引了。</li>
-</ol>
-
-
-        <a href="/2012/05/01/indexer-for-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">27</span>四月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/04/27/display-recent-comments-in-octopress-2/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/04/27/display-recent-comments-in-octopress-2/" rel="bookmark">在 Octopress 加上近期回覆（二）</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>之前在有發過一篇<a href="/2012/02/12/display-recent-comments-in-octopress">在 Octopress 加上近期回覆</a>，我因為找不到有關顯示近期回應的程式碼（搜尋能力有待加強），所以自己徒手寫了一個。想不到今天在 Disqus 管理頁面發現有 widget 可以用，除此之外還有熱門回覆等其他 wedget。</p>
-
-<p>可惡啊……之前做了白工……</p>
-
-<p><img alt="" src="/images/disqus-admin-tools.png" /></p>
-
-        <a href="/2012/04/27/display-recent-comments-in-octopress-2/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">8</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/08/using-sinatra-for-local-javascript-development/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" rel="bookmark">使用 Sinatra、HFS 在本地開發 Javascript</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p>
-<p>寫 Javascript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 <code>http://</code> 以外協定的 AJAX request，其中當然包括 <code>file://</code>）。</p>
-
-<p>這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 <a href="http://www.rejetto.com/hfs/">HTTP File Server</a> ，另一個則是 <a href="http://www.sinatrarb.com/">Sinatra</a>。</p>
-
-
-        <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>

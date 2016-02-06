@@ -5,16 +5,45 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2016-01-07T23:27:00+08:00</updated>
+  <updated>2016-01-30T14:56:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>來自 chef.io 的小禮物</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/"/>
+    <id>http://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/</id>
+    <published>2016-01-30T14:56:00+08:00</published>
+    <updated>2016-02-06T15:05:47+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌：&lt;/p&gt;
+
+</summary>
+    <content type="html">&lt;p&gt;筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌：&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;img alt="" src="/images/chef-2.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://chef.io/"&gt;chef.io&lt;/a&gt; 這種方式還頗逗趣的，比起錢，筆者似乎還比較喜歡這種可愛方式（完全中招啊）。除了感謝狀之外，還有一些小貼紙，可惜筆者沒有在筆電上面加貼紙的習慣，只能收在抽屜裡了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="/images/chef.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;唯一美中不足的地方就是國名寫了「Province of China」讓人不是很舒服，如果只寫「China」或「Republic of China」筆者是還勉強可以接受，畢竟現在中國正在內戰中嘛，只是搞不清兩個政府的領土就實在有點不應該（但無論是哪一個 China，當然還是寫 Taiwan 最好聽了）。&lt;/p&gt;
+
+&lt;h1 id="chefconf-2016"&gt;ChefConf 2016&lt;/h1&gt;
+
+&lt;p&gt;題外話，最近筆者收到一封寄給貢獻者的 &lt;a href="https://chefconf.chef.io"&gt;ChefConf 2016&lt;/a&gt; 邀請信，早鳥票可以省 400 鎂，然後如果是 chef 貢獻者的話還可以額外省 $295 鎂，害得筆者頗心動，但即便如此筆者仍無法負擔高額的機票與住宿的費用，如果有誰需要這筆優惠的話，還請與筆者聯絡，不要讓這筆錢浪費了，感激不盡 :)&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>對不起，我把馬英九放進 Ruby 2.3 了</title>
     <link rel="alternate" href="http://tonytonyjan.net/2016/01/07/there-are-politicians-in-ruby-2-3-0/"/>
     <id>http://tonytonyjan.net/2016/01/07/there-are-politicians-in-ruby-2-3-0/</id>
     <published>2016-01-07T23:27:00+08:00</published>
-    <updated>2016-01-08T01:50:21+08:00</updated>
+    <updated>2016-01-30T14:59:28+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -331,7 +360,7 @@ expect {
     <link rel="alternate" href="http://tonytonyjan.net/2015/11/05/concurrent-ruby/"/>
     <id>http://tonytonyjan.net/2015/11/05/concurrent-ruby/</id>
     <published>2015-11-05T01:10:00+08:00</published>
-    <updated>2015-11-05T22:50:39+08:00</updated>
+    <updated>2016-01-30T15:02:37+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -610,107 +639,6 @@ end
 &lt;p&gt;此外筆者小投一篇近來對 Rails 前端套件的管理心得，僥倖錄取了，如果你對 Rails 上的前端套件管理有興趣，除了筆者的講題「還給前端工程師一個天空」之外，也建議也可以參考講者何澤清的「gem 'webpack-rails'」，分別使用的技術是 gulp 與 webpack。&lt;/p&gt;
 
 &lt;p&gt;而以國際化為重的 Ruby Conf Taiwan 今年議程也有 13 個國家的開發者投稿議程，將會為聽眾們帶來許多精彩的演說。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Rails 購物車設計</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/"/>
-    <id>http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/</id>
-    <published>2015-08-05T21:14:00+08:00</published>
-    <updated>2015-10-08T22:24:11+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;img alt="" src="/images/cart.png"&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;封面圖片為 Minecraft 遊戲的截圖，軌道上的貨車（cart on rails），筆者也算是從 alpha 版就開始玩的老玩家呢。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;隨著電子商務的崛起，網站上的購物車系統已經成了普遍的功能，這幾年 Rails 在台灣也快速竄紅，且由 Dave Thomas 與 David Heinemeier...&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;img alt="" src="/images/cart.png" /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;封面圖片為 Minecraft 遊戲的截圖，軌道上的貨車（cart on rails），筆者也算是從 alpha 版就開始玩的老玩家呢。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;隨著電子商務的崛起，網站上的購物車系統已經成了普遍的功能，這幾年 Rails 在台灣也快速竄紅，且由 Dave Thomas 與 David Heinemeier Hansson 所著的「&lt;a href="https://pragprog.com/book/rails4/agile-web-development-with-rails-4"&gt;Agile Web Development with Rails 4&lt;/a&gt;」一書中也有購物車範例。即便如此，仍然有許多開發者對於設計真正可用的購物車平台感到挫折。&lt;/p&gt;
-
-&lt;p&gt;其中一個理由是書中對於購物車、訂單、發票等規劃並沒有詳細的介紹，其二則是台灣的第三方支付並沒有任何一家廠商提供足夠友善的 API 供開發者使用。&lt;/p&gt;
-
-&lt;h1 id="section"&gt;購物車系統起手式&lt;/h1&gt;
-
-&lt;p&gt;該如何設計一個購物車系統呢？在思考這個問題前不妨先想想從挑選商品到放入購物車，到最後結帳的過程中，可以切出哪些 entity 以方便規劃資料庫，我們隨即可以直覺的想到有「商品」與「購物車」，而以下就是一個初步的 &lt;a href="https://www.wikiwand.com/en/Entity%E2%80%93relationship_model"&gt;Entity-Relation diagram&lt;/a&gt;：&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/erd/2.png" /&gt;&lt;/p&gt;
-
-&lt;h2 id="section-1"&gt;保留金額資訊&lt;/h2&gt;
-
-&lt;p&gt;沒道理筆者拿了一罐牛奶，你就只能挑豆漿，所以研判一個購物車可以有多個產品，且一個產品放進多個購物車，而這樣的設計圖乍看完美卻有個問題：試想當一個訪客挑選了一樣產品，並且放入購物車，這時如果該產品的價錢被後台管理員異動，那麼在訪客結帳之前購物車中的商品價錢也需要異動嗎？&lt;/p&gt;
-
-&lt;p&gt;如果這是被允許的，那麼筆者可以在訪客結帳的前一秒，將價錢偷改為幾百萬（之後幾年就是官司人生），於是我們需要新的設計避免這樣的悲劇：&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/erd/3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;這樣就好了許多，LineItem（在其他 Rails 的專案中，有的人會將 LineItem 命名為 CartItem）作為關聯 Product 與 Cart 的角色之外，還需額外儲存數量與金額資訊，這個金額必須是該產品加入購物車當下的數字，如此結帳時才不會有爭議價錢異動的爭議。&lt;/p&gt;
-
-&lt;h2 id="section-2"&gt;「訂單」與「購物車」的差異？&lt;/h2&gt;
-
-&lt;p&gt;「訂單」與「購物車」在電子商務系統中扮演的角色相似卻也有些差異，相似是兩者都同樣會記錄訪客加入購物車的商品的當前價錢與數量，差異則是「購物車」可編輯商品資訊（例如數量或新增商品），但「訂單」除了付款之外，不可再異動商品資訊，且「訂單」會擁有更多如地址、姓名、統編等一類的通訊資料。&lt;/p&gt;
-
-&lt;p&gt;加上「訂單」後的設計圖：&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/erd/5.png" /&gt;&lt;/p&gt;
-
-&lt;h2 id="section-3"&gt;付款紀錄&lt;/h2&gt;
-
-&lt;p&gt;「訂單」不能異動，唯一可以執行的動作就是「付款」。可是付款未必每次都會成功，且無論成功與否都應該留個記錄，記錄除了方便管理員查詢、找出問題之外，也能提供給使用者供參考與留存。&lt;/p&gt;
-
-&lt;p&gt;「交易紀錄」不需通訊資料，只需要記錄成功與否、交易編號即可，以下是新的設計圖：&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/erd/7.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;你大概會注意到 Trade 有個 &lt;code&gt;params:text&lt;/code&gt; 屬性，這是用來存放第三方支付服務所回傳的資料，可能是 JSON 或是 XML 格式，搭配 ActiveRecord 中的 &lt;a href="http://api.rubyonrails.org/classes/ActiveRecord/AttributeMethods/Serialization/ClassMethods.html#method-i-serialize"&gt;&lt;code&gt;#serialize&lt;/code&gt;&lt;/a&gt;，可以輕易存取這個欄位以供日後的查閱由服務所回傳的原始交易資料。&lt;/p&gt;
-
-&lt;h1 id="section-4"&gt;其他人怎麼做？&lt;/h1&gt;
-
-&lt;p&gt;像購物車系統如此常見的功能，想必也有許多開源項目可以使用，其中最有名的三個專案分別是：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/drhenner/ror_ecommerce"&gt;ror_ecommerce&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spreecommerce.com/"&gt;Spree&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/piggybak/piggybak"&gt;Piggybak&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="rorecommerce"&gt;ror_ecommerce&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/ror-ecommerce.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;是由 &lt;a href="https://github.com/drhenner"&gt;David Henner&lt;/a&gt; 在設計一個電子商務系統時，順手開源的項目，並且寫了&lt;a href="http://www.ror-e.com/"&gt;一個網站&lt;/a&gt;解釋他的設計哲學，即便這個項目是三個之中更新最慢的，但對於想學習如何徒手製作電子商務網站的人來說，筆者認為這是最值得參考的學習文件。&lt;/p&gt;
-
-&lt;p&gt;ror_ecommerce 的資料庫設計與本篇文章的示意圖、以及「Agile Web Development with Rails 4」書中的範例相同。&lt;/p&gt;
-
-&lt;h2 id="spree"&gt;Spree&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/spree.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Spree 是 Rails 開源電子商務圈最著名的項目，是由許多資深工程師組成的核心團隊所開發，其中不乏 Apache 軟體協會的成員與公司的 CTO、CEO，品質保證，加上完整的 API、文件以及活絡的社群，此外與 ActiveMerchant 相容性高，對於單純只是想要快速架設電子商務網站的人來說，Spree 堪稱首選。&lt;/p&gt;
-
-&lt;p&gt;資料結構方面，有別於前述的架構，Spree 並沒有 Cart entity，而是在 Order 之中新增一個 &lt;code&gt;state&lt;/code&gt; 屬性將「訂單」偽裝成「購物車」的行為，導致 Order 的行為邏輯比 Cart 複雜，但是可以實現的功能更多。&lt;/p&gt;
-
-&lt;h2 id="piggybak"&gt;Piggybak&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt="" src="/images/piggybak.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;算是 Rails 開源電子商務的後起之秀，沒有 Spree 那樣完備，但其模組化的彈性使得許多開發者也開始投像 Piggybak 的懷抱，這層關係有點像 Paperclip 與 CarrierWave 之間一樣，後者也是以模組化著稱。&lt;/p&gt;
-
-&lt;p&gt;你可以在 Rails 中任何一個 ActiveRecord model 中掛上 &lt;code&gt;acts_as_sellable&lt;/code&gt; 使其成為可以買賣的商品，相當簡便，如果你想要的是在既有的網站上加上購物功能，而非重新打造一個購物網站，也許這是讓你選擇 Piggybak 而非 Spree 的誘因。&lt;/p&gt;
-
-&lt;h1 id="section-5"&gt;結語嗎&lt;/h1&gt;
-
-&lt;p&gt;購物車系統沒有什麼「一定得這樣」的設計，不管是什麼架構的購物車，可以結帳的就是好的購物車。如果對於設計購物車仍有疑惑，也建議不妨多看看他人的開源項目怎麼設計，其實許多書中找不到的答案，都放在程式碼裡面，而優良的程式碼更是可以閱讀的。&lt;/p&gt;
-
-&lt;p&gt;筆者也有一份串接歐付寶的範例網站就放在 &lt;a href="https://github.com/tonytonyjan/brainana_shop"&gt;Github&lt;/a&gt; 上，有興趣的讀者可供參考，當然，也歡迎送 patch =)&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -7,19 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2015/08/05/design-cart-system-in-rails/">
-  <title>Rails 購物車設計 - 不歸錄</title>
-<meta name="description" content=" 封面圖片為 Minecraft 遊戲的截圖，軌道上的貨車（cart on rails），筆者也算是從 alpha 版就開始玩的老玩家呢。 隨著電子商務的崛起，網站上的購物車系統已經成了普遍的功能，這幾年 Rails 在台灣也快速竄紅，且由 Dave Thomas 與 David Heinemeier...">
-<meta name="keywords" content="Rails, Cart, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="Rails 購物車設計 - 不歸錄" />
-<meta property="og:description" content=" 封面圖片為 Minecraft 遊戲的截圖，軌道上的貨車（cart on rails），筆者也算是從 alpha 版就開始玩的老玩家呢。 隨著電子商務的崛起，網站上的購物車系統已經成了普遍的功能，這幾年 Rails 在台灣也快速竄紅，且由 Dave Thomas 與 David Heinemeier..." />
+  <meta property="og:url" content="http://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/">
+  <title>來自 chef.io 的小禮物 - 不歸錄</title>
+<meta name="description" content="筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌： ">
+<meta name="keywords" content="chef.io, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="來自 chef.io 的小禮物 - 不歸錄" />
+<meta property="og:description" content="筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌： " />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/cart.png" />
-<meta property="article:tag" content="Rails" />
-<meta property="article:tag" content="Cart" />
+<meta property="og:image" content="http://tonytonyjan.net/images/chef-2.jpg" />
+<meta property="article:tag" content="chef.io" />
 <meta property="article:section" content="程式" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
-<meta property="article:published_time" content="2015-08-05T21:14:00+08:00" />
+<meta property="article:published_time" content="2016-01-30T14:56:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -89,7 +88,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">Rails 購物車設計</h1>
+      <h1 class="entry-title">來自 chef.io 的小禮物</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -100,7 +99,7 @@
       </span>
       <span class="posted-on">
         在
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2015-08-05T21:14:00+08:00">2015 年 08 月 05 日</time></a>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2016-01-30T14:56:00+08:00">2016 年 01 月 30 日</time></a>
       </span>
       <span class="posted-in">
         發表於
@@ -110,97 +109,28 @@
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p><img alt="" src="/images/cart.png" /></p>
+      <p>筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌：</p>
 
-<blockquote>
-  <p>封面圖片為 Minecraft 遊戲的截圖，軌道上的貨車（cart on rails），筆者也算是從 alpha 版就開始玩的老玩家呢。</p>
-</blockquote>
 
-<p>隨著電子商務的崛起，網站上的購物車系統已經成了普遍的功能，這幾年 Rails 在台灣也快速竄紅，且由 Dave Thomas 與 David Heinemeier Hansson 所著的「<a href="https://pragprog.com/book/rails4/agile-web-development-with-rails-4">Agile Web Development with Rails 4</a>」一書中也有購物車範例。即便如此，仍然有許多開發者對於設計真正可用的購物車平台感到挫折。</p>
 
-<p>其中一個理由是書中對於購物車、訂單、發票等規劃並沒有詳細的介紹，其二則是台灣的第三方支付並沒有任何一家廠商提供足夠友善的 API 供開發者使用。</p>
+<p><img alt="" src="/images/chef-2.jpg" /></p>
 
-<h1 id="section">購物車系統起手式</h1>
+<p><a href="http://chef.io/">chef.io</a> 這種方式還頗逗趣的，比起錢，筆者似乎還比較喜歡這種可愛方式（完全中招啊）。除了感謝狀之外，還有一些小貼紙，可惜筆者沒有在筆電上面加貼紙的習慣，只能收在抽屜裡了。</p>
 
-<p>該如何設計一個購物車系統呢？在思考這個問題前不妨先想想從挑選商品到放入購物車，到最後結帳的過程中，可以切出哪些 entity 以方便規劃資料庫，我們隨即可以直覺的想到有「商品」與「購物車」，而以下就是一個初步的 <a href="https://www.wikiwand.com/en/Entity%E2%80%93relationship_model">Entity-Relation diagram</a>：</p>
+<p><img alt="" src="/images/chef.jpg" /></p>
 
-<p><img alt="" src="/images/erd/2.png" /></p>
+<p>唯一美中不足的地方就是國名寫了「Province of China」讓人不是很舒服，如果只寫「China」或「Republic of China」筆者是還勉強可以接受，畢竟現在中國正在內戰中嘛，只是搞不清兩個政府的領土就實在有點不應該（但無論是哪一個 China，當然還是寫 Taiwan 最好聽了）。</p>
 
-<h2 id="section-1">保留金額資訊</h2>
+<h1 id="chefconf-2016">ChefConf 2016</h1>
 
-<p>沒道理筆者拿了一罐牛奶，你就只能挑豆漿，所以研判一個購物車可以有多個產品，且一個產品放進多個購物車，而這樣的設計圖乍看完美卻有個問題：試想當一個訪客挑選了一樣產品，並且放入購物車，這時如果該產品的價錢被後台管理員異動，那麼在訪客結帳之前購物車中的商品價錢也需要異動嗎？</p>
-
-<p>如果這是被允許的，那麼筆者可以在訪客結帳的前一秒，將價錢偷改為幾百萬（之後幾年就是官司人生），於是我們需要新的設計避免這樣的悲劇：</p>
-
-<p><img alt="" src="/images/erd/3.png" /></p>
-
-<p>這樣就好了許多，LineItem（在其他 Rails 的專案中，有的人會將 LineItem 命名為 CartItem）作為關聯 Product 與 Cart 的角色之外，還需額外儲存數量與金額資訊，這個金額必須是該產品加入購物車當下的數字，如此結帳時才不會有爭議價錢異動的爭議。</p>
-
-<h2 id="section-2">「訂單」與「購物車」的差異？</h2>
-
-<p>「訂單」與「購物車」在電子商務系統中扮演的角色相似卻也有些差異，相似是兩者都同樣會記錄訪客加入購物車的商品的當前價錢與數量，差異則是「購物車」可編輯商品資訊（例如數量或新增商品），但「訂單」除了付款之外，不可再異動商品資訊，且「訂單」會擁有更多如地址、姓名、統編等一類的通訊資料。</p>
-
-<p>加上「訂單」後的設計圖：</p>
-
-<p><img alt="" src="/images/erd/5.png" /></p>
-
-<h2 id="section-3">付款紀錄</h2>
-
-<p>「訂單」不能異動，唯一可以執行的動作就是「付款」。可是付款未必每次都會成功，且無論成功與否都應該留個記錄，記錄除了方便管理員查詢、找出問題之外，也能提供給使用者供參考與留存。</p>
-
-<p>「交易紀錄」不需通訊資料，只需要記錄成功與否、交易編號即可，以下是新的設計圖：</p>
-
-<p><img alt="" src="/images/erd/7.png" /></p>
-
-<p>你大概會注意到 Trade 有個 <code>params:text</code> 屬性，這是用來存放第三方支付服務所回傳的資料，可能是 JSON 或是 XML 格式，搭配 ActiveRecord 中的 <a href="http://api.rubyonrails.org/classes/ActiveRecord/AttributeMethods/Serialization/ClassMethods.html#method-i-serialize"><code>#serialize</code></a>，可以輕易存取這個欄位以供日後的查閱由服務所回傳的原始交易資料。</p>
-
-<h1 id="section-4">其他人怎麼做？</h1>
-
-<p>像購物車系統如此常見的功能，想必也有許多開源項目可以使用，其中最有名的三個專案分別是：</p>
-
-<ul>
-  <li><a href="https://github.com/drhenner/ror_ecommerce">ror_ecommerce</a></li>
-  <li><a href="https://spreecommerce.com/">Spree</a></li>
-  <li><a href="https://github.com/piggybak/piggybak">Piggybak</a></li>
-</ul>
-
-<h2 id="rorecommerce">ror_ecommerce</h2>
-
-<p><img alt="" src="/images/ror-ecommerce.png" /></p>
-
-<p>是由 <a href="https://github.com/drhenner">David Henner</a> 在設計一個電子商務系統時，順手開源的項目，並且寫了<a href="http://www.ror-e.com/">一個網站</a>解釋他的設計哲學，即便這個項目是三個之中更新最慢的，但對於想學習如何徒手製作電子商務網站的人來說，筆者認為這是最值得參考的學習文件。</p>
-
-<p>ror_ecommerce 的資料庫設計與本篇文章的示意圖、以及「Agile Web Development with Rails 4」書中的範例相同。</p>
-
-<h2 id="spree">Spree</h2>
-
-<p><img alt="" src="/images/spree.jpg" /></p>
-
-<p>Spree 是 Rails 開源電子商務圈最著名的項目，是由許多資深工程師組成的核心團隊所開發，其中不乏 Apache 軟體協會的成員與公司的 CTO、CEO，品質保證，加上完整的 API、文件以及活絡的社群，此外與 ActiveMerchant 相容性高，對於單純只是想要快速架設電子商務網站的人來說，Spree 堪稱首選。</p>
-
-<p>資料結構方面，有別於前述的架構，Spree 並沒有 Cart entity，而是在 Order 之中新增一個 <code>state</code> 屬性將「訂單」偽裝成「購物車」的行為，導致 Order 的行為邏輯比 Cart 複雜，但是可以實現的功能更多。</p>
-
-<h2 id="piggybak">Piggybak</h2>
-
-<p><img alt="" src="/images/piggybak.png" /></p>
-
-<p>算是 Rails 開源電子商務的後起之秀，沒有 Spree 那樣完備，但其模組化的彈性使得許多開發者也開始投像 Piggybak 的懷抱，這層關係有點像 Paperclip 與 CarrierWave 之間一樣，後者也是以模組化著稱。</p>
-
-<p>你可以在 Rails 中任何一個 ActiveRecord model 中掛上 <code>acts_as_sellable</code> 使其成為可以買賣的商品，相當簡便，如果你想要的是在既有的網站上加上購物功能，而非重新打造一個購物網站，也許這是讓你選擇 Piggybak 而非 Spree 的誘因。</p>
-
-<h1 id="section-5">結語嗎</h1>
-
-<p>購物車系統沒有什麼「一定得這樣」的設計，不管是什麼架構的購物車，可以結帳的就是好的購物車。如果對於設計購物車仍有疑惑，也建議不妨多看看他人的開源項目怎麼設計，其實許多書中找不到的答案，都放在程式碼裡面，而優良的程式碼更是可以閱讀的。</p>
-
-<p>筆者也有一份串接歐付寶的範例網站就放在 <a href="https://github.com/tonytonyjan/brainana_shop">Github</a> 上，有興趣的讀者可供參考，當然，也歡迎送 patch =)</p>
+<p>題外話，最近筆者收到一封寄給貢獻者的 <a href="https://chefconf.chef.io">ChefConf 2016</a> 邀請信，早鳥票可以省 400 鎂，然後如果是 chef 貢獻者的話還可以額外省 $295 鎂，害得筆者頗心動，但即便如此筆者仍無法負擔高額的機票與住宿的費用，如果有誰需要這筆優惠的話，還請與筆者聯絡，不要讓這筆錢浪費了，感激不盡 :)</p>
 
       
     </div>
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/rails/">Rails</a>
-        <a rel="tag" href="/tags/cart/">Cart</a>
+        <a rel="tag" href="/tags/chef-io/">chef.io</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -229,12 +159,9 @@
   <nav class="nav-single row">
     <div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="/2015/07/14/s-don/" rel="prev"><span class="meta-nav">←</span> [台北] 艾斯糖 S Don</a>
+    <a href="/2016/01/07/there-are-politicians-in-ruby-2-3-0/" rel="prev"><span class="meta-nav">←</span> 對不起，我把馬英九放進 Ruby 2.3 了</a>
   </div>
-  <div class="nav-next col-sm-6">
-  <h4>下一篇</h4>
-  <a href="/2015/08/06/ruby-conference-taiwan-2015/" rel="next">Ruby Conference Taiwan 2015 <span class="meta-nav">→</span></a>
-</div>
+  
 </nav>
 <!-- .nav-single --> 
 <!-- #comments -->
