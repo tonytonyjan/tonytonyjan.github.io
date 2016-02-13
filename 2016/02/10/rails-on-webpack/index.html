@@ -7,18 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/">
-  <title>來自 chef.io 的小禮物 - 不歸錄</title>
-<meta name="description" content="筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌： ">
-<meta name="keywords" content="chef.io, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="來自 chef.io 的小禮物 - 不歸錄" />
-<meta property="og:description" content="筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌： " />
+  <meta property="og:url" content="http://tonytonyjan.net/2016/02/10/rails-on-webpack/">
+  <title>Rails on webpack - 不歸錄</title>
+<meta name="description" content="覺得 Rails 與 webpack 的整合不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法。">
+<meta name="keywords" content="Ruby on Rails, webpack, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="Rails on webpack - 不歸錄" />
+<meta property="og:description" content="覺得 Rails 與 webpack 的整合不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法。" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/chef-2.jpg" />
-<meta property="article:tag" content="chef.io" />
+<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="article:tag" content="Ruby on Rails" />
+<meta property="article:tag" content="webpack" />
 <meta property="article:section" content="程式" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
-<meta property="article:published_time" content="2016-01-30T14:56:00+08:00" />
+<meta property="article:published_time" content="2016-02-10T22:35:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -88,7 +89,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">來自 chef.io 的小禮物</h1>
+      <h1 class="entry-title">Rails on webpack</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -99,7 +100,7 @@
       </span>
       <span class="posted-on">
         在
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2016-01-30T14:56:00+08:00">2016 年 01 月 30 日</time></a>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2016-02-10T22:35:00+08:00">2016 年 02 月 10 日</time></a>
       </span>
       <span class="posted-in">
         發表於
@@ -109,28 +110,97 @@
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p>筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌：</p>
+      <p>記得筆者在去年於 RubyConf Taiwan 講的題目「<a href="https://youtu.be/0mphTtsekkI?t=2m59s">還給前端工程師一片天空</a>」中提到如何整合 Rails 與 Node.js 世界的工具，<a href="/slides/2015-09-11-return-front-end-back-to-front-end-developers/slides.pdf">投影片在此</a>。雖然 <a href="https://github.com/webpack/webpack">webpack</a> 正夯，但礙於筆者當時沒去研究，使用的工具仍是上一代的 gulp、bower，所幸議程也有相關的講題，如<strong>何澤清</strong>前輩的「<a href="https://www.youtube.com/watch?v=vbdVuEctCCQ">gem 'webpack-rails'</a>」。</p>
 
-<p><img alt="" src="/images/chef-2.jpg" /></p>
+<p>只是經過筆者幾番研究之後，覺得整合這兩樣東西似乎不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法（但並不保留 sprockets）。在那之前，先分享一些小知識：</p>
 
 
 
-<p><a href="http://chef.io/">chef.io</a> 這種方式還頗逗趣的，比起錢，筆者似乎還比較喜歡這種可愛方式（完全中招啊）。除了感謝狀之外，還有一些小貼紙，可惜筆者沒有在筆電上面加貼紙的習慣，只能收在抽屜裡了。</p>
+<h1 id="assetpath-">asset_path 知多少？</h1>
 
-<p><img alt="" src="/images/chef.jpg" /></p>
+<p><code>#asset_path</code> 是 Rails 中其中一個底層 API，許多 helper 如 <code>#image_tag</code> 等都會調用，而若沒有特別查閱原始碼，大概不多人知道 <code>asset_path('/app.js')</code> 和 <code>asset_path('app.js')</code> 差了一個斜線會影響結果，至於差在哪就讓我們節錄部份原始碼：</p>
 
-<p>唯一美中不足的地方就是國名寫了「Province of China」讓人不是很舒服，如果只寫「China」或「Republic of China」筆者是還勉強可以接受，畢竟現在中國正在內戰中嘛，只是搞不清兩個政府的領土就實在有點不應該（但無論是哪一個 China，當然還是寫 Taiwan 最好聽了）。</p>
+<pre><code class="language-ruby">def asset_path(source, options = {})
+  # ...
+  if source[0] != ?/
+    source = compute_asset_path(source, options)
+  end
+  # ...
+end
+</code></pre>
 
-<h1 id="chefconf-2016">ChefConf 2016</h1>
+<p>sprockets 其實有偷偷去複寫 <code>#compute_asset_path</code>，也就是說當傳入 <code>"/app.js"</code>，assets pipeline 是不會運作的，但若傳入 <code>"app.js"</code>，在 sprockets <code>#compute_asset_path</code> 的加持下結果會長的像 <code>/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.js?body=1</code>；反之若 <code>"app.js"</code> 檔案不存在，或者根本就沒安裝 sprockets，那就退回原型得到 <code>"/app.js"</code>。</p>
 
-<p>題外話，最近筆者收到一封寄給貢獻者的 <a href="https://chefconf.chef.io">ChefConf 2016</a> 邀請信，早鳥票可以省 400 鎂，然後如果是 chef 貢獻者的話還可以額外省 $295 鎂，害得筆者頗心動，但即便如此筆者仍無法負擔高額的機票與住宿的費用，如果有誰需要這筆優惠的話，還請與筆者聯絡，不要讓這筆錢浪費了，感激不盡 :)</p>
+<p>所以只要我們複寫的 <code>#compute_asset_path</code> 能算出 webpack 產生在 <code>public/assets</code> 中的正確路徑，其實不用更改任何 API，就可以輕鬆整合 webpack。而 <code>#javascript_include_tag</code>、<code>#stylesheet_link_tag</code>、<code>#image_tag</code> 等 helper 都可以照常使用。</p>
 
-      
+<h1 id="webpack---json">webpack –json</h1>
+
+<p>sprockets 在編譯後會產生 <code>manifest.json</code>，裡面有 asset 原始路徑與其計算後的路徑資訊（例如 <code>app.js</code> 對應到 <code>/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.js</code>，以 Hash 儲存），好處是 Rails 可以透過讀檔取得計算後的路徑結果，不須透過 sprockets，所以為了增加效能，這個檔案在 production 環境中是必要的，而在 development 環境中，由於 assets 的路徑是及時透過 sprockets 得出，所以並不需要這個檔案。</p>
+
+<p>此外 sprockets 在 controller 與 router 中也動了手腳，這也是為什麼專案中 <code>public/assets</code> 明明沒東西，而在 development 環境下中送出像是 <code>/assets/ooxx.js</code> 的請求卻仍可以正常運作的原因。</p>
+
+<p>只是 webpack 畢竟是 Node.js 世界的產物，無法篡改 Rails controller 與 router，好消息是 <code>webpack --json</code> 會產生一個跟 <code>manifest.json</code> 類似的檔案（官方稱之為 stats file）。所以只要在 <code>webpack.config.js</code> 中加入產生 stats 的 plugin，再用 <code>webpack --watch</code> 來開發就已經綽綽有餘了，例如我們在專案的根目錄下產生 <code>stats.json</code>：</p>
+
+<pre><code class="language-js">plugins = [
+  function() {
+    this.plugin('done', function(stats) {
+      require('fs').writeFileSync(__dirname + '/stats.json', JSON.stringify(stats.toJson()))
+    })
+  }
+]
+</code></pre>
+
+<h1 id="section">範例專案</h1>
+
+<p>筆者<a href="https://github.com/tonytonyjan/rails_on_webpack">在 Github 實作了一個範例</a>，重點只在兩個檔案： <a href="https://github.com/tonytonyjan/rails_on_webpack/blob/master/app/helpers/webpack_helper.rb">app/helpers/webpack_helper.rb</a> 與 <a href="https://github.com/tonytonyjan/rails_on_webpack/blob/master/lib/webpack_stats.rb">lib/webpack_stats.rb</a> 。</p>
+
+<p><code>webpack_stats.rb</code> 負責載入 webpack 產生的 <code>stats.json</code>，經過處理之後產生一個 assets hash，例如：</p>
+
+<pre><code class="language-ruby">{
+  'app.js' =&gt; '/assets/app.js',
+  'app.css' =&gt; '/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.css' # 也支援 hash 尾綴
+}
+</code></pre>
+
+<p>（限制是 webpack 必須遵守檔名格式為 <code>filename-hash.extname</code> 或是 <code>filename.extname</code>。）</p>
+
+<p>而這個 assets hash 將被用在 <code>#compute_asset_path</code>：</p>
+
+<pre><code class="language-ruby"># app/helpers/webpack_helper.rb
+require 'webpack_stats'
+module WebpackHelper
+  def compute_asset_path source, options = {}
+    WebpackStats.assets[source] || super
+  end
+end
+</code></pre>
+
+<p>大功告成！老實說這樣就已經能完美運作了，不用安裝什麼 gem，實測用來寫 react 也不用安裝 <a href="https://github.com/reactjs/react-rails">react-rails</a>。而剩下的問題已經不關整合的事，像要加入 SASS、CoffeeScript 或是 Font Awesome 等，或是在 production 下要壓縮 JavaScript 並且分離 CSS 檔案等，這取決開發者對 webpack 的掌握。</p>
+
+<p>至於只在 production 中分離 CSS 檔案，裡面可以這樣寫：</p>
+
+<pre><code class="language-html">&lt;%= stylesheet_link_tag 'application', media: 'all' if Rails.env.production? %&gt;
+</code></pre>
+
+<p>至於為何要這樣做，可參考 extract-text-webpack-plugin 的 <a href="https://github.com/webpack/extract-text-webpack-plugin/blob/master/README.md">README</a> 提到的優缺點。</p>
+
+<h1 id="gem">我就是要 gem</h1>
+
+<p>其實筆者也是有做啦⋯⋯如果真的覺得那兩個檔案很麻煩，可以安裝 <a href="https://github.com/tonytonyjan/webpack_stats">webpack_stats</a>，這除了可以用在 Rails，也可以當一般 webpack stats 的 loader 使用（用在 Rails 之外的地方）。</p>
+
+      <!-- .project-action -->
+      <div class="project-action">
+        
+        
+        <a href="https://github.com/tonytonyjan/webpack_stats" class="button button-icon big red"><i class="fa fa-github"></i>GITHUB</a>
+      </div>
+      <!-- .project-action -->
     </div>
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/chef-io/">chef.io</a>
+        <a rel="tag" href="/tags/ruby-on-rails/">Ruby on Rails</a>
+        <a rel="tag" href="/tags/webpack/">webpack</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -159,12 +229,9 @@
   <nav class="nav-single row">
     <div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="/2016/01/07/there-are-politicians-in-ruby-2-3-0/" rel="prev"><span class="meta-nav">←</span> 對不起，我把馬英九放進 Ruby 2.3 了</a>
+    <a href="/2016/01/30/a-gift-from-chef-io/" rel="prev"><span class="meta-nav">←</span> 來自 chef.io 的小禮物</a>
   </div>
-  <div class="nav-next col-sm-6">
-  <h4>下一篇</h4>
-  <a href="/2016/02/10/rails-on-webpack/" rel="next">Rails on webpack <span class="meta-nav">→</span></a>
-</div>
+  
 </nav>
 <!-- .nav-single --> 
 <!-- #comments -->

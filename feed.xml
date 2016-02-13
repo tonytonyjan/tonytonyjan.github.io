@@ -5,27 +5,122 @@
   <id>http://tonytonyjan.net</id>
   <link href="http://tonytonyjan.net"/>
   <link href="http://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2016-01-30T14:56:00+08:00</updated>
+  <updated>2016-02-10T22:35:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>Rails on webpack</title>
+    <link rel="alternate" href="http://tonytonyjan.net/2016/02/10/rails-on-webpack/"/>
+    <id>http://tonytonyjan.net/2016/02/10/rails-on-webpack/</id>
+    <published>2016-02-10T22:35:00+08:00</published>
+    <updated>2016-02-12T09:22:58+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;記得筆者在去年於 RubyConf Taiwan 講的題目「&lt;a href="https://youtu.be/0mphTtsekkI?t=2m59s"&gt;還給前端工程師一片天空&lt;/a&gt;」中提到如何整合 Rails 與 Node.js 世界的工具，&lt;a href="/slides/2015-09-11-return-front-end-back-to-front-end-developers/slides.pdf"&gt;投影片在此&lt;/a&gt;。雖然 &lt;a href="https://github.com/webpack/webpack"&gt;webpack&lt;/a&gt; 正夯，但礙於筆者當時沒去研究，使用的工具仍是上一代的 gulp、bower，所幸議程也有相關的講題，如&lt;strong&gt;何澤清&lt;/strong&gt;前輩的「&lt;a href="https://www.youtube.com/watch?v=vbdVuEctCCQ"&gt;gem 'webpack-rails'&lt;/a&gt;」。&lt;/p&gt;
+
+&lt;p&gt;只是經過筆者幾番研究之後，覺得整合這兩樣東西似乎不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法（但並不保留 sprockets）。在那之前，先分享一些小知識：&lt;/p&gt;
+
+</summary>
+    <content type="html">&lt;p&gt;記得筆者在去年於 RubyConf Taiwan 講的題目「&lt;a href="https://youtu.be/0mphTtsekkI?t=2m59s"&gt;還給前端工程師一片天空&lt;/a&gt;」中提到如何整合 Rails 與 Node.js 世界的工具，&lt;a href="/slides/2015-09-11-return-front-end-back-to-front-end-developers/slides.pdf"&gt;投影片在此&lt;/a&gt;。雖然 &lt;a href="https://github.com/webpack/webpack"&gt;webpack&lt;/a&gt; 正夯，但礙於筆者當時沒去研究，使用的工具仍是上一代的 gulp、bower，所幸議程也有相關的講題，如&lt;strong&gt;何澤清&lt;/strong&gt;前輩的「&lt;a href="https://www.youtube.com/watch?v=vbdVuEctCCQ"&gt;gem 'webpack-rails'&lt;/a&gt;」。&lt;/p&gt;
+
+&lt;p&gt;只是經過筆者幾番研究之後，覺得整合這兩樣東西似乎不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法（但並不保留 sprockets）。在那之前，先分享一些小知識：&lt;/p&gt;
+
+
+
+&lt;h1 id="assetpath-"&gt;asset_path 知多少？&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;#asset_path&lt;/code&gt; 是 Rails 中其中一個底層 API，許多 helper 如 &lt;code&gt;#image_tag&lt;/code&gt; 等都會調用，而若沒有特別查閱原始碼，大概不多人知道 &lt;code&gt;asset_path('/app.js')&lt;/code&gt; 和 &lt;code&gt;asset_path('app.js')&lt;/code&gt; 差了一個斜線會影響結果，至於差在哪就讓我們節錄部份原始碼：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;def asset_path(source, options = {})
+  # ...
+  if source[0] != ?/
+    source = compute_asset_path(source, options)
+  end
+  # ...
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sprockets 其實有偷偷去複寫 &lt;code&gt;#compute_asset_path&lt;/code&gt;，也就是說當傳入 &lt;code&gt;"/app.js"&lt;/code&gt;，assets pipeline 是不會運作的，但若傳入 &lt;code&gt;"app.js"&lt;/code&gt;，在 sprockets &lt;code&gt;#compute_asset_path&lt;/code&gt; 的加持下結果會長的像 &lt;code&gt;/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.js?body=1&lt;/code&gt;；反之若 &lt;code&gt;"app.js"&lt;/code&gt; 檔案不存在，或者根本就沒安裝 sprockets，那就退回原型得到 &lt;code&gt;"/app.js"&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;所以只要我們複寫的 &lt;code&gt;#compute_asset_path&lt;/code&gt; 能算出 webpack 產生在 &lt;code&gt;public/assets&lt;/code&gt; 中的正確路徑，其實不用更改任何 API，就可以輕鬆整合 webpack。而 &lt;code&gt;#javascript_include_tag&lt;/code&gt;、&lt;code&gt;#stylesheet_link_tag&lt;/code&gt;、&lt;code&gt;#image_tag&lt;/code&gt; 等 helper 都可以照常使用。&lt;/p&gt;
+
+&lt;h1 id="webpack---json"&gt;webpack –json&lt;/h1&gt;
+
+&lt;p&gt;sprockets 在編譯後會產生 &lt;code&gt;manifest.json&lt;/code&gt;，裡面有 asset 原始路徑與其計算後的路徑資訊（例如 &lt;code&gt;app.js&lt;/code&gt; 對應到 &lt;code&gt;/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.js&lt;/code&gt;，以 Hash 儲存），好處是 Rails 可以透過讀檔取得計算後的路徑結果，不須透過 sprockets，所以為了增加效能，這個檔案在 production 環境中是必要的，而在 development 環境中，由於 assets 的路徑是及時透過 sprockets 得出，所以並不需要這個檔案。&lt;/p&gt;
+
+&lt;p&gt;此外 sprockets 在 controller 與 router 中也動了手腳，這也是為什麼專案中 &lt;code&gt;public/assets&lt;/code&gt; 明明沒東西，而在 development 環境下中送出像是 &lt;code&gt;/assets/ooxx.js&lt;/code&gt; 的請求卻仍可以正常運作的原因。&lt;/p&gt;
+
+&lt;p&gt;只是 webpack 畢竟是 Node.js 世界的產物，無法篡改 Rails controller 與 router，好消息是 &lt;code&gt;webpack --json&lt;/code&gt; 會產生一個跟 &lt;code&gt;manifest.json&lt;/code&gt; 類似的檔案（官方稱之為 stats file）。所以只要在 &lt;code&gt;webpack.config.js&lt;/code&gt; 中加入產生 stats 的 plugin，再用 &lt;code&gt;webpack --watch&lt;/code&gt; 來開發就已經綽綽有餘了，例如我們在專案的根目錄下產生 &lt;code&gt;stats.json&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-js"&gt;plugins = [
+  function() {
+    this.plugin('done', function(stats) {
+      require('fs').writeFileSync(__dirname + '/stats.json', JSON.stringify(stats.toJson()))
+    })
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id="section"&gt;範例專案&lt;/h1&gt;
+
+&lt;p&gt;筆者&lt;a href="https://github.com/tonytonyjan/rails_on_webpack"&gt;在 Github 實作了一個範例&lt;/a&gt;，重點只在兩個檔案： &lt;a href="https://github.com/tonytonyjan/rails_on_webpack/blob/master/app/helpers/webpack_helper.rb"&gt;app/helpers/webpack_helper.rb&lt;/a&gt; 與 &lt;a href="https://github.com/tonytonyjan/rails_on_webpack/blob/master/lib/webpack_stats.rb"&gt;lib/webpack_stats.rb&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;webpack_stats.rb&lt;/code&gt; 負責載入 webpack 產生的 &lt;code&gt;stats.json&lt;/code&gt;，經過處理之後產生一個 assets hash，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;{
+  'app.js' =&amp;gt; '/assets/app.js',
+  'app.css' =&amp;gt; '/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.css' # 也支援 hash 尾綴
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（限制是 webpack 必須遵守檔名格式為 &lt;code&gt;filename-hash.extname&lt;/code&gt; 或是 &lt;code&gt;filename.extname&lt;/code&gt;。）&lt;/p&gt;
+
+&lt;p&gt;而這個 assets hash 將被用在 &lt;code&gt;#compute_asset_path&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# app/helpers/webpack_helper.rb
+require 'webpack_stats'
+module WebpackHelper
+  def compute_asset_path source, options = {}
+    WebpackStats.assets[source] || super
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大功告成！老實說這樣就已經能完美運作了，不用安裝什麼 gem，實測用來寫 react 也不用安裝 &lt;a href="https://github.com/reactjs/react-rails"&gt;react-rails&lt;/a&gt;。而剩下的問題已經不關整合的事，像要加入 SASS、CoffeeScript 或是 Font Awesome 等，或是在 production 下要壓縮 JavaScript 並且分離 CSS 檔案等，這取決開發者對 webpack 的掌握。&lt;/p&gt;
+
+&lt;p&gt;至於只在 production 中分離 CSS 檔案，裡面可以這樣寫：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;%= stylesheet_link_tag 'application', media: 'all' if Rails.env.production? %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;至於為何要這樣做，可參考 extract-text-webpack-plugin 的 &lt;a href="https://github.com/webpack/extract-text-webpack-plugin/blob/master/README.md"&gt;README&lt;/a&gt; 提到的優缺點。&lt;/p&gt;
+
+&lt;h1 id="gem"&gt;我就是要 gem&lt;/h1&gt;
+
+&lt;p&gt;其實筆者也是有做啦⋯⋯如果真的覺得那兩個檔案很麻煩，可以安裝 &lt;a href="https://github.com/tonytonyjan/webpack_stats"&gt;webpack_stats&lt;/a&gt;，這除了可以用在 Rails，也可以當一般 webpack stats 的 loader 使用（用在 Rails 之外的地方）。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>來自 chef.io 的小禮物</title>
     <link rel="alternate" href="http://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/"/>
     <id>http://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/</id>
     <published>2016-01-30T14:56:00+08:00</published>
-    <updated>2016-02-06T15:05:47+08:00</updated>
+    <updated>2016-02-11T11:37:49+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
     <summary type="html">&lt;p&gt;筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌：&lt;/p&gt;
 
+&lt;p&gt;&lt;img alt="" src="/images/chef-2.jpg" /&gt;&lt;/p&gt;
+
 </summary>
     <content type="html">&lt;p&gt;筆者在開原世界裡面也打滾一陣子，貢獻過大小專案如 Rails、Ruby 等，也收過一些獎勵如比特幣、質數幣，但這次的禮物還蠻特別的，讓人忍不住想要多發一篇網誌：&lt;/p&gt;
 
-
-
 &lt;p&gt;&lt;img alt="" src="/images/chef-2.jpg" /&gt;&lt;/p&gt;
+
+
 
 &lt;p&gt;&lt;a href="http://chef.io/"&gt;chef.io&lt;/a&gt; 這種方式還頗逗趣的，比起錢，筆者似乎還比較喜歡這種可愛方式（完全中招啊）。除了感謝狀之外，還有一些小貼紙，可惜筆者沒有在筆電上面加貼紙的習慣，只能收在抽屜裡了。&lt;/p&gt;
 
@@ -610,35 +705,6 @@ end
   &lt;li&gt;&lt;a href="https://github.com/celluloid/celluloid-io"&gt;celluloid-io&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://github.com/rails/actioncable"&gt;actioncable&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Ruby Conference Taiwan 2015</title>
-    <link rel="alternate" href="http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/"/>
-    <id>http://tonytonyjan.net/2015/08/06/ruby-conference-taiwan-2015/</id>
-    <published>2015-08-06T03:34:00+08:00</published>
-    <updated>2015-08-18T18:03:11+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;a href="http://2015.rubyconf.tw/"&gt;&lt;img src="/images/ruby-conf-tw-2015.png" width="100%"&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://2015.rubyconf.tw/"&gt;大會官網&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一年一度的 Ruby Conference 又來啦，今年的明星陣容除了與去年一樣有邀請到 Ruby 之父松本行弘（Matz），Rails 的核心開發者 Aaron Patterson（tenderlove），以及一位來自日本的 CRuby 核心開發者芝田浩（hsbt）。&lt;/p&gt;
-
-&lt;p&gt;大會...&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;a href="http://2015.rubyconf.tw/"&gt;&lt;img src="/images/ruby-conf-tw-2015.png" width="100%" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://2015.rubyconf.tw/"&gt;大會官網&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一年一度的 Ruby Conference 又來啦，今年的明星陣容除了與去年一樣有邀請到 Ruby 之父松本行弘（Matz），Rails 的核心開發者 Aaron Patterson（tenderlove），以及一位來自日本的 CRuby 核心開發者芝田浩（hsbt）。&lt;/p&gt;
-
-&lt;p&gt;大會議程主題種類多元，從 Rails 前後端網頁應用到 Ruby 與 C library 的串接都有。如果你對於 Ruby 的效能問題感興趣，可以參考 tka 的「如何用 golang 幫 ruby 專案加速」以及林鈺翔的「Need for Speed: Boost ruby with FFI」，分別應用了不同的程式語言替 Ruby 加速（雖然筆者仍喜歡直接調用 Ruby 的 C API 去寫 C 擴展）。&lt;/p&gt;
-
-&lt;p&gt;此外筆者小投一篇近來對 Rails 前端套件的管理心得，僥倖錄取了，如果你對 Rails 上的前端套件管理有興趣，除了筆者的講題「還給前端工程師一個天空」之外，也建議也可以參考講者何澤清的「gem 'webpack-rails'」，分別使用的技術是 gulp 與 webpack。&lt;/p&gt;
-
-&lt;p&gt;而以國際化為重的 Ruby Conf Taiwan 今年議程也有 13 個國家的開發者投稿議程，將會為聽眾們帶來許多精彩的演說。&lt;/p&gt;
 </content>
   </entry>
 </feed>

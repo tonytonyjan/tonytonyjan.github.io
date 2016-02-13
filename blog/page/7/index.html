@@ -85,6 +85,32 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">2</span>五月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/02/list-all-posts-rake-task-for-octopress/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/05/02/list-all-posts-rake-task-for-octopress/" rel="bookmark">List Published or Unpublished Posts in Octopress</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><h2 id="whats-the-problem">What's the Problem?</h2>
+
+<p>We may leave some draft posts in <code>_posts</code> directory, but it comes a problem when we are going to find whether the post is published...</p>
+        <a href="/2012/05/02/list-all-posts-rake-task-for-octopress/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">1</span>五月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/05/01/indexer-for-octopress/#disqus_thread"></span>留言</span>
     </footer>
@@ -374,49 +400,6 @@ page_asides: [custom/asides/indexer.html] # 加上這個
 
 <p>舉個例子，今天身在一個團隊的隊長，他的夥伴一個用 Facebook...</p>
         <a href="/2012/03/05/cooperation-and-connection/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">3</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/03/03/string-and-symbol-in-controller/" rel="bookmark">params["key"] 和 params[:key]</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 <code>params[:id]</code> 和 <code>params["id"]</code> 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。</p>
-
-<p>我臨時寫了一個程式，先 trace <code>params[:id]</code>，再 trace <code>params["id"]</code>，並用等於符號分隔，看他們之間的不同：</p>
-
-<p>``` ruby Experiment in controller<br />
-set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params[:id]<br />
-set_trace_func nil</p>
-
-<p>puts "=====================" # 我不希望 trace 到 puts method</p>
-
-<p>set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params["id"]<br />
-set_trace_func nil<br />
-```<br />
-
-        <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>

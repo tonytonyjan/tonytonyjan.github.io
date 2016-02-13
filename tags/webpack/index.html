@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/blog/page/36/">
-  <title>不歸錄</title>
+  <meta property="og:url" content="http://tonytonyjan.net/tags/webpack/">
+  <title>標籤：webpack - 不歸錄</title>
 <meta name="description" content="大兜的個人部落格，本名簡煒航，網路代號 tonytonyjan。內容包括程式設計、音樂創作與生活雜記。">
-<meta name="keywords" content="Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="不歸錄">
+<meta name="keywords" content="webpack, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="標籤：webpack - 不歸錄">
 <meta property="og:description" content="大兜的個人部落格，本名簡煒航，網路代號 tonytonyjan。內容包括程式設計、音樂創作與生活雜記。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png">
@@ -57,9 +57,8 @@
   <!-- NAV MENU -->
   <ul class="vs-nav">
     <!-- TemplateBeginEditable name="Menu-Content" -->
-    <li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="left"></i></a></li>
-<li><a><i title="搜尋" class="search-link fa fa-search tooltip" data-tooltip-pos="right"></i></a></li>
-
+    <li><a href="javascript:history.back()"><i title="上一頁" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+    <li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
     <!-- TemplateEndEditable -->
   </ul>
   <!-- NAV MENU -->
@@ -77,161 +76,37 @@
 <!-- HEADER -->
     <!-- WRAPPER -->
     <div class="wrapper">
-
 <!-- .blog-posts -->
 <div class="blog-posts readable-content">
+  <article class="post hentry">
+    <header class="entry-header">
+       <h1 class="entry-title">標籤：webpack</h1>
+    </header>
+  </article>
   <!-- .post -->
   <article class="post type-post hentry">
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
-      <span title="2005" class="entry-date"><span class="day">26</span>十一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2005/11/26/265/#disqus_thread"></span>留言</span>
+      <span title="2016" class="entry-date"><span class="day">10</span>二月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2016/02/10/rails-on-webpack/#disqus_thread"></span>留言</span>
     </footer>
     <!-- .entry-meta -->  
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
-        <a href="/2005/11/26/265/" rel="bookmark">笑話一小則</a>
+        <a href="/2016/02/10/rails-on-webpack/" rel="bookmark">Rails on webpack</a>
       </h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-content -->     
     <div class="entry-content">
-      <p><p>如果有這麼一天</p>
-<p>台彎的選舉，從開始到結束，不曾出現誹謗、抹黑、幹譙、勾心鬥角；然後平安落幕......</p>
-<p />
-<p />
+      <p><p>記得筆者在去年於 RubyConf Taiwan 講的題目「<a href="https://youtu.be/0mphTtsekkI?t=2m59s">還給前端工程師一片天空</a>」中提到如何整合 Rails 與 Node.js 世界的工具，<a href="/slides/2015-09-11-return-front-end-back-to-front-end-developers/slides.pdf">投影片在此</a>。雖然 <a href="https://github.com/webpack/webpack">webpack</a> 正夯，但礙於筆者當時沒去研究，使用的工具仍是上一代的 gulp、bower，所幸議程也有相關的講題，如<strong>何澤清</strong>前輩的「<a href="https://www.youtube.com/watch?v=vbdVuEctCCQ">gem 'webpack-rails'</a>」。</p>
+
+<p>只是經過筆者幾番研究之後，覺得整合這兩樣東西似乎不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法（但並不保留 sprockets）。在那之前，先分享一些小知識：</p>
 
 
-        <a href="/2005/11/26/265/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2005" class="entry-date"><span class="day">18</span>十一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2005/11/18/266/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2005/11/18/266/" rel="bookmark">心理矛盾</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>近來幾天，考試甚繁，課業輕重；娛樂與學業難臻兩全，有同鮑魚與熊掌般難以取捨。</p>
-<p>娛樂固然好，偶爾上上網、打打球、玩玩GAME......等，卻不過惰性爾爾，玩起來卻一發不可收拾。</p>
-<p>課業也重要，偶爾翻翻書、吟吟詩、寫寫ARTICAL......等，但是後繼無力，常覺得幹勁十足而馬力不足，學業是「食...</p>
-        <a href="/2005/11/18/266/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2005" class="entry-date"><span class="day">11</span>十一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2005/11/11/267/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2005/11/11/267/" rel="bookmark">眾犬吠聲</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>藝術家(尤其是創新者)是弱勢族群，就像原住民或殘障人士一樣；唯一不同的是，對於他們，並沒有相關的福利政策；眾人不過是對於自己所不了解的「藝術」，大肆進行抨擊罷了；然而，世上有多少人真正明白那些藝術家呢？</p>
-
-        <a href="/2005/11/11/267/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2005" class="entry-date"><span class="day">3</span>十一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2005/11/03/268/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2005/11/03/268/" rel="bookmark">百米賽跑</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>今天是個好日子──除了考試，還要測一百公尺。考試就不用說了(無比悽慘...)，說說一百公尺測驗吧！</p>
-<p>我從國中時期，對自己的速度還蠻感到自信的，！我測當然囉，今天便是一展身手的時候了出來的成績是13.1秒(在班上是第二快的吧！)，至於那個12.8秒的「飛毛腿」，相較之下，我真是遜色不少啊！![]...</p>
-        <a href="/2005/11/03/268/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2005" class="entry-date"><span class="day">28</span>十月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2005/10/28/270/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2005/10/28/270/" rel="bookmark">好久沒來的訪客</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>那是幾天前的事了......</p>
-<p>等我醒來的時候，發現我在自己的書桌上睡著了(還睡在我的歷史講義上面)。抬頭看一下時間，業已半夜十二點。![](/images/slum-area/248_m1.gif)</p>
-<p>當時醒過來，喉嚨就有一點不舒服了，然而，誰曉得呢？隔天早上我就發燒了！早上先是頭暈，然後冷的發...</p>
-        <a href="/2005/10/28/270/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2005" class="entry-date"><span class="day">20</span>十月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2005/10/20/271/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2005/10/20/271/" rel="bookmark">球與運氣</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>今天的體育課啊，本來是要上網球的，誰知道網球拍能用的僅僅二十來支，而一班少說有四十位，加上網球場正在整修(除草吧...我沒看清楚)，別說玩了，碰一下也不得，就連任課體育老師都說了：「不曉得學校是把網球不當一回事......」他還停頓了一下：「還是根本沒有這回事。」聽完我們班都笑了。</p>
-<p>網球呢，就...</p>
-        <a href="/2005/10/20/271/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+        <a href="/2016/02/10/rails-on-webpack/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
@@ -239,7 +114,7 @@
     <!-- post nav -->
     <nav class="navigation" role="navigation">
         
-        <div class="nav-next"><a href="/blog/page/35/">更新<span class="meta-nav">→</span></a></div>
+        
     </nav>
     <!-- post nav -->
     <!-- post pagination -->
