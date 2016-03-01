@@ -2,6 +2,7 @@
 title: "五倍的祝福，五倍紅寶石"
 date: 2014-05-30 15:28:11 +0800
 category: 閒聊
+tags: Ruby
 ---
 
 ![](/images/5xruby_logo.png)
@@ -59,6 +60,6 @@ http://5xruby.tw
 
 ## 說明會
 
-報名網址：[http://www.accupass.com/go/5xruby](http://www.accupass.com/go/5xruby)  
-時間：2014/6/5 (星期四) 19:30  
+報名網址：[http://www.accupass.com/go/5xruby](http://www.accupass.com/go/5xruby)
+時間：2014/6/5 (星期四) 19:30
 地點：TED x Taipei Space (台北市金山南路一段 9 號 4 樓)
