@@ -146,6 +146,38 @@ api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET...
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2014" class="entry-date"><span class="day">30</span>五月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2014/05/30/5xruby-start/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2014/05/30/5xruby-start/" rel="bookmark">五倍的祝福，五倍紅寶石</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p><img alt="" src="/images/5xruby_logo.png"></p>
+
+<p>http://5xruby.tw</p>
+
+<blockquote>
+  <p>莫名其妙地，第二間公司就這樣開張了。</p>
+</blockquote>
+
+<p>三年，從 Movimpact（已停止運作）、<a href="http://brainana.com">腦袋有動工作室</a>一路到<a href="http://5xruby.tw">五倍紅寶石</a>，有趣的是這些我有參與創辦過程的單位，其名字湊巧都是我想的，偶爾我也懷疑到底是我體貼的隊友想讓我開心的，抑或我說不定是個命名的天才？...</p>
+        <a href="/2014/05/30/5xruby-start/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2013" class="entry-date"><span class="day">23</span>十月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2013/10/23/tjstamp-yin-zhang-chan-sheng-qi/#disqus_thread"></span>留言</span>
     </footer>
@@ -380,49 +412,6 @@ api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET...
 
 
         <a href="/2012/06/06/an-n-gram-generator-for-ruby/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">3</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/03/03/string-and-symbol-in-controller/" rel="bookmark">params["key"] 和 params[:key]</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 <code>params[:id]</code> 和 <code>params["id"]</code> 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。</p>
-
-<p>我臨時寫了一個程式，先 trace <code>params[:id]</code>，再 trace <code>params["id"]</code>，並用等於符號分隔，看他們之間的不同：</p>
-
-<p>``` ruby Experiment in controller<br />
-set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params[:id]<br />
-set_trace_func nil</p>
-
-<p>puts "=====================" # 我不希望 trace 到 puts method</p>
-
-<p>set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params["id"]<br />
-set_trace_func nil<br />
-```<br />
-
-        <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
