@@ -88,6 +88,37 @@
     <!-- .entry-meta --> 
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2014" class="entry-date"><span class="day">7</span>十月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2014/10/07/multi-line-c-macros/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->  
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2014/10/07/multi-line-c-macros/" rel="bookmark">C 語言之多行巨集</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->     
+    <div class="entry-content">
+      <p><p>有時候我們在翻閱原始碼的時候會看到類似這樣的寫法：</p>
+
+<pre><code class="language-c">#define FOO(x, y)    \
+do {                 \
+  typeof(x) tmp = x; \
+  x = y;             \
+  y = tmp;           \
+} while...</code></pre>
+        <a href="/2014/10/07/multi-line-c-macros/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2014" class="entry-date"><span class="day">28</span>六月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2014/06/28/fcfc-movie-downloader/#disqus_thread"></span>留言</span>
     </footer>
@@ -355,34 +386,6 @@ api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET...
 <p><img alt="" src="/images/human-cloning.png" /></p>
 
         <a href="/2013/06/22/the-human-cloning-wall/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2013" class="entry-date"><span class="day">20</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2013/03/20/tj-caesar-cipher/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/20/tj-caesar-cipher/" rel="bookmark">凱薩密碼中文版</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p>靈感是受到凱薩密碼的影響，且英文論壇中為了避免髒話或敏感詞彙被擋，有 rot13 的出現（其實就是凱薩加密，key 設定成 13，所以 rot13 兩次會等於原來的句子）。想說中文也可這樣玩，所以決定寫一個全世界最沒用的玩具。</p>
-
-<h2 id="section">安裝</h2>
-
-<pre><code>gem install tj_caesar_cipher...</code></pre>
-        <a href="/2013/03/20/tj-caesar-cipher/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
