@@ -24,9 +24,13 @@ activate :blog do |blog|
 end
 activate :directory_indexes
 activate :deploy do |deploy|
-  deploy.method       = :git
-  deploy.branch       = :master
-  deploy.build_before = true
+  deploy.method = :rsync
+  deploy.clean = true
+  deploy.user            = 'deploy'
+  deploy.host            = '128.199.147.210'
+  deploy.port            = 22
+  deploy.path            = '/var/www/tonytonyjan.net'
+  # deploy.build_before    = true
 end
 
 page 'feed.xml', layout: false
