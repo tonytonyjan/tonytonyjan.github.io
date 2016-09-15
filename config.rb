@@ -34,7 +34,8 @@ activate :deploy do |deploy|
 end
 
 page 'feed.xml', layout: false
-page "google7bd685dfb8300eb0.html", directory_index: false
+page 'google7bd685dfb8300eb0.html', directory_index: false
+page '404.html', directory_index: false
 
 ignore 'slides/*'
 after_build do
