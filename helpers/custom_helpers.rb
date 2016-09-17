@@ -1,6 +1,6 @@
 module CustomHelpers
   def page_image
-    site_url + image_path(current_page.data.image || 'site/avatar_big.png')
+    config[:site_url] + image_path(current_page.data.image || 'site/avatar_big.png')
   end
 
   def condense str
@@ -8,7 +8,7 @@ module CustomHelpers
   end
 
   def article_title
-    "#{current_article.title} - #{site_name}"
+    "#{current_article.title} - #{config[:site_name]}"
   end
 
   def article_description
@@ -17,7 +17,7 @@ module CustomHelpers
 
   def article_thumb_path article
     if article.data.thumb
-      article.data.thumb 
+      article.data.thumb
     elsif article.data.image && File.exist?(File.join(source_dir, "images/thumbs/#{article.data.image}"))
       "thumbs/#{article.data.image}"
     else

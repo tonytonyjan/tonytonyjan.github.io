@@ -3,11 +3,11 @@ pageable: true
 ---
 
 <% content_for :meta do %>
-<title>分類：<%= category %> - <%= site_name %></title>
-<meta name="description" content="<%= blog_description %>">
+<title>分類：<%= category %> - <%= config[:site_name] %></title>
+<meta name="description" content="<%= config[:blog_description] %>">
 <meta name="keywords" content="<%= category %>, <%= I18n.t 'site.keywords' %>">
-<meta property="og:title" content="分類：<%= category %> - <%= site_name %>">
-<meta property="og:description" content="<%= blog_description %>">
+<meta property="og:title" content="分類：<%= category %> - <%= config[:site_name] %>">
+<meta property="og:description" content="<%= config[:blog_description] %>">
 <meta property="og:type" content="website">
 <meta property="og:image" content="<%= page_image %>">
 <% end %>
@@ -22,13 +22,13 @@ pageable: true
   <% page_articles.each do |article| %>
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="<%= article.date.year %>" class="entry-date"><span class="day"><%= article.date.mday %></span><%= I18n.l article.date, format: '%b' %></span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="<%= site_url + article.url %>#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="<%= config[:site_url] + article.url %>#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -36,7 +36,7 @@ pageable: true
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p><%= article.summary %>
         <a href="<%= article.url %>" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>

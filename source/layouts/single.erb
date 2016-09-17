@@ -1,8 +1,8 @@
 <% content_for :meta do %>
-<title><%= current_page.data.title %> - <%= site_name %></title>
+<title><%= current_page.data.title %> - <%= config[:site_name] %></title>
 <meta name="description" content="<%= current_page.data.description %>">
 <meta name="keywords" content="<%= I18n.t 'site.keywords' %>">
-<meta property="og:title" content="<%= current_page.data.title %> - <%= site_name %>">
+<meta property="og:title" content="<%= current_page.data.title %> - <%= config[:site_name] %>">
 <meta property="og:description" content="<%= current_page.data.description %>">
 <meta property="og:type" content="website">
 <meta property="og:image" content="<%= page_image %>">

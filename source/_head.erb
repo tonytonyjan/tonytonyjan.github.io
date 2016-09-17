@@ -2,8 +2,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="<%= I18n.t 'site.author' %>">
-  <meta property="og:site_name" content="<%= site_name %>">
-  <meta property="og:url" content="<%= site_url + current_page.url %>">
+  <meta property="og:site_name" content="<%= config[:site_name] %>">
+  <meta property="og:url" content="<%= config[:site_url] + current_page.url %>">
   <% if content_for? :meta %><%= yield_content :meta %><% end %>
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
