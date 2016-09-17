@@ -37,7 +37,6 @@ activate :deploy do |deploy|
   deploy.clean = true
   deploy.user = 'deploy'
   deploy.host = 'tonytonyjan.net'
-  deploy.port = 22
   deploy.path = '/var/www/tonytonyjan.net'
 end
 
