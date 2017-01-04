@@ -31,7 +31,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -69,9 +69,9 @@
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -83,7 +83,7 @@
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -97,9 +97,10 @@
   <a href="<%= current_article.next_article.url %>" rel="next"><%= current_article.next_article.title %> <span class="meta-nav">→</span></a>
 </div><% end %>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <%= partial 'disqus' if current_article.data.comment || current_article.data.comment.nil? %>
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 <% end %>
