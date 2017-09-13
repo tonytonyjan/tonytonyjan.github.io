@@ -2,7 +2,7 @@
 title: "Compiz真是太帥了～"
 date: 2010-03-31 00:20:15 +0800
 category: 程式
-tags: FreeBSD
+tags: [FreeBSD]
 ---
 
 ![](/images/slum-area/77_0.png)

@@ -2,7 +2,7 @@
 title: 對不起，我把馬英九放進 Ruby 2.3 了
 date: 2016-01-07 23:27 +0800
 category: 程式
-tags: 馬英九, 連勝文, Ruby
+tags: [馬英九, 連勝文, Ruby]
 image: /images/ma.png
 thumb: /images/thumbs/ma.png
 description: 身為一個 Ruby 語言的教徒，這個聖誕節最令人興奮的莫過於 Ruby 2.3 的發表了，不過這次由於筆者的緣故，意外讓台灣的政治人物們走進了 Ruby 原始碼中，究竟是怎麼回事呢XD

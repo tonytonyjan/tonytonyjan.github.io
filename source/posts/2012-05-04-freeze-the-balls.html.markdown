@@ -2,7 +2,7 @@
 title: "冰冰涼涼的 Ju-Ju"
 date: 2012-05-04 13:40 +0800
 category: 閒聊
-tags: 蛋蛋
+tags: [蛋蛋]
 ---
 
 ![](/images/ice-ball.jpg)

@@ -2,7 +2,7 @@
 title: "Rails 4.2 重點介紹"
 date: 2014-12-20 09:46:11 +0800
 category: 程式
-tags: Ruby on Rails, Ruby
+tags: [Ruby on Rails, Ruby]
 thumb: thumbs/rails.jpg
 ---
 

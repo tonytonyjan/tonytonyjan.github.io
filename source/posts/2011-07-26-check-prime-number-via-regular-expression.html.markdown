@@ -2,7 +2,7 @@
 title: "正規表達式檢查質數"
 date: 2011-07-26 17:57 +0800
 category: 程式
-tags: 正規表達式, Regex, 質數, Regular Expression
+tags: [正規表達式, Regex, 質數, Regular Expression]
 ---
 
 ```

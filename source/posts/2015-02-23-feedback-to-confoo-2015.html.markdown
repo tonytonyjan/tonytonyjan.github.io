@@ -2,7 +2,7 @@
 title: ConFoo 2015 心得
 date: 2015-02-23 02:34 +0800
 category: 心得
-tags: Ruby, 加拿大, ConFoo, 研討會
+tags: [Ruby, 加拿大, ConFoo, 研討會]
 image: images/confoo-2015.jpg
 thumb: thumbs/confoo-2015.jpg
 description: 去年，筆者在 Ruby 官方網站看到了加拿大 ConFoo 在徵 Ruby 的稿件，雖然蒙特婁有些遙遠，不過講者享有交通與食宿全免的福利（住在希爾頓酒店），筆者遂小投三篇，結果運氣不錯地上了兩篇。這次的旅程對筆者來說有需多「第一次」成就：路過北京、上海、轉機、到西方國家 、體驗零下溫度、堆雪人。

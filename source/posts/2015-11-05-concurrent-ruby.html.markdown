@@ -4,7 +4,7 @@ image: /images/push_server.jpg
 thumb: /images/thumbs/push_server.jpg
 date: 2015-11-05 01:10 +0800
 category: 程式
-tags: Ruby, SSE, eventmachine
+tags: [Ruby, SSE, eventmachine]
 description: 最近要蓋個 SSE 服務，筆者因貪一時方便就暫時使用 puma 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 select()，少了 epoll()、kqueue() 很不方便，好在 eventmachine 背後使用的是 libev 和 libevent，有用到上述兩個系統調用，但筆者其實是最希望使用 libuv 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 celluloid 替代 eventmachine，但前者在 I/O 的處理上[仍然使用 Kernel.select()，筆者也就作罷。
 ---
 

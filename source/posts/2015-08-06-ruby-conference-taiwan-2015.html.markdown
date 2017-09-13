@@ -4,7 +4,7 @@ image: /images/ruby-conf-tw-2015.png
 thumb: /images/thumbs/ruby-conf-tw-2015.png
 date: 2015-08-06 03:34 +0800
 category: 研討會
-tags: Ruby, 研討會, 台灣
+tags: [Ruby, 研討會, 台灣]
 link: http://2015.rubyconf.tw/
 ---
 

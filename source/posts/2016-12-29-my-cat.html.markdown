@@ -2,7 +2,7 @@
 title: 我的貓 - 黏黏和歲歲
 date: 2016-12-29 16:58 +0800
 category: 貓
-tags: 貓
+tags: [貓]
 description: 似乎從來沒有介紹過家裡的貓，也養了一年多了，索性來出賣幾張照片吧。
 image: /images/cats/20161110.jpg
 thumb: /images/cats/thumbs/20161110.jpg

@@ -2,7 +2,7 @@
 title: "列出系統中 Java 可用字型"
 date: 2010-04-14 21:18:02 +0800
 category: 程式
-tags: Java
+tags: [Java]
 ---
 
 由於 GUI 無論文字，都是用「畫」出來的，第一件事情就是要取得自身的圖形環境（GraphicaEnvironment）

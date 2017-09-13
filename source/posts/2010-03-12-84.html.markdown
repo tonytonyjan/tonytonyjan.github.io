@@ -2,7 +2,7 @@
 title: "CSRPG2.14版"
 date: 2010-03-12 00:44:35 +0800
 category: 程式
-tags: 交大, 資工, CSSULA, 鍾翔, kvchung, 遊戲, 角色扮演, Windows, C
+tags: [交大, 資工, CSSULA, 鍾翔, kvchung, 遊戲, 角色扮演, Windows, C]
 ---
 
 ![](/images/slum-area/89_0.jpg)

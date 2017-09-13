@@ -1,7 +1,7 @@
 ---
 title: 台灣身份證字號驗證器
 date: 2015-04-15 18:30 +0800
-tags: Ruby
+tags: [Ruby]
 category: 程式
 ---
 
