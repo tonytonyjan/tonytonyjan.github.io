@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+usage = 'Usage: import_image INPUT_FILE_PATH [OUTPUT_FILENAME]'
+
+if ARGV.length.zero?
+  $stderr.puts usage
+  exit(1)
+end
+
+input = ARGV[0]
+output_filename = ARGV[1] || "#{File.basename(input, '.*')}.jpg"
+output = File.expand_path("../../source/images/#{output_filename}", __FILE__)
+thumbnail_output = File.expand_path("../../source/images/thumbs/#{output_filename}", __FILE__)
+
+system "gm convert #{input} -interlace Plane -resize 740 -strip #{output}"
+system "gm convert #{input} -thumbnail 400x300^ -gravity center -crop 400x300+0+0 #{thumbnail_output}"
