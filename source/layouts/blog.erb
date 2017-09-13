@@ -88,13 +88,13 @@
   <!-- .about-author -->
   <!-- .nav-single -->
   <nav class="nav-single row">
-    <% if current_article.previous_article %><div class="nav-previous col-sm-6">
+    <% if current_article.article_previous %><div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="<%= current_article.previous_article.url %>" rel="prev"><span class="meta-nav">←</span> <%= current_article.previous_article.title %></a>
+    <a href="<%= current_article.article_previous.url %>" rel="prev"><span class="meta-nav">←</span> <%= current_article.article_previous.title %></a>
   </div><% end %>
-  <% if current_article.next_article %><div class="nav-next col-sm-6">
+  <% if current_article.article_next %><div class="nav-next col-sm-6">
   <h4>下一篇</h4>
-  <a href="<%= current_article.next_article.url %>" rel="next"><%= current_article.next_article.title %> <span class="meta-nav">→</span></a>
+  <a href="<%= current_article.article_next.url %>" rel="next"><%= current_article.article_next.title %> <span class="meta-nav">→</span></a>
 </div><% end %>
 </nav>
 <!-- .nav-single -->
