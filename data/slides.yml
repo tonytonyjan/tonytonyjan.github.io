@@ -1,3 +1,9 @@
+- date: 2018-03-07
+  topic: An Introduction of Interator Pattern in Ruby
+  event: Confoo 2018
+  event_url: https://confoo.ca/en/yul2018
+  links:
+    - url: /slides/2018-03-07-an-introduction-of-interator-pattern-in-ruby.pdf
 - date: 2015-09-11
   topic: 還給前端工程師一片天空
   event: RubyConf Taiwan
