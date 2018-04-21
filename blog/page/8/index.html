@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/blog/page/8/">
+  <meta property="og:url" content="https://tonytonyjan.net/blog/page/8/">
   <title>不歸錄</title>
 <meta name="description" content="大兜的個人部落格，本名簡煒航，網路代號 tonytonyjan。內容包括程式設計、音樂創作與生活雜記。">
 <meta name="keywords" content="Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="不歸錄">
 <meta property="og:description" content="大兜的個人部落格，本名簡煒航，網路代號 tonytonyjan。內容包括程式設計、音樂創作與生活雜記。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png">
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png">
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -20,9 +20,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -44,8 +44,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -64,9 +65,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -75,6 +76,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper">
 
@@ -82,13 +84,42 @@
 <div class="blog-posts readable-content">
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">8</span>三月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/03/08/using-sinatra-for-local-javascript-development/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" rel="bookmark">使用 Sinatra、HFS 在本地開發 Javascript</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>
+<p>寫 Javascript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 <code>http://</code> 以外協定的 AJAX request，其中當然包括 <code>file://</code>）。</p>
+
+<p>這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 <a href="http://www.rejetto.com/hfs/">HTTP File Server</a> ，另一個則是 <a href="http://www.sinatrarb.com/">Sinatra</a>。</p>
+
+
+        <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">6</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/06/shortcut-to-open-command-prompt-in-current-directory/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/03/06/shortcut-to-open-command-prompt-in-current-directory/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -96,7 +127,7 @@
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p><p>這篇文章會告訴你在 windows 檔案總管，如何用右鍵快速在某個目錄下打開命令字元。</p>
 
@@ -108,13 +139,13 @@
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">5</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/05/cooperation-and-connection/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/03/05/cooperation-and-connection/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -122,9 +153,9 @@
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
-      <p><p><img alt="" src="/images/team.jpg"></p>
+      <p><p><img src="/images/team.jpg" alt=""></p>
 
 <p>在一個團隊裡面，有一個常遇到的問題就是訊息的傳達不夠全面，尤其是在遠距團隊時更是如此。一個團隊的訊息無法在最短時間傳達給每個人，很多人會認為這是隊長的責任，殊不知隊員如果沒有身份的自覺，這個團隊除非隊長累死，否則仍有溝通的障礙。</p>
 
@@ -136,13 +167,13 @@
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">3</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/03/03/string-and-symbol-in-controller/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -150,28 +181,11 @@
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p><p>今天在寫學長託付的 API Server 時，突然對 controller 中用到的 params 變數感到好奇，我想知道為什麼 <code>params[:id]</code> 和 <code>params["id"]</code> 都可以 access 同一份資料，於是展開了 trace code 奇幻之旅。</p>
 
-<p>我臨時寫了一個程式，先 trace <code>params[:id]</code>，再 trace <code>params["id"]</code>，並用等於符號分隔，看他們之間的不同：</p>
-
-<p>``` ruby Experiment in controller<br />
-set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params[:id]<br />
-set_trace_func nil</p>
-
-<p>puts "=====================" # 我不希望 trace 到 puts method</p>
-
-<p>set_trace_func proc { |event, file, line, id, binding, classname|<br />
-   printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname<br />
-}<br />
-params["id"]<br />
-set_trace_func nil<br />
-```<br />
-
+<p>我臨時寫了一個程式，先 trace...</p>
         <a href="/2012/03/03/string-and-symbol-in-controller/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
@@ -179,13 +193,13 @@ set_trace_func nil<br />
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">1</span>三月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/03/01/install-octopress-on-windows/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/03/01/install-octopress-on-windows/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -193,10 +207,10 @@ set_trace_func nil<br />
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p>
-<h2 id="ruby">安裝 Ruby</h2>
+<h2 id="安裝-ruby">安裝 Ruby</h2>
 
 <p>雖然你也可以安裝 <a href="http://www.ruby-lang.org/en/downloads">RVM</a> 或者自行編譯，但既然是在 Windows 下，建議直接使用 <a href="http://rubyinstaller.org/downloads">Ruby Installer</a> 最省事。在此要下載兩個東西，一就是 ruby ，另一個則是 development kit。之所以要後者是因為屆時在安裝 Octopress 時，所需要用到的 ruby gems 會需要在本地編譯（例如 <a href="https://github.com/rtomayko/rdiscount">rdiscount</a>）。而 development kit 是一套基於 <a href="http://www.mingw.org/wiki/MSYS">MSYS/MinGW</a> 下的 C/C++ 編譯環境工具組，安裝時請跟著<a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">官網上的指示</a>即可，你大概會輸入以下指令：</p>
 
@@ -219,13 +233,13 @@ gem update
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">25</span>二月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/02/25/migrate-from-wordpress-to-octopress/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/02/25/migrate-from-wordpress-to-octopress/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -233,7 +247,7 @@ gem update
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p>
 <p>今天心血來潮的，把以前在 <a href="http://cssula.twgg.org">CSsula 機房</a>寫的文章全部搬到現在的 Octopress 了。我覺得比較麻煩的地方在於文章標題出現中文的時候，又沒有設定 post_name 時，就會以 <code>yyyy-mm-dd-中文字.markdown</code> 的格式儲存。而這個當然無解，只好手動一個一個改檔名了Orz</p>
@@ -250,13 +264,13 @@ gem update
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">13</span>二月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/02/13/category-list-and-tag-cloud/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/02/13/category-list-and-tag-cloud/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -264,7 +278,7 @@ gem update
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p><p>正在苦惱 octopress 沒有可以顯示所有目錄地外掛時，在<a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">高見龍前輩的網誌上取到西經</a>（看不懂的人，建議先閱讀過 <a href="https://github.com/mojombo/jekyll/wiki/Plugins">jekll plugin</a>）。但由於這種解在 <code>rake preview</code> 時會失敗，於是我開始撰寫 tag 版本。</p>
 
@@ -276,13 +290,13 @@ gem update
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">12</span>二月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/02/12/display-recent-comments-in-octopress/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/02/12/display-recent-comments-in-octopress/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -290,7 +304,7 @@ gem update
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
       <p>
 <p>octopress 內建的回覆外掛是 <a href="http://disqus.com">disqus</a>。但卻沒有提供在 asides 顯示近期回應的功能，加上我在網路上查不太到別人的寫法，於是我就自己寫了一個，也許對一些人有幫助：</p>
@@ -303,13 +317,13 @@ gem update
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">11</span>二月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/02/11/the-first-post/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/02/11/the-first-post/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -317,9 +331,9 @@ gem update
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
-      <p><p><img alt="" src="/images/octopress.png" /></p>
+      <p><p><img src="/images/octopress.png" alt=""></p>
 
 <p>之後很可能就以這裡為主要的部落格了。</p>
 
@@ -333,13 +347,13 @@ gem update
     <!-- .post -->
   <!-- .post -->
   <article class="post type-post hentry">
-    <!-- .entry-meta --> 
+    <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">22</span>一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/01/22/1/#disqus_thread"></span>留言</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/01/22/1/#disqus_thread"></span>留言</span>
     </footer>
-    <!-- .entry-meta -->  
+    <!-- .entry-meta -->
     <!-- .entry-header -->
     <header class="entry-header">
       <h1 class="entry-title">
@@ -347,37 +361,11 @@ gem update
       </h1>
     </header>
     <!-- .entry-header -->
-    <!-- .entry-content -->     
+    <!-- .entry-content -->
     <div class="entry-content">
-      <p><p><img alt="" src="/images/slum-area/1_208966196_m.jpg"></p>
+      <p><p><img src="/images/slum-area/1_208966196_m.jpg" alt=""></p>
 <p>昨天又經過了我國中同學的春聯攤位，我逗留一下，閒言閒語之間，她邀請我下午來幫忙一起叫賣，我盤算一下，自己其實也沒有什麼事要忙，便答應了。因為是臨時加入的外援，對於春聯的價位都不熟，糖果的磅秤也不會操作，且昨天下午也只有幫忙短短一個鐘頭的時間，除了我發出了約五張的傳單之外，我感覺我是來幫倒忙的...</p>
         <a href="/2012/01/22/1/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta --> 
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2012" class="entry-date"><span class="day">16</span>一月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="http://tonytonyjan.net/2012/01/16/2/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->  
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2012/01/16/2/" rel="bookmark">聊聊漂亮的女人</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->     
-    <div class="entry-content">
-      <p><p><img alt="" src="/images/slum-area/2_208511316_m.jpg"></p>
-<p>筆者想談談為什麼常聽人說「漂亮的女人往往笨，醜陋的女人往往有才智」，我雖一向不太同意無據之詞，但一面覺得成句不會無中生有，且身為一名好胡思亂想之人，餘習所遷，偶會去思考到底什麼原因造成有此成句。當然，我的答案畢竟是自推自斷，僅供參考，若筆者的文章也讓閣下想到什麼，也歡迎提出來與網友分享。</p>
-<p>筆...</p>
-        <a href="/2012/01/16/2/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
@@ -402,7 +390,10 @@ gem update
     </nav>
     <!-- post pagination -->
   </div>
-<!-- .blog-posts --></div>
+<!-- .blog-posts -->
+
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
+</div>
     <!-- WRAPPER -->
   </div>
   <!-- CONTAINER -->
@@ -445,7 +436,6 @@ gem update
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

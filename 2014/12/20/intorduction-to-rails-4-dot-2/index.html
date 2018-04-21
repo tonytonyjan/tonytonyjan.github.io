@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/">
+  <meta property="og:url" content="https://tonytonyjan.net/2014/12/20/intorduction-to-rails-4-dot-2/">
   <title>Rails 4.2 重點介紹 - 不歸錄</title>
 <meta name="description" content="Rails 團隊終於要在聖誕節的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目： Active Job Asynchronous mails Adequate Record Web Console Foreign key support ">
 <meta name="keywords" content="Ruby on Rails, Ruby, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="Rails 4.2 重點介紹 - 不歸錄" />
 <meta property="og:description" content="Rails 團隊終於要在聖誕節的同時釋出 Rails 4.2 版了，這次更新的重點有以下項目： Active Job Asynchronous mails Adequate Record Web Console Foreign key support " />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="Ruby on Rails" />
 <meta property="article:tag" content="Ruby" />
 <meta property="article:section" content="程式" />
@@ -27,9 +27,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -51,8 +51,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -71,9 +72,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -82,6 +83,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -94,7 +96,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -104,7 +106,7 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
@@ -154,7 +156,7 @@ test_adapter.rb
 
 <p>除了 <code>test_adapter.rb</code> 僅用於測試，以及 <code>inline_adapter.rb</code> 為預設（立即執行，不會丟入背景），以外都有相對的 gem 需要安裝。</p>
 
-<h3 id="section">使用方式</h3>
+<h3 id="使用方式">使用方式</h3>
 
 <p>工作的內容必須定義在 <code>app/jobs/</code> 下，並繼承自 <code>ActiveJob::Base</code>，不過 Rails 4.2 提供了產生器，並不一定要手動新增：</p>
 
@@ -206,7 +208,7 @@ module YourApp
 end
 </code></pre>
 
-<h3 id="callback">回呼（Callback）</h3>
+<h3 id="回呼callback">回呼（Callback）</h3>
 
 <p>共有以下 6 個註冊點：</p>
 
@@ -263,11 +265,11 @@ MyMailer.welcome(@user).deliver_now
 
 <p>如果你有用過 <code>better_errors</code> gem，那麼這就是類似的東西了。Rails 4.2 在開發環境下的錯誤頁面會多出一個 rails console 命令窗可以使用，除了一般 irb 的功能以外，也可以存取到該次請求中定義的實體與區域變數。</p>
 
-<p><img alt="Rails 4.2 Web Console" src="/images/web-console.png" /></p>
+<p><img src="/images/web-console.png" alt="Rails 4.2 Web Console" /></p>
 
 <p>但不只有錯誤頁面才有命令窗可以使用，也可以在任何 view 的檔案中的任何位置加入 <code>&lt;%= console %&gt;</code>，只要渲染到該檔案，就有命令窗可以使用。</p>
 
-<h2 id="foreign-keys">外鍵（Foreign Keys）</h2>
+<h2 id="外鍵foreign-keys">外鍵（Foreign Keys）</h2>
 
 <p>Rails 4.2 遷移指令支援了 SQL 的外鍵定義功能，目前只有 mysql、mysql2 與 postgresql 可用。</p>
 
@@ -305,8 +307,8 @@ end
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/ruby-on-rails/">Ruby on Rails</a>
-        <a rel="tag" href="/tags/ruby/">Ruby</a>
+        <a href="/tags/ruby-on-rails/" rel="tag">Ruby on Rails</a>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -314,9 +316,9 @@ end
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -328,7 +330,7 @@ end
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -342,7 +344,7 @@ end
   <a href="/2015/01/03/2014-review/" rel="next">2014 回顧 <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -359,7 +361,8 @@ end
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -403,7 +406,6 @@ end
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

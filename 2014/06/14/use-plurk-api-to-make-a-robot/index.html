@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2014/06/14/use-plurk-api-to-make-a-robot/">
+  <meta property="og:url" content="https://tonytonyjan.net/2014/06/14/use-plurk-api-to-make-a-robot/">
   <title>噗浪機器人製作 - 不歸錄</title>
 <meta name="description" content="回聲蟲示範 以下這段程式碼的功能即是在自己河道上只要聽到有人發新噗，立即回應一模一樣的內容給噗主。 require 'tjplurk' api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET...">
 <meta name="keywords" content="Ruby, 噗浪, 回聲蟲, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="噗浪機器人製作 - 不歸錄" />
 <meta property="og:description" content="回聲蟲示範 以下這段程式碼的功能即是在自己河道上只要聽到有人發新噗，立即回應一模一樣的內容給噗主。 require 'tjplurk' api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET..." />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="Ruby" />
 <meta property="article:tag" content="噗浪" />
 <meta property="article:tag" content="回聲蟲" />
@@ -28,9 +28,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -52,8 +52,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -72,9 +73,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -83,6 +84,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -95,7 +97,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -105,13 +107,13 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <h2 id="section">回聲蟲示範</h2>
+      <h2 id="回聲蟲示範">回聲蟲示範</h2>
 
 <p>以下這段程式碼的功能即是在自己河道上只要聽到有人發新噗，立即回應一模一樣的內容給噗主。</p>
 
@@ -144,7 +146,7 @@ end
 <pre><code class="language-ruby">api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET
 </code></pre>
 
-<p><img alt="" src="/images/plurk_app.png" /></p>
+<p><img src="/images/plurk_app.png" alt="" /></p>
 
 <p>初始化，後面四個參數看起來嚇人，但也不至太難取得，請到<a href="http://www.plurk.com/PlurkApp/">這裡</a>申請噗浪應用，隨即可以取得 consumer key 與 concumer secret。</p>
 
@@ -176,7 +178,7 @@ end
 
 <p>之所以會有 <code>if plurk['type'] == 'new_plurk'</code>，是為了避免回聲蟲暴走，見到新的回應也回。</p>
 
-<h2 id="section-1">指令</h2>
+<h2 id="指令">指令</h2>
 
 <pre><code class="language-bash">$ tjplurk help
 Commands:
@@ -209,9 +211,9 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
 <pre><code class="language-bash">$ tjplurk api /APP/Users/me | ruby -rjson -e 'jj JSON.parse ARGF.read'
 </code></pre>
 
-<h2 id="section-2">附錄</h2>
+<h2 id="附錄">附錄</h2>
 
-<h3 id="newplurk">new_plurk</h3>
+<h3 id="new_plurk">new_plurk</h3>
 
 <pre><code class="language-json">{
   "replurkers": [
@@ -246,7 +248,7 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
 }
 </code></pre>
 
-<h3 id="newresponse">new_response</h3>
+<h3 id="new_response">new_response</h3>
 
 <pre><code class="language-json">{
   "plurk_id": 1216516326,
@@ -317,9 +319,9 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/ruby/">Ruby</a>
-        <a rel="tag" href="/tags/噗浪/">噗浪</a>
-        <a rel="tag" href="/tags/回聲蟲/">回聲蟲</a>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
+        <a href="/tags/.html" rel="tag">噗浪</a>
+        <a href="/tags/.html" rel="tag">回聲蟲</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -327,9 +329,9 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -341,7 +343,7 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -355,7 +357,7 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
   <a href="/2014/06/20/swift-optional-chaining-on-ruby/" rel="next">Swift Optional Chaining in Ruby <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -372,7 +374,8 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -416,7 +419,6 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

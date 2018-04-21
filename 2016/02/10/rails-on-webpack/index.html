@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2016/02/10/rails-on-webpack/">
+  <meta property="og:url" content="https://tonytonyjan.net/2016/02/10/rails-on-webpack/">
   <title>Rails on webpack - 不歸錄</title>
 <meta name="description" content="覺得 Rails 與 webpack 的整合不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法。">
 <meta name="keywords" content="Ruby on Rails, webpack, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="Rails on webpack - 不歸錄" />
 <meta property="og:description" content="覺得 Rails 與 webpack 的整合不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法。" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="Ruby on Rails" />
 <meta property="article:tag" content="webpack" />
 <meta property="article:section" content="程式" />
@@ -27,9 +27,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -51,8 +51,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -71,9 +72,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -82,6 +83,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -94,7 +96,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -104,7 +106,7 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
@@ -116,7 +118,7 @@
 
 
 
-<h1 id="assetpath-">asset_path 知多少？</h1>
+<h1 id="asset_path-知多少">asset_path 知多少？</h1>
 
 <p><code>#asset_path</code> 是 Rails 中其中一個底層 API，許多 helper 如 <code>#image_tag</code> 等都會調用，而若沒有特別查閱原始碼，大概不多人知道 <code>asset_path('/app.js')</code> 和 <code>asset_path('app.js')</code> 差了一個斜線會影響結果，至於差在哪就讓我們節錄部份原始碼：</p>
 
@@ -133,7 +135,7 @@ end
 
 <p>所以只要我們複寫的 <code>#compute_asset_path</code> 能算出 webpack 產生在 <code>public/assets</code> 中的正確路徑，其實不用更改任何 API，就可以輕鬆整合 webpack。而 <code>#javascript_include_tag</code>、<code>#stylesheet_link_tag</code>、<code>#image_tag</code> 等 helper 都可以照常使用。</p>
 
-<h1 id="webpack---json">webpack –json</h1>
+<h1 id="webpack-json">webpack –json</h1>
 
 <p>sprockets 在編譯後會產生 <code>manifest.json</code>，裡面有 asset 原始路徑與其計算後的路徑資訊（例如 <code>app.js</code> 對應到 <code>/assets/app-c5bd5cb45ee76432b26a5dfb28e01b59.js</code>，以 Hash 儲存），好處是 Rails 可以透過讀檔取得計算後的路徑結果，不須透過 sprockets，所以為了增加效能，這個檔案在 production 環境中是必要的，而在 development 環境中，由於 assets 的路徑是及時透過 sprockets 得出，所以並不需要這個檔案。</p>
 
@@ -150,7 +152,7 @@ end
 ]
 </code></pre>
 
-<h1 id="section">範例專案</h1>
+<h1 id="範例專案">範例專案</h1>
 
 <p>筆者<a href="https://github.com/tonytonyjan/rails_on_webpack">在 Github 實作了一個範例</a>，重點只在兩個檔案： <a href="https://github.com/tonytonyjan/rails_on_webpack/blob/master/app/helpers/webpack_helper.rb">app/helpers/webpack_helper.rb</a> 與 <a href="https://github.com/tonytonyjan/rails_on_webpack/blob/master/lib/webpack_stats.rb">lib/webpack_stats.rb</a> 。</p>
 
@@ -184,7 +186,7 @@ end
 
 <p>至於為何要這樣做，可參考 extract-text-webpack-plugin 的 <a href="https://github.com/webpack/extract-text-webpack-plugin/blob/master/README.md">README</a> 提到的優缺點。</p>
 
-<h1 id="gem">我就是要 gem</h1>
+<h1 id="我就是要-gem">我就是要 gem</h1>
 
 <p>其實筆者也是有做啦⋯⋯如果真的覺得那兩個檔案很麻煩，可以安裝 <a href="https://github.com/tonytonyjan/webpack_stats">webpack_stats</a>，這除了可以用在 Rails，也可以當一般 webpack stats 的 loader 使用（用在 Rails 之外的地方）。</p>
 
@@ -199,8 +201,8 @@ end
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/ruby-on-rails/">Ruby on Rails</a>
-        <a rel="tag" href="/tags/webpack/">webpack</a>
+        <a href="/tags/ruby-on-rails/" rel="tag">Ruby on Rails</a>
+        <a href="/tags/webpack/" rel="tag">webpack</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -208,9 +210,9 @@ end
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -222,7 +224,7 @@ end
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -236,7 +238,7 @@ end
   <a href="/2016/03/01/ziltag-start/" rel="next">Ziltag Beta 啟動 <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -253,7 +255,8 @@ end
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -297,7 +300,6 @@ end
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

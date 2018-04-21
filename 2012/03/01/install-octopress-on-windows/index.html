@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2012/03/01/install-octopress-on-windows/">
+  <meta property="og:url" content="https://tonytonyjan.net/2012/03/01/install-octopress-on-windows/">
   <title>在 Windows 使用 Octopress - 不歸錄</title>
 <meta name="description" content=" 安裝 Ruby 雖然你也可以安裝 RVM 或者自行編譯，但既然是在 Windows 下，建議直接使用 Ruby Installer 最省事。在此要下載兩個東西，一就是 ruby ，另一個則是 development kit。之所以要後者是因為屆時在安裝 Octopress 時，所需要用到的 ruby gems 會需要在本地編譯（例如 rdiscount）。而 development kit 是一套基於 MSYS/MinGW 下的 C/C++ 編譯環境工具組，安裝時請跟著官網上的指示即可，你大概會輸入以下指令： cd C:\Devkit ruby dk.rb init :: 產生 config.yaml，裡面有你的 ruby 路徑，一般會幫你設好 ruby dk.rb install 為了保險起見，安裝之後先更新一下 gem 是個好習慣。 gem update --system gem update ">
 <meta name="keywords" content="Octopress, Jekyll, Windows, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="在 Windows 使用 Octopress - 不歸錄" />
 <meta property="og:description" content=" 安裝 Ruby 雖然你也可以安裝 RVM 或者自行編譯，但既然是在 Windows 下，建議直接使用 Ruby Installer 最省事。在此要下載兩個東西，一就是 ruby ，另一個則是 development kit。之所以要後者是因為屆時在安裝 Octopress 時，所需要用到的 ruby gems 會需要在本地編譯（例如 rdiscount）。而 development kit 是一套基於 MSYS/MinGW 下的 C/C++ 編譯環境工具組，安裝時請跟著官網上的指示即可，你大概會輸入以下指令： cd C:\Devkit ruby dk.rb init :: 產生 config.yaml，裡面有你的 ruby 路徑，一般會幫你設好 ruby dk.rb install 為了保險起見，安裝之後先更新一下 gem 是個好習慣。 gem update --system gem update " />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="Octopress" />
 <meta property="article:tag" content="Jekyll" />
 <meta property="article:tag" content="Windows" />
@@ -28,9 +28,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -52,8 +52,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -72,9 +73,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -83,6 +84,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -95,7 +97,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -105,14 +107,14 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
       
-<h2 id="ruby">安裝 Ruby</h2>
+<h2 id="安裝-ruby">安裝 Ruby</h2>
 
 <p>雖然你也可以安裝 <a href="http://www.ruby-lang.org/en/downloads">RVM</a> 或者自行編譯，但既然是在 Windows 下，建議直接使用 <a href="http://rubyinstaller.org/downloads">Ruby Installer</a> 最省事。在此要下載兩個東西，一就是 ruby ，另一個則是 development kit。之所以要後者是因為屆時在安裝 Octopress 時，所需要用到的 ruby gems 會需要在本地編譯（例如 <a href="https://github.com/rtomayko/rdiscount">rdiscount</a>）。而 development kit 是一套基於 <a href="http://www.mingw.org/wiki/MSYS">MSYS/MinGW</a> 下的 C/C++ 編譯環境工具組，安裝時請跟著<a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">官網上的指示</a>即可，你大概會輸入以下指令：</p>
 
@@ -129,11 +131,11 @@ gem update
 
 
 
-<h2 id="git">安裝 Git</h2>
+<h2 id="安裝-git">安裝 Git</h2>
 
 <p>下載 <a href="http://git-scm.com">Git</a> 之後，安裝時請選擇 label 上有類似「Full installer for official Git for Windows」之類的字樣。</p>
 
-<h2 id="octopress">安裝 Octopress</h2>
+<h2 id="安裝-octopress">安裝 Octopress</h2>
 
 <pre><code>git clone git://github.com/imathis/octopress.git DIR_NAME
 cd DIR_NAME
@@ -144,45 +146,44 @@ rake install :: 安裝預設的 Octopress 樣式
 
 <p>如果你只是想要寫一般的文字網誌，那麼到此為止即可；如果想要加上一些分享代碼，當然你也可以使用 markdown 內附的 code block syntax，但要是你希望可以將程式碼上色或加上行號（也就是 <a href="http://octopress.org/docs/plugins/">Octopress plugins</a> 裡面的 Backtick Code Block、Code Block 和 Include Code 功能），再安裝 Python 2.7。</p>
 
-<h2 id="python">安裝 Python</h2>
+<h2 id="安裝-python">安裝 Python</h2>
 
 <p>之所以要安裝 Python 是因為 Octopress 的代碼上色 plugin 是用 Python 的一個開源項目：<a href="http://pygments.org/">Pygment</a>，雖然 Pygment 支援 Python 2 版和 3 版，不過由於 Ruby 和 Python 之間的橋接是用 <a href="http://rubypython.rubyforge.org">RubyPython</a> 完成，而 RubyPython 目前只支援 Python 2。所以還是乖乖安裝 2 版吧！</p>
 
-<h2 id="section">遇到問題</h2>
-<p>### RubyPython</p>
+<h2 id="遇到問題">遇到問題</h2>
+<h3 id="rubypython">RubyPython</h3>
 
 <p>還有一點想在此特別提出，當我進行到這個步驟後，以為可以從此高枕無憂寫文章時，在文章中使用 code block 的功能並且執行 <code>rake generate</code>，不料卻噴了一大堆錯誤：<br />
     (LoadError)ib/ruby/gems/1.9.1/gems/ffi-1.0.9-x86-mingw32/lib/ffi/library.rb:75:in <code>block in ffi_lib': Could not open library '.dll': 找不到指定的模組。
           from C:/Ruby193/lib/ruby/gems/1.9.1/gems/ffi-1.0.9-x86-mingw32/lib/ffi/library.rb:54:in </code>map'<br />
           from C:/Ruby193/lib/ruby/gems/1.9.1/gems/ffi-1.0.9-x86-mingw32/lib/ffi/library.rb:54:in <code>ffi_lib'
-          from C:/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.5.1/lib/rubypython/python.rb:30:in </code><module:python>'
+          from C:/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.5.1/lib/rubypython/python.rb:30:in </code><module:Python>'
           from C:/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.5.1/lib/rubypython/python.rb:21:in `&lt;top (required)&gt;'
-    ...</module:python></p>
+    ...</module:Python></p>
 
 <p>一開使找不到原因，所以去問 Google，找到<a href="http://mattn.github.com/blog/2011/10/21/octopress-pygments-utf8/">這篇文章</a>，提到 rubypython 需要 python27.dll，但由於在 C:\python\libs 下找不到，於是作者將 C:\windows\system32\python27.dll 複製過去便解決了這個問題。而我也照做了，果然！</p>
 
 <p>果然事情沒有憨人想的這麼簡單，錯誤訊息原封不動地噴出來。經過 trace code 之後：</p>
 
-<p><code>ruby C:\Ruby193\lib\ruby\gems\1.9.1\gems\rubypython-0.5.1\lib\rubypython\python.rb:26
-    PYTHON_LIB = EXEC.library
-    # FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_GLOBAL
-    ffi_lib_flags :lazy, :global
-    ffi_lib EXEC.library
-</code></p>
+<p>``` ruby C:\Ruby193\lib\ruby\gems\1.9.1\gems\rubypython-0.5.1\lib\rubypython\python.rb:26<br />
+    PYTHON_LIB = EXEC.library<br />
+    # FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_GLOBAL<br />
+    ffi_lib_flags :lazy, :global<br />
+    ffi_lib EXEC.library</p>
+<pre><code>
+我發現問題出在 EXEC.library 一直是 nil 所導致，神奇的是我用 irb 去測試同樣的代碼，卻可以正常運作，而且 python27.dll 明明就在預設的 path 中能找到。找不到原因，最後我只好決定使用最黑暗的方法解決這個問題：
 
-<p>我發現問題出在 EXEC.library 一直是 nil 所導致，神奇的是我用 irb 去測試同樣的代碼，卻可以正常運作，而且 python27.dll 明明就在預設的 path 中能找到。找不到原因，最後我只好決定使用最黑暗的方法解決這個問題：</p>
-
-<p><code>ruby C:\Ruby193\lib\ruby\gems\1.9.1\gems\rubypython-0.5.1\lib\rubypython\python.rb:26
+``` ruby C:\Ruby193\lib\ruby\gems\1.9.1\gems\rubypython-0.5.1\lib\rubypython\python.rb:26
     PYTHON_LIB = EXEC.library
     # FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_GLOBAL
     ffi_lib_flags :lazy, :global
     # ffi_lib EXEC.library # 問題出在 EXEC.library 一直是 nil，所以就乾脆註解掉
     ffi_lib "python27" # 直接加上字串
-</code></p>
+</code></pre>
 
 <p>RubyPython 對 Windows 的支援沒有很好是被公認的，而我今天也領教到了。</p>
 
-<h3 id="utf-8-">UTF-8 編碼</h3>
+<h3 id="utf-8-編碼">UTF-8 編碼</h3>
 
 <p>嘗試在 windows 下使用 octopress，幾乎快被 Windows 的編碼問題搞死！</p>
 
@@ -210,9 +211,9 @@ bundle exec rake generate
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/octopress/">Octopress</a>
-        <a rel="tag" href="/tags/jekyll/">Jekyll</a>
-        <a rel="tag" href="/tags/windows/">Windows</a>
+        <a href="/tags/octopress/" rel="tag">Octopress</a>
+        <a href="/tags/jekyll/" rel="tag">Jekyll</a>
+        <a href="/tags/windows/" rel="tag">Windows</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -220,9 +221,9 @@ bundle exec rake generate
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -234,7 +235,7 @@ bundle exec rake generate
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -248,7 +249,7 @@ bundle exec rake generate
   <a href="/2012/03/03/string-and-symbol-in-controller/" rel="next">params["key"] 和 params[:key] <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -265,7 +266,8 @@ bundle exec rake generate
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -309,7 +311,6 @@ bundle exec rake generate
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2016/01/07/there-are-politicians-in-ruby-2-3-0/">
+  <meta property="og:url" content="https://tonytonyjan.net/2016/01/07/there-are-politicians-in-ruby-2-3-0/">
   <title>對不起，我把馬英九放進 Ruby 2.3 了 - 不歸錄</title>
 <meta name="description" content="身為一個 Ruby 語言的教徒，這個聖誕節最令人興奮的莫過於 Ruby 2.3 的發表了，不過這次由於筆者的緣故，意外讓台灣的政治人物們走進了 Ruby 原始碼中，究竟是怎麼回事呢XD">
 <meta name="keywords" content="馬英九, 連勝文, Ruby, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="對不起，我把馬英九放進 Ruby 2.3 了 - 不歸錄" />
 <meta property="og:description" content="身為一個 Ruby 語言的教徒，這個聖誕節最令人興奮的莫過於 Ruby 2.3 的發表了，不過這次由於筆者的緣故，意外讓台灣的政治人物們走進了 Ruby 原始碼中，究竟是怎麼回事呢XD" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/ma.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/ma.png" />
 <meta property="article:tag" content="馬英九" />
 <meta property="article:tag" content="連勝文" />
 <meta property="article:tag" content="Ruby" />
@@ -28,9 +28,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -52,8 +52,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -72,9 +73,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -83,6 +84,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -95,7 +97,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -105,13 +107,13 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p><img alt="" src="/images/ma.png" /></p>
+      <p><img src="/images/ma.png" alt="" /></p>
 
 <blockquote>
   <p>這世界所有升級到 Ruby 2.3 的伺服器，皆可以得到英九的庇佑。</p>
@@ -143,13 +145,13 @@ buybug
 
 <p>簡（煒航）言之這就是 Ruby 的 spell check 功能，是來自 <a href="https://twitter.com/yuki24">@yuki24</a> 製作的 Ruby gem <a href="https://github.com/yuki24/did_you_mean">did_you_mean</a>，當 <code>NameError</code> 發生時，該 gem  會嘗試找出其他相似的字。</p>
 
-<h1 id="jaro-winkler-">Jaro-Winkler 距離</h1>
+<h1 id="jaro-winkler-距離">Jaro-Winkler 距離</h1>
 
 <p>對於兩個字串之間的相似度的比對有許多相關的演算法，諸如 <a href="https://www.wikiwand.com/en/Hamming_distance">Hamming</a>、<a href="https://www.wikiwand.com/en/Levenshtein_distance">Levenshtein</a>、<a href="https://www.wikiwand.com/en/Jaro%E2%80%93Winkler_distance">Jaro-Winkler</a> 等，而對於短字串的比較尤以 Jaro-Winkler 普遍被認為較為精準。該演算法當初在醫療機構內，為了確認病患姓名而被發明出來的，如今卻已經在諸多領域中得到廣泛的使用，這也是 did_you_mean 所使用的核心算法。<a href="https://github.com/yuki24/did_you_mean/commit/15f8b049ce2a04957d0975027f2cbf8e93b0ad59">在 Gemfile 中</a>能找到一段 <a href="https://github.com/tonytonyjan/jaro_winkler">jaro_winkler</a> 的引用，這即是筆者的貢獻。</p>
 
 <p>只是不料當 did_you_mean 被移植到 Ruby 時，連筆者寫下的支援 UTF-8 的測試也都<a href="https://github.com/yuki24/did_you_mean/blob/b2e4b3c590a2fd1b08f37a9d976e4dfe97533c68/test/edit_distance/jaro_winkler_test.rb">一併被移植過去了</a>。</p>
 
-<h1 id="section">大選近矣</h1>
+<h1 id="大選近矣">大選近矣</h1>
 
 <p>話說最近正逢總統大選，也發生一些趣事，有些國民黨的支持者在國民黨候選人的廣告上貼上馬英九的貼紙，聽說<a href="https://www.ptt.cc/bbs/Gossiping/M.1451986445.A.CF1.html">就被移送法辦了</a>，後續如何筆者不是很清楚。但現在因為筆者的關係，讓世界上的許多人的伺服器硬碟的某處存著一個馬英九，希望筆者不會有什麼遭遇才是。萬一，哪天筆者再也沒有出現在臉書上，傳訊也沒回，請幫筆者轉達家母「我愛她」。另外不自殺聲明已經放在 Github 上了，萬一有不測，請幫筆者討回公道，萬分感謝！</p>
 
@@ -161,9 +163,9 @@ buybug
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/馬英九/">馬英九</a>
-        <a rel="tag" href="/tags/連勝文/">連勝文</a>
-        <a rel="tag" href="/tags/ruby/">Ruby</a>
+        <a href="/tags/.html" rel="tag">馬英九</a>
+        <a href="/tags/.html" rel="tag">連勝文</a>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -171,9 +173,9 @@ buybug
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -185,7 +187,7 @@ buybug
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -199,7 +201,7 @@ buybug
   <a href="/2016/01/30/a-gift-from-chef-io/" rel="next">來自 chef.io 的小禮物 <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -216,7 +218,8 @@ buybug
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -260,7 +263,6 @@ buybug
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

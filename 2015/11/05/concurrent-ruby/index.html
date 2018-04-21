@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2015/11/05/concurrent-ruby/">
+  <meta property="og:url" content="https://tonytonyjan.net/2015/11/05/concurrent-ruby/">
   <title>Ruby SSE Server 動手做 - 不歸錄</title>
 <meta name="description" content="最近要蓋個 SSE 服務，筆者因貪一時方便就暫時使用 puma 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 select()，少了 epoll()、kqueue() 很不方便，好在 eventmachine 背後使用的是 libev 和 libevent，有用到上述兩個系統調用，但筆者其實是最希望使用 libuv 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 celluloid 替代 eventmachine，但前者在 I/O 的處理上[仍然使用 Kernel.select()，筆者也就作罷。">
 <meta name="keywords" content="Ruby, SSE, eventmachine, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="Ruby SSE Server 動手做 - 不歸錄" />
 <meta property="og:description" content="最近要蓋個 SSE 服務，筆者因貪一時方便就暫時使用 puma 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 select()，少了 epoll()、kqueue() 很不方便，好在 eventmachine 背後使用的是 libev 和 libevent，有用到上述兩個系統調用，但筆者其實是最希望使用 libuv 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 celluloid 替代 eventmachine，但前者在 I/O 的處理上[仍然使用 Kernel.select()，筆者也就作罷。" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/push_server.jpg" />
+<meta property="og:image" content="https://tonytonyjan.net/images/push_server.jpg" />
 <meta property="article:tag" content="Ruby" />
 <meta property="article:tag" content="SSE" />
 <meta property="article:tag" content="eventmachine" />
@@ -28,9 +28,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -52,8 +52,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -72,9 +73,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -83,6 +84,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -95,7 +97,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -105,7 +107,7 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
@@ -114,7 +116,7 @@
       
 <p><strong>本篇文章同時也發表於 <a href="http://weekly.codetengu.com/">CodeTengu</a></strong></p>
 
-<p><img alt="" src="/images/push_server.jpg" /></p>
+<p><img src="/images/push_server.jpg" alt="" /></p>
 
 <blockquote>
   <p>照片是日本硬體製造商 Speedlink 在東京舉辦的 server 投擲大賽，誰能把 server 推得最遠，可以得到最高的分數，圖片中的機器值 50 萬日幣，這也是名符其實的 push server，<a href="https://www.youtube.com/watch?v=A_j_iBH6wTI">影片在此</a>。</p>
@@ -122,7 +124,7 @@
 
 <p>最近要蓋個 <a href="http://www.wikiwand.com/en/Server-sent_events">SSE</a> 服務，筆者因貪一時方便就暫時使用 <a href="https://github.com/puma/puma">puma</a> 在 Rails 上實現，但畢竟用執行緒解決長請求是很不妙的行為，這幾天就用 Ruby 開始徒手寫了 I/O multiplexing 伺服器，有種回到學生時代的感覺，只是 Ruby 只有 <code>select()</code>，少了 <code>epoll()</code>、<code>kqueue()</code> 很不方便，好在 <a href="https://github.com/eventmachine/eventmachine">eventmachine</a> 背後使用的是 <a href="http://software.schmorp.de/pkg/libev.html">libev</a> 和 <a href="https://github.com/libevent/libevent">libevent</a>，有用到上述兩個系統調用，但筆者其實是最希望使用 <a href="https://github.com/libuv/libuv">libuv</a> 呢（一副要逼人貢獻的節奏啊），另外一個方案是用 <a href="https://github.com/celluloid/celluloid">celluloid</a> 替代 <a href="https://github.com/eventmachine/eventmachine">eventmachine</a>，但前者在 I/O 的處理上<a href="https://github.com/celluloid/celluloid-io/blob/5e96845e68fdcd406717e3ab543b0099168a1c15/lib/celluloid/io.rb">仍然使用 <code>Kernel.select()</code></a>，筆者也就作罷。</p>
 
-<h1 id="rails-">Rails 即時串流</h1>
+<h1 id="rails-即時串流">Rails 即時串流</h1>
 
 <p>雖然以 Rails 時下的 HTTP server 方案，要做串流服務有點吃力，但要做也是可行的，串流功能在 Rails 4 後才開始支援，controller 需要 mix <code>ActionController::Live</code> 才可以使用 <code>response.stream</code>，建議可以參考 tenderlove 在 2012 寫的 <a href="http://tenderlovemaking.com/2012/07/30/is-it-live.html">Is it live?</a>。</p>
 
@@ -189,7 +191,7 @@ end
 end
 </code></pre>
 
-<h2 id="rails--http-">別用 Rails 做 HTTP 推送服務</h2>
+<h2 id="別用-rails-做-http-推送服務">別用 Rails 做 HTTP 推送服務</h2>
 
 <p>從以前工程師就在苦思如何在有限的運算單位與記憶體之下服務更多的訪客，Rails 的並行性目前已有許多方案，做法不外乎是用執行緒（puma）、行程（unicorn）或者兩者並行（rainbows、puma clustered mode），無論何者，每個連線都會佔用至少一個行程或是執行緒，直到 action 方法執行結束才會釋放資源。</p>
 
@@ -205,7 +207,7 @@ end
 
 <p>所以即便在 Rails 做 SSE 是如此容易，筆者也不會建議用 Rails 做 SSE，理由是支援 Rails 的 HTTP 伺服器，無論是 unicorn 或 puma 等皆然，它們每服務一個連線會佔用一個行程或是執行緒造成阻塞，此架構下不適合實作提供長久連線的服務（例如 push server 網路遊戲、聊天室等）。</p>
 
-<h1 id="io-multiplexing-">I/O Multiplexing 動手做</h1>
+<h1 id="io-multiplexing-動手做">I/O Multiplexing 動手做</h1>
 
 <p>Ruby 內建相關的系統調用只有 <code>select()</code>，沒有 <code>epoll()</code>、沒有 <code>kqueue</code>，在阻塞方面也只有提供 <code>IO#read_nonblock</code> 和 <code>IO#write_nonblock</code>，沒有支援 AIO，在這樣的資源下，選用非同步阻塞的策略也是很合理的，筆者先後用原生 Ruby 做了第一個版本，再用 eventmachine 做了另外一個，程式碼如下：</p>
 
@@ -316,15 +318,15 @@ end
 
 <p>但筆者只是單純寫個 SSE 服務，用 eventmachine 就綽綽有餘了，即便 eventmachine 只用到一顆處理器，但多開幾個伺服器然後反向代理也是可以做到橫向擴展。</p>
 
-<h1 id="section">結論</h1>
+<h1 id="結論">結論</h1>
 
 <p>Rails 不是萬靈丹，即便支援了串流功能，仍不適合做 I/O 密集的應用，不過 Rails 5 的 Action Cable 是可以期待一下，因為這東西使用的是 eventmachine 和執行緒，很適合用來維持大量的連線，不過這是為了 websocket 而寫，如果是要做 comet 的應用（長請求），最好另尋方法，使用 Rails 恐怕是繞遠路，以 Ruby 的方案來看，著名的專案就屬 eventmachine 與 celluloid。</p>
 
 <p><del>或者叛逃到 node 或 go 也行啦</del></p>
 
-<h1 id="section-1">本文出現的連結</h1>
+<h1 id="本文出現的連結">本文出現的連結</h1>
 
-<h2 id="section-2">好文</h2>
+<h2 id="好文">好文</h2>
 
 <ul>
   <li><a href="http://www.wikiwand.com/en/Server-sent_events">SSE</a></li>
@@ -334,7 +336,7 @@ end
   <li><a href="http://www.html5rocks.com/en/tutorials/eventsource/basics">Stream Updates with Server-Sent Events</a></li>
 </ul>
 
-<h2 id="section-3">開原專案</h2>
+<h2 id="開原專案">開原專案</h2>
 
 <ul>
   <li><a href="https://github.com/puma/puma">puma</a></li>
@@ -353,9 +355,9 @@ end
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/ruby/">Ruby</a>
-        <a rel="tag" href="/tags/sse/">SSE</a>
-        <a rel="tag" href="/tags/eventmachine/">eventmachine</a>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
+        <a href="/tags/sse/" rel="tag">SSE</a>
+        <a href="/tags/eventmachine/" rel="tag">eventmachine</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -363,9 +365,9 @@ end
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -377,7 +379,7 @@ end
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -391,7 +393,7 @@ end
   <a href="/2015/12/08/login-ptt-everyday-automatically/" rel="next">PTT 每天自動登入小程式 <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -408,7 +410,8 @@ end
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -452,7 +455,6 @@ end
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2016/06/15/comparison-of-ruby-open/">
+  <meta property="og:url" content="https://tonytonyjan.net/2016/06/15/comparison-of-ruby-open/">
   <title>Ruby#open 知多少？ - 不歸錄</title>
 <meta name="description" content="使用 Ruby 光是開個檔案描述符就有數幾種方法，令人眼花撩亂，常看到的是有人用同一招打天下，卻一直沒有去了解其他的方法與其是用情境，有些可惜，而這篇文章將透過由下而上的方式，一一介紹、示範它們的差別和使用。">
 <meta name="keywords" content="Ruby, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="Ruby#open 知多少？ - 不歸錄" />
 <meta property="og:description" content="使用 Ruby 光是開個檔案描述符就有數幾種方法，令人眼花撩亂，常看到的是有人用同一招打天下，卻一直沒有去了解其他的方法與其是用情境，有些可惜，而這篇文章將透過由下而上的方式，一一介紹、示範它們的差別和使用。" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/io.jpg" />
 <meta property="article:tag" content="Ruby" />
 <meta property="article:section" content="程式" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
@@ -26,9 +26,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -50,8 +50,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -70,9 +71,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -81,6 +82,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -93,7 +95,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -103,7 +105,7 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
@@ -111,7 +113,7 @@
     <div class="entry-content">
       <p><strong>本文同步發表於 <a href="https://blog.alphacamp.co/2016/06/30/ruby-open/">alphacamp</a></strong></p>
 
-<p><img alt="" src="/images/io.jpg" /></p>
+<p><img src="/images/io.jpg" alt="" /></p>
 
 <p>先來個快問快答吧：</p>
 
@@ -179,7 +181,7 @@ io.close
 
 <p>有曾好奇過市面上的 CI 是怎麼做到即時顯示終端上的文字嗎？以 Travis CI 為例，下圖那塊黑色區塊中的內容是即時輸出的：</p>
 
-<p><img alt="" src="/images/travis.png" /></p>
+<p><img src="/images/travis.png" alt="" /></p>
 
 <p>或者曾想過在自己的網站上執行外部的指令，並且即時呈現給使用者呢？若你有在 Ruby 中呼叫其他系統指令的經驗（例如 <code>ls</code>、<code>cat</code>、<code>bundle install</code> 等等），那應該對 <code>system</code>、<code>%x{}</code> 或是 <code>``</code> 不陌生：</p>
 
@@ -209,7 +211,7 @@ end
 <p>當然這還離真正做出一個在網頁上呈現終端執行畫面的功能還很遠，例如上述的程式碼卡在一個無窮迴圈裡面，<br />
 你可能會想針對 IO 阻塞問題做出一些改善，像是配合 <code>IO.select</code> 或是 <code>IO#read_nonblock</code> 等，但純屬延伸議題，不在本章範圍，有機會筆者會在另一篇章中分享怎麼做到 :)</p>
 
-<h1 id="filenew--fileopen">File.new 與 File.open</h1>
+<h1 id="filenew-與-fileopen">File.new 與 File.open</h1>
 
 <p>這兩個方方法就是大家耳熟能詳的開檔方案了，它們和 <code>IO.new</code> 與 <code>IO.open</code> 幾乎一樣，只差在覆寫了 <code>initialize</code> 方法，使其接受的參數不再是 FD 而是檔案的路徑字串。<code>File.new</code> 回傳值也和 <code>IO.new</code> 一樣是 <code>IO</code> 物件；在 <code>File.open</code> 與 block 同時使用的情況下也和 <code>IO.open</code> 一樣，會自動關檔，且回傳 block 的最後執行結果。</p>
 
@@ -225,7 +227,7 @@ end
   <li>最後交給 <code>File.open</code> 處理</li>
 </ol>
 
-<h2 id="toopen">to_open</h2>
+<h2 id="to_open">to_open</h2>
 
 <p>關於 <code>#to_open</code> Ruby 文件上沒有一處提及，只記載在 Ruby 原始碼中。實作的時候必要回傳 <code>IO</code> 物件即可：</p>
 
@@ -242,7 +244,7 @@ open Foo.new do |io|
 end
 </code></pre>
 
-<h1 id="section">該用哪個？</h1>
+<h1 id="該用哪個">該用哪個？</h1>
 
 <p>這沒有什麼強制的規範，畢竟 Ruby 是一個自由的程式語言，比較接近 Perl，和一板一眼的 Python 不太一樣（Only one way to do it）。不過筆者建議大原則是盡量使用易讀易寫的 API 來完成工作，如果有細節需要處理再用其他的方法。例如一般開檔就使用 <code>File.open</code> 或是 <code>Kernel.open</code> 即可，需要存取 FD 則改用 <code>IO.open</code>，若要手動關檔再考慮 <code>File.new</code> 或 <code>IO.new</code>。另外也不要特別使用 <code>Kernel.open</code> 調用 <code>IO.popen</code> 的奇怪語法（<code>|</code>），這會降低程式碼的可讀性，不符合易讀易寫。像 <code>IO.popen('date')</code> 就比 <code>Kernel.open('|date')</code> 好懂多了。</p>
 
@@ -254,7 +256,7 @@ end
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/ruby/">Ruby</a>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -262,9 +264,9 @@ end
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -276,7 +278,7 @@ end
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -285,9 +287,12 @@ end
     <h4>上一篇</h4>
     <a href="/2016/03/01/ziltag-start/" rel="prev"><span class="meta-nav">←</span> Ziltag Beta 啟動</a>
   </div>
-  
+  <div class="nav-next col-sm-6">
+  <h4>下一篇</h4>
+  <a href="/2016/12/29/my-cat/" rel="next">我的貓 - 黏黏和歲歲 <span class="meta-nav">→</span></a>
+</div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -304,7 +309,8 @@ end
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -348,7 +354,6 @@ end
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

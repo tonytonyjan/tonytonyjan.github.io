@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="http://tonytonyjan.net/2008/11/29/127/">
+  <meta property="og:url" content="https://tonytonyjan.net/2008/11/29/127/">
   <title>～C語言程式設計～電腦猜數字～ - 不歸錄</title>
 <meta name="description" content="這次換人想題目給電腦猜，而且保證七次內可以猜的出來，想下載的人請點我，以後要跟別人玩猜數字遊戲就拿著個當外掛就好了XDD 這次費了我很大的功夫在想演算法，對於一個超級不會玩猜數字遊戲的人，要他想演算法實在是太吃力了......其實若要我自己來猜的話大概都要猜個40、50次才答對......最後...">
 <meta name="keywords" content="C, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="～C語言程式設計～電腦猜數字～ - 不歸錄" />
 <meta property="og:description" content="這次換人想題目給電腦猜，而且保證七次內可以猜的出來，想下載的人請點我，以後要跟別人玩猜數字遊戲就拿著個當外掛就好了XDD 這次費了我很大的功夫在想演算法，對於一個超級不會玩猜數字遊戲的人，要他想演算法實在是太吃力了......其實若要我自己來猜的話大概都要猜個40、50次才答對......最後..." />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="C" />
 <meta property="article:section" content="程式" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
@@ -26,9 +26,9 @@
   <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
   <script src="/js/modernizr.custom.js"></script>
   <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -50,8 +50,9 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <script src="/js/selectivizr-min.js"></script>
-  <![endif]--> 
+  <![endif]-->
 </head>
+
 <body>
   <!-- CONTAINER -->
   <div class="container" id="container">
@@ -70,9 +71,9 @@
   </ul>
   <!-- NAV MENU -->
 
-  <!-- SEARCH --> 
+  <!-- SEARCH -->
   <div class="header-search">
-    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:http://tonytonyjan.net';">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
       <input type="hidden" name="q" value="">
       <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
       <input type="submit" id="search-submit" title="Search" value="→">
@@ -81,6 +82,7 @@
   <!-- SEARCH -->
 </header>
 <!-- HEADER -->
+
     <!-- WRAPPER -->
     <div class="wrapper"><!-- .blog-single -->
 <div class="readable-content blog-single">
@@ -93,7 +95,7 @@
     <!-- .entry-header -->
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="posted-by"> 
+      <span class="posted-by">
         由
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
@@ -103,7 +105,7 @@
       </span>
       <span class="posted-in">
         發表於
-        <a title="瀏覽所有 程式 的文章" href="/categories/程式/">程式</a>
+        <a href="/categories/.html" title="瀏覽所有 程式 的文章">程式</a>
       </span>
     </div>
     <!-- .entry-meta -->
@@ -115,7 +117,7 @@
 <p>另外值得一提的是，我用了一個新的防呆措施，運用do{}while(); 先讀取再判斷，如果使用者亂打就再重複一直讀取，讀取至使用者打對為止，這個方法我覺得很簡潔^^（自以為）</p>
 <p>至於怎麼刪去不可能的答案組合成新的答案庫，是先判斷所有的答案（如果是一開始，當然，就要判斷5040次），找尋不可能的答案，找到之後，就把這個答案之後所有的答案往前遞移一個答案，這和隨機不重複用的是一樣的方法。</p>
 <p>總之我覺得這是個滿好玩的題目^^</p>
-<p><img alt="" src="/images/slum-area/110_0.jpg" /></p>
+<p><img src="/images/slum-area/110_0.jpg" alt="" /></p>
 
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 #include&lt;stdlib.h&gt;
@@ -299,7 +301,7 @@ void intro(void){
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a rel="tag" href="/tags/c/">C</a>
+        <a href="/tags/c/" rel="tag">C</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -307,9 +309,9 @@ void intro(void){
   <!-- .about-author -->
   <aside class="about-author">
     <h3>關於作者</h3>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
     <div class="author-bio">
-      <!-- .author-img --> 
+      <!-- .author-img -->
       <div class="author-img">
         <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
       </div>
@@ -321,7 +323,7 @@ void intro(void){
       </div>
       <!-- .author-info -->
     </div>
-    <!-- .author-bio --> 
+    <!-- .author-bio -->
   </aside>
   <!-- .about-author -->
   <!-- .nav-single -->
@@ -335,7 +337,7 @@ void intro(void){
   <a href="/2008/12/03/126/" rel="next">如果你是我，你也會很無奈 <span class="meta-nav">→</span></a>
 </div>
 </nav>
-<!-- .nav-single --> 
+<!-- .nav-single -->
 <!-- #comments -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -352,7 +354,8 @@ void intro(void){
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
-<!-- .blog-single --> 
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
 </div>
     <!-- WRAPPER -->
   </div>
@@ -396,7 +399,6 @@ void intro(void){
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
   </script>
-  <script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
