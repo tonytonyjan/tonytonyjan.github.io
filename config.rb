@@ -32,14 +32,6 @@ activate :blog do |blog|
   }
 end
 
-activate :deploy do |deploy|
-  deploy.deploy_method = :rsync
-  deploy.clean = true
-  # deploy.user = 'deploy' # https://github.com/middleman-contrib/middleman-deploy/issues/79
-  deploy.host = 'freebsd@128.199.147.210'
-  deploy.path = '/var/www/tonytonyjan.net'
-end
-
 ignore 'slides/*'
 
 after_build do
