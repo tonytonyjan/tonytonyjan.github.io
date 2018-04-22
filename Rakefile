@@ -1,6 +1,16 @@
 require 'yaml'
 require 'set'
 
+desc 'Build'
+task :build do
+  sh 'bundle exec middleman build'
+end
+
+desc 'Deploy'
+task :deploy do
+  sh 'cd build && git add -A && git commit -m "$(date)" && git push'
+end
+
 desc 'List all tags'
 task :tags do
   tags = Set.new

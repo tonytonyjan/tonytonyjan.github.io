@@ -1,7 +1,6 @@
 ---
-
 title: Ruby 自動載入器
-date: 2018-04-22 20:16 +08:00
+date: 2018-04-22 16:23 +08:00
 category: Ruby
 tags: [Ruby]
 description: 本文介紹如何使用自製的 Module.autoload 取代 ActiveSupport 的 autoload 功能，並且將效能提升至 10 倍。
