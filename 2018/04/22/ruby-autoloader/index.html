@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# article: http://ogp.me/ns/article#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="大兜">
+  <meta property="og:site_name" content="不歸錄">
+  <meta property="og:url" content="https://tonytonyjan.net/2018/04/22/ruby-autoloader/">
+  <title>Ruby 自動載入器 - 不歸錄</title>
+<meta name="description" content="本文介紹如何使用自製的 Module.autoload 取代 ActiveSupport 的 autoload 功能，並且將效能提升至 10 倍。">
+<meta name="keywords" content="Ruby, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="Ruby 自動載入器 - 不歸錄" />
+<meta property="og:description" content="本文介紹如何使用自製的 Module.autoload 取代 ActiveSupport 的 autoload 功能，並且將效能提升至 10 倍。" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="article:tag" content="Ruby" />
+<meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
+<meta property="article:published_time" content="2018-04-22T16:23:00+08:00" />
+
+  <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH -->
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
+      <input type="hidden" name="q" value="">
+      <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">Ruby 自動載入器</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by">
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        發表於
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2018-04-22T16:23:00+08:00">2018 年 04 月 22 日</time></a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>軟體在載入模組的方式，可大致分為兩種：消極載入（lazy loading） 與積極載入（eager loading）<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。顧名思義，消極載入是指軟體在啟動時僅載入少數需要的模組，而在執行過程如果有需要其他模組時，再載入該需要的模組；反之積極載入則是在軟體啟動時，積極地將所有的模組載入。</p>
+
+
+
+<p>兩者各有優缺點，一般會在消極載入由於啟動速度快，常用在開發環境（development environment）中，缺點則是軟體運作過程中，對於首次執行的任務，因得加上載入的時間導致效率較差，這在生產環境（production environment）不見得是好事。所以在消極載入的設計下，有些人會在部署時加上一道暖身（warn up）的步驟，以部署一台網頁伺服器為例，可能會在部署後送出各種超文本傳輸協定的請求到上線伺服器，以被動的方式使其可以預先載入所需的模組。積極載入的優缺點則相反：運行快但啟動慢，所以一般會用在生產環境。</p>
+
+<p>一個比較現代的開發方式是針對載入模組的工作額外設計一個載入器，這個載入器可以在積極或消極兩者間做切換，以在開發環境中使用消極載入，生產環境中使用積極載入。</p>
+
+<h1 id="const_missing-vs-moduleautoload">const_missing v.s. Module.autoload</h1>
+
+<p><a href="http://guides.rubyonrails.org/autoloading_and_reloading_constants.html">Rails Guide 有一個篇章</a>詳細介紹了 Rails 內部載入的方法。內文提到 Rails 在消極載入的實作並沒有使用到 Ruby 內建的 <code>Module.autoload</code>，取而代之則是用 <code>const_missing</code> 來實作。</p>
+
+<p>雖然使用 ActiveSupport 的載入器可以省不少麻煩，但筆者沒有需要用到像是熱重載這類進接功能，加上覺得 <code>const_missing</code> 效能上並沒有比用 <code>Module.autoload</code> 實作來的好，只是到底會慢多少？筆者寫了一個基準測試（benchmark test）：</p>
+
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+require 'bundler/setup'
+require 'benchmark'
+require 'fileutils'
+require 'active_support' # v5.2.0
+require_relative 'autoloader'
+
+n = 10000
+words = (?a..?z).to_a.permutation(5).lazy.map(&amp;:join).first(n)
+class_names = words.map(&amp;:capitalize)
+FileUtils.rm_rf %w[as al]
+FileUtils.mkdir_p 'as/foo'
+FileUtils.mkdir_p 'al/bar'
+words.each do |word|
+  IO.write "as/foo/#{word}.rb", "module Foo; module #{word.capitalize} end end"
+  IO.write "al/bar/#{word}.rb", "module Bar; module #{word.capitalize} end end"
+end
+
+Benchmark.bm(13) do |x|
+  ActiveSupport::Dependencies.autoload_paths = ['as']
+  x.report('ActiveSupport') do
+    class_names.each do |class_name|
+      eval "Foo::#{class_name}"
+    end
+  end
+
+  IO.write 'al/bar.rb', 'module Bar; include Autoloader end'
+  require_relative 'al/bar'
+  x.report('Autoloader') do
+    class_names.each do |class_name|
+      eval "Bar::#{class_name}"
+    end
+  end
+end
+</code></pre>
+
+<p>其中 <code>autoloader</code> 是筆者另外寫的載入器，載入的檔案是動態產生的，分別放在 <code>as</code> 和 <code>al</code> 資料夾，<code>as</code> 裡的檔案給 ActiveSupport 載入，<code>al</code> 裡的則以筆者的自製的載入器載入。</p>
+
+<p>再來看看結果：</p>
+
+<pre><code>user     system      total        real
+ActiveSupport  16.810000   1.320000  18.130000 ( 18.128572)
+Autoloader      1.170000   0.630000   1.800000 (  1.804112)
+</code></pre>
+
+<p>看起來 Autoloader 大約比 ActiveSupport 的版本要快上 10 倍。以下是 <code>autoloader.rb</code> 的原始碼：</p>
+
+<pre><code class="language-ruby">module Autoloader
+  def self.included(mod)
+    caller_path, = caller(1..1).first.partition(':')
+    pattern = "#{File.dirname(caller_path)}/#{File.basename(caller_path, '.rb')}/*.rb"
+    Dir.glob(pattern).each do |path|
+      class_name = File.basename(path, '.rb').split('_').map(&amp;:capitalize).join.to_sym
+      mod.autoload class_name, path
+    end
+  end
+end
+</code></pre>
+
+<h1 id="筆者的-autoloader-的慣例">筆者的 Autoloader 的慣例</h1>
+
+<p>筆者的 Autoloader 雖然以效能為出發點，但使用上有些限制。由於它沒有像是 ActiveSupport 會自動將資料夾轉為 module 的<del>魔法</del>功能（例如有個空的資料夾 <code>foo/bar</code>，當引用 <code>Foo::Bar</code> 時，即便沒有 <code>foo/bar.rb</code>，<code>module Bar; end</code> 也會自動產生），所以針對每個層級的資料夾，都需要有一個同級同名的檔案來定義名稱空間，例如以下的檔案結構為例：</p>
+
+<pre><code>lib
+├── myapp
+│   ├── adapters
+│   │   ├── foo.rb
+│   │   ├── bar.rb
+│   │   └── buz.rb
+│   ├── adapters.rb
+│   ├── entities
+│   │   ├── foo.rb
+│   │   ├── bar.rb
+│   │   └── buz.rb
+│   ├── entities.rb
+│   ├── interactors
+│   │   ├── foo.rb
+│   │   ├── bar.rb
+│   │   └── buz.rb
+│   └── interactors.rb
+└── myapp.rb
+</code></pre>
+
+<p>而其中 <code>adapters</code> 資料夾相對應 <code>adapters.rb</code> 原始碼：</p>
+
+<pre><code class="language-ruby">module Myapp
+  module Adapters
+    include Autoloader
+  end
+end
+</code></pre>
+
+<p>等同於：</p>
+
+<pre><code class="language-ruby">module Myapp
+  module Adapters
+    autoload :Foo, "#{__dir__}/foo.rb"
+    autoload :Bar, "#{__dir__}/bar.rb"
+    autoload :Buz, "#{__dir__}/buz.rb"
+  end
+end
+</code></pre>
+
+<h1 id="積極載入">積極載入</h1>
+
+<p>筆者尚未對 Autoloader 於生產環境做過優化，但理論上不至於太困難，一個作法是在 <code>autoloader.rb</code> 裡面可以加入環境變數來判斷如何載入：</p>
+
+<pre><code class="language-ruby">if ENV['MYAPP_ENV'] == 'production'
+  Kernel.require path
+else
+  mod.autoload class_name, path
+end
+</code></pre>
+
+<p>或者在 <code>Autoloader</code> 模組裡面提供載入方法的介面：</p>
+
+<pre><code class="language-ruby">class Foo
+  include Autoloader
+  ENV['MYAPP_ENV'] == 'production' ? eager_load! : lazy_load!
+end
+</code></pre>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>也有翻譯叫「惰性載入」、「懶載入」，另一邊則稱「熱情載入」等，但筆者認為兩者概念應該透過「消極」與「積極」這樣的翻譯最能融入當地的用語且能一目了然。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio -->
+    <div class="author-bio">
+      <!-- .author-img -->
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio -->
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2016/12/29/my-cat/" rel="prev"><span class="meta-nav">←</span> 我的貓 - 黏黏和歲歲</a>
+  </div>
+  
+</nav>
+<!-- .nav-single -->
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <!-- <script src="/js/smoothscroll.js"></script> -->
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71890573-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
