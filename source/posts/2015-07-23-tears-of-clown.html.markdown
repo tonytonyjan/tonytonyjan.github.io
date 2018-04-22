@@ -1,7 +1,7 @@
 ---
 title: 小丑的眼淚
 date: 2015-07-23 21:21 +0800
-category: 閒聊
+
 published: false
 comment: false
 ---

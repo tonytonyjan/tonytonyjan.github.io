@@ -1,7 +1,7 @@
 ---
 title: "[新竹] 清大旺宏館（圖書館）"
 date: 2013-08-17 14:45 +0800
-category: SOHO
+
 ---
 
 ![](/images/nthu-library.jpg)

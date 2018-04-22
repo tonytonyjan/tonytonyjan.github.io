@@ -2,7 +2,7 @@
 title: "在 Octopress 加上近期回覆"
 date: 2012-02-12 19:14 +0800
 tags: [Octopress, Disqus]
-category: 程式
+
 ---
 
 [disqus]: http://disqus.com

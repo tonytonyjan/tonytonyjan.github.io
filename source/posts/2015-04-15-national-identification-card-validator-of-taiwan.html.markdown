@@ -2,7 +2,7 @@
 title: 台灣身份證字號驗證器
 date: 2015-04-15 18:30 +0800
 tags: [Ruby]
-category: 程式
+
 ---
 
 今天在 Ruby Taiwan 的 [FB 社團上](https://www.facebook.com/groups/142197385837507/permalink/888110727912832/)看到 adz 大大在問是否有身份證字號驗證的 gem 可以用。

@@ -1,7 +1,7 @@
 ---
 title: "[音樂創作] 獨夜"
 date: 2013-01-15 20:37 +0800
-category: 音樂
+
 ---
 
 <iframe width="853" height="480" src="http://www.youtube.com/embed/ubz-L9_Oe6w?list=PL1E3D73CA92E288FF" frameborder="0" allowfullscreen></iframe>

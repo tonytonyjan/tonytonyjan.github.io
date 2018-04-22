@@ -1,7 +1,7 @@
 ---
 title: "第一次喝 Java 就上癮-計畫序"
 date: 2010-04-24 01:14:40 +0800
-category: 程式
+
 tags: [Java]
 ---
 ![](/images/cssula-blog/javaLogo.png)

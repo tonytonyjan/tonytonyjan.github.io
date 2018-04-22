@@ -1,7 +1,7 @@
 ---
 title: 2015 回顧
 date: 2016-01-02 01:09 +0800
-category: 閒聊
+
 tags: ['2015', 跨年, 回顧]
 image: /images/2016-firework.jpg
 thumb: /images/thumbs/2016-firework.jpg

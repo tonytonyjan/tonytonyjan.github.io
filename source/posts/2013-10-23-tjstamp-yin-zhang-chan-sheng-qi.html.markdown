@@ -1,7 +1,7 @@
 ---
 title: "TJStamp 印章產生器"
 date: 2013-10-23 14:52 +0800
-category: 程式
+
 tags: [Ruby, 印章, 朕知道了]
 preview: http://tjstamp.tonytonyjan.net
 github: https://github.com/tonytonyjan/tjstamp

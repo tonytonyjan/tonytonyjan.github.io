@@ -1,7 +1,7 @@
 ---
 title: Rails on webpack
 date: 2016-02-10 22:35 +0800
-category: 程式
+
 tags: [Ruby on Rails, webpack]
 description: 覺得 Rails 與 webpack 的整合不需要像網路上找到的各種教學文或是 gem 搞的那樣複雜，所以想藉這篇文章分享自己的做法。
 github: https://github.com/tonytonyjan/webpack_stats

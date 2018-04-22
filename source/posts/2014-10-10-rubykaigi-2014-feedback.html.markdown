@@ -1,7 +1,7 @@
 ---
 title: RubyKaigi 2014 攻略心得
 date: 2014-10-10 10:29:04 +0800
-category: 心得
+
 tags: [Ruby Kaigi, Ruby, 日本, 研討會]
 image: rubykaigi.png
 thumb: thumbs/rubykaigi.png

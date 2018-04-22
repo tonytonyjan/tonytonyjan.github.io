@@ -1,7 +1,7 @@
 ---
 title: C 語言之多行巨集
 date: 2014-10-07 02:19:13 +0800
-category: 程式
+
 tags: [C]
 thumb: thumbs/c.png
 ---

@@ -1,7 +1,7 @@
 ---
 title: "團隊、溝通管道"
 date: 2012-03-05 01:40 +0800
-category: 生命
+
 ---
 
 ![](/images/team.jpg)

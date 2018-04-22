@@ -2,7 +2,7 @@
 title: "將 Octopress Page 依照標題自動索引"
 date: 2012-05-01 13:30 +0800
 tags: [Octopress, Jekyll]
-category: 程式
+
 preview: /projects/octopress-indexer
 github: https://gist.github.com/2565249/6151c81f7af333d5c1d9dd0b2bdcba2c7a966dca
 ---

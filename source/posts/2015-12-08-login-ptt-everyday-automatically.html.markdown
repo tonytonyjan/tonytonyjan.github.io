@@ -3,7 +3,7 @@ title: PTT 每天自動登入小程式
 image: /images/ptt.png
 thumb: /images/thumbs/ptt.png
 date: 2015-12-08 23:45 +0800
-category: 程式
+
 ---
 
 ![](/images/ptt.png)

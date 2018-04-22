@@ -1,7 +1,7 @@
 ---
 title: "[台北] 後門咖啡 Cafe Backstage"
 date: 2013-08-12 13:31 +0800
-category: SOHO
+
 ---
 
 ![](/images/cafe-backstage.jpg)

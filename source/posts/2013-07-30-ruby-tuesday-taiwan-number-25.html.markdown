@@ -1,7 +1,7 @@
 ---
 title: "Ruby Tuesday Taiwan #25"
 date: 2013-07-30 20:07 +0800
-category: 閒聊
+
 ---
 
 ## Topic 1

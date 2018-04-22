@@ -1,7 +1,7 @@
 ---
 title: "在 Octopress 顯示目錄與標籤雲"
 date: 2012-02-13 00:34 +0800
-category: 程式
+
 tags: [Octopress, Jekyll, 標籤雲]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Ziltag Beta 啟動
 date: 2016-03-01 00:53 +0800
-category: 閒聊
+
 tags: [Ziltag, 樂貼趣]
 description: 這個服務的目的是希望在現有的圖片、影片等多媒體上面，創要一種新的社交互動方式：你可以在任何圖片的任何地方標籤上任何資訊，可以是一句話、一個人名、一段連結影片等，而每個標籤都可以是個討論串。
 image: /images/piano.jpg

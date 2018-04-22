@@ -2,7 +2,7 @@
 title: "Swift Optional Chaining in Ruby"
 date: 2014-06-20 15:49:35 +0800
 tags: [Ruby,Swift]
-category: 程式
+
 ---
 
 上次參加了 [Ruby Tuesday #29](http://rubytaiwan.kktix.cc/events/ruby-tuesday-29)，由 Ruby 圈的 JoJo，[Joseph Ku](https://twitter.com/josephku)（<del>范范范瑋琪的概念</del>），分享 WWDC 參加心得與 Swift 的簡介。

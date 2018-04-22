@@ -1,7 +1,7 @@
 ---
 title: "臉書打卡集氣棒"
 date: 2014-06-27 23:51:38 +0800
-category: 程式
+
 tags: [Ruby]
 thumb: thumbs/fb.jpg
 ---

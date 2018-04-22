@@ -24,12 +24,6 @@ activate :blog do |blog|
   blog.summary_separator  = /<!-- more -->/
   blog.summary_length     = 150
   blog.tag_template       = 'tag.html'
-  blog.custom_collections = {
-    category: {
-      link: '/categories/{category}.html',
-      template: 'category.html'
-    }
-  }
 end
 
 ignore 'slides/*'

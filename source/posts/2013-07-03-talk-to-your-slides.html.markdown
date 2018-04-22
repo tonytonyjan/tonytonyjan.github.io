@@ -1,7 +1,7 @@
 ---
 title: "跟簡報說話"
 date: 2013-07-03 14:12 +0800
-category: 程式
+
 tags: [JavaScript]
 ---
 [老樹咖啡]: http://www.oldtree.com.tw/

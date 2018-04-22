@@ -1,7 +1,7 @@
 ---
 title: "將現有資料庫導入 Rails ActiveModel"
 date: 2011-08-17 17:45 +0800
-category: 程式
+
 tags: [Ruby, Ruby on Rails]
 ---
 

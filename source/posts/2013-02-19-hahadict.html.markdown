@@ -1,7 +1,7 @@
 ---
 title: "笑典 - 教育部國語辭典 Chrome 離線版"
 date: 2013-02-19 14:47 +0800
-category: 程式
+
 tags: [Chrome, 字典, 教育部]
 ---
 

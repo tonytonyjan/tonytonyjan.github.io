@@ -1,7 +1,7 @@
 ---
 title: "別把世界關在外面"
 date: 2013-08-09 04:50 +0800
-category: 生命
+
 ---
 
 ![](/images/birds-heron-fly-sky-clouds.jpg)

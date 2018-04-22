@@ -1,7 +1,7 @@
 ---
 title: "params[\"key\"] 和 params[:key]"
 date: 2012-03-03 15:31 +0800
-category: 程式
+
 tags: [Ruby, Ruby on Rails]
 ---
 

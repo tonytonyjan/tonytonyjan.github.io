@@ -1,7 +1,7 @@
 ---
 title: "使用 Sinatra、HFS 在本地開發 Javascript"
 date: 2012-03-08 14:16 +0800
-category: 程式
+
 tags: [JavaScript]
 ---
 

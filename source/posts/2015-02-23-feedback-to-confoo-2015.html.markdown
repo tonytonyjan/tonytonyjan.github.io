@@ -1,7 +1,7 @@
 ---
 title: ConFoo 2015 心得
 date: 2015-02-23 02:34 +0800
-category: 心得
+
 tags: [Ruby, 加拿大, ConFoo, 研討會]
 image: images/confoo-2015.jpg
 thumb: thumbs/confoo-2015.jpg

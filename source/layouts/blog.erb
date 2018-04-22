@@ -9,7 +9,6 @@
 <% current_article.tags.each do |tag| %>
 <meta property="article:tag" content="<%= tag %>" />
 <% end %>
-<meta property="article:section" content="<%= current_article.data.category %>" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
 <meta property="article:published_time" content="<%= current_article.date.xmlschema %>" />
 <% end %>
@@ -36,12 +35,8 @@
         <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
       </span>
       <span class="posted-on">
-        在
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="<%= current_article.date.xmlschema %>"><%= I18n.l current_article.date, format: :date %></time></a>
-      </span>
-      <span class="posted-in">
         發表於
-        <%= link_to current_article.data.category, category_path(current_article.data.category), title: "瀏覽所有 #{current_article.data.category} 的文章" %>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="<%= current_article.date.xmlschema %>"><%= I18n.l current_article.date, format: :date %></time></a>
       </span>
     </div>
     <!-- .entry-meta -->

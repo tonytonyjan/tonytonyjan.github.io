@@ -1,7 +1,7 @@
 ---
 title: "Java Telnet"
 date: 2010-04-30 02:05:37 +0800
-category: 程式
+
 tags: [Java]
 ---
 

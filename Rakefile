@@ -21,14 +21,3 @@ task :tags do
   end
   puts tags.to_a.sort
 end
-
-desc 'List all categories'
-task :categories do
-  categories = Set.new
-  Dir["#{__dir__}/source/posts/*.markdown"].each do |path|
-    match_data = IO.read(path).match(/---\n+(.*?)\n+---/m)
-    parsed = YAML.load(match_data[1])
-    categories.add(parsed['category']) if parsed.key?('category')
-  end
-  puts categories.to_a.sort
-end

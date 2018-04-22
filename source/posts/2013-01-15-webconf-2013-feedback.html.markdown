@@ -1,7 +1,7 @@
 ---
 title: "WebConf 2013 會場志工心得"
 date: 2013-01-15 23:06 +0800
-category: 閒聊
+
 ---
 
 ![](/images/webconf.png)

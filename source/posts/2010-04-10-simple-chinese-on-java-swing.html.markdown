@@ -1,7 +1,7 @@
 ---
 title: "解決 Java Swing GUI 在 Un*x 的中文亂碼問題"
 date: 2010-04-10 02:54:01 +0800
-category: 程式
+
 tags: [Java, FreeBSD]
 ---
 

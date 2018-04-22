@@ -1,7 +1,7 @@
 ---
 title: "讓 wine 再也不怕簡中"
 date: 2010-04-07 16:05:49 +0800
-category: 程式
+
 tags: [FreeBSD]
 ---
 

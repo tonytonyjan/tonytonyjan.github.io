@@ -1,7 +1,7 @@
 ---
 title: 來自 chef.io 的小禮物
 date: 2016-01-30 14:56 +0800
-category: 程式
+
 tags: [chef.io]
 image: /images/chef-2.jpg
 thumb: /images/thumbs/chef-2.jpg

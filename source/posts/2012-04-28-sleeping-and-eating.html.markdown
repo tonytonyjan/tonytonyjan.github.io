@@ -1,7 +1,7 @@
 ---
 title: "吃、睡與生活"
 date: 2012-04-28 19:10 +0800
-category: 生命
+
 ---
 
 ![](/images/birds.jpg)

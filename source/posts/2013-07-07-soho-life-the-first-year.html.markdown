@@ -1,7 +1,7 @@
 ---
 title: "自由業之路"
 date: 2013-07-07 02:34 +0800
-category: 閒聊
+
 ---
 
 ![](/images/freedom.jpg)

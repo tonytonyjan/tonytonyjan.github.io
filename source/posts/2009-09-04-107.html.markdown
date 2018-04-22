@@ -1,7 +1,7 @@
 ---
 title: "Visa廣告"
 date: 2009-09-04 00:33:16 +0800
-category: 閒聊
+
 tags: [Visa, 廣告, 跳舞]
 ---
 

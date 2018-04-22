@@ -1,7 +1,7 @@
 ---
 title: "兜翔健康工作室元旦特輯！！"
 date: 2009-01-01 00:21:31 +0800
-category: 程式
+
 tags: [交大, 資工, CSSULA, 鍾翔, kvchung, 遊戲, 角色扮演, Windows, C]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 對不起，我把馬英九放進 Ruby 2.3 了
 date: 2016-01-07 23:27 +0800
-category: 程式
+
 tags: [馬英九, 連勝文, Ruby]
 image: /images/ma.png
 thumb: /images/thumbs/ma.png

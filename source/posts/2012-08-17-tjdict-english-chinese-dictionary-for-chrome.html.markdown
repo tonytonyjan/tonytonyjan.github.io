@@ -2,7 +2,7 @@
 title: "TJDict - Chrome 英漢、漢英網路集成字典"
 date: 2012-08-17 01:53 +0800
 tags: [Chrome, Javascript]
-category: 程式
+
 ---
 
 ![](/images/tjdict3.png)

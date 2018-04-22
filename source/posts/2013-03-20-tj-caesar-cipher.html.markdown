@@ -1,7 +1,7 @@
 ---
 title: "凱薩密碼中文版"
 date: 2013-03-20 16:33 +0800
-category: 程式
+
 tags: [Ruby]
 ---
 

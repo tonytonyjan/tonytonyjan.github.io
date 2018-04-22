@@ -1,7 +1,7 @@
 ---
 title: "TJMarkdownPaste - Markdown with Tex and code highlight"
 date: 2012-12-12 07:09 +0800
-category: 程式
+
 tags: [Ruby, Ruby on Rails]
 ---
 

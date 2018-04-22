@@ -1,7 +1,7 @@
 ---
 title: "Ruby Tuesday Taiwan #28"
 date: 2014-01-07 19:19 +0800
-category: 閒聊
+
 published: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "你可以接受世界的幾分之幾？"
 date: 2014-05-17 03:09:07 +0800
-category: 生命
+
 ---
 
 ![](/images/world.jpg)
