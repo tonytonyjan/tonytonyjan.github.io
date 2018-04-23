@@ -18,7 +18,7 @@ description: 本文介紹如何使用自製的 Module.autoload 取代 ActiveSupp
 
 [Rails Guide 有一個篇章](http://guides.rubyonrails.org/autoloading_and_reloading_constants.html)詳細介紹了 Rails 內部載入的方法。內文提到 Rails 在消極載入的實作並沒有使用到 Ruby 內建的 `Module.autoload`，取而代之則是用 `const_missing` 來實作。
 
-雖然使用 ActiveSupport 的載入器可以省不少麻煩，但筆者沒有需要用到像是熱重載這類進接功能，加上覺得 `const_missing` 效能上並沒有比用 `Module.autoload` 實作來的好，只是到底會慢多少？筆者寫了一個基準測試（benchmark test）：
+雖然使用 ActiveSupport 的載入器可以省不少麻煩，但筆者沒有需要用到像是熱重載這類進階功能，加上覺得 `const_missing` 效能上並沒有比用 `Module.autoload` 實作來的好，只是到底會慢多少？筆者寫了一個基準測試（benchmark test）：
 
 ```ruby
 # frozen_string_literal: true
