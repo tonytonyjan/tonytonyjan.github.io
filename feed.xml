@@ -5,7 +5,7 @@
   <id>https://tonytonyjan.net</id>
   <link href="https://tonytonyjan.net"/>
   <link href="https://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2018-04-22T16:23:00+08:00</updated>
+  <updated>2018-04-22T17:23:00+09:00</updated>
   <author>
     <name>大兜</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Ruby 自動載入器</title>
     <link rel="alternate" href="https://tonytonyjan.net/2018/04/22/ruby-autoloader/"/>
     <id>https://tonytonyjan.net/2018/04/22/ruby-autoloader/</id>
-    <published>2018-04-22T16:23:00+08:00</published>
-    <updated>2018-04-23T09:42:27+08:00</updated>
+    <published>2018-04-22T17:23:00+09:00</published>
+    <updated>2018-04-23T10:42:27+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -171,8 +171,8 @@ end
     <title>我的貓 - 黏黏和歲歲</title>
     <link rel="alternate" href="https://tonytonyjan.net/2016/12/29/my-cat/"/>
     <id>https://tonytonyjan.net/2016/12/29/my-cat/</id>
-    <published>2016-12-29T16:58:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
+    <published>2016-12-29T17:58:00+09:00</published>
+    <updated>2018-04-22T17:49:27+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -228,8 +228,8 @@ end
     <title>Ruby#open 知多少？</title>
     <link rel="alternate" href="https://tonytonyjan.net/2016/06/15/comparison-of-ruby-open/"/>
     <id>https://tonytonyjan.net/2016/06/15/comparison-of-ruby-open/</id>
-    <published>2016-06-15T00:12:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
+    <published>2016-06-15T01:12:00+09:00</published>
+    <updated>2018-04-22T17:49:27+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -389,8 +389,8 @@ end
     <title>Ziltag Beta 啟動</title>
     <link rel="alternate" href="https://tonytonyjan.net/2016/03/01/ziltag-start/"/>
     <id>https://tonytonyjan.net/2016/03/01/ziltag-start/</id>
-    <published>2016-03-01T00:53:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
+    <published>2016-03-01T01:53:00+09:00</published>
+    <updated>2018-04-22T17:49:27+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -425,8 +425,8 @@ end
     <title>Rails on webpack</title>
     <link rel="alternate" href="https://tonytonyjan.net/2016/02/10/rails-on-webpack/"/>
     <id>https://tonytonyjan.net/2016/02/10/rails-on-webpack/</id>
-    <published>2016-02-10T22:35:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
+    <published>2016-02-10T23:35:00+09:00</published>
+    <updated>2018-04-22T17:49:27+09:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -518,8 +518,8 @@ end
     <title>來自 chef.io 的小禮物</title>
     <link rel="alternate" href="https://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/"/>
     <id>https://tonytonyjan.net/2016/01/30/a-gift-from-chef-io/</id>
-    <published>2016-01-30T14:56:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
+    <published>2016-01-30T15:56:00+09:00</published>
+    <updated>2018-04-22T17:49:27+09:00</updated>
     <author>
       <name>大兜</name>
     </author>

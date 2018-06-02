@@ -219,6 +219,7 @@
 <p>Ruby 的 Proc 類似 ECMAScript 的 function。在 ECMAScript 中使用關鍵字 function 即可配置一個 Function 物件。Ruby 則使用 Kernel::proc、Kernel::lambda 方法（但兩者有些微差異），或是直接建構一個 Proc 物件（Proc.new）。</p>
 
 <h2 id="block-and-proc">Block and Proc</h2>
+
 <p>Ruby 會主動將 Block 參數化成 Proc，Block 無法單獨存在，只能作為 Ruby 指令或呼叫方法時的引數。僅需利用流程指令 yield 即可將流程轉移到被參數化的 Block 中運行。我們可以用 Kernel::block_given? 判斷使用者有無傳遞 Block。</p>
 
 
