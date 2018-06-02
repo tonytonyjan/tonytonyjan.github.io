@@ -10,6 +10,7 @@ Ruby 可將程式碼當參數傳遞，被參數化的程式碼稱為 Block。也
 Ruby 的 Proc 類似 ECMAScript 的 function。在 ECMAScript 中使用關鍵字 function 即可配置一個 Function 物件。Ruby 則使用 Kernel::proc、Kernel::lambda 方法（但兩者有些微差異），或是直接建構一個 Proc 物件（Proc.new）。
 
 ## Block and Proc
+
 Ruby 會主動將 Block 參數化成 Proc，Block 無法單獨存在，只能作為 Ruby 指令或呼叫方法時的引數。僅需利用流程指令 yield 即可將流程轉移到被參數化的 Block 中運行。我們可以用 Kernel::block_given? 判斷使用者有無傳遞 Block。
 
 <!-- more -->
@@ -119,9 +120,10 @@ p upcase_words
 
 原理是因為 Ruby 可以用物件的方法名去參考到該方法（反射），舉個例子：
 
-```ruby This two lines are equivalent
-“tonytonyjan”.upcase
-“tonytonyjan”.send(:upcase)
+```ruby
+# those two lines are equivalent
+"tonytonyjan".upcase
+"tonytonyjan".send(:upcase)
 ```
 
 所以當我們寫出 `map(&:upcase)` 這樣的語法時，他會將傳出的物件的方法化為 Proc 並執行，所以與 `map{|x| x.upcase}` 意義相同。
@@ -142,7 +144,7 @@ end
 f5(A.new,"The World!", &:f7)
 ```
 
-&:f7 會去找第一個接到的參數，並呼叫 f7，及 f5 中的 n，而在那之後所有擲出的參數，都被當成 f7 的參數。所以 `f5(A.new,"The World!", &:f7)` 的真正意思是「呼叫物件 A 的 f7 方法，並傳入 "The World!" 當參數」。
+`&:f7` 會去找第一個接到的參數，並呼叫 f7，及 f5 中的 n，而在那之後所有擲出的參數，都被當成 f7 的參數。所以 `f5(A.new,"The World!", &:f7)` 的真正意思是「呼叫物件 A 的 f7 方法，並傳入 "The World!" 當參數」。
 
 ## Proc and Lambda
 
