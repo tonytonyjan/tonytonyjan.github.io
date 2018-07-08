@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# article: http://ogp.me/ns/article#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="大兜">
+  <meta property="og:site_name" content="不歸錄">
+  <meta property="og:url" content="https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/">
+  <title>cron 如何忽略系統的環境變數 - 不歸錄</title>
+<meta name="description" content="本文並不會告訴你如何將環境變數傳入 cron 工作，而是記錄了筆者探究 cron 如何處理環境變數的過程。">
+<meta name="keywords" content="Docker, cron, UNIX, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="cron 如何忽略系統的環境變數 - 不歸錄" />
+<meta property="og:description" content="本文並不會告訴你如何將環境變數傳入 cron 工作，而是記錄了筆者探究 cron 如何處理環境變數的過程。" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="article:tag" content="Docker" />
+<meta property="article:tag" content="cron" />
+<meta property="article:tag" content="UNIX" />
+<meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
+<meta property="article:published_time" content="2018-07-08T14:57:00+08:00" />
+
+  <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH -->
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
+      <input type="hidden" name="q" value="">
+      <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">cron 如何忽略系統的環境變數</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by">
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        發表於
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2018-07-08T14:57:00+08:00">2018 年 07 月 08 日</time></a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <h1 id="cron-的環境變數去哪了">cron 的環境變數去哪了？</h1>
+
+<p>這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。</p>
+
+<p>為了偵錯，這時筆者通常會在 cron 腳本設定：</p>
+
+<pre><code>* * * * * env &gt; /var/log/env.log
+</code></pre>
+
+<p>靜待一分鐘後觀察 <code>/var/log/env.log</code> 的內容，以決定要補上那些缺漏的環境變數。</p>
+
+<p>筆者將以類似這樣技巧來重現問題與實驗，並且透過以下 <code>Dockerfile</code> 作為基礎：</p>
+
+<pre><code class="language-dockerfile">FROM debian:stretch-slim
+RUN echo 'deb-src http://deb.debian.org/debian stretch main' &gt;&gt; /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y procps cron vim dpkg-dev
+</code></pre>
+
+<h1 id="問題重現">問題重現</h1>
+
+<p>透過 <code>docker run -e FOO=BAR</code> 可以將環境變數 <code>FOO=BAR</code> 設定在 Docker container 的 init 程序，由於 init 程序是 UN*X 啟動時開天闢地的第一個程序，其他的程序都是由此程序衍生出來，所以除非做了特別設定，否則所有程序能繼承到 <code>FOO</code> 環境變數。</p>
+
+<p>讓我們驗證一下：</p>
+
+<pre><code>$ docker run --rm -e FOO=BAR IMAGE_NAME env
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=20794784a3ce
+FOO=BAR
+HOME=/root
+</code></pre>
+
+<p>我們可以看到 <code>FOO=BAR</code> 確實傳進去了，接著，我們再用 cron 做另外一個實驗：</p>
+
+<pre><code>$ docker run --rm -e FOO=BAR IMAGE_NAME sh -c 'echo \'* * * * * env &gt; /var/log/env.log\' | crontab - &amp;&amp; cron &amp;&amp; sleep $((62 - $(date +%S) )) &amp;&amp; cat /var/log/env.log'
+HOME=/root
+LOGNAME=root
+PATH=/usr/bin:/bin
+SHELL=/bin/sh
+PWD=/root
+</code></pre>
+
+<ul>
+  <li><code>sleep $((62 - $(date +%S) ))</code> - 指的是「睡到秒針到 2」。</li>
+</ul>
+
+<p>從印出的結果發現，同樣是 <code>env</code> 指令，在殼層執行與 cron 執行的結果並不一致。首先 <code>FOO=BAR</code> 消失了，甚至 <code>PATH</code> 裡的路徑也差異極大，從原本的 <code>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</code> 變成僅剩下 <code>/usr/bin:/bin</code>，這可以說明為何許多人在 cron 腳本中使用指令時，習慣使用絕對路徑，或者在腳本上方定義明確定義 <code>PATH</code> 變數。</p>
+
+<h2 id="cron-的-forking-過程">cron 的 forking 過程</h2>
+
+<blockquote>
+  <p>那麼 cron 是在哪個階段把環境變數清掉的呢？</p>
+</blockquote>
+
+<p>由於筆者深受「知其然不知其所以然」的痛苦，不得不調查 cron 到底在搞什麼鬼。在此推薦一個好用的指令：</p>
+
+<pre><code class="language-sh">ps wwefxo pid,ppid,command
+</code></pre>
+
+<ul>
+  <li><code>ww</code> - 無視終端機的寬度，將結果都印出</li>
+  <li><code>e</code> - 印出環境變數</li>
+  <li><code>f</code> - 以樹狀的方式呈現</li>
+  <li><code>x</code> - 印出不被任何終端所控制的程序，例如守護行程</li>
+  <li><code>o pid,ppid,command</code> - 只印出程序的 pid、ppid、command</li>
+</ul>
+
+<p>更多用法請參考 <a href="https://linux.die.net/man/1/ps">man ps</a></p>
+
+<p>用同樣的技巧再作一次實驗：</p>
+
+<pre><code>$ docker run --rm -e FOO=BAR foo sh -c 'echo \'* * * * * ps wwefxo pid,ppid,command &gt; /var/log/ps.log\' | crontab - &amp;&amp; cron &amp;&amp; sleep $((62 - $(date +%S) )) &amp;&amp; cat /var/log/ps.log'
+  PID  PPID COMMAND
+    1     0 sh -c echo '* * * * * ps wwefxo pid,ppid,command &gt; /var/log/ps.log' | crontab - &amp;&amp; cron &amp;&amp; sleep $((62 - $(date +%S) )) &amp;&amp; cat /var/log/ps.log PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin HOSTNAME=87736bfa1426 FOO=BAR HOME=/root
+   11     1 cron HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
+   14    11  \_ CRON HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
+   15    14      \_ /bin/sh -c ps wwefxo pid,ppid,command &gt; /var/log/ps.log SHELL=/bin/sh HOME=/root PATH=/usr/bin:/bin LOGNAME=root
+   16    15          \_ ps wwefxo pid,ppid,command HOME=/root LOGNAME=root PATH=/usr/bin:/bin SHELL=/bin/sh PWD=/root
+   13     1 sleep 57 HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
+</code></pre>
+
+<p>由此可見當 cron 執行一份工作項目時，整體程序的祖孫結構如下：</p>
+
+<pre><code>init -&gt; cron -&gt; cron -&gt; sh -&gt; cron job
+</code></pre>
+
+<p>cron 會額外再 fork 一次自己，然後再執行 <code>sh -c "JOB STRING"</code>，而環境變數正是在這個階段消失的。</p>
+
+<p>截至目前為止我們僅知道執行 <code>sh</code> 時，環境變數已經被改變，無法說明為何環境變數會莫名奇妙消失。筆者起初猜測是 cron 有使用 <code>env -i</code> 指令，但從程序樹的結果來看則不然。</p>
+
+<p>無計可施，只好翻了一下 cron 的原始碼，在 <code>do_command.c</code> 找到了線索：</p>
+
+<pre><code>$ docker run --rm -e FOO=BAR -w /usr/src -v (pwd)/src:/usr/src IMAGE_NAME apt-get source cron
+$ grep -C 3 --color '"-c"' (find src -name do_command.c)
+                            }
+                        }
+#endif
+                        execle(shell, shell, "-c", e-&gt;cmd, (char *)0, jobenv);
+                        fprintf(stderr, "%s: execle: %s\n", shell, strerror(errno));
+                        _exit(ERROR_EXIT);
+                }
+</code></pre>
+
+<p>原來 cron 在執行 <code>sh</code> 指令時，使用了 <code>execle</code>，且在最後的參數傳入了自訂的環境變數 <code>jobenv</code>。</p>
+
+<p>引用一段 <code>execle</code> 的 <code>man</code> 頁面：</p>
+
+<blockquote>
+  <p>The execle() and execvpe() functions allow the caller to specify the environment of the executed program via the argument envp. The envp argument is an array of pointers to null-terminated strings and must be terminated by a NULL pointer. The other functions take the environment for the new process image from the external variable environ in the calling process.  - https://linux.die.net/man/3/execle</p>
+</blockquote>
+
+<p>然後於是筆者在 <code>entry.c</code> 找到了設定環境變數的地方</p>
+
+<pre><code>$ grep -B 2 --color 'env_set' (find src -name entry.c)
+        if (!env_get("SHELL", e-&gt;envp)) {
+                snprintf(envstr, MAX_ENVSTR, "SHELL=%s", _PATH_BSHELL);
+                if ((tenvp = env_set(e-&gt;envp, envstr))) {
+--
+        if (!env_get("HOME", e-&gt;envp)) {
+                snprintf(envstr, MAX_ENVSTR, "HOME=%s", pw-&gt;pw_dir);
+                if ((tenvp = env_set(e-&gt;envp, envstr))) {
+--
+        if (!env_get("PATH", e-&gt;envp)) {
+                snprintf(envstr, MAX_ENVSTR, "PATH=%s", _PATH_DEFPATH);
+                if ((tenvp = env_set(e-&gt;envp, envstr))) {
+--
+        }
+        snprintf(envstr, MAX_ENVSTR, "%s=%s", "LOGNAME", pw-&gt;pw_name);
+        if ((tenvp = env_set(e-&gt;envp, envstr))) {
+--
+#if defined(BSD)
+        snprintf(envstr, MAX_ENVSTR, "%s=%s", "USER", pw-&gt;pw_name);
+        if ((tenvp = env_set(e-&gt;envp, envstr))) {
+</code></pre>
+
+<p>分別設定了 <code>SHELL</code>、<code>HOME</code>、<code>PATH</code> 和 <code>LOGNAME</code>，這 4 的變數和上述用 <code>ps</code> 所觀測的環境變數，<code>SHELL=/bin/sh HOME=/root PATH=/usr/bin:/bin LOGNAME=root</code>，其結果是完全吻合的。</p>
+
+<p>至此，真相大白。</p>
+
+<h1 id="後記">後記</h1>
+
+<ul>
+  <li>本文中的 cron 指的是大多數人所使用的 vixie cron，如果是 busybox 的實作則不會出現這個問題，在 busybox 裡面，cron 工作的程序環境變數會繼承父程序。</li>
+  <li>感謝吾友 @floydwch 提出了的問題，使筆者學到不少知識。</li>
+</ul>
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a href="/tags/docker/" rel="tag">Docker</a>
+        <a href="/tags/cron/" rel="tag">cron</a>
+        <a href="/tags/unix/" rel="tag">UNIX</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio -->
+    <div class="author-bio">
+      <!-- .author-img -->
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio -->
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2018/04/22/ruby-autoloader/" rel="prev"><span class="meta-nav">←</span> Ruby 自動載入器</a>
+  </div>
+  
+</nav>
+<!-- .nav-single -->
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single -->
+<script src="https://ziltag.com/plugin.js" data-ziltag="5823ed"></script>
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <!-- <script src="/js/smoothscroll.js"></script> -->
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/google-code-prettify/prettify.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71890573-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
