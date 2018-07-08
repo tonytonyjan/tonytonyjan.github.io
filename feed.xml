@@ -14,20 +14,18 @@
     <link rel="alternate" href="https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/"/>
     <id>https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/</id>
     <published>2018-07-08T14:57:00+08:00</published>
-    <updated>2018-07-08T17:27:53+08:00</updated>
+    <updated>2018-07-08T17:32:09+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
-    <summary type="html">&lt;h1 id="cron-的環境變數去哪了"&gt;cron 的環境變數去哪了？&lt;/h1&gt;
+    <summary type="html">&lt;p&gt;這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。&lt;/p&gt;
 
-&lt;p&gt;這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。&lt;/p&gt;
+</summary>
+    <content type="html">&lt;p&gt;這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。&lt;/p&gt;
 
-&lt;p&gt;為了偵錯，這時筆者通常會在 cron 腳本設定：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;* * * * * env &amp;gt; /var/log/env...&lt;/code&gt;&lt;/pre&gt;</summary>
-    <content type="html">&lt;h1 id="cron-的環境變數去哪了"&gt;cron 的環境變數去哪了？&lt;/h1&gt;
 
-&lt;p&gt;這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。&lt;/p&gt;
+&lt;h1 id="cron-的環境變數去哪了"&gt;cron 的環境變數去哪了？&lt;/h1&gt;
 
 &lt;p&gt;為了偵錯，這時筆者通常會在 cron 腳本設定：&lt;/p&gt;
 
