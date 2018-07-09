@@ -345,20 +345,8 @@ var $container, $blog_container;
 		// ------------------------------
 		// LIGHTBOX
 		setupLigtbox();
-		// ------------------------------
-		
-		
-		
-		// ------------------------------
-		// CODE PRETTIFY
-		if($('.prettyprint').length) {
-			window.prettyPrint && prettyPrint();
-		}
-		// ------------------------------
-		
-		
-		
-		// ------------------------------
+		// ------------------------------		
+
 		// TABS
 		$('.tabs').each(function() {
 			if(!$(this).find('.tab-titles li a.active').length) {

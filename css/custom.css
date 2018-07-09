@@ -1,13 +1,3 @@
-pre.prettyprint > code{
-  background: initial;
-  border: initial;
-  box-shadow: initial;
-}
-
-code{
-  overflow: initial;
-}
-
 .social li a.plurk:hover {
   background-color: #cf682f;
 }
