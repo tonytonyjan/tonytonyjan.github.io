@@ -1,1 +1,1 @@
-$('pre').addClass('prettyprint');
+hljs.initHighlightingOnLoad();
