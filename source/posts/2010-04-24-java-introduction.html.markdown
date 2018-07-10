@@ -13,7 +13,7 @@ tags: [Java]
 
 **學習一個語言，有"愛"很重要**
 
-** **這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，[程式語言使用率統計](http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">維基</a>可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java, Fortran……等等，至今仍屹立不搖；2009年11月，新的語言<a href="http://www.zimbu.org/" target="_blank">Zimbu</a>問世，同時Google也發布了<a href="http://golang.org/" target="_blank">go</a>。另外呢，這個月TIOBE軟體公司公佈了最新的<a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" target="_blank)（這東西每個月都會更新一次），這個月C又再次奪回了第一名寶座，Java被C領先位居第二。語言的數目是多到數不清，關係與地位又瞬息萬變。然而儘管語言的種類是如此龐大，對於到底該學哪一個，大兜認為不是最重要的議題，於此大兜想分享一些建議：
+** **這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，[程式語言使用率統計](http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">維基</a>可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java, Fortran……等等，至今仍屹立不搖；2009年11月，新的語言[Zimbu](http://www.zimbu.org/)問世，同時Google也發布了[go](http://golang.org/)。另外呢，這個月TIOBE軟體公司公佈了最新的[結果](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html)（這東西每個月都會更新一次），這個月C又再次奪回了第一名寶座，Java被C領先位居第二。語言的數目是多到數不清，關係與地位又瞬息萬變。然而儘管語言的種類是如此龐大，對於到底該學哪一個，大兜認為不是最重要的議題，於此大兜想分享一些建議：
 
 * 尋找一個您對它有"**愛**"的程式語言，並且持續不懈的了解它、發展它、熟悉它，不斷探索其背後原理、實做、理論根基、應用…等等，別急著什麼都學，等到根扎實、夠穩了，有時間再慢慢發展旁邊的枝葉。
 
