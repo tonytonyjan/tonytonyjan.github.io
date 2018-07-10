@@ -3,4 +3,20 @@ title: "DIY冷氣"
 date: 2006-07-22 00:48:48 +0800
 
 ---
-Warning: mkdir(): Permission denied in /home/www/HinetBlog/_classes/article/GenericArticle.php on line 75Warning: mkdir(): Permission denied in /home/www/HinetBlog/_classes/article/GenericArticle.php on line 75<OBJECT classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'				 codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0'				 ID='main' WIDTH='495' HEIGHT='371' ALIGN=''>				 <PARAM NAME=menu VALUE=false>				 <PARAM NAME=movie VALUE='/_service/paint/swf/show.swf?xml_url=/flash_config.xml&server_url=/_users&service_url=/_service/paint/&act=show'> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#FFFFFF> 				 <embed name='main' src='/_service/paint/swf/show.swf?xml_url=/flash_config.xml&server_url=/_users&service_url=/_service/paint/&act=show' quality='high' bgcolor='#ffffff' width='495' height='371' align='middle' allowScriptAccess='sameDomain' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />									</OBJECT><p>特色：</p><p>無汙染、無氟氯碳化物；讓你不用花大錢買冷氣，還要繳一大筆電費；讓你全家一起動手DIY，增進親子關係，快樂成長！![](/images/slum-area/210_m13.gif)</p>
+Warning: mkdir(): Permission denied in /home/www/HinetBlog/_classes/article/GenericArticle.php on line 75Warning: mkdir(): Permission denied in /home/www/HinetBlog/_classes/article/GenericArticle.php on line 75<OBJECT classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'				 codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0'				 ID='main' WIDTH='495' HEIGHT='371' ALIGN=''>				 
+
+				 
+
+ 
+
+ 
+
+ 				 <embed name='main' src='/_service/paint/swf/show.swf?xml_url=/flash_config.xml&server_url=/_users&service_url=/_service/paint/&act=show' quality='high' bgcolor='#ffffff' width='495' height='371' align='middle' allowScriptAccess='sameDomain' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />									</OBJECT>
+
+特色：
+
+
+
+無汙染、無氟氯碳化物；讓你不用花大錢買冷氣，還要繳一大筆電費；讓你全家一起動手DIY，增進親子關係，快樂成長！![](/images/slum-area/210_m13.gif)
+
+

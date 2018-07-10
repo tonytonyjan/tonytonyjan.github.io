@@ -3,5 +3,113 @@ title: "～林強～唱出鄉下人的心聲"
 date: 2007-04-11 00:38:32 +0800
 
 ---
-<object classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" codebase="http://www.microsoft.com/ntserver/netshow/download/en/nsmp2inf.cab#Version=5,1,51,415" id="msplayer" type="application/x-oleobject" standby="Loading Microsoft Media Player components..." name="msplayer" width="320" height="240"> <param name="AllowChangeDisplaySize" value="1"> <param name="AutoStart" value="1"> <param name="AutoSize" value="0"> <param name="AnimationAtStart" value="1"> <param name="ClickToPlay" value="1"> <param name="EnableContextMenu" value="0"> <param name="EnablePositionControls" value="1"> <param name="EnableFullScreenControls" value="1"> <param name="URL" value="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/11006509/11006509.mp3"> <param name="ShowControls" value="1"> <param name="ShowAudioControls" value="1"> <param name="ShowDisplay" value="0"> <param name="ShowGotoBar" value="0"> <param name="ShowPositionControls" value="1"> <param name="ShowStatusBar" value="1"> <param name="ShowTracker" value="1"> <embed src="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/11006509/11006509.mp3" type="video/x-ms-wmv" width="320" height="240" autostart="1" showcontrols="0" autosize="0" animationatstart="1" clicktoplay="1" enablecontextmenu="0" enablepositioncontrols="1" enablefullscreencontrols="1" showaudiocontrols="1" showdisplay="0" showgotobar="0" showpositioncontrols="1" showstatusbar="1" showtracker="1"> </object>
-<p class="MsoNormal">向前走</p><p class="MsoNormal">作詞/林強<br />作曲/林強<br />編曲/羅紘武<o:p /></p><p class="MsoNormal"><o:p />火車漸漸在起走<br />再會我的故鄉和親戚<br />親愛的父母再會吧<br />到陣的朋友告辭啦<br />阮欲來去台北打拼<br />聽人講啥物好空的攏在那<br />朋友笑我是愛做暝夢的憨子<br />不管如何路是自己走<br /></p><p class="MsoNormal">OH!再會吧OH!啥物攏不驚<br />OH!再會吧OH!向前行<o:p /><br /></p><p class="MsoNormal">車站一站一站過去啦<br />風景一幕一幕親像電影<br />把自己當作是男主角來扮<br />雲遊四海可比是小飛俠<br />不管是幼稚也是樂觀<br />後果若按怎自己就來擔<br />原諒不孝的子兒吧<br />趁我還少年趕緊來打拼<o:p /></p><p class="MsoNormal"><o:p>OH!</o:p>再會吧OH!啥物攏不驚<br />OH!再會吧OH!向前走<o:p /></p><p class="MsoNormal"><o:p />台北台北台北車站到啦<br />欲下車的旅客請趕緊下車<br />頭前市現在的台北車頭<br />我的理想和希望攏在這<br />一棟一棟的高樓大廈<br />不知有多少像我這款的憨子<br />卡早聽人唱台北不是我的家<br />但我一點攏無感覺<br /></p><p class="MsoNormal">OH!啥物攏不驚OH!向前走<br />OH!啥物攏不驚OH!向前走</p><p class="MsoNormal"></p><hr style="width: 100%; height: 2px;" /><p class="MsoNormal">最近，沒錯也就是這個禮拜，一位過去曾經轟動一時的歌手引起我強烈的關注。</p><p class="MsoNormal">林強</p><p class="MsoNormal">一位真正的實力派歌手﹍﹍</p><p class="MsoNormal">或許現在的年輕人已經忘記這號人物了，不過大家記得的並不是他的名字，而是他所創作的一首首充滿台灣精神的歌。不論歌詞的意境、林強本身的台語腔以及他那一身土裡土氣的打扮，唱起台灣歌曲來實在深得人心！而成名曲像是「向前走」、「黑輪伯仔」等，聲稱台灣歌曲中的經典，似乎還閒太便宜。</p><p class="MsoNormal">一句句的「啊～～啥物攏不驚！啊～～向前走！」<br /></p><p class="MsoNormal">是啊，我被感動了，被他的歌感動了﹍﹍</p><p class="MsoNormal">「啥人有法度了解，一個鄉下姻仔，來到大都市打拼耶心情？」-林強<br /></p><p class="MsoNormal">相較於現今的流行歌手，林強的音樂沒有華麗的伴奏，沒有形形色色的樂器，他的表演也沒有精緻的服裝、舞台﹍﹍</p><p class="MsoNormal">事實上，他根本不需要，他有的是實力，真正的實力以及的音樂才華；反觀現代的歌手只要長得好看就可以出專輯了，等級怎麼可比？流行音樂是經不起時間的考驗的，我想稱過了半個世紀就會被淘汰；但是真正好聽的歌不怕歲月的打擊，就像這一首「向前走」一樣。或許更久以後，大家幾乎不記得林強是誰了，但是一聽到「向前走」，卻可以不自覺得跟著一起唱﹍﹍</p><p class="MsoNormal">林強，你太強啦～～<br /></p>
+<object classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" codebase="http://www.microsoft.com/ntserver/netshow/download/en/nsmp2inf.cab#Version=5,1,51,415" id="msplayer" type="application/x-oleobject" standby="Loading Microsoft Media Player components..." name="msplayer" width="320" height="240"> 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ <embed src="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/11006509/11006509.mp3" type="video/x-ms-wmv" width="320" height="240" autostart="1" showcontrols="0" autosize="0" animationatstart="1" clicktoplay="1" enablecontextmenu="0" enablepositioncontrols="1" enablefullscreencontrols="1" showaudiocontrols="1" showdisplay="0" showgotobar="0" showpositioncontrols="1" showstatusbar="1" showtracker="1"> </object>
+
+
+向前走
+
+
+
+作詞/林強<br />作曲/林強<br />編曲/羅紘武<o:p />
+
+
+
+<o:p />火車漸漸在起走<br />再會我的故鄉和親戚<br />親愛的父母再會吧<br />到陣的朋友告辭啦<br />阮欲來去台北打拼<br />聽人講啥物好空的攏在那<br />朋友笑我是愛做暝夢的憨子<br />不管如何路是自己走<br />
+
+
+
+OH!再會吧OH!啥物攏不驚<br />OH!再會吧OH!向前行<o:p /><br />
+
+
+
+車站一站一站過去啦<br />風景一幕一幕親像電影<br />把自己當作是男主角來扮<br />雲遊四海可比是小飛俠<br />不管是幼稚也是樂觀<br />後果若按怎自己就來擔<br />原諒不孝的子兒吧<br />趁我還少年趕緊來打拼<o:p />
+
+
+
+<o:p>OH!</o:p>再會吧OH!啥物攏不驚<br />OH!再會吧OH!向前走<o:p />
+
+
+
+<o:p />台北台北台北車站到啦<br />欲下車的旅客請趕緊下車<br />頭前市現在的台北車頭<br />我的理想和希望攏在這<br />一棟一棟的高樓大廈<br />不知有多少像我這款的憨子<br />卡早聽人唱台北不是我的家<br />但我一點攏無感覺<br />
+
+
+
+OH!啥物攏不驚OH!向前走<br />OH!啥物攏不驚OH!向前走
+
+
+
+
+
+<hr style="width: 100%; height: 2px;" />
+
+最近，沒錯也就是這個禮拜，一位過去曾經轟動一時的歌手引起我強烈的關注。
+
+
+
+林強
+
+
+
+一位真正的實力派歌手﹍﹍
+
+
+
+或許現在的年輕人已經忘記這號人物了，不過大家記得的並不是他的名字，而是他所創作的一首首充滿台灣精神的歌。不論歌詞的意境、林強本身的台語腔以及他那一身土裡土氣的打扮，唱起台灣歌曲來實在深得人心！而成名曲像是「向前走」、「黑輪伯仔」等，聲稱台灣歌曲中的經典，似乎還閒太便宜。
+
+
+
+一句句的「啊～～啥物攏不驚！啊～～向前走！」<br />
+
+
+
+是啊，我被感動了，被他的歌感動了﹍﹍
+
+
+
+「啥人有法度了解，一個鄉下姻仔，來到大都市打拼耶心情？」-林強<br />
+
+
+
+相較於現今的流行歌手，林強的音樂沒有華麗的伴奏，沒有形形色色的樂器，他的表演也沒有精緻的服裝、舞台﹍﹍
+
+
+
+事實上，他根本不需要，他有的是實力，真正的實力以及的音樂才華；反觀現代的歌手只要長得好看就可以出專輯了，等級怎麼可比？流行音樂是經不起時間的考驗的，我想稱過了半個世紀就會被淘汰；但是真正好聽的歌不怕歲月的打擊，就像這一首「向前走」一樣。或許更久以後，大家幾乎不記得林強是誰了，但是一聽到「向前走」，卻可以不自覺得跟著一起唱﹍﹍
+
+
+
+林強，你太強啦～～<br />
+
+

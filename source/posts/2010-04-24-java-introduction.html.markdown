@@ -23,7 +23,15 @@ tags: [Java]
 
 <strong>Java 的魅力</strong>
 
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/SRLU1bJSLVg&amp;hl=zh_TW&amp;fs=1&amp;rel=0" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="480" height="385" src="http://www.youtube.com/v/SRLU1bJSLVg&amp;hl=zh_TW&amp;fs=1&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+
+
+
+
+
+
+
+<embed type="application/x-shockwave-flash" width="480" height="385" src="http://www.youtube.com/v/SRLU1bJSLVg&amp;hl=zh_TW&amp;fs=1&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 
 其實不妨試著在 Google 上搜尋一下"<a href="http://www.google.com.tw/search?source=ig&amp;hl=zh-TW&amp;rlz=&amp;=&amp;q=java+%E7%89%B9%E8%89%B2&amp;meta=lr%3D&amp;aq=f&amp;aqi=g1&amp;aql=&amp;oq=&amp;gs_rfai=" target="_blank">Java 特色</a>"，會得到數量可觀的筆數。意思是如果我把它們全部列出來，可能會被批佔頁面。而由於每個Java 控喜愛 Java 的並理由不一樣，在此大兜只舉出一些自己之所以選擇 Java 的主要理由。

@@ -4,4 +4,44 @@ date: 2010-03-04 00:15:18 +0800
 
 tags: [FreeBSD]
 ---
-<p>之前因為課堂需要，為了撰寫masm不得已特地裝了dosbox，好不容易成功了，高高興興寫了第一個Hello World~，成功是成功了，但是跑了老師的範例檔竟然發現過不了！？</p><p>原來dos不支援32位元...所以並不存叫EAX的register。可是作業還是要做，好吧，裝個VirtualBox，裡面灌Win7再裝上VisualStudio這樣總可以了吧QQ</p><p>$ portinstall -c emulators/virtualbox-ose</p><p>$ portinstall -c&nbsp; emulators/virtualbox-ose-kmod</p><p>$ echo 'vboxdrv_load="YES"' &gt;&gt; /boot/loader.confo8n#Yi�^2I</p><p>$ echo 'vboxnetflt_load="YES"' &gt;&gt; /boot/loader.confF#W,|ZBu6J2i</p><p>$ echo 'ng_ether_load="YES"' &gt;&gt; /boot/loader.conf</p><p>$ reboot</p><p>$ startx</p><p>Enjoy~<br /></p>
+
+
+之前因為課堂需要，為了撰寫masm不得已特地裝了dosbox，好不容易成功了，高高興興寫了第一個Hello World~，成功是成功了，但是跑了老師的範例檔竟然發現過不了！？
+
+
+
+原來dos不支援32位元...所以並不存叫EAX的register。可是作業還是要做，好吧，裝個VirtualBox，裡面灌Win7再裝上VisualStudio這樣總可以了吧QQ
+
+
+
+$ portinstall -c emulators/virtualbox-ose
+
+
+
+$ portinstall -c&nbsp; emulators/virtualbox-ose-kmod
+
+
+
+$ echo 'vboxdrv_load="YES"' &gt;&gt; /boot/loader.confo8n#Yi�^2I
+
+
+
+$ echo 'vboxnetflt_load="YES"' &gt;&gt; /boot/loader.confF#W,|ZBu6J2i
+
+
+
+$ echo 'ng_ether_load="YES"' &gt;&gt; /boot/loader.conf
+
+
+
+$ reboot
+
+
+
+$ startx
+
+
+
+Enjoy~<br />
+
+
