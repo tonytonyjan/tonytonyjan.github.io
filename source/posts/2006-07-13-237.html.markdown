@@ -5,7 +5,7 @@ date: 2006-07-13 00:40:24 +0800
 ---
 
 
-<b style="mso-bidi-font-weight: normal">第四屆敦安學園開訓心得</b><b style="mso-bidi-font-weight: normal"></b>
+**第四屆敦安學園開訓心得******
 
 
 
@@ -19,7 +19,7 @@ date: 2006-07-13 00:40:24 +0800
 
 
 
-<b style="mso-bidi-font-weight: normal">真誠以待</b><b style="mso-bidi-font-weight: normal"></b>
+**真誠以待******
 
 
 
@@ -39,7 +39,7 @@ date: 2006-07-13 00:40:24 +0800
 
 
 
-<b style="mso-bidi-font-weight: normal">領袖特質</b><b style="mso-bidi-font-weight: normal"></b>
+**領袖特質******
 
 
 
@@ -53,7 +53,7 @@ date: 2006-07-13 00:40:24 +0800
 
 
 
-<b style="mso-bidi-font-weight: normal">愛情功課</b><b style="mso-bidi-font-weight: normal"></b>
+**愛情功課******
 
 
 
@@ -71,7 +71,7 @@ date: 2006-07-13 00:40:24 +0800
 
 
 
-<b style="mso-bidi-font-weight: normal">自我肯定</b><b style="mso-bidi-font-weight: normal"></b>
+**自我肯定******
 
 
 
@@ -87,7 +87,7 @@ date: 2006-07-13 00:40:24 +0800
 
 
 
-<b style="mso-bidi-font-weight: normal">最終感言</b><b style="mso-bidi-font-weight: normal"></b>
+**最終感言******
 
 
 
@@ -111,7 +111,7 @@ date: 2006-07-13 00:40:24 +0800
 
 
 
-<b style="mso-bidi-font-weight: normal"></b>
+****
 
 
 

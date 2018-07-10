@@ -6,7 +6,7 @@ tags: [C]
 ---
 
 
-這次換人想題目給電腦猜，而且<b>保證七次內</b>可以猜的出來，想下載的人<a href="http://www.cs.nctu.edu.tw/~whchien/coding/PCGuessNum.exe">請點我</a>，以後要跟別人玩猜數字遊戲就拿著個當外掛就好了XDD
+這次換人想題目給電腦猜，而且**保證七次內**可以猜的出來，想下載的人<a href="http://www.cs.nctu.edu.tw/~whchien/coding/PCGuessNum.exe">請點我</a>，以後要跟別人玩猜數字遊戲就拿著個當外掛就好了XDD
 
 
 

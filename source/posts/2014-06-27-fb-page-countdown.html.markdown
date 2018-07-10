@@ -22,7 +22,7 @@ thumb: thumbs/fb.jpg
   <label for="auto_fire">自動放煙火</label>
   <input id="auto_fire" type="checkbox" name="auto_fire">
   <input type="submit" value="送出"><br>
-  <b>進階設定：</b><br>
+  **進階設定：**<br>
   <label for="font_size">倒數數字大小</label>
   <input id="font_size" type="number" name="font_size" value="0.5" step="any"><br>
   <label for="btn_size">啟動煙火按鈕大小（px）</label>
