@@ -12,7 +12,9 @@ date: 2007-12-02 00:31:11 +0800
 
 		<!--content begin--><table width="250" cellspacing="6" cellpadding="0" border="0" align="left"><tbody><tr><td scope="row"></td></tr><tr><td class="txt11" scope="row">　抗議啦！▲嘉義高中學生參加公聽會，當場高舉海報，表達反對嘉東變電所興建的立場。 （廖素慧攝）</td></tr></tbody></table>
 
-<div id="ctkeywordcontent">
+
+
+
 
     　台電「嘉東變電所」預定今年底在嘉義市大雅路動工興建，嘉義高中十一月卅日舉行公聽會，台電人員及專家學者再三說明變電所釋放的極低頻磁場不會造成危害，但2千多名師生及居民以「我們要生小孩」等為訴求，表達堅決反對的立場。
 
@@ -114,4 +116,6 @@ date: 2007-12-02 00:31:11 +0800
 
 所以還是不對......
 
-</div>
+
+
+

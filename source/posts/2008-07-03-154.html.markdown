@@ -29,7 +29,11 @@ date: 2008-07-03 00:30:21 +0800
 
 
 
-<div class="blogbody"><div align="center"><object id="msplayer" style="LEFT: 151px; WIDTH: 500px; TOP: 408px; HEIGHT: 352px" codebase="http://www.microsoft.com/ntserver/netshow/download/en/nsmp2inf.cab#Version=5,1,51,415" type="application/x-oleobject" height="352" standby="Loading Microsoft Media Player components..." width="500" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" name="msplayer">
+
+
+
+
+<object id="msplayer" style="LEFT: 151px; WIDTH: 500px; TOP: 408px; HEIGHT: 352px" codebase="http://www.microsoft.com/ntserver/netshow/download/en/nsmp2inf.cab#Version=5,1,51,415" type="application/x-oleobject" height="352" standby="Loading Microsoft Media Player components..." width="500" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" name="msplayer">
 
 
 
@@ -61,7 +65,15 @@ date: 2008-07-03 00:30:21 +0800
 
 
 
-</object></div><div align="center"></div></div>
+</object>
+
+
+
+
+
+
+
+
 
 &nbsp;
 

@@ -29,7 +29,15 @@ date: 2007-12-13 00:15:00 +0800
 
 
 
-<table cellspacing="0" cellpadding="0" width="90%" border="0"><tbody><tr><td><div align="center"></div></td><td><div align="center"></div></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0" width="90%" border="0"><tbody><tr><td>
+
+
+
+</td><td>
+
+
+
+</td></tr></tbody></table>
 
 
 

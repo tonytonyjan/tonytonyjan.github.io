@@ -22,12 +22,28 @@ tags: [jQuery, JavaScript]
 先準備好要排版的項目，正規結構如下：
 
 ``` html
-<div id="container">
-  <div class="item">...</div>
-  <div class="item">...</div>
-  <div class="item">...</div>
+
+
+
+  
+
+...
+
+
+  
+
+...
+
+
+  
+
+...
+
+
   ...
-</div>
+
+
+
 ```
 
 ``` html
@@ -72,8 +88,16 @@ $(function(){
 如果你只是單純照著官方文件在 item 裡面放大小不一的圖片：
 
 ``` html
-<div class="item"><img src="..." /></div>
-<div class="item"><img src="..." /></div>
+
+
+<img src="..." />
+
+
+
+
+<img src="..." />
+
+
 ...
 ```
 
