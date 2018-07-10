@@ -78,7 +78,7 @@ ps wwefxo pid,ppid,command
 用同樣的技巧再作一次實驗：
 
 ```
-$ docker run --rm -e FOO=BAR foo sh -c 'echo \'* * * * * ps wwefxo pid,ppid,command > /var/log/ps.log\' | crontab - && cron && sleep $((62 - $(date +%S) )) && cat /var/log/ps.log'
+$ docker run --rm -e FOO=BAR IMAGE_NAME sh -c 'echo \'* * * * * ps wwefxo pid,ppid,command > /var/log/ps.log\' | crontab - && cron && sleep $((62 - $(date +%S) )) && cat /var/log/ps.log'
   PID  PPID COMMAND
     1     0 sh -c echo '* * * * * ps wwefxo pid,ppid,command > /var/log/ps.log' | crontab - && cron && sleep $((62 - $(date +%S) )) && cat /var/log/ps.log PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin HOSTNAME=87736bfa1426 FOO=BAR HOME=/root
    11     1 cron HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
@@ -151,4 +151,4 @@ $ grep -B 2 --color 'env_set' (find src -name entry.c)
 # 後記
 
 - 本文中的 cron 指的是大多數人所使用的 vixie cron，如果是 busybox 的實作則不會出現這個問題，在 busybox 裡面，cron 工作的程序環境變數會繼承父程序。
-- 感謝吾友 @floydwch 提出了的問題，使筆者學到不少知識。
+- 感謝吾友 @floydwch 提出的問題，使筆者學到不少知識。
