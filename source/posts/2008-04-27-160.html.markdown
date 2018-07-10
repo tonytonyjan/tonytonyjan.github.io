@@ -29,11 +29,11 @@ date: 2008-04-27 00:40:01 +0800
 
 
 
-<a title="1011114d87661c286760fdb90620e33cb72.jpg" href="http://yi-fan.no-ip.org/wordpress/wp-content/uploads/2007/11/1011114d87661c286760fdb90620e33cb72.jpg" rel="lightbox"></a><strong></strong>
+<a title="1011114d87661c286760fdb90620e33cb72.jpg" href="http://yi-fan.no-ip.org/wordpress/wp-content/uploads/2007/11/1011114d87661c286760fdb90620e33cb72.jpg" rel="lightbox"></a>****
 
 
 
-<strong>初音加油示意圖　囧</strong>
+**初音加油示意圖　囧**
 
 
 
@@ -45,9 +45,9 @@ date: 2008-04-27 00:40:01 +0800
 
 
 
-<strong></strong>
+****
 
-<strong>
+**
 
 <embed src="http://www.youtube.com/v/kbbA9BhCTko&hl=en" width="425" height="355" type="application/x-shockwave-flash" wmode="transparent"></embed></embed /></embed /></embed /></embed /></embed /></embed /></embed /></embed /></embed /></embed />
 
@@ -121,7 +121,7 @@ date: 2008-04-27 00:40:01 +0800
 
 Kurutto, Odotte, Hatsune Miku同台演唱
 
-<strong>
+**
 
 <embed src="http://www.youtube.com/v/qDyUqvp7Uak&hl=en" width="425" height="355" type="application/x-shockwave-flash" wmode="transparent"></embed></embed /></embed /></embed /></embed /></embed /></embed /></embed /></embed /></embed /></embed />
 
@@ -145,4 +145,4 @@ Kurutto, Odotte, Hatsune Miku同台演唱
 
  初音大戰史密斯...
 
-</strong></strong><embed src="http://www.youtube.com/v/cjCFH4TTJRA&hl=en" width="425" height="355" type="application/x-shockwave-flash" wmode="transparent"></embed></embed /></embed /> 
+****<embed src="http://www.youtube.com/v/cjCFH4TTJRA&hl=en" width="425" height="355" type="application/x-shockwave-flash" wmode="transparent"></embed></embed /></embed /> 

@@ -11,17 +11,17 @@ tags: [Java]
 
 <!--more-->
 
-<strong>學習一個語言，有"愛"很重要</strong>
+**學習一個語言，有"愛"很重要**
 
-<strong> </strong>這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，<a href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">維基</a>可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java, Fortran……等等，至今仍屹立不搖；2009年11月，新的語言<a href="http://www.zimbu.org/" target="_blank">Zimbu</a>問世，同時Google也發布了<a href="http://golang.org/" target="_blank">go</a>。另外呢，這個月TIOBE軟體公司公佈了最新的<a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" target="_blank">程式語言使用率統計</a>（這東西每個月都會更新一次），這個月C又再次奪回了第一名寶座，Java被C領先位居第二。語言的數目是多到數不清，關係與地位又瞬息萬變。然而儘管語言的種類是如此龐大，對於到底該學哪一個，大兜認為不是最重要的議題，於此大兜想分享一些建議：
+** **這個世界存在的程式語言實在太多，但如果還是想粗略的一探多寡，<a href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">維基</a>可以幫上一點忙，但是實際數量肯定是比這還要多更多的。除了一些耳熟能詳的程式語言元老如 C, C++, Java, Fortran……等等，至今仍屹立不搖；2009年11月，新的語言<a href="http://www.zimbu.org/" target="_blank">Zimbu</a>問世，同時Google也發布了<a href="http://golang.org/" target="_blank">go</a>。另外呢，這個月TIOBE軟體公司公佈了最新的<a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" target="_blank">程式語言使用率統計</a>（這東西每個月都會更新一次），這個月C又再次奪回了第一名寶座，Java被C領先位居第二。語言的數目是多到數不清，關係與地位又瞬息萬變。然而儘管語言的種類是如此龐大，對於到底該學哪一個，大兜認為不是最重要的議題，於此大兜想分享一些建議：
 
-* 尋找一個您對它有"<strong>愛</strong>"的程式語言，並且持續不懈的了解它、發展它、熟悉它，不斷探索其背後原理、實做、理論根基、應用…等等，別急著什麼都學，等到根扎實、夠穩了，有時間再慢慢發展旁邊的枝葉。
+* 尋找一個您對它有"**愛**"的程式語言，並且持續不懈的了解它、發展它、熟悉它，不斷探索其背後原理、實做、理論根基、應用…等等，別急著什麼都學，等到根扎實、夠穩了，有時間再慢慢發展旁邊的枝葉。
 
 * 大兜不會把您綁起來要脅去學Java，這只是我個人的因緣遭遇導致我選擇了 Java 當做我的樹根。除了Java之外您仍有很多選擇。
 
-重要的還是"<strong>愛</strong>"啊～～～～<strong> </strong>
+重要的還是"**愛**"啊～～～～** **
 
-<strong>Java 的魅力</strong>
+**Java 的魅力**
 
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
 
@@ -58,13 +58,13 @@ Applet 是讓 Java 一舉成名的一項關鍵，它讓 Java 程式可以跑在�
 
 <br class="spacer_" />
 
-<strong>關於本計畫</strong>
+**關於本計畫**
 
-本文件的誕生是一個出自吃飽太閒的死大學生的學習分享計畫，在這之前並沒有任何技術文件的撰文經驗，任何訪客如對於之後的內容有任何疑問，歡迎切磋指教，如果能糾正我那就更好了。希望藉此計畫學習教學文件的杜撰與章法風格，另外雖知道網路上存在許多人跟我做著同樣的事，大兜只是想單純的<strong>分享自己所學的一點微薄知識，以及發現與發明的喜悅</strong>。這是這個計畫的唯一目的。
+本文件的誕生是一個出自吃飽太閒的死大學生的學習分享計畫，在這之前並沒有任何技術文件的撰文經驗，任何訪客如對於之後的內容有任何疑問，歡迎切磋指教，如果能糾正我那就更好了。希望藉此計畫學習教學文件的杜撰與章法風格，另外雖知道網路上存在許多人跟我做著同樣的事，大兜只是想單純的**分享自己所學的一點微薄知識，以及發現與發明的喜悅**。這是這個計畫的唯一目的。
 
 <br class="spacer_" />
 
-<strong>給讀者</strong>
+**給讀者**
 
 很歡迎很歡迎有讀者可以給予迴響、建議與指正，甚至一起討論，因為討論往往可以激盪出美麗火花，我很喜歡。只是萬一我哪裡錯了盡量不要大聲嗆我，拜託了，我是很脆弱的……QQ
 

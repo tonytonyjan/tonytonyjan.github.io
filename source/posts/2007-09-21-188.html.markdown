@@ -4,7 +4,7 @@ date: 2007-09-21 00:06:17 +0800
 
 ---
 
-<strong>高雄915大遊行現場</strong>
+**高雄915大遊行現場**
 
 1.<a href="http://blog.pixnet.net/hidavid/post/8871921">David’s 時光筆記 ~ 高雄915台灣入聯大遊行側寫</a><br /> <br />2.<a href="http://blog.roodo.com/gamy543/archives/4145495.html">年糕料理館 ~米糕送年糕 獨家圖報導</a><br /> <br />3.<a href="http://duisme.blogspot.com/2007/09/915.html">蘋果咬一口~915入聯大遊行</a>
 
@@ -22,11 +22,11 @@ date: 2007-09-21 00:06:17 +0800
 
 
 
-8<strong>.</strong><a href="http://blog.roodo.com/fairy220/archives/4153779.html">尋找夢想的天空</a>
+8**.**<a href="http://blog.roodo.com/fairy220/archives/4153779.html">尋找夢想的天空</a>
 
 
 
-<strong>紐約915大遊行現場</strong>
+**紐約915大遊行現場**
 
 
 
@@ -50,7 +50,7 @@ date: 2007-09-21 00:06:17 +0800
 
 
 
-<strong>澳洲915遊行現場</strong>
+**澳洲915遊行現場**
 
 
 
@@ -58,7 +58,7 @@ date: 2007-09-21 00:06:17 +0800
 
 
 
-<strong>日本915遊行照片選集</strong>
+**日本915遊行照片選集**
 
 
 

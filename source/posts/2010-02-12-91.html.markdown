@@ -6,7 +6,7 @@ tags: [FreeBSD]
 ---
 
 
-1.將虛線間的文字存成<strong>winfonts.reg到/home/username/Desktop</strong>
+1.將虛線間的文字存成**winfonts.reg到/home/username/Desktop**
 
 
 
