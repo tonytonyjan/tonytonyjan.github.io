@@ -5,7 +5,7 @@ date: 2009-09-03 00:11:21 +0800
 ---
 
 
-<a href="http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/26507179/5.jpg">![](/images/slum-area/95_5.jpg)</a>
+[![](/images/slum-area/95_5.jpg)](http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/26507179/5.jpg)
 
 
 

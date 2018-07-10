@@ -20,15 +20,15 @@ octopress 內建的回覆外掛是 [disqus]。但卻沒有提供在 asides 顯�
         resault = '<ul>';
         obj.response.forEach(function(response){
           resault += '<li>';
-          resault += '<a href="'+response.author.profileUrl+'"><img src="'+response.author.avatar.permalink+'" width=32 height=32 style="float: left; margin-right: 5px;"></a>';
-          resault += '<a href="'+response.author.profileUrl+'">'+response.author.name+'</a>：';
+          resault += '[]('+response.author.profileUrl+'"><img src="'+response.author.avatar.permalink+'" width=32 height=32 style="float: left; margin-right: 5px;)';
+          resault += '['+response.author.name+']('+response.author.profileUrl+')：';
           resault += ''+response.message+'
 
 '
-          resault += '<a href="'+response.thread.link+'">'+response.thread.title+'</a>
+          resault += '['+response.thread.title+']('+response.thread.link+')
 
 '
-          resault += 'at <a href="'+response.url+'">'+response.createdAt+'</a>'
+          resault += 'at ['+response.createdAt+']('+response.url+')'
           resault += '</li>';
         });
         resault += '</ul>';

@@ -22,6 +22,6 @@ date: 2008-04-12 00:51:01 +0800
 
 
 
-<a href="http://www.hlgs.hlc.edu.tw/ann/show.php?mytid=2238&mypartid=&noday=&nopart=&show=&myday=&noyear=&nomonth=&myyear=&mymonth=&usenuke" target="_blank">～點我響應～</a>
+[～點我響應～](http://www.hlgs.hlc.edu.tw/ann/show.php?mytid=2238&mypartid=&noday=&nopart=&show=&myday=&noyear=&nomonth=&myyear=&mymonth=&usenuke" target="_blank)
 
 

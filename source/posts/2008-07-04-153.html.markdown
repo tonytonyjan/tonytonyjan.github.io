@@ -23,7 +23,7 @@ date: 2008-07-04 00:00:30 +0800
 
 
 
-<table style="WIDTH: 100%" border="1"><tbody><tr><td><h3 class="title">「舞動青春貼近生命」</h3><h3 class="title">第二屆恆春半島大專青年暑期教育志工召募活動</h3><a href="http://www.wretch.cc/album/show.php?i=hccoblog&b=32764&f=1333483353.jpg" target="_blank"></a>
+<table style="WIDTH: 100%" border="1"><tbody><tr><td><h3 class="title">「舞動青春貼近生命」</h3><h3 class="title">第二屆恆春半島大專青年暑期教育志工召募活動</h3>[](http://www.wretch.cc/album/show.php?i=hccoblog&b=32764&f=1333483353.jpg" target="_blank)
 
 
 
@@ -105,7 +105,7 @@ date: 2008-07-04 00:00:30 +0800
 
 
 
-十一、 受訓地點：本會事務所（<a class="smaplink" title="前往地圖" href="http://tw.rd.yahoo.com/referurl/wretch/maps/*http://tw.maps.yahoo.com/?ei=utf8&addr=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E7%9C%81%E5%8C%97%E8%B7%AF121%E5%B7%B73%E5%BC%8436%E8%99%9F" target="_blank">屏東縣恆春鎮省北路121巷3弄36號![](/images/slum-area/162_map_texticon.gif)</a>）
+十一、 受訓地點：本會事務所（[屏東縣恆春鎮省北路121巷3弄36號![](/images/slum-area/162_map_texticon.gif)](http://tw.rd.yahoo.com/referurl/wretch/maps/*http://tw.maps.yahoo.com/?ei=utf8&addr=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E7%9C%81%E5%8C%97%E8%B7%AF121%E5%B7%B73%E5%BC%8436%E8%99%9F" target="_blank)）
 
 十二、 志工福利： 1. 提供當次志願服務梯隊的保險。
 
@@ -117,7 +117,7 @@ date: 2008-07-04 00:00:30 +0800
 
 
 
-十三、 報名方式：請至<a href="http://www.iphcco.url.tw/word/bt2008.doc" target="_blank">http://www.iphcco.url.tw/word/bt2008.doc</a> 下載報名表，並e-mail至<a target="_blank">hcco.110@gmail.com</a>，註明夏日學苑收即可。
+十三、 報名方式：請至[hcco.110@gmail.com](http://www.iphcco.url.tw/word/bt2008.doc" target="_blank">http://www.iphcco.url.tw/word/bt2008.doc</a> 下載報名表，並e-mail至<a target="_blank)，註明夏日學苑收即可。
 
 
 
@@ -131,7 +131,7 @@ date: 2008-07-04 00:00:30 +0800
 
 
 
-3.機構地址：<a class="smaplink" title="前往地圖" href="http://tw.rd.yahoo.com/referurl/wretch/maps/*http://tw.maps.yahoo.com/?ei=utf8&addr=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E7%9C%81%E5%8C%97%E8%B7%AF121%E5%B7%B73%E5%BC%8436%E8%99%9F" target="_blank">屏東縣恆春鎮省北路121巷3弄36號![](/images/slum-area/163_map_texticon.gif)</a>。</td></tr></tbody></table>
+3.機構地址：[屏東縣恆春鎮省北路121巷3弄36號![](/images/slum-area/163_map_texticon.gif)](http://tw.rd.yahoo.com/referurl/wretch/maps/*http://tw.maps.yahoo.com/?ei=utf8&addr=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E7%9C%81%E5%8C%97%E8%B7%AF121%E5%B7%B73%E5%BC%8436%E8%99%9F" target="_blank)。</td></tr></tbody></table>
 
 全部看完還真是辛苦各位了^^&quot;
 

@@ -5,7 +5,7 @@ date: 2007-12-13 00:15:00 +0800
 ---
 
 
-點燃生命之火首頁：<a href="http://chinatrust.dc.com.tw/">http://chinatrust.dc.com.tw/</a>
+點燃生命之火首頁：[http://chinatrust.dc.com.tw/](http://chinatrust.dc.com.tw/)
 
 
 
@@ -17,15 +17,15 @@ date: 2007-12-13 00:15:00 +0800
 
 
 
-台灣兒童既家庭扶助基金會（推薦）：<a href="http://www.ccf.org.tw/">http://www.ccf.org.tw/</a>
+台灣兒童既家庭扶助基金會（推薦）：[http://www.ccf.org.tw/](http://www.ccf.org.tw/)
 
 
 
-羅慧夫顱顏基金會：<a href="http://www.nncf.org/">http://www.nncf.org</a>
+羅慧夫顱顏基金會：[http://www.nncf.org](http://www.nncf.org/)
 
 
 
-心路社會福利基金會：<a href="http://web.syinlu.org.tw/">http://web.syinlu.org.tw/</a>
+心路社會福利基金會：[http://web.syinlu.org.tw/](http://web.syinlu.org.tw/)
 
 
 

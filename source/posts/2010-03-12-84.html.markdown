@@ -8,7 +8,7 @@ tags: [交大, 資工, CSSULA, 鍾翔, kvchung, 遊戲, 角色扮演, Windows, C
 ![](/images/slum-area/89_0.jpg)
 
 
-<a href="http://www.cs.nctu.edu.tw/~whchien/csrpg2.14.rar">下載</a>
+[下載](http://www.cs.nctu.edu.tw/~whchien/csrpg2.14.rar)
 
 
 

@@ -8,7 +8,7 @@ tags: [Ruby, 研討會, 台灣]
 link: http://2015.rubyconf.tw/
 ---
 
-<a href="http://2015.rubyconf.tw/"><img src="/images/ruby-conf-tw-2015.png" width="100%"></a>
+[](http://2015.rubyconf.tw/"><img src="/images/ruby-conf-tw-2015.png" width="100%)
 
 [大會官網](http://2015.rubyconf.tw/)
 

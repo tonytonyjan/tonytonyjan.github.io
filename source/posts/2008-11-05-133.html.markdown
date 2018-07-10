@@ -5,7 +5,7 @@ date: 2008-11-05 00:05:39 +0800
 tags: [C]
 ---
 
-要下載執行檔請<a href="http://www.cs.nctu.edu.tw/~whchien/coding/GuessNum.exe">點我</a>
+要下載執行檔請[點我](http://www.cs.nctu.edu.tw/~whchien/coding/GuessNum.exe)
 
 呼～昨天晚上花了一節課終於完成啦！這是筆者的版本，下面的語法框有附上說明，需要的人請自行參考...
 

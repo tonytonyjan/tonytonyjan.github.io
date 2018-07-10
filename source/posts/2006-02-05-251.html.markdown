@@ -50,7 +50,7 @@ date: 2006-02-05 00:21:27 +0800
 
 
 
-<a href="http://www.jingo.com.tw/performer/kevenkern/page1.htm">http://www.jingo.com.tw/performer/kevenkern/page1.htm</a>
+[http://www.jingo.com.tw/performer/kevenkern/page1.htm](http://www.jingo.com.tw/performer/kevenkern/page1.htm)
 
 
 

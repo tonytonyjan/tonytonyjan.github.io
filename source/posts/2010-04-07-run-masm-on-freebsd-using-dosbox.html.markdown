@@ -4,7 +4,7 @@ date: 2010-04-07 16:49:30 +0800
 
 tags: [FreeBSD, ASM]
 ---
-課上要用 masm 交作業，然而我的系統是FreeBSD，由於不想灌windows，而有了這個替代方案。在開始之前可以先來<a href="http://zh.wikipedia.org/zh-tw/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80%E5%88%97%E8%A1%A8" target="_blank">這裡</a>看看組語言到底有哪些種類
+課上要用 masm 交作業，然而我的系統是FreeBSD，由於不想灌windows，而有了這個替代方案。在開始之前可以先來[這裡](http://zh.wikipedia.org/zh-tw/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80%E5%88%97%E8%A1%A8" target="_blank)看看組語言到底有哪些種類
 
 
 （唯一一個有標注 FreeBSD 的是 HLA……QQ）
@@ -19,7 +19,7 @@ tags: [FreeBSD, ASM]
     %mkdir ~/learnASM/tools
     %mkdir ~/learnASM/tools/masm5
 
-從網路上下載 masm5.0 （太新的版本可能不能跑），我是從<a href="http://download.pchome.net/development/linetools/detail-9028.html" target="_blank">這裡</a>下載的。
+從網路上下載 masm5.0 （太新的版本可能不能跑），我是從[這裡](http://download.pchome.net/development/linetools/detail-9028.html" target="_blank)下載的。
 
 把含有.exe檔的目錄下所有的檔案放在 `~/learnASM/tools/masm5`
 

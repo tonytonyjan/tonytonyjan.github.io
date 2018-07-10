@@ -127,7 +127,7 @@ date: 2008-07-03 00:30:21 +0800
 
 
 
-<a href="http://tonytonyjan.myhosting247.com/anotherSummer.rar">這裡有.ove和.xps的.rar檔</a>
+[這裡有.ove和.xps的.rar檔](http://tonytonyjan.myhosting247.com/anotherSummer.rar)
 
 
 
@@ -143,19 +143,19 @@ date: 2008-07-03 00:30:21 +0800
 
 
 
-<a href="http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/5.jpg">![](/images/slum-area/164_5.jpg)</a>
+[![](/images/slum-area/164_5.jpg)](http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/5.jpg)
 
 
 
-<a href="http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/6.jpg">![](/images/slum-area/165_6.jpg)</a>
+[![](/images/slum-area/165_6.jpg)](http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/6.jpg)
 
 
 
-<a href="http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/7.jpg">![](/images/slum-area/166_7.jpg)</a>
+[![](/images/slum-area/166_7.jpg)](http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/7.jpg)
 
 
 
-<a href="http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/8.jpg">![](/images/slum-area/167_8.jpg)</a>
+[![](/images/slum-area/167_8.jpg)](http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17858021/8.jpg)
 
 
 

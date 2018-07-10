@@ -78,7 +78,7 @@ REGEDIT4
 
 
 
-2.下載<a href="http://mingliu.myweb.hinet.net/MingLiu/MingLiU.zip">PMinLiu</a>並解壓縮
+2.下載[PMinLiu](http://mingliu.myweb.hinet.net/MingLiu/MingLiU.zip)並解壓縮
 
 
 

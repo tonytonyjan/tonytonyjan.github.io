@@ -11,7 +11,7 @@ date: 2008-10-04 00:55:11 +0800
 
 &uarr;I'm Yours&nbsp;&nbsp; by Jason Mraz
 
-or you can <a href="http://tw.youtube.com/watch?v=QedgzsjouXU">click me</a> to see the MTV
+or you can [click me](http://tw.youtube.com/watch?v=QedgzsjouXU) to see the MTV
 
 
 

@@ -73,7 +73,7 @@ github: https://gist.github.com/2565249/6151c81f7af333d5c1d9dd0b2bdcba2c7a966dca
 
 那麼右方所有就會有對應的
 
-    <li><a href="#guide-assumptions">Guide Assumptions</a></li>
+    <li>[Guide Assumptions](#guide-assumptions)</li>
 
 但實際上，在 Textile 文件中 他們實際是這樣寫的：
 

@@ -3,7 +3,7 @@ title: "台灣人的世界觀"
 date: 2008-06-07 00:11:50 +0800
 
 ---
-<a href="http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17268805/0.jpg">![](/images/slum-area/176_0.jpg)</a>
+[![](/images/slum-area/176_0.jpg)](http://9.blog.xuite.net/9/a/8/f/10971305/blog_112520/txt/17268805/0.jpg)
 
 （看不到字的可以點左鍵以原圖大小觀看）
 
@@ -31,7 +31,7 @@ date: 2008-06-07 00:11:50 +0800
 
 
 
-<a href="http://www.passionateamerica.com/pictures/american-world-800x560.jpg" target="_blank"></a>
+[](http://www.passionateamerica.com/pictures/american-world-800x560.jpg" target="_blank)
 
 
 
@@ -39,11 +39,11 @@ date: 2008-06-07 00:11:50 +0800
 
 
 
-<a href="http://whodunit.hp.infoseek.co.jp/diary_img/TheWorldAccordingToBush_large.jpg" target="_blank">![](/images/slum-area/177_TheWorldAccordingToBush_large.jpg)</a>
+[![](/images/slum-area/177_TheWorldAccordingToBush_large.jpg)](http://whodunit.hp.infoseek.co.jp/diary_img/TheWorldAccordingToBush_large.jpg" target="_blank)
 
 
 
-<a href="http://strangemaps.files.wordpress.com/2006/11/800px-reagan-digitised-poster.JPG" target="_blank">![](/images/slum-area/178_800px-reagan-digitised-poster.JPG)</a>
+[![](/images/slum-area/178_800px-reagan-digitised-poster.JPG)](http://strangemaps.files.wordpress.com/2006/11/800px-reagan-digitised-poster.JPG" target="_blank)
 
 
 
@@ -57,7 +57,7 @@ date: 2008-06-07 00:11:50 +0800
 
 
 
-<a href="http://photo1.bababian.com/upload11/20080429/4A91BC08C6C0BE45E45B2F8311AA9F12.jpg" target="_blank">![](/images/slum-area/179_4A91BC08C6C0BE45E45B2F8311AA9F12.jpg)</a>
+[![](/images/slum-area/179_4A91BC08C6C0BE45E45B2F8311AA9F12.jpg)](http://photo1.bababian.com/upload11/20080429/4A91BC08C6C0BE45E45B2F8311AA9F12.jpg" target="_blank)
 
 
 

@@ -61,7 +61,7 @@ date: 2011-11-12 00:50:01 +0800
 
 
 
-<a href="http://esc.nccu.edu.tw/modules/tinyd2/content/TaiwanChineseID.htm" target="_blank">http://esc.nccu.edu.tw/modules/tinyd2/content/TaiwanChineseID.htm</a>
+[http://esc.nccu.edu.tw/modules/tinyd2/content/TaiwanChineseID.htm](http://esc.nccu.edu.tw/modules/tinyd2/content/TaiwanChineseID.htm" target="_blank)
 
 
 

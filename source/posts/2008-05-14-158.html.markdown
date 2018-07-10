@@ -211,7 +211,7 @@ date: 2008-05-14 00:29:04 +0800
 
 
 
-<a style="COLOR: rgb(255,0,0)" href="http://bookmark.udn.com/tag.jsp?days=all&tag=%E5%9B%9B%E5%B7%9D%E5%A4%A7%E5%9C%B0%E9%9C%87">書籤在這裡</a>
+[書籤在這裡](http://bookmark.udn.com/tag.jsp?days=all&tag=%E5%9B%9B%E5%B7%9D%E5%A4%A7%E5%9C%B0%E9%9C%87)
 
 
 

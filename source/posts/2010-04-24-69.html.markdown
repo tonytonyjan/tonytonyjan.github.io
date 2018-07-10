@@ -6,7 +6,7 @@ date: 2010-04-24 00:28:54 +0800
 
 
 
-<a target="_blank" href="http://cssula.twgg.org">![](/images/slum-area/70_0.png)</a>
+[![](/images/slum-area/70_0.png)](http://cssula.twgg.org)
 
 
 
@@ -14,7 +14,7 @@ date: 2010-04-24 00:28:54 +0800
 
 
 
-<a target="_blank" href="http://cssula.twgg.org">http://cssula.twgg.org</a>
+[http://cssula.twgg.org](http://cssula.twgg.org)
 
 
 

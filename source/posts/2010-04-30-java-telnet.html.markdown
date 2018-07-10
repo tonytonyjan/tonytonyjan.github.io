@@ -9,7 +9,7 @@ tags: [Java]
 
 不知道各位有沒有用過 telnet 的經驗，至少也打過類似 `telnet ptt.cc 23` 的指令吧？其實 telnet 不只可以拿來打B而已，他還可以拿來做很多事情喔～
 
-<a href="http://cssula.twgg.org/wp-content/uploads/2010/04/duke-waving.gif">![](/images/cssula-blog/duke-waving.gif)</a>想要一起DIY的人快快來喔～～
+[![](/images/cssula-blog/duke-waving.gif)](http://cssula.twgg.org/wp-content/uploads/2010/04/duke-waving.gif)想要一起DIY的人快快來喔～～
 
 <!-- more -->
 
@@ -61,8 +61,8 @@ telnet 也是 tcp/ip 協議的一員，有許多應用層的服務用的是 TCP 
 	<li>Telnet是許多駭……喔不……我是說是許多優良程式師的最愛</li>
 	<li>Windows Vista和7並不是沒有telnet程式，只是沒有打開</li>
 	<li>telnet屬於TCP/IP協議的一員，提供本機完成遠端工作的能力</li>
-	<li><a href="http://zh.wikipedia.org/zh-tw/Http#.E4.BE.8B.E5.AD.90" target="_blank">這是</a>發送Http Request的例子</li>
-	<li><a href="http://www.backup.idv.tw/viewtopic.php?=&amp;p=645" target="_blank">這是</a>發送SMTP Request來寄信的例子</li>
+	<li>[這是](http://zh.wikipedia.org/zh-tw/Http#.E4.BE.8B.E5.AD.90" target="_blank)發送Http Request的例子</li>
+	<li>[這是](http://www.backup.idv.tw/viewtopic.php?=&amp;p=645" target="_blank)發送SMTP Request來寄信的例子</li>
 </ol>
 
 ``` java

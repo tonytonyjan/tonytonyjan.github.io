@@ -9,7 +9,7 @@ date: 2007-12-16 00:33:54 +0800
 
 
 
-<a href="http://www.horo.idv.tw/FreeHoro/index.php">http://www.horo.idv.tw/FreeHoro/index.php</a>
+[http://www.horo.idv.tw/FreeHoro/index.php](http://www.horo.idv.tw/FreeHoro/index.php)
 
 
 

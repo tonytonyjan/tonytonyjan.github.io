@@ -40,7 +40,7 @@ tags: [FreeBSD]
         "Times New Roman TUR,162"="PMingLiU"
         "Tms Rmn"="PMingLiU"
 
-2.  下載 <a href="http://mingliu.myweb.hinet.net/MingLiu/MingLiU.zip">PMinLiu</a> 並解壓縮
+2.  下載 [PMinLiu](http://mingliu.myweb.hinet.net/MingLiu/MingLiU.zip) 並解壓縮
 
         $ mv MingLiu.ttc /home/username/.wine/drive_c/windows/Fonts
         $ wine ~/.wine/drive_c/windows/regedit.exe ~/Desktop/winfonts.reg

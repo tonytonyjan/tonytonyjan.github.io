@@ -8,7 +8,7 @@ tags: [遊戲, Java, Applet]
 ![](/images/slum-area/88_0.png)
 
 
-<a href="http://www.cs.nctu.edu.tw/~whchien/DownFloor.html">《點我玩》</a>
+[《點我玩》](http://www.cs.nctu.edu.tw/~whchien/DownFloor.html)
 
 
 

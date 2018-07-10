@@ -5,7 +5,7 @@ date: 2008-07-28 00:58:15 +0800
 ---
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/18.jpg" target="_blank">![](/images/slum-area/150_99497173_m.jpg)</a>
+[![](/images/slum-area/150_99497173_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/18.jpg" target="_blank)
 
 **↑這對雙胞胎（左一、左二）據傳擁有瞬間萌殺南洋大兜蟲（右一）的能力，實在令人畏懼......**
 
@@ -19,7 +19,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/12.jpg" target="_blank">![](/images/slum-area/151_99493446_m.jpg)</a>
+[![](/images/slum-area/151_99493446_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/12.jpg" target="_blank)
 
 
 
@@ -37,7 +37,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/10.jpg" target="_blank">![](/images/slum-area/152_99493401_m.jpg)</a>
+[![](/images/slum-area/152_99493401_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/10.jpg" target="_blank)
 
 
 
@@ -71,7 +71,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/1.jpg" target="_blank">![](/images/slum-area/153_99493090_m.jpg)</a>
+[![](/images/slum-area/153_99493090_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/1.jpg" target="_blank)
 
 
 
@@ -83,7 +83,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/3.jpg" target="_blank">![](/images/slum-area/154_99493129_m.jpg)</a>
+[![](/images/slum-area/154_99493129_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/3.jpg" target="_blank)
 
 
 
@@ -111,7 +111,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/4.jpg" target="_blank">![](/images/slum-area/156_99493135_m.jpg)</a>
+[![](/images/slum-area/156_99493135_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/4.jpg" target="_blank)
 
 
 
@@ -127,7 +127,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/9.jpg" target="_blank">![](/images/slum-area/157_99493392_m.jpg)</a>
+[![](/images/slum-area/157_99493392_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/9.jpg" target="_blank)
 
 
 
@@ -139,7 +139,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/5.jpg" target="_blank">![](/images/slum-area/158_99493236_m.jpg)</a>
+[![](/images/slum-area/158_99493236_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/5.jpg" target="_blank)
 
 
 
@@ -151,7 +151,7 @@ date: 2008-07-28 00:58:15 +0800
 
 
 
-<a href="http://photo.xuite.net/_r9009/funnyfamily/2662602/13.jpg" target="_blank">![](/images/slum-area/159_99493497_m.jpg)</a>
+[![](/images/slum-area/159_99493497_m.jpg)](http://photo.xuite.net/_r9009/funnyfamily/2662602/13.jpg" target="_blank)
 
 
 

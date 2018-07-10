@@ -21,7 +21,7 @@ tags: ["2013", 跨年, 回顧]
       <td>一月</td>
       <td>有了自己的筆電，工作效率得到提昇</td>
       <td>從交大畢業了</td>
-      <td><a href="/2013/01/15/webconf-2013-feedback/">擔任 WebConf 會場志工</a></td>
+      <td>[擔任 WebConf 會場志工](/2013/01/15/webconf-2013-feedback/)</td>
     </tr>
     <tr>
       <td>二月</td>
@@ -32,14 +32,14 @@ tags: ["2013", 跨年, 回顧]
     <tr>
       <td>三月</td>
       <td>與見龍、慕凡前輩互加好友，開始與台灣 Ruby 社群接觸</td>
-      <td><a href="/2013/03/22/the-interview-in-ntust/">到台科面試，造成教授困擾</a></td>
-      <td><a href="/2013/04/01/potluck/">第一次參加 Potluck，煮了拿手雞肉咖哩</a></td>
+      <td>[到台科面試，造成教授困擾](/2013/03/22/the-interview-in-ntust/)</td>
+      <td>[第一次參加 Potluck，煮了拿手雞肉咖哩](/2013/04/01/potluck/)</td>
     </tr>
     <tr>
       <td>四月</td>
       <td>參加工研院新訓</td>
       <td></td>
-      <td><a href="https://www.facebook.com/photo.php?fbid=10151438292407620&set=a.356536787619.157727.714547619&type=1">第一次 FB 的文章誤打誤撞無論回應、分享或讚數全部破紀錄</a>、<a href="https://www.facebook.com/photo.php?fbid=10151432152452620&set=a.356536787619.157727.714547619&type=1">第一次知道自己的愛情觀可以受到他人讚賞</a></td>
+      <td>[第一次知道自己的愛情觀可以受到他人讚賞](https://www.facebook.com/photo.php?fbid=10151438292407620&set=a.356536787619.157727.714547619&type=1">第一次 FB 的文章誤打誤撞無論回應、分享或讚數全部破紀錄</a>、<a href="https://www.facebook.com/photo.php?fbid=10151432152452620&set=a.356536787619.157727.714547619&type=1)</td>
     </tr>
     <tr>
       <td>五月</td>
@@ -81,7 +81,7 @@ tags: ["2013", 跨年, 回顧]
       <td>十一月</td>
       <td>事情越來越多</td>
       <td></td>
-      <td><a href="https://www.facebook.com/photo.php?fbid=693878150624926&set=t.714547619&type=3&theater">Yahoo Hack Day 冠軍</a>、第一次上廣播電台：科技 98</td>
+      <td>[Yahoo Hack Day 冠軍](https://www.facebook.com/photo.php?fbid=693878150624926&set=t.714547619&type=3&theater)、第一次上廣播電台：科技 98</td>
     </tr>
     <tr>
       <td>十二月</td>

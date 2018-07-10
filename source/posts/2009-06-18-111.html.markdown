@@ -9,7 +9,7 @@ date: 2009-06-18 00:30:39 +0800
 
 
 
-<a href="http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;q=%E7%86%AC%E5%A4%9C+%E7%A6%BF%E9%A0%AD&amp;btnG=%E6%90%9C%E5%B0%8B&amp;meta=&amp;aq=f&amp;oq=">禿頭</a>
+[禿頭](http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;q=%E7%86%AC%E5%A4%9C+%E7%A6%BF%E9%A0%AD&amp;btnG=%E6%90%9C%E5%B0%8B&amp;meta=&amp;aq=f&amp;oq=)
 
 
 
@@ -17,7 +17,7 @@ date: 2009-06-18 00:30:39 +0800
 
 
 
-<a href="http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;q=%E7%86%AC%E5%A4%9C+%E8%82%9D%E7%99%8C&amp;btnG=%E6%90%9C%E5%B0%8B&amp;meta=&amp;aq=f&amp;oq=">癌症</a>
+[癌症](http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;q=%E7%86%AC%E5%A4%9C+%E8%82%9D%E7%99%8C&amp;btnG=%E6%90%9C%E5%B0%8B&amp;meta=&amp;aq=f&amp;oq=)
 
 
 
@@ -27,7 +27,7 @@ date: 2009-06-18 00:30:39 +0800
 
 
 
-<a href="http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;ei=Jpk5SsfJJ9OHkAX36MTgDQ&amp;sa=X&amp;oi=spell&amp;resnum=0&amp;ct=result&amp;cd=1&amp;q=%E7%86%AC%E5%A4%9C+%E8%BA%81%E9%AC%B1&amp;spell=1">躁鬱</a>
+[躁鬱](http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;ei=Jpk5SsfJJ9OHkAX36MTgDQ&amp;sa=X&amp;oi=spell&amp;resnum=0&amp;ct=result&amp;cd=1&amp;q=%E7%86%AC%E5%A4%9C+%E8%BA%81%E9%AC%B1&amp;spell=1)
 
 
 
@@ -35,7 +35,7 @@ date: 2009-06-18 00:30:39 +0800
 
 
 
-<a href="http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;q=%E7%86%AC%E5%A4%9C+%E5%BF%83%E8%87%9F%E7%97%85&amp;btnG=%E6%90%9C%E5%B0%8B&amp;meta=&amp;aq=f&amp;oq=">心臟病</a>
+[心臟病](http://www.google.com.tw/search?hl=zh-TW&amp;safe=off&amp;q=%E7%86%AC%E5%A4%9C+%E5%BF%83%E8%87%9F%E7%97%85&amp;btnG=%E6%90%9C%E5%B0%8B&amp;meta=&amp;aq=f&amp;oq=)
 
 
 

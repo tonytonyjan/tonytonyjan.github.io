@@ -6,11 +6,11 @@ tags: [Java, Swing, 樂譜, 警大]
 ---
 
 
-<a href="http://cssula.twgg.org/wp-content/uploads/2010/04/Screenshot-15.png">![](/images/slum-area/71_Screenshot-15.png)</a>
+[![](/images/slum-area/71_Screenshot-15.png)](http://cssula.twgg.org/wp-content/uploads/2010/04/Screenshot-15.png)
 
 
 
-<a href="http://www.cs.nctu.edu.tw/~whchien/CPUSK-Beta.rar">載點</a>
+[載點](http://www.cs.nctu.edu.tw/~whchien/CPUSK-Beta.rar)
 
 
 

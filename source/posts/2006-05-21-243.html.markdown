@@ -20,7 +20,7 @@ If you want to leave a message, you need to click this Chinese word &quot;回應
 
 
 
-Besides, this is my guest book, <a href="http://gbook.xuite.net/funnyfamily">http://gbook.xuite.net/funnyfamily</a>.
+Besides, this is my guest book, [http://gbook.xuite.net/funnyfamily](http://gbook.xuite.net/funnyfamily).
 
 You can also leave a message on the top right button next to the little pencal.
 
