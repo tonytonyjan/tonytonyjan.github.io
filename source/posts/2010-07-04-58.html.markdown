@@ -5,13 +5,13 @@ date: 2010-07-04 00:55:52 +0800
 ---
 
 
-<object height="385" width="480" data="http://www.youtube.com/v/exrR1_rHJLI&amp;hl=zh_TW&amp;fs=1?rel=0" type="application/x-shockwave-flash">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/exrR1_rHJLI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 
 
 
-</object>
+
 
 
 

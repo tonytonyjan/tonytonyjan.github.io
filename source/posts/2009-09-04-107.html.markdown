@@ -15,7 +15,7 @@ tags: [Visa, 廣告, 跳舞]
 
 
 
-<object data="http://www.youtube.com/v/zlfKdbWwruY&amp;hl=zh_TW&amp;fs=1&amp;hd=1" width="480" height="295" type="application/x-shockwave-flash">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zlfKdbWwruY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 
@@ -23,7 +23,7 @@ tags: [Visa, 廣告, 跳舞]
 
 
 
-</object>
+
 
 
 
