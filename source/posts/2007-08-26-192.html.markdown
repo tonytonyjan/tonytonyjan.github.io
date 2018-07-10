@@ -11,7 +11,11 @@ date: 2007-08-26 00:06:46 +0800
 
 
 
-<hr style="width: 100%; height: 2px;" />
+
+
+---
+
+
 
 <o:p>&nbsp;</o:p>
 
@@ -69,7 +73,11 @@ Feisal Lekworee, a resident of Laikipia, also accusedthe government of neglectin
 
 
 
-<hr style="width: 100%; height: 2px;" />
+
+
+---
+
+
 
 <o:p>&nbsp;</o:p>
 

@@ -7,7 +7,11 @@ date: 2008-05-14 00:29:04 +0800
 
 
 
-<hr style="WIDTH: 100%; HEIGHT: 2px" /></div>
+
+
+---
+
+</div>
 
 話說四川大地震自從五月十二日發生以來不下兩天，從官方得到的死亡估計是：
 
@@ -33,7 +37,11 @@ date: 2008-05-14 00:29:04 +0800
 
 
 
-<hr style="WIDTH: 100%; HEIGHT: 2px" />
+
+
+---
+
+
 
 <table cellspacing="3" cellpadding="0" width="100%" border="0"><tbody><tr><td><table cellspacing="0" cellpadding="0" width="100%" border="0"><tbody><tr><td class="story_author" width="75%"><div id="story_author">【聯合報╱記者楊德宜／桃園縣報導】</div></td><td class="story_author" width="25%"><div id="story_update" align="right">2008.05.14 09:28 am</div></td></tr></tbody></table></td></tr><tr><td class="story_author"> </td></tr><tr><td valign="top"><div class="story" id="story">
 
@@ -67,7 +75,11 @@ date: 2008-05-14 00:29:04 +0800
 
 </div></td></tr></tbody></table>
 
-<hr style="WIDTH: 100%; HEIGHT: 2px" />
+
+
+---
+
+
 
 還記得九二一當時的情形嗎？四川的地震大概要把921再放大個四五倍，如果這樣的地震發生在台灣，我恐怕也沒有機會這麼幸福的在家裏打這篇網誌......
 
@@ -77,7 +89,11 @@ date: 2008-05-14 00:29:04 +0800
 
 
 
-<hr style="WIDTH: 100%; HEIGHT: 2px" />
+
+
+---
+
+
 
 <div id="media_file" align="center"></div>四川都江堰市聚源鎮中學校園教學樓被震垮，一名男子為一名學生不幸罹難而傷心落淚。（美聯社）
 
@@ -115,7 +131,11 @@ date: 2008-05-14 00:29:04 +0800
 
 
 
-<hr style="WIDTH: 100%; HEIGHT: 2px" />
+
+
+---
+
+
 
 中文有一句成語可以形容一個人看到嚴重的災難和極度的悲劇時那種想閉上眼睛的心情：那就叫：「慘不忍睹」......當然，我貼的也僅僅只是一點點，如果需要更多資訊的話網路上有很多的資訊，在此我先提供一個節點，這是網路上善心人士收集的四川災情書籤
 
@@ -167,7 +187,11 @@ date: 2008-05-14 00:29:04 +0800
 
 佛光山世界總會秘書長慈容法師指出，佛光山已捐出一千萬元賑災。靈鷲山創辦人心道法師目前也積極聯繫大陸台商，了解當地災情與救援所需物資，並指示全球弟子以捐血和善款為優先。
 
-<hr style="WIDTH: 100%; HEIGHT: 2px" /></div></div> 
+
+
+---
+
+</div></div> 
 
 事情就是這樣......其實要捐多少都好，因為有捐就是錢。如果全台灣人都捐一塊錢，就有兩千三百萬，如果都捐一百塊，就有二十三億！所以...讓我們把愛傳出去吧！
 

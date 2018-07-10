@@ -27,6 +27,10 @@ Warning: mkdir(): Permission denied in /home/www/HinetBlog/_classes/article/Gene
 
 我好幸福，真的好幸福。我實在不知道要怎麼用文字寫出我的感覺，或許我的程度就只有到不斷使用重複的字句來表達情感。
 
-<hr style="width: 100%; height: 2px;" />ps.上面的flash是社關活動拿來給外國朋友當教材用的（看圖說故事），至於為什麼放上來，這個......仍是「順便」放的。
+
+
+---
+
+ps.上面的flash是社關活動拿來給外國朋友當教材用的（看圖說故事），至於為什麼放上來，這個......仍是「順便」放的。
 
 
