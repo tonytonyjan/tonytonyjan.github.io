@@ -4,19 +4,9 @@ date: 2007-10-13 00:22:00 +0800
 
 ---
 
- <object width="425" height="350">
-
-
-
-<embed width="425" height="350" src="http://www.youtube.com/v/DQqkKzxuQG8" type="application/x-shockwave-flash" wmode="transparent"></embed></object>
-
-
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DQqkKzxuQG8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 各位...這影片看到一半...我哭出來了......到現在我寫這篇文章...眼淚還是停不下來......
-
-
 
 ---
 
