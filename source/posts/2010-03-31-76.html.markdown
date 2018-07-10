@@ -8,7 +8,9 @@ tags: [FreeBSD]
 ![](/images/slum-area/77_0.png)
 
 
-Desktop CubeXD<br />![](/images/slum-area/78_1.png)
+Desktop CubeXD
+
+![](/images/slum-area/78_1.png)
 
 
 
@@ -20,7 +22,9 @@ Compiz是第一個由OpenGL驅動的執行於X Window上的Window Manager。Comp
 
 
 
-Compiz符合ICCCM標準，可以取代GNOME環境的Metacity視窗管理器，或是KDE環境下的Kwin。Compiz擁有類似蘋果電腦的Mac OS X作業系統中所提供的許多桌面特效，例如 Expos&eacute;。 Compiz 是架構在Xgl這個新的X環境，使用OpenGL繪圖層Glitz。Compiz最早是由Novell在2006年一月時公佈新版Xgl時所發表的。在開發初期Compiz只能正常執行在有限的幾種Xgl所支援的硬體3D加速卡上。儘管Xgl和Compiz這兩個全新構造的系統還存在一些bug並且仍處於積極的開發階段，大多數NVIDIA和ATI圖形處理卡可以在Xgl上正常執行Compiz。Compiz在其他一些X伺服器和硬體上也可以正常執行。據報導，Compiz在現時仍處於開發階段的AIGLX上執行良好。 from Wiki.<br />
+Compiz符合ICCCM標準，可以取代GNOME環境的Metacity視窗管理器，或是KDE環境下的Kwin。Compiz擁有類似蘋果電腦的Mac OS X作業系統中所提供的許多桌面特效，例如 Expos&eacute;。 Compiz 是架構在Xgl這個新的X環境，使用OpenGL繪圖層Glitz。Compiz最早是由Novell在2006年一月時公佈新版Xgl時所發表的。在開發初期Compiz只能正常執行在有限的幾種Xgl所支援的硬體3D加速卡上。儘管Xgl和Compiz這兩個全新構造的系統還存在一些bug並且仍處於積極的開發階段，大多數NVIDIA和ATI圖形處理卡可以在Xgl上正常執行Compiz。Compiz在其他一些X伺服器和硬體上也可以正常執行。據報導，Compiz在現時仍處於開發階段的AIGLX上執行良好。 from Wiki.
+
+
 
 
 

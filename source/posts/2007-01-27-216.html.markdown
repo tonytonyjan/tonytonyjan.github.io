@@ -8,4 +8,22 @@ date: 2007-01-27 00:23:13 +0800
  
 
  <embed height="371" width="495" src="http://9.mms.blog.xuite.net/9/a/8/f/10971305/blog_112520/dv/9896632/9896632.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" style="display: block !important; "></object>
-<div style="text-align: left;">和彈鋼琴一樣──近幾走火入魔了。<br />我不知道為什麼對程式設計感興趣，反正，這東西很迷人就對了，我不是很會形容。<br /><br /><div style="text-align: left;">而我正在&quot;玩&quot;這兩種編譯軟體：C++Builder 和 Flash Action Script(其中C++可能比較廣為人知)<br /><br />寫程式的過程真的很刺激，不過因為我的電腦本身記憶體不太夠，有時候在使用這些編譯軟體的時候常常出現記憶體不足的狀況，寫個程式就要當機五六次；然而對於一個走火入魔的人，並不會因為五六次的當機而放棄，我是說真的。<br /><br />或許吧，寫程式真的要有一些本錢，除了本身的技能之外，還要加上好的電腦；而我的第一部步恐怕是先把電腦的記憶體從256升到512吧？那會是很久以後的事，老天保佑。<br /><br />P.S.關於上面的動畫，可以用鍵盤控制上下左右移動。</div></div>
+<div style="text-align: left;">和彈鋼琴一樣──近幾走火入魔了。
+
+我不知道為什麼對程式設計感興趣，反正，這東西很迷人就對了，我不是很會形容。
+
+
+
+<div style="text-align: left;">而我正在&quot;玩&quot;這兩種編譯軟體：C++Builder 和 Flash Action Script(其中C++可能比較廣為人知)
+
+
+
+寫程式的過程真的很刺激，不過因為我的電腦本身記憶體不太夠，有時候在使用這些編譯軟體的時候常常出現記憶體不足的狀況，寫個程式就要當機五六次；然而對於一個走火入魔的人，並不會因為五六次的當機而放棄，我是說真的。
+
+
+
+或許吧，寫程式真的要有一些本錢，除了本身的技能之外，還要加上好的電腦；而我的第一部步恐怕是先把電腦的記憶體從256升到512吧？那會是很久以後的事，老天保佑。
+
+
+
+P.S.關於上面的動畫，可以用鍵盤控制上下左右移動。</div></div>

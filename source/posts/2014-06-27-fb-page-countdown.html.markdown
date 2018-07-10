@@ -21,16 +21,28 @@ thumb: thumbs/fb.jpg
   <input id="max_count" type="number" name="max_count" value="500">
   <label for="auto_fire">自動放煙火</label>
   <input id="auto_fire" type="checkbox" name="auto_fire">
-  <input type="submit" value="送出"><br>
-  **進階設定：**<br>
+  <input type="submit" value="送出">
+
+
+  **進階設定：**
+
+
   <label for="font_size">倒數數字大小</label>
-  <input id="font_size" type="number" name="font_size" value="0.5" step="any"><br>
+  <input id="font_size" type="number" name="font_size" value="0.5" step="any">
+
+
   <label for="btn_size">啟動煙火按鈕大小（px）</label>
-  <input id="btn_size" type="number" name="btn_size" value="100"><br>
+  <input id="btn_size" type="number" name="btn_size" value="100">
+
+
   <label for="qr_code_size">QRCode 圖片大小（px）</label>
-  <input id="qr_code_size" type="number" name="qr_code_size" value="600"><br>
+  <input id="qr_code_size" type="number" name="qr_code_size" value="600">
+
+
   <label for="cycle">更新週期（千分之秒）</label>
-  <input id="cycle" type="number" name="cycle" value="1000"><br>
+  <input id="cycle" type="number" name="cycle" value="1000">
+
+
 </form>
 
 Github：https://github.com/5xRuby/FB-checkin

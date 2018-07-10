@@ -42,6 +42,8 @@ $ startx
 
 
 
-Enjoy~<br />
+Enjoy~
+
+
 
 

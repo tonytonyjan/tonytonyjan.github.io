@@ -78,7 +78,41 @@ tags: [FreeBSD]
 
 
 
-&nbsp;&nbsp; .model small<br />&nbsp;&nbsp; .stack<br />&nbsp;&nbsp; .data<br />&nbsp;&nbsp; message&nbsp;&nbsp; db "Hello world, I'm learning Assembly !!!", "$" <br />&nbsp;&nbsp; <br />&nbsp;&nbsp; .code<br />&nbsp;&nbsp; <br />&nbsp;&nbsp; main&nbsp;&nbsp; proc<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ax,seg message<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ds,ax<br />&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ah,09<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp; dx,message<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; 21h <br />&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ax,4c00h<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; 21h <br />&nbsp;&nbsp; main&nbsp;&nbsp; endp
+&nbsp;&nbsp; .model small
+
+&nbsp;&nbsp; .stack
+
+&nbsp;&nbsp; .data
+
+&nbsp;&nbsp; message&nbsp;&nbsp; db "Hello world, I'm learning Assembly !!!", "$" 
+
+&nbsp;&nbsp; 
+
+&nbsp;&nbsp; .code
+
+&nbsp;&nbsp; 
+
+&nbsp;&nbsp; main&nbsp;&nbsp; proc
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ax,seg message
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ds,ax
+
+&nbsp;&nbsp; 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ah,09
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp; dx,message
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; 21h 
+
+&nbsp;&nbsp; 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; ax,4c00h
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; 21h 
+
+&nbsp;&nbsp; main&nbsp;&nbsp; endp
 
 
 

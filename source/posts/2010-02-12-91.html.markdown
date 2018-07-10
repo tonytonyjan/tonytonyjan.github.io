@@ -18,7 +18,59 @@ REGEDIT4
 
 
 
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]<br />"Arial"="Arial"<br />"Arial CE,238"="PMingLiU"<br />"Arial CYR,204"="PMingLiU"<br />"Arial Greek,161"="PMingLiU"<br />"Arial TUR,162"="PMingLiU"<br />"Courier New"="Courier New"Courier New CE,238"="PMingLiU"<br />"Courier New CYR,204"="PMingLiU"<br />"Courier New Greek,161"="PMingLiU"<br />"Courier New TUR,162"="PMingLiU"<br />"MingLiU"="MingLiU"<br />"PMingLiU"="PMingLiU"<br />"FixedSys"="PMingLiU"<br />"Helv"="PMingLiU"<br />"Helvetica"="PMingLiU"<br />"MS Sans Serif"="PMingLiU"<br />"MS Shell Dlg"="PMingLiU"<br />"MS Shell Dlg 2"="PMingLiU"<br />"System"="PMingLiU"<br />"Tahoma"="PMingLiU"<br />"Times"="Times"<br />"Times New Roman"="Times New Roman"<br />"Times New Roman CE,238"="PMingLiU"<br />"Times New Roman CYR,204"="PMingLiU"<br />"Times New Roman Greek,161"="PMingLiU"<br />"Times New Roman TUR,162"="PMingLiU"<br />"Tms Rmn"="PMingLiU"
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+
+"Arial"="Arial"
+
+"Arial CE,238"="PMingLiU"
+
+"Arial CYR,204"="PMingLiU"
+
+"Arial Greek,161"="PMingLiU"
+
+"Arial TUR,162"="PMingLiU"
+
+"Courier New"="Courier New"Courier New CE,238"="PMingLiU"
+
+"Courier New CYR,204"="PMingLiU"
+
+"Courier New Greek,161"="PMingLiU"
+
+"Courier New TUR,162"="PMingLiU"
+
+"MingLiU"="MingLiU"
+
+"PMingLiU"="PMingLiU"
+
+"FixedSys"="PMingLiU"
+
+"Helv"="PMingLiU"
+
+"Helvetica"="PMingLiU"
+
+"MS Sans Serif"="PMingLiU"
+
+"MS Shell Dlg"="PMingLiU"
+
+"MS Shell Dlg 2"="PMingLiU"
+
+"System"="PMingLiU"
+
+"Tahoma"="PMingLiU"
+
+"Times"="Times"
+
+"Times New Roman"="Times New Roman"
+
+"Times New Roman CE,238"="PMingLiU"
+
+"Times New Roman CYR,204"="PMingLiU"
+
+"Times New Roman Greek,161"="PMingLiU"
+
+"Times New Roman TUR,162"="PMingLiU"
+
+"Tms Rmn"="PMingLiU"
 
 
 
