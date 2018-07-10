@@ -46,7 +46,11 @@ date: 2008-12-10 00:10:22 +0800
 
 <embed height="344" width="425" src="http://www.youtube.com/v/iPgZ50tB5s4&amp;hl=zh_TW&amp;fs=1" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash"></embed></object>
 
-<hr />
+
+
+---
+
+
 
 我今天才知道有預告片！宣傳組真的很用心啊......（還把我的作品當背景音樂了XD）
 

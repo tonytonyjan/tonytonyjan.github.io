@@ -31,7 +31,11 @@ date: 2011-06-15 00:29:13 +0800
 
 *正說著我們的故事&hellip;&hellip;*
 
-<hr />
+
+
+---
+
+
 
 Jewel - Satisfied
 

@@ -31,7 +31,11 @@ date: 2008-04-27 00:33:13 +0800
 
 &nbsp;
 
-<hr /><br />
+
+
+---
+
+<br />
 
 <iframe height="65" frameborder="0" width="185" scrolling="no" src="http://vlog.xuite.net/vlog/guest/external.php?media_id=ZnVwUzFxLTEwMjUxODQuZmx2&pt=2&ar=1&as=1" marginheight="0" marginwidth="0"></iframe>
 
