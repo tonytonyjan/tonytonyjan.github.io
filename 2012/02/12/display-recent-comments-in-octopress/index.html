@@ -120,11 +120,15 @@
         resault = '&lt;ul&gt;';
         obj.response.forEach(function(response){
           resault += '&lt;li&gt;';
-          resault += '&lt;a href="'+response.author.profileUrl+'"&gt;&lt;img src="'+response.author.avatar.permalink+'" width=32 height=32 style="float: left; margin-right: 5px;"&gt;&lt;/a&gt;';
-          resault += '&lt;a href="'+response.author.profileUrl+'"&gt;'+response.author.name+'&lt;/a&gt;：';
-          resault += '&lt;span&gt;'+response.message+'&lt;/span&gt;&lt;br&gt;'
-          resault += '&lt;a href="'+response.thread.link+'"&gt;'+response.thread.title+'&lt;/a&gt;&lt;br&gt;'
-          resault += 'at &lt;a href="'+response.url+'"&gt;'+response.createdAt+'&lt;/a&gt;'
+          resault += '[]('+response.author.profileUrl+'"&gt;&lt;img src="'+response.author.avatar.permalink+'" width=32 height=32 style="float: left; margin-right: 5px;)';
+          resault += '['+response.author.name+']('+response.author.profileUrl+')：';
+          resault += ''+response.message+'
+
+'
+          resault += '['+response.thread.title+']('+response.thread.link+')
+
+'
+          resault += 'at ['+response.createdAt+']('+response.url+')'
           resault += '&lt;/li&gt;';
         });
         resault += '&lt;/ul&gt;';
