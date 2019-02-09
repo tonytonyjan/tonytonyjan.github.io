@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
-
+require 'shellwords'
 usage = 'Usage: import_image INPUT_FILE_PATH [OUTPUT_FILENAME]'
 
 if ARGV.length.zero?
@@ -13,5 +13,5 @@ output_filename = ARGV[1] || "#{File.basename(input, '.*')}.jpg"
 output = File.expand_path("../../source/images/#{output_filename}", __FILE__)
 thumbnail_output = File.expand_path("../../source/images/thumbs/#{output_filename}", __FILE__)
 
-system "gm convert #{input} -interlace Plane -resize 740 -strip #{output}"
-system "gm convert #{input} -thumbnail 400x300^ -gravity center -crop 400x300+0+0 #{thumbnail_output}"
+system "gm convert #{Shellwords.escape input} -interlace Plane -resize 740 -strip #{Shellwords.escape output}"
+system "gm convert #{Shellwords.escape input} -thumbnail 400x300^ -gravity center -crop 400x300+0+0 #{Shellwords.escape thumbnail_output}"
