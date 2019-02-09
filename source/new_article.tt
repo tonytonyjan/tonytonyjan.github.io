@@ -1,0 +1,12 @@
+---
+
+title: <%= @title %>
+date: <%= @date.strftime('%F %R %z') %>
+tags: <%= @tags.join(",") %>
+description:
+image: '/images/<%= @title %>.jpg'
+thumb: '/images/thumbs/<%= @title %>.jpg
+
+---
+
+<%= @content %>

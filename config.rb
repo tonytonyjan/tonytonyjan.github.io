@@ -24,6 +24,7 @@ activate :blog do |blog|
   blog.summary_separator  = /<!-- more -->/
   blog.summary_length     = 150
   blog.tag_template       = 'tag.html'
+  blog.new_article_template = "#{__dir__}/source/new_article.tt"
 end
 
 ignore 'slides/*'
