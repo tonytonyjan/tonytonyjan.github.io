@@ -8,11 +8,11 @@
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
   <meta property="og:url" content="https://tonytonyjan.net/2012/03/08/using-sinatra-for-local-javascript-development/">
-  <title>使用 Sinatra、HFS 在本地開發 Javascript - 不歸錄</title>
-<meta name="description" content=" 寫 Javascript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 http:// 以外協定的 AJAX request，其中當然包括 file://）。 這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 HTTP File Server ，另一個則是 Sinatra。 ">
+  <title>使用 Sinatra、HFS 在本地開發 JavaScript - 不歸錄</title>
+<meta name="description" content=" 寫 JavaScript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 http:// 以外協定的 AJAX request，其中當然包括 file://）。 這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 HTTP File Server ，另一個則是 Sinatra。 ">
 <meta name="keywords" content="JavaScript, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="使用 Sinatra、HFS 在本地開發 Javascript - 不歸錄" />
-<meta property="og:description" content=" 寫 Javascript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 http:// 以外協定的 AJAX request，其中當然包括 file://）。 這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 HTTP File Server ，另一個則是 Sinatra。 " />
+<meta property="og:title" content="使用 Sinatra、HFS 在本地開發 JavaScript - 不歸錄" />
+<meta property="og:description" content=" 寫 JavaScript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 http:// 以外協定的 AJAX request，其中當然包括 file://）。 這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 HTTP File Server ，另一個則是 Sinatra。 " />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="JavaScript" />
@@ -89,7 +89,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">使用 Sinatra、HFS 在本地開發 Javascript</h1>
+      <h1 class="entry-title">使用 Sinatra、HFS 在本地開發 JavaScript</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -107,7 +107,7 @@
     <!-- .entry-content -->
     <div class="entry-content">
       
-<p>寫 Javascript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 <code>http://</code> 以外協定的 AJAX request，其中當然包括 <code>file://</code>）。</p>
+<p>寫 JavaScript 的時候難免會用到 AJAX 抑或讀檔，尤其現在 HTML5 正熱，常常需要讀取圖片並顯示在 canvas，但麻煩是，瀏覽器會為了安全考量，禁止所有對本地檔案系統的資料的存取（Chrome 自從版本 5 之後，擋住了所有對 <code>http://</code> 以外協定的 AJAX request，其中當然包括 <code>file://</code>）。</p>
 
 <p>這個問題有個很直覺的解法，那就是自己開一個 HTTP server。但只是為了做前端網頁開發，搞個像 Apache 這種重量級的 server 豈不是用大砲打鳥蛋。所以介紹一下我個人在使用的兩個工具，一個是 <a href="http://www.rejetto.com/hfs/">HTTP File Server</a> ，另一個則是 <a href="http://www.sinatrarb.com/">Sinatra</a>。</p>
 
@@ -117,7 +117,7 @@
 
 <p><a href="http://www.rejetto.com/hfs/">HFS</a> 是一套免費、開原的輕量級 HTTP server，顧名思義他可以讓你透過瀏覽器存取你電腦上的檔案，上傳、下載、而且有簡單的驗證與帳號控管。對共享檔案來說，遠比開一個 FTP server 來得更方便。且 <a href="http://www.rejetto.com/hfs/">HFS</a> 不用安裝，方便攜帶，是出門在外、居家旅行的好夥伴。</p>
 
-<p>說了這麼多廢話，當然，用來開發 Javascript 是很簡單的事，只要將程式碼所在的資料夾加入即可。附圖是我將 <a href="http://easeljs.com/">EaselJS</a> 的範例程式碼所在資料夾放上去的結果。</p>
+<p>說了這麼多廢話，當然，用來開發 JavaScript 是很簡單的事，只要將程式碼所在的資料夾加入即可。附圖是我將 <a href="http://easeljs.com/">EaselJS</a> 的範例程式碼所在資料夾放上去的結果。</p>
 
 <p><img src="/images/HFS.png" alt="" /></p>
 

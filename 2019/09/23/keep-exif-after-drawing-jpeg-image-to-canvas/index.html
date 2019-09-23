@@ -7,17 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="https://tonytonyjan.net/2012/03/06/shortcut-to-open-command-prompt-in-current-directory/">
-  <title>在目錄下打開命令提示字元 - 不歸錄</title>
-<meta name="description" content="這篇文章會告訴你在 windows 檔案總管，如何用右鍵快速在某個目錄下打開命令字元。 因為我發現周遭有很多習慣於命令列工作的人，仍傻呼呼的執行 cmd.exe 之後，一次又一次的 cd、dir，直到抵敵目的地。抑或先打開檔案總管，到目的地之後再複製目錄，貼到命令列，然後在前面再加個 cd。...">
-<meta name="keywords" content="Windows, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="在目錄下打開命令提示字元 - 不歸錄" />
-<meta property="og:description" content="這篇文章會告訴你在 windows 檔案總管，如何用右鍵快速在某個目錄下打開命令字元。 因為我發現周遭有很多習慣於命令列工作的人，仍傻呼呼的執行 cmd.exe 之後，一次又一次的 cd、dir，直到抵敵目的地。抑或先打開檔案總管，到目的地之後再複製目錄，貼到命令列，然後在前面再加個 cd。..." />
+  <meta property="og:url" content="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/">
+  <title>在 canvas 繪製 JPEG 圖片後保留 EXIF 資訊 - 不歸錄</title>
+<meta name="description" content=" 筆者近來開發 canvas 相關的應用，發現繪製後的圖片會遺失 EXIF 資訊，於是花了點時間研究 JPEG 檔案格式的規格，並在此將解法分享出來。 ">
+<meta name="keywords" content="JavaScript, 已知用火, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="在 canvas 繪製 JPEG 圖片後保留 EXIF 資訊 - 不歸錄" />
+<meta property="og:description" content=" 筆者近來開發 canvas 相關的應用，發現繪製後的圖片會遺失 EXIF 資訊，於是花了點時間研究 JPEG 檔案格式的規格，並在此將解法分享出來。 " />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
-<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="JavaScript" />
+<meta property="article:tag" content="已知用火" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
-<meta property="article:published_time" content="2012-03-06T23:03:00+08:00" />
+<meta property="article:published_time" content="2019-09-23T16:44:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -89,7 +90,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">在目錄下打開命令提示字元</h1>
+      <h1 class="entry-title">在 canvas 繪製 JPEG 圖片後保留 EXIF 資訊</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -100,50 +101,93 @@
       </span>
       <span class="posted-on">
         發表於
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2012-03-06T23:03:00+08:00">2012 年 03 月 06 日</time></a>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2019-09-23T16:44:00+08:00">2019 年 09 月 23 日</time></a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p>這篇文章會告訴你在 windows 檔案總管，如何用右鍵快速在某個目錄下打開命令字元。</p>
+      
+<p>筆者近來開發 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">canvas</a> 相關的應用，發現繪製後的圖片會遺失 EXIF 資訊，於是花了點時間研究 JPEG 檔案格式的規格，並在此將解法分享出來。</p>
 
-<p>因為我發現周遭有很多習慣於命令列工作的人，仍傻呼呼的執行 <code>cmd.exe</code> 之後，一次又一次的 <code>cd</code>、<code>dir</code>，直到抵敵目的地。抑或先打開檔案總管，到目的地之後再複製目錄，貼到命令列，然後在前面再加個 <code>cd</code>。雖然後者又快了一點。若是可以對目錄右鍵之後，有個選項能打開當前目錄的命令提示字元，豈不是非常方便？</p>
 
-<h2 id="windows-7">Windows 7</h2>
+
+<p>這個問題應該不難搜尋到<a href="https://stackoverflow.com/questions/18297120/html5-resize-image-and-keep-exif-in-resized-image">這篇 Stack Overflow 上的討論串</a>。</p>
+
+<p>只不過 Martin Perry 的<a href="http://www.perry.cz/files/ExifRestorer.js">在 2013 的做法</a>有些老舊，筆者重新用 2019 已知的技術翻新了版本。僅使用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">Blob</a> 和 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a>。</p>
+
+<h1 id="問題描述">問題描述</h1>
+
+<p>在 canvas 上繪製 JPEG 圖片，處理後再將 canvas 輸出新的 JPEG 圖片，同時保留 EXIF 資訊。</p>
+
+<h1 id="demo">Demo</h1>
+
+<ul>
+  <li><a href="https://codepen.io/tonytonyjan/project/editor/XEkOkv">Keep EXIF Data after Drawing JPEG Image in Canvas</a></li>
+  <li><a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233">copyExif.js</a></li>
+</ul>
+
+<h1 id="解釋">解釋</h1>
+
+<p>直覺上，第一時間想到的做法會是先讀取 EXIF 後再重新寫入。其中讀取 EXIF 方面首選 <a href="https://github.com/exif-js/exif-js">exif-js</a>，但寫入 EXIF 方面就不是這麼容易找到成熟的專案，若非年久失修，就是使用的人太少，可能有很多尚未發現的問題。</p>
+
+<p>然而需求若只是單純要保存原本的 EXIF，而非逐一寫入，其實不需要用到像 exif-js 這麼大的專案。因為 JPEG 檔案的裡面的元資料其實像貨櫃一樣，一個個整齊地存放在名為 marker 的資料結構裡，而其中一個 marker 專門存放 EXIF 資訊。只要將其複製下來，並在新的 JPEG 圖片裡貼上，那麼新的圖片就可以完整保留原始圖片的 EXIF。</p>
+
+<h1 id="jpeg-marker-結構">JPEG Marker 結構</h1>
+
+<p>每一個 JPEG marker 結構如下：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Marker</th>
+      <th>大小</th>
+      <th>資料</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FFXX</td>
+      <td>SSSS</td>
+      <td>DDDD</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>marker 的標頭都以兩個位元表示，格式以 <code>FFXX</code> 的形式出現，而接著 marker 後的 2 個位元 <code>SSSS</code> 則表示後面的資料結構的大小，格式為大端序（big-endian），而該數字所表達的大小包含了 <code>SSSS</code> 所佔用 2 個位元。</p>
+
+<p>舉例：</p>
+
+<p><code>FF C1 00 0C DD DD ...</code></p>
+
+<p><code>FFC1</code> 表示 marker 標頭，<code>000C</code> 表示資料結構大小為 12，但 12 包含了 <code>000C</code> 本身，所以後面的 <code>DD DD ...</code> 只有 10 個位元。</p>
+
+<h1 id="copyexifjs">copyExif.js</h1>
+
+<p>EXIF 資訊存放在 APP1 marker 裡面，標頭為 <code>FFE1</code>，這個檔案的實際操作如下：</p>
 
 <ol>
-  <li>在檔案總管中選取你想要打開命令列的資料夾</li>
-  <li><code>Shift</code> + 右鍵</li>
-  <li>按下 'W'（或者左鍵點擊「開啟命令視窗」）</li>
+  <li>讀取來源 blob，搜尋 <code>FFE1</code> 標頭，將整段 APP1 marker 擷取出來。</li>
+  <li>取得 canvas 的 blob。</li>
+  <li>將取得到的 APP1 marker 嵌入 canvas blob 裡面的正確位置。</li>
 </ol>
 
-<p><img src="/images/right-click-prompt.png" alt="" /></p>
+<p>如果有任何問題或覺得寫的哪裡不好，希望能到 <a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233">gist</a> 給筆者一些指點，感激不盡。</p>
 
-<h2 id="windows-xp">Windows XP</h2>
-<h3 id="diy">DIY</h3>
-<p>（這個方法需要動到你的登錄檔，如果你不敢改或者不擅長……請跳到下面的簡易版）</p>
+<h1 id="參考資料">參考資料</h1>
 
-<ol>
-  <li>執行 <code>regedit</code></li>
-  <li>找到 HKEY_LOCAL_MACHINE/Software/Classes/Folder/Shell</li>
-  <li>新增一個鍵，命名為 <code>Command Prompt</code></li>
-  <li>預設值設定成 <code>Command Prompt Here</code></li>
-  <li>新增一個鍵，命名為 <code>Command</code></li>
-  <li>預設值設定成 <code>cmd.exe /k pushd %L</code></li>
-</ol>
-
-<p>之後你只要在資料夾上點右鍵，就會出現一個叫 <code>Command Prompt Here</code> 的選項。</p>
-
-<h3 id="簡單方法">簡單方法</h3>
-<p><a href="http://windows.microsoft.com/en-US/windows/downloads/windows-xp">Windows 自己有開發這樣的功能，在 Power Toys 下，下載之後安裝就行了。</a></p>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Exif">Exif - Wikipedia</a></li>
+  <li><a href="https://www.media.mit.edu/pia/Research/deepview/exif.html">Exif file format - MIT Media Lab</a></li>
+</ul>
 
       
     </div>
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a href="/tags/windows/" rel="tag">Windows</a>
+        <a href="/tags/javascript/" rel="tag">JavaScript</a>
+        <a href="/tags/已知用火/" rel="tag">已知用火</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -172,12 +216,9 @@
   <nav class="nav-single row">
     <div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="/2012/03/05/cooperation-and-connection/" rel="prev"><span class="meta-nav">←</span> 團隊、溝通管道</a>
+    <a href="/2019/02/09/a-board-game-for-double-dating/" rel="prev"><span class="meta-nav">←</span> 男生女生慼 - 適合兩對情侶的桌遊</a>
   </div>
-  <div class="nav-next col-sm-6">
-  <h4>下一篇</h4>
-  <a href="/2012/03/08/using-sinatra-for-local-javascript-development/" rel="next">使用 Sinatra、HFS 在本地開發 JavaScript <span class="meta-nav">→</span></a>
-</div>
+  
 </nav>
 <!-- .nav-single -->
 <!-- #comments -->

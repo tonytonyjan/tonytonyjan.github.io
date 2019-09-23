@@ -9,10 +9,10 @@
   <meta property="og:site_name" content="不歸錄">
   <meta property="og:url" content="https://tonytonyjan.net/2012/05/25/get-start-with-chrome-extension/">
   <title>大兜的 Chrome Extension 學習筆記 - 不歸錄</title>
-<meta name="description" content="要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、Javascript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。 這篇介紹會針對 Chrome Extension 的 manifest 結構、檔案結構以及一些常用到的部份做簡單的介紹，包括 Browser Action、Page Action、Background Page 和 Content Script。 ">
+<meta name="description" content="要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、JavaScript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。 這篇介紹會針對 Chrome Extension 的 manifest 結構、檔案結構以及一些常用到的部份做簡單的介紹，包括 Browser Action、Page Action、Background Page 和 Content Script。 ">
 <meta name="keywords" content="Chrome, Extension, 外掛, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
 <meta property="og:title" content="大兜的 Chrome Extension 學習筆記 - 不歸錄" />
-<meta property="og:description" content="要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、Javascript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。 這篇介紹會針對 Chrome Extension 的 manifest 結構、檔案結構以及一些常用到的部份做簡單的介紹，包括 Browser Action、Page Action、Background Page 和 Content Script。 " />
+<meta property="og:description" content="要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、JavaScript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。 這篇介紹會針對 Chrome Extension 的 manifest 結構、檔案結構以及一些常用到的部份做簡單的介紹，包括 Browser Action、Page Action、Background Page 和 Content Script。 " />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
 <meta property="article:tag" content="Chrome" />
@@ -108,7 +108,7 @@
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p>要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、Javascript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。</p>
+      <p>要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、JavaScript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。</p>
 
 <p>這篇介紹會針對 Chrome Extension 的 manifest 結構、檔案結構以及一些常用到的部份做簡單的介紹，包括 Browser Action、Page Action、Background Page 和 Content Script。</p>
 
@@ -118,7 +118,7 @@
 
 <h3 id="background-pages">Background Pages</h3>
 
-<p>大多外掛會有一個 background page 常駐在背景，可能是一個 HTML 或者 javascript 檔，外掛的功能與邏輯都被定義在此，然後透過 API 與 UI（browser actions 或 page actions）做溝通。</p>
+<p>大多外掛會有一個 background page 常駐在背景，可能是一個 HTML 或者 JavaScript 檔，外掛的功能與邏輯都被定義在此，然後透過 API 與 UI（browser actions 或 page actions）做溝通。</p>
 
 <p><img src="/images/arch-1.gif" alt="" /></p>
 
@@ -287,7 +287,7 @@
 
 <h2 id="content-script">Content Script</h2>
 
-<p>這是筆者認為最有趣的部份，content script 顧名思義可以在頁面裡面嵌入 javascript，他們可以透過 DOM 得知使用者瀏覽的頁面的內容，甚至可以改變這些內容。</p>
+<p>這是筆者認為最有趣的部份，content script 顧名思義可以在頁面裡面嵌入 JavaScript，他們可以透過 DOM 得知使用者瀏覽的頁面的內容，甚至可以改變這些內容。</p>
 
 <p>這些是 content script 可以做到的事：</p>
 

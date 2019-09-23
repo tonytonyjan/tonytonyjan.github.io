@@ -5,16 +5,104 @@
   <id>https://tonytonyjan.net</id>
   <link href="https://tonytonyjan.net"/>
   <link href="https://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2019-02-09T15:14:00+08:00</updated>
+  <updated>2019-09-23T16:44:00+08:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>在 canvas 繪製 JPEG 圖片後保留 EXIF 資訊</title>
+    <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
+    <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
+    <published>2019-09-23T16:44:00+08:00</published>
+    <updated>2019-09-23T18:10:18+08:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">
+&lt;p&gt;筆者近來開發 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"&gt;canvas&lt;/a&gt; 相關的應用，發現繪製後的圖片會遺失 EXIF 資訊，於是花了點時間研究 JPEG 檔案格式的規格，並在此將解法分享出來。&lt;/p&gt;
+
+</summary>
+    <content type="html">
+&lt;p&gt;筆者近來開發 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"&gt;canvas&lt;/a&gt; 相關的應用，發現繪製後的圖片會遺失 EXIF 資訊，於是花了點時間研究 JPEG 檔案格式的規格，並在此將解法分享出來。&lt;/p&gt;
+
+
+
+&lt;p&gt;這個問題應該不難搜尋到&lt;a href="https://stackoverflow.com/questions/18297120/html5-resize-image-and-keep-exif-in-resized-image"&gt;這篇 Stack Overflow 上的討論串&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;只不過 Martin Perry 的&lt;a href="http://www.perry.cz/files/ExifRestorer.js"&gt;在 2013 的做法&lt;/a&gt;有些老舊，筆者重新用 2019 已知的技術翻新了版本。僅使用 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob"&gt;Blob&lt;/a&gt; 和 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"&gt;ArrayBuffer&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h1 id="問題描述"&gt;問題描述&lt;/h1&gt;
+
+&lt;p&gt;在 canvas 上繪製 JPEG 圖片，處理後再將 canvas 輸出新的 JPEG 圖片，同時保留 EXIF 資訊。&lt;/p&gt;
+
+&lt;h1 id="demo"&gt;Demo&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://codepen.io/tonytonyjan/project/editor/XEkOkv"&gt;Keep EXIF Data after Drawing JPEG Image in Canvas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233"&gt;copyExif.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id="解釋"&gt;解釋&lt;/h1&gt;
+
+&lt;p&gt;直覺上，第一時間想到的做法會是先讀取 EXIF 後再重新寫入。其中讀取 EXIF 方面首選 &lt;a href="https://github.com/exif-js/exif-js"&gt;exif-js&lt;/a&gt;，但寫入 EXIF 方面就不是這麼容易找到成熟的專案，若非年久失修，就是使用的人太少，可能有很多尚未發現的問題。&lt;/p&gt;
+
+&lt;p&gt;然而需求若只是單純要保存原本的 EXIF，而非逐一寫入，其實不需要用到像 exif-js 這麼大的專案。因為 JPEG 檔案的裡面的元資料其實像貨櫃一樣，一個個整齊地存放在名為 marker 的資料結構裡，而其中一個 marker 專門存放 EXIF 資訊。只要將其複製下來，並在新的 JPEG 圖片裡貼上，那麼新的圖片就可以完整保留原始圖片的 EXIF。&lt;/p&gt;
+
+&lt;h1 id="jpeg-marker-結構"&gt;JPEG Marker 結構&lt;/h1&gt;
+
+&lt;p&gt;每一個 JPEG marker 結構如下：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Marker&lt;/th&gt;
+      &lt;th&gt;大小&lt;/th&gt;
+      &lt;th&gt;資料&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FFXX&lt;/td&gt;
+      &lt;td&gt;SSSS&lt;/td&gt;
+      &lt;td&gt;DDDD&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;marker 的標頭都以兩個位元表示，格式以 &lt;code&gt;FFXX&lt;/code&gt; 的形式出現，而接著 marker 後的 2 個位元 &lt;code&gt;SSSS&lt;/code&gt; 則表示後面的資料結構的大小，格式為大端序（big-endian），而該數字所表達的大小包含了 &lt;code&gt;SSSS&lt;/code&gt; 所佔用 2 個位元。&lt;/p&gt;
+
+&lt;p&gt;舉例：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;FF C1 00 0C DD DD ...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;FFC1&lt;/code&gt; 表示 marker 標頭，&lt;code&gt;000C&lt;/code&gt; 表示資料結構大小為 12，但 12 包含了 &lt;code&gt;000C&lt;/code&gt; 本身，所以後面的 &lt;code&gt;DD DD ...&lt;/code&gt; 只有 10 個位元。&lt;/p&gt;
+
+&lt;h1 id="copyexifjs"&gt;copyExif.js&lt;/h1&gt;
+
+&lt;p&gt;EXIF 資訊存放在 APP1 marker 裡面，標頭為 &lt;code&gt;FFE1&lt;/code&gt;，這個檔案的實際操作如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;讀取來源 blob，搜尋 &lt;code&gt;FFE1&lt;/code&gt; 標頭，將整段 APP1 marker 擷取出來。&lt;/li&gt;
+  &lt;li&gt;取得 canvas 的 blob。&lt;/li&gt;
+  &lt;li&gt;將取得到的 APP1 marker 嵌入 canvas blob 裡面的正確位置。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果有任何問題或覺得寫的哪裡不好，希望能到 &lt;a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233"&gt;gist&lt;/a&gt; 給筆者一些指點，感激不盡。&lt;/p&gt;
+
+&lt;h1 id="參考資料"&gt;參考資料&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Exif"&gt;Exif - Wikipedia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.media.mit.edu/pia/Research/deepview/exif.html"&gt;Exif file format - MIT Media Lab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>男生女生慼 - 適合兩對情侶的桌遊</title>
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
     <published>2019-02-09T15:14:00+08:00</published>
-    <updated>2019-02-09T17:05:05+08:00</updated>
+    <updated>2019-09-23T18:05:18+08:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -606,42 +694,6 @@ end
 &lt;p&gt;這沒有什麼強制的規範，畢竟 Ruby 是一個自由的程式語言，比較接近 Perl，和一板一眼的 Python 不太一樣（Only one way to do it）。不過筆者建議大原則是盡量使用易讀易寫的 API 來完成工作，如果有細節需要處理再用其他的方法。例如一般開檔就使用 &lt;code&gt;File.open&lt;/code&gt; 或是 &lt;code&gt;Kernel.open&lt;/code&gt; 即可，需要存取 FD 則改用 &lt;code&gt;IO.open&lt;/code&gt;，若要手動關檔再考慮 &lt;code&gt;File.new&lt;/code&gt; 或 &lt;code&gt;IO.new&lt;/code&gt;。另外也不要特別使用 &lt;code&gt;Kernel.open&lt;/code&gt; 調用 &lt;code&gt;IO.popen&lt;/code&gt; 的奇怪語法（&lt;code&gt;|&lt;/code&gt;），這會降低程式碼的可讀性，不符合易讀易寫。像 &lt;code&gt;IO.popen('date')&lt;/code&gt; 就比 &lt;code&gt;Kernel.open('|date')&lt;/code&gt; 好懂多了。&lt;/p&gt;
 
 &lt;p&gt;另一個原則是程式碼的一致性，如果團隊開檔案都使用 &lt;code&gt;File.open&lt;/code&gt;，那就盡量避免特立獨行使用 &lt;code&gt;Kernel.open&lt;/code&gt;，反之亦然。&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Ziltag Beta 啟動</title>
-    <link rel="alternate" href="https://tonytonyjan.net/2016/03/01/ziltag-start/"/>
-    <id>https://tonytonyjan.net/2016/03/01/ziltag-start/</id>
-    <published>2016-03-01T00:53:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;筆者很久以前曾希望有個服務可以在圖片上自由的加上各種資訊，那是在看漫畫的時候，心想如果可以在某些分鏡加上自己的評論並與網友們互動，效果應該不錯，不料今天出自夥伴與自己的手，世事難料啊XD&lt;/p&gt;
-
-&lt;h1 id="zillion-tags-ziltag"&gt;Zillion Tags, Ziltag&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://ziltag.com"&gt;Ziltag&lt;/a&gt; 的目的是希望在現有的圖片、影片等多媒體上面，創要一種新的社交互動方式：你可以在任何圖片的任何地方標籤上任何資訊，可以是一句話、一個人名、一段連結影片等，而每個標籤都可以是個討論串。&lt;/p&gt;
-
-</summary>
-    <content type="html">&lt;p&gt;筆者很久以前曾希望有個服務可以在圖片上自由的加上各種資訊，那是在看漫畫的時候，心想如果可以在某些分鏡加上自己的評論並與網友們互動，效果應該不錯，不料今天出自夥伴與自己的手，世事難料啊XD&lt;/p&gt;
-
-&lt;h1 id="zillion-tags-ziltag"&gt;Zillion Tags, Ziltag&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://ziltag.com"&gt;Ziltag&lt;/a&gt; 的目的是希望在現有的圖片、影片等多媒體上面，創要一種新的社交互動方式：你可以在任何圖片的任何地方標籤上任何資訊，可以是一句話、一個人名、一段連結影片等，而每個標籤都可以是個討論串。&lt;/p&gt;
-
-
-
-&lt;p&gt;如果你的設備有滑鼠指標（Beta 尚未支援手機），只要將它移動到下面這張圖片就可以理解這個服務在做什麼：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/piano.jpg" alt="tonytonyjan is playing the piano" /&gt;&lt;/p&gt;
-
-&lt;p&gt;有別於其他平台，Ziltag 是以提供腳本的方式給那些想要在網站上提供多元互動的站長們使用，這些站長們可能是部落客、攝影師、畫家、設計師、美食家、探險家等。除了創造與讀者的新互動之外，他們也能透過標籤傳達讀者可能感興趣的資訊，例如商品的價錢、植物的介紹、食材廣告、英語單字教學等等，使用方式依照使用者的創意可以十分多元。&lt;/p&gt;
-
-&lt;h1 id="成為-ziltag-夥伴"&gt;成為 Ziltag 夥伴&lt;/h1&gt;
-
-&lt;p&gt;成為使用者很容易，當你在聆聽筆者的音樂拙作時，就已經是 Ziltag 使用者了，如果想進一步留下評語（手下留情），直接留言即可，並不需要離開筆者的網站。相對的，你若有自己的網站，且也希望提供你的讀者不同的體驗，則必須透過 &lt;a href="https://ziltag.com"&gt;Ziltag&lt;/a&gt; 網站註冊並索取腳本，不妨今天就來玩玩看吧 :)&lt;/p&gt;
 
 </content>
   </entry>

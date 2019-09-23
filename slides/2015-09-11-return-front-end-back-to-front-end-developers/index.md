@@ -213,7 +213,7 @@ ex. YUI Compressor
 ---
 
 # Sprockets 做了些什麼 (4/4)
-## Javascript Templating
+## JavaScript Templating
 
 ```html
 <!-- templates/hello.jst.ejs -->

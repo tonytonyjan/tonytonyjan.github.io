@@ -88,6 +88,38 @@
     <footer class="entry-meta">
       <span class="post-format"></span>
       <span title="2011" class="entry-date"><span class="day">12</span>八月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2011/08/12/ruby-block-proc-lambda/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2011/08/12/ruby-block-proc-lambda/" rel="bookmark">Ruby Block, Proc and Lambda</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p><p>Ruby 可將程式碼當參數傳遞，被參數化的程式碼稱為 Block。也就是呼叫方法時後面的 <code>{|| }</code>  符號，其中的 <code>||</code> 之間放置參數列宣告，若無參數則可省略。</p>
+
+<p>Ruby 的 Proc 類似 ECMAScript 的 function。在 ECMAScript 中使用關鍵字 function 即可配置一個 Function 物件。Ruby 則使用 Kernel::proc、Kernel::lambda 方法（但兩者有些微差異），或是直接建構一個 Proc 物件（Proc.new）。</p>
+
+<h2 id="block-and-proc">Block and Proc</h2>
+
+<p>Ruby 會主動將 Block 參數化成 Proc，Block 無法單獨存在，只能作為 Ruby 指令或呼叫方法時的引數。僅需利用流程指令 yield 即可將流程轉移到被參數化的 Block 中運行。我們可以用 Kernel::block_given? 判斷使用者有無傳遞 Block。</p>
+
+
+        <a href="/2011/08/12/ruby-block-proc-lambda/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <span class="post-format"></span>
+      <span title="2011" class="entry-date"><span class="day">12</span>八月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2011/08/12/17/#disqus_thread"></span>留言</span>
     </footer>
     <!-- .entry-meta -->
@@ -374,44 +406,6 @@
 
 <p>暑假在家過的十分愜意，早上起床第一件事情不再是用電腦，而是彈一個小時的鋼琴，然後再寫專題，中午吃過飯之後，繼續鋼琴，傍晚和母親一起去...</p>
         <a href="/2011/07/14/24/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
-      </div>
-      <!-- .entry-content -->
-    </article>
-    <!-- .post -->
-  <!-- .post -->
-  <article class="post type-post hentry">
-    <!-- .entry-meta -->
-    <footer class="entry-meta">
-      <span class="post-format"></span>
-      <span title="2011" class="entry-date"><span class="day">5</span>七月</span>
-      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2011/07/05/25/#disqus_thread"></span>留言</span>
-    </footer>
-    <!-- .entry-meta -->
-    <!-- .entry-header -->
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2011/07/05/25/" rel="bookmark">撐家的滋味</a>
-      </h1>
-    </header>
-    <!-- .entry-header -->
-    <!-- .entry-content -->
-    <div class="entry-content">
-      <p><p><img src="/images/slum-area/22_5.jpg" alt=""></p>
-
-<p>那天與詠有聊到成家立業的話題，送他到車站之後，回宿舍路上我突然打了一通電話回家……</p>
-
-<hr>
-
-<p>我：「媽？」</p>
-
-<p>媽：「什麼事？」</p>
-
-<p>我：「妳憑藉一人之力賺錢養著阿公阿嬤，養活自己，還養活我和我弟弟，學費、房貸、保險……那種壓力是什麼感覺？」</p>
-
-<hr>
-
-<p>我從高中就在等，不斷不斷等，等待我可以有第一份工...</p>
-        <a href="/2011/07/05/25/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
       </div>
       <!-- .entry-content -->
     </article>
