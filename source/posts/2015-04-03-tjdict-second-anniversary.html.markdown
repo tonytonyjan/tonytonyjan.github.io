@@ -3,7 +3,7 @@ title: TJDict 兩週年紀念
 image: /images/tjdict.png
 thumb: /images/thumbs/tjdict.png
 date: 2015-04-03 23:35 +0800
-tags: [Chrome, Javascript]
+tags: [Chrome, JavaScript]
 
 download: https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp?hl=zh-TW
 ---

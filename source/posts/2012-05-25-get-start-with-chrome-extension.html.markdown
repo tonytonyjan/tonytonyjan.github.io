@@ -5,7 +5,7 @@ date: 2012-05-25 12:12 +0800
 tags: [Chrome, Extension, 外掛]
 ---
 
-要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、Javascript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。
+要寫 Chrome Extension 的先決條件是擁有網頁基礎，因為寫 Chrome Extension 會用到 HTML、JavaScript、CSS，如果還不會這些東西，建議在學習 Chrome Extension 之前，先把這些技能磨練好。
 
 這篇介紹會針對 Chrome Extension 的 manifest 結構、檔案結構以及一些常用到的部份做簡單的介紹，包括 Browser Action、Page Action、Background Page 和 Content Script。
 
@@ -15,7 +15,7 @@ tags: [Chrome, Extension, 外掛]
 
 ### Background Pages
 
-大多外掛會有一個 background page 常駐在背景，可能是一個 HTML 或者 javascript 檔，外掛的功能與邏輯都被定義在此，然後透過 API 與 UI（browser actions 或 page actions）做溝通。
+大多外掛會有一個 background page 常駐在背景，可能是一個 HTML 或者 JavaScript 檔，外掛的功能與邏輯都被定義在此，然後透過 API 與 UI（browser actions 或 page actions）做溝通。
 
 ![](/images/arch-1.gif)
 
@@ -173,7 +173,7 @@ Browser action 適合在需要一個常駐的功能放在 Google 工具列時使
 
 ## Content Script
 
-這是筆者認為最有趣的部份，content script 顧名思義可以在頁面裡面嵌入 javascript，他們可以透過 DOM 得知使用者瀏覽的頁面的內容，甚至可以改變這些內容。
+這是筆者認為最有趣的部份，content script 顧名思義可以在頁面裡面嵌入 JavaScript，他們可以透過 DOM 得知使用者瀏覽的頁面的內容，甚至可以改變這些內容。
 
 這些是 content script 可以做到的事：
 
