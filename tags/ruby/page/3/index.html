@@ -90,6 +90,70 @@
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <span class="post-format"></span>
+      <span title="2012" class="entry-date"><span class="day">4</span>十一月</span>
+      <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/11/04/tony-jians-rails-template/#disqus_thread"></span>留言</span>
+    </footer>
+    <!-- .entry-meta -->
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="/2012/11/04/tony-jians-rails-template/" rel="bookmark">My Rails Template</a>
+      </h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p><h2 id="why">Why</h2>
+
+<p>We engineers always hate repeating doing the same thing.</p>
+
+<p>Take me for instance, everytime I create a new rails project, I edit <code>GemFile</code> to install lots of useful gems such as <code>devise</code>, <code>carrierwave</code>, etc, and then download <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> with newest version, extract it into <code>vendor/assets/images</code>, <code>vendor/assets/javascripts</code> and <code>vendor/assets/stylesheets</code>, finally, replace <code>../img/xxx.png</code> into <code>xxx.png</code> in <code>bootstrap.css</code> and <code>bootstrap.min.css</code>.</p>
+
+<h2 id="what">What</h2>
+
+<p>My template does two things:</p>
+
+<ol>
+  <li>
+    <p>Automatically install the following gems:</p>
+
+    <ul>
+      <li>devise</li>
+      <li>cancan</li>
+      <li>carrierwave</li>
+      <li>simple_form</li>
+      <li>dynamic_form</li>
+      <li>will_paginate</li>
+      <li>rdiscount</li>
+      <li>rails-i18n</li>
+    </ul>
+  </li>
+  <li>
+    <p>Download Twitter Boostrap with the newest version, and correspondingly extract files into <code>vendor/assets/</code></p>
+  </li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<pre><code>rails new myapp -m=https://raw.github.com/gist/4010690
+</code></pre>
+
+<p>Alternatively, if you encounter some SSL problem during the previous command, please download the file directly and run:</p>
+
+<pre><code>rails new myapp -m=filename
+</code></pre>
+
+
+        <a href="/2012/11/04/tony-jians-rails-template/" class="more-link">繼續閱讀 <span class="meta-nav">→</span></a></p>
+      </div>
+      <!-- .entry-content -->
+    </article>
+    <!-- .post -->
+  <!-- .post -->
+  <article class="post type-post hentry">
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <span class="post-format"></span>
       <span title="2012" class="entry-date"><span class="day">25</span>六月</span>
       <span class="entry-comment"><span class="count disqus-comment-count" data-disqus-url="https://tonytonyjan.net/2012/06/25/tjslides-a-text-based-slides-generator/#disqus_thread"></span>留言</span>
     </footer>

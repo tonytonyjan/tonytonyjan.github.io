@@ -5,16 +5,124 @@
   <id>https://tonytonyjan.net</id>
   <link href="https://tonytonyjan.net"/>
   <link href="https://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2019-09-23T16:44:00+08:00</updated>
+  <updated>2020-01-12T06:44:00+00:00</updated>
   <author>
     <name>大兜</name>
   </author>
   <entry>
+    <title>Rails ActiveStorage 一次下載所有檔案</title>
+    <link rel="alternate" href="https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/"/>
+    <id>https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/</id>
+    <published>2020-01-12T06:44:00+00:00</published>
+    <updated>2020-01-12T09:17:58+00:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;自從 Rails 5.2 引進了 ActiveStorage 之後，似乎一直沒有看到什麼好方法可以一次下載所有的檔案。在 Rails 6 之後，多了 &lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 用以取代 &lt;code&gt;ActiveStorage::Downloading&lt;/code&gt;，即便如此，&lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 仍然只能處理一個檔案。無論是 Google 還是 Stack Overflow，皆尚未能看到任何簡潔的做法。&lt;/p&gt;
+
+</summary>
+    <content type="html">&lt;p&gt;自從 Rails 5.2 引進了 ActiveStorage 之後，似乎一直沒有看到什麼好方法可以一次下載所有的檔案。在 Rails 6 之後，多了 &lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 用以取代 &lt;code&gt;ActiveStorage::Downloading&lt;/code&gt;，即便如此，&lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 仍然只能處理一個檔案。無論是 Google 還是 Stack Overflow，皆尚未能看到任何簡潔的做法。&lt;/p&gt;
+
+
+
+&lt;h1 id="tldr"&gt;TLDR&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;def download_all(attachments, files = [], &amp;amp;block)
+  if attachments.empty?
+    yield files
+    return
+  end
+
+  attachments.first.open do |file|
+    files &amp;lt;&amp;lt; file
+    method(__method__)[attachments[1, attachments.length - 1], files, &amp;amp;block]
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;download_all(record.attachments) do |files|
+  pp files
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id="activestorageblobopen-有什麼限制"&gt;&lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 有什麼限制？&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 在處理單一檔案時沒什麼問題，具體使用方法如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;blob.open(tmpdir: "/path/to/tmp") do |file|
+ file.class # =&amp;gt; Tempfile
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;詳細資訊請參考&lt;a href="https://api.rubyonrails.org/v6.0.2.1/classes/ActiveStorage/Blob.html#method-i-open"&gt;官方 API 文件&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;其實作大概就是將檔案下載為暫存檔，而之所以不直接回傳 file 實體，改為用 block 來存取，是為了在 block 結束時自動將暫存檔刪掉，正如官方 API 文件所描述：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The tempfile is automatically closed and unlinked after the given block is executed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;所以使用者在調用該方法時可以不用擔心下載後的檔案是否最終會塞滿硬碟空間，內部的實作已有做妥善的處理。&lt;/p&gt;
+
+&lt;p&gt;但若我們想手動刪除暫存檔，辦得到嗎？一個常見的用例是將所有的檔案打包後壓縮成一個檔案，直覺的解法是迭代所有的檔案，逐一調用 &lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt;，但由於 block 結束後會將檔案刪掉導致無法存取。讓我們看一下&lt;a href="https://github.com/rails/rails/blob/f33d52c95217212cbacc8d5e44b5a8e3cdc6f5b3/activestorage/lib/active_storage/downloader.rb#L11-L17"&gt;原始碼&lt;/a&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;    def open(key, checksum:, name: "ActiveStorage-", tmpdir: nil)
+      open_tempfile(name, tmpdir) do |file|
+        download key, file
+        verify_integrity_of file, checksum: checksum
+        yield file
+      end
+    end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;由於 &lt;code&gt;ActiveStorage::Blob#open&lt;/code&gt; 最終會調用 &lt;code&gt;ActiveStorage::Downloader#open&lt;/code&gt;，而 &lt;code&gt;ActiveStorage::Downloader#open&lt;/code&gt; 卻僅支援 block 的寫法，導致無法將檔案迭代後再進行批次存取，因只要每次 block 一結束，該暫存檔就會被刪除。&lt;/p&gt;
+
+&lt;h1 id="解法-1---另外複製檔案"&gt;解法 1 - 另外複製檔案&lt;/h1&gt;
+
+&lt;p&gt;這個方法得記得手動把產生的檔案刪掉：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;files = []
+record.attachments.each do |attachment|
+  attachment.open do |file|
+    new_path = "/usr/src/app/#{attachment.filename}"
+    FileUtils.cp file.path, new_path
+    files &amp;lt;&amp;lt; new_path
+  end
+end
+pp files
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id="解法-2---迭代"&gt;解法 2 - 迭代&lt;/h1&gt;
+
+&lt;p&gt;這是筆者較常用的做法，暫存檔一樣會自動刪掉，但是必須在 block 內處理檔案，原始碼如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;def download_all(attachments, files = [], &amp;amp;block)
+  if attachments.empty?
+    yield files
+    return
+  end
+
+  attachments.first.open do |file|
+    files &amp;lt;&amp;lt; file
+    method(__method__)[attachments[1, attachments.length - 1], files, &amp;amp;block]
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;download_all(record.attachments) do |files|
+  pp files
+end
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
     <title>在 canvas 繪製 JPEG 圖片後保留 EXIF 資訊</title>
     <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
     <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
-    <published>2019-09-23T16:44:00+08:00</published>
-    <updated>2019-09-23T18:10:18+08:00</updated>
+    <published>2019-09-23T08:44:00+00:00</published>
+    <updated>2020-01-12T09:17:57+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -101,8 +209,8 @@
     <title>男生女生慼 - 適合兩對情侶的桌遊</title>
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
-    <published>2019-02-09T15:14:00+08:00</published>
-    <updated>2019-09-23T18:05:18+08:00</updated>
+    <published>2019-02-09T07:14:00+00:00</published>
+    <updated>2020-01-12T09:17:57+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -165,8 +273,8 @@
     <title>cron 如何忽略系統的環境變數</title>
     <link rel="alternate" href="https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/"/>
     <id>https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/</id>
-    <published>2018-07-08T14:57:00+08:00</published>
-    <updated>2018-09-14T09:20:41+08:00</updated>
+    <published>2018-07-08T06:57:00+00:00</published>
+    <updated>2020-01-12T09:17:57+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -325,8 +433,8 @@ $ grep -C 3 --color '"-c"' (find src -name do_command.c)
     <title>Ruby 自動載入器</title>
     <link rel="alternate" href="https://tonytonyjan.net/2018/04/22/ruby-autoloader/"/>
     <id>https://tonytonyjan.net/2018/04/22/ruby-autoloader/</id>
-    <published>2018-04-22T16:23:00+08:00</published>
-    <updated>2018-04-23T09:42:27+08:00</updated>
+    <published>2018-04-22T08:23:00+00:00</published>
+    <updated>2020-01-12T09:17:57+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -483,8 +591,8 @@ end
     <title>我的貓 - 黏黏和歲歲</title>
     <link rel="alternate" href="https://tonytonyjan.net/2016/12/29/my-cat/"/>
     <id>https://tonytonyjan.net/2016/12/29/my-cat/</id>
-    <published>2016-12-29T16:58:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
+    <published>2016-12-29T08:58:00+00:00</published>
+    <updated>2020-01-12T09:17:57+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -534,167 +642,6 @@ end
 &lt;hr /&gt;
 
 &lt;p&gt;養寵物真的事很棒的一件事，尤其是對獨居太久的人，加上如果工作性質又屬於 SOHO 的話，長久下來真的會生病，有個寵物陪在身邊，生活也比較不會憂鬱。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Ruby#open 知多少？</title>
-    <link rel="alternate" href="https://tonytonyjan.net/2016/06/15/comparison-of-ruby-open/"/>
-    <id>https://tonytonyjan.net/2016/06/15/comparison-of-ruby-open/</id>
-    <published>2016-06-15T00:12:00+08:00</published>
-    <updated>2018-04-22T16:49:27+08:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本文同步發表於 &lt;a href="https://blog.alphacamp.co/2016/06/30/ruby-open/"&gt;alphacamp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/io.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;先來個快問快答吧：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;如果現在要你使用 Ruby 去開檔，你會想到怎麼做？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;直覺是使用 &lt;code&gt;File.open&lt;/code&gt;，但想想 &lt;code&gt;File.new&lt;/code&gt; 似乎也可行，然後又發現不使用 &lt;code&gt;File&lt;/code&gt; 類別，直接用 &lt;code&gt;open&lt;/code&gt; 也能做到一樣的事。去查了 Ruby 文件結果...&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;本文同步發表於 &lt;a href="https://blog.alphacamp.co/2016/06/30/ruby-open/"&gt;alphacamp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/io.jpg" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;先來個快問快答吧：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;如果現在要你使用 Ruby 去開檔，你會想到怎麼做？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;直覺是使用 &lt;code&gt;File.open&lt;/code&gt;，但想想 &lt;code&gt;File.new&lt;/code&gt; 似乎也可行，然後又發現不使用 &lt;code&gt;File&lt;/code&gt; 類別，直接用 &lt;code&gt;open&lt;/code&gt; 也能做到一樣的事。去查了 Ruby 文件結果發現 &lt;code&gt;IO.open&lt;/code&gt; 和 &lt;code&gt;IO.new&lt;/code&gt; 也能做到同樣的操作。&lt;/p&gt;
-
-&lt;p&gt;如你所見，使用 Ruby 光是開個&lt;a href="https://zh.wikipedia.org/zh-tw/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"&gt;檔案描述符&lt;/a&gt;（以下簡稱 FD）就有數幾種方法，令人眼花撩亂，常看到的是有人用同一招打天下，卻一直沒有去了解其他的方法與其是用情境，有些可惜，而這篇文章將透過由下而上的方式，一一介紹、示範它們的差別和使用。&lt;/p&gt;
-
-&lt;h1 id="ionew"&gt;IO.new&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;IO&lt;/code&gt; 類別是 Ruby 對 FD 進行讀寫操作的一切基礎，我們可以用 &lt;code&gt;File&lt;/code&gt; 來操作是因為 &lt;code&gt;File&lt;/code&gt; 繼承自 &lt;code&gt;IO&lt;/code&gt;，只是稍嫌麻煩些。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;IO.new&lt;/code&gt; 的第一個參數必須是 FD，或在 Windows 下則稱 &lt;a href="https://zh.wikipedia.org/zh-hant/%E5%8F%A5%E6%9F%84"&gt;句柄&lt;/a&gt;，無論何者都只是一個數字。&lt;/p&gt;
-
-&lt;p&gt;如果你已知標準輸入與標準輸出的檔案描述符分別為 &lt;code&gt;0&lt;/code&gt; 和 &lt;code&gt;1&lt;/code&gt;，不妨實驗一下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;stdin = IO.new(0)
-stdout = IO.new(1)
-stdout.puts "what's your name?"
-name = stdin.gets.chomp!
-stdout.puts "hello, #{name}!"
-
-# what's your name?
-# tony
-# hello, tony!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;另外可用 &lt;code&gt;IO.sysopen&lt;/code&gt; 來取得檔案的 FD，這其實就是 &lt;code&gt;File&lt;/code&gt; 類別的做法，&lt;code&gt;File&lt;/code&gt; 只是隱藏此細節罷了：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;fd = IO.sysopen('file.txt', 'w') #=&amp;gt; 3
-io = IO.new(fd)
-io.puts 'hello!'
-io.close
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;另一個例子是透過 &lt;code&gt;/dev/tty&lt;/code&gt; 寫到終端：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;fd = IO.sysopen('/dev/tty', 'w')
-io = IO.new(fd,'w')
-puts 'Hello'
-io.puts 'World'
-io.close
-
-# Hello
-# World
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;筆者在這裡提醒要小心選擇正確的 tty 檔案，萬一不慎選到其他使用者的，執行上述程式碼就會在他人的終端畫面上印出一堆垃圾。&lt;/p&gt;
-
-&lt;p&gt;如果對 tty 的概念不熟悉，可以參考&lt;a href="http://tldp.org/HOWTO/Text-Terminal-HOWTO-7.html"&gt;這篇文章&lt;/a&gt;，在 UN*X 的世界裡面，所有裝置都是一個檔案，終端也是一個檔案，自然可以像檔案一樣對其進行讀寫。&lt;/p&gt;
-
-&lt;h1 id="ioopen"&gt;IO.open&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;IO.open&lt;/code&gt; 沒什麼新奇之處，它只是 &lt;code&gt;IO.new&lt;/code&gt; 加上 block 的擴充版本，若無使用 block 時，與 &lt;code&gt;IO.new&lt;/code&gt; 無異，最後會回傳 &lt;code&gt;IO&lt;/code&gt; 物件；但若與 block 使用，有兩個特點：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code&gt;IO&lt;/code&gt; 物件會在 block 結束時被自動關閉（意即不需要寫 &lt;code&gt;IO#close&lt;/code&gt;）。&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;IO.open&lt;/code&gt; 最後回傳的不再是 &lt;code&gt;IO&lt;/code&gt; 物件，而是 block 的最後執行結果。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id="iopopen"&gt;IO.popen&lt;/h1&gt;
-
-&lt;p&gt;有曾好奇過市面上的 CI 是怎麼做到即時顯示終端上的文字嗎？以 Travis CI 為例，下圖那塊黑色區塊中的內容是即時輸出的：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/travis.png" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;或者曾想過在自己的網站上執行外部的指令，並且即時呈現給使用者呢？若你有在 Ruby 中呼叫其他系統指令的經驗（例如 &lt;code&gt;ls&lt;/code&gt;、&lt;code&gt;cat&lt;/code&gt;、&lt;code&gt;bundle install&lt;/code&gt; 等等），那應該對 &lt;code&gt;system&lt;/code&gt;、&lt;code&gt;%x{}&lt;/code&gt; 或是 &lt;code&gt;``&lt;/code&gt; 不陌生：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;system 'date' # =&amp;gt; true, false or nil
-%x{date}      # =&amp;gt; the standard output of the running cmd
-`date`        # =&amp;gt; as above
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然而 &lt;code&gt;system&lt;/code&gt; 只根據指令執行結果成功與否回傳布林值，無法直接存取子程序輸出的結果；&lt;code&gt;%x{}&lt;/code&gt; 會以字串形式回傳結果，但必須等到子程序執行結束後才會回傳整個字串，無法即時監控子程序的標準輸出。&lt;/p&gt;
-
-&lt;p&gt;相較於 &lt;code&gt;%x{}&lt;/code&gt; 回傳完整的字串，&lt;code&gt;IO.popen&lt;/code&gt; 則是回傳 &lt;code&gt;IO&lt;/code&gt; 物件。為了比較出差異，這裡就拿 &lt;code&gt;ping&lt;/code&gt; 指令為例，因為該指令會不斷在終端畫面上輸出訊息，直到使用者手動停止，如果使用 &lt;code&gt;%x{}&lt;/code&gt; 的話，Ruby 程式將會卡在該處，且因準備要回傳的字串越來越長，最後導致記憶體不夠用或程式會卡到海枯石爛。&lt;/p&gt;
-
-&lt;p&gt;相較下操作 &lt;code&gt;IO&lt;/code&gt; 物件就可以一次讀一行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;# puts %x{ping www.alphacamp.co} # don't do this
-io = IO.popen('ping www.alphacamp.co')
-while line = io.gets
-  print line
-end
-# PING www.alphacamp.co (198.41.206.122): 56 data bytes
-# 64 bytes from 198.41.206.122: icmp_seq=0 ttl=58 time=2.794 ms
-# 64 bytes from 198.41.206.122: icmp_seq=1 ttl=58 time=4.876 ms
-# 64 bytes from 198.41.206.122: icmp_seq=2 ttl=58 time=7.081 ms
-# ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;當然這還離真正做出一個在網頁上呈現終端執行畫面的功能還很遠，例如上述的程式碼卡在一個無窮迴圈裡面，&lt;br /&gt;
-你可能會想針對 IO 阻塞問題做出一些改善，像是配合 &lt;code&gt;IO.select&lt;/code&gt; 或是 &lt;code&gt;IO#read_nonblock&lt;/code&gt; 等，但純屬延伸議題，不在本章範圍，有機會筆者會在另一篇章中分享怎麼做到 :)&lt;/p&gt;
-
-&lt;h1 id="filenew-與-fileopen"&gt;File.new 與 File.open&lt;/h1&gt;
-
-&lt;p&gt;這兩個方方法就是大家耳熟能詳的開檔方案了，它們和 &lt;code&gt;IO.new&lt;/code&gt; 與 &lt;code&gt;IO.open&lt;/code&gt; 幾乎一樣，只差在覆寫了 &lt;code&gt;initialize&lt;/code&gt; 方法，使其接受的參數不再是 FD 而是檔案的路徑字串。&lt;code&gt;File.new&lt;/code&gt; 回傳值也和 &lt;code&gt;IO.new&lt;/code&gt; 一樣是 &lt;code&gt;IO&lt;/code&gt; 物件；在 &lt;code&gt;File.open&lt;/code&gt; 與 block 同時使用的情況下也和 &lt;code&gt;IO.open&lt;/code&gt; 一樣，會自動關檔，且回傳 block 的最後執行結果。&lt;/p&gt;
-
-&lt;h1 id="kernelopen"&gt;Kernel.open&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;Kernel.open&lt;/code&gt; 大概是最萬用的方法了，留在最後講是因為它是 &lt;code&gt;IO.popen&lt;/code&gt; 與 &lt;code&gt;File.open&lt;/code&gt; 的合體，除此也接受擁有 &lt;code&gt;#to_open&lt;/code&gt; 方法的物件。&lt;/p&gt;
-
-&lt;p&gt;當傳入一個物件給 &lt;code&gt;Kernel.open&lt;/code&gt; 時，處理的優先續如下：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;檢查該物件是否有 &lt;code&gt;#to_open&lt;/code&gt; 方法，有則直接呼叫以取得 &lt;code&gt;IO&lt;/code&gt; 物件。&lt;/li&gt;
-  &lt;li&gt;如果物件是字串且開頭是 &lt;code&gt;|&lt;/code&gt;，則去掉 &lt;code&gt;|&lt;/code&gt;，剩下丟給 &lt;code&gt;IO.popen&lt;/code&gt; 處理。&lt;/li&gt;
-  &lt;li&gt;最後交給 &lt;code&gt;File.open&lt;/code&gt; 處理&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="to_open"&gt;to_open&lt;/h2&gt;
-
-&lt;p&gt;關於 &lt;code&gt;#to_open&lt;/code&gt; Ruby 文件上沒有一處提及，只記載在 Ruby 原始碼中。實作的時候必要回傳 &lt;code&gt;IO&lt;/code&gt; 物件即可：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;class Foo
-  def to_open
-    puts 'Foo#to_open is here'
-    File.open('test.txt') # =&amp;gt; IO instance
-  end
-end
-
-open Foo.new do |io|
-  # ...
-  # io will be closed automatically
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id="該用哪個"&gt;該用哪個？&lt;/h1&gt;
-
-&lt;p&gt;這沒有什麼強制的規範，畢竟 Ruby 是一個自由的程式語言，比較接近 Perl，和一板一眼的 Python 不太一樣（Only one way to do it）。不過筆者建議大原則是盡量使用易讀易寫的 API 來完成工作，如果有細節需要處理再用其他的方法。例如一般開檔就使用 &lt;code&gt;File.open&lt;/code&gt; 或是 &lt;code&gt;Kernel.open&lt;/code&gt; 即可，需要存取 FD 則改用 &lt;code&gt;IO.open&lt;/code&gt;，若要手動關檔再考慮 &lt;code&gt;File.new&lt;/code&gt; 或 &lt;code&gt;IO.new&lt;/code&gt;。另外也不要特別使用 &lt;code&gt;Kernel.open&lt;/code&gt; 調用 &lt;code&gt;IO.popen&lt;/code&gt; 的奇怪語法（&lt;code&gt;|&lt;/code&gt;），這會降低程式碼的可讀性，不符合易讀易寫。像 &lt;code&gt;IO.popen('date')&lt;/code&gt; 就比 &lt;code&gt;Kernel.open('|date')&lt;/code&gt; 好懂多了。&lt;/p&gt;
-
-&lt;p&gt;另一個原則是程式碼的一致性，如果團隊開檔案都使用 &lt;code&gt;File.open&lt;/code&gt;，那就盡量避免特立獨行使用 &lt;code&gt;Kernel.open&lt;/code&gt;，反之亦然。&lt;/p&gt;
-
 </content>
   </entry>
 </feed>
