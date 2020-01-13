@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
       - uses: actions/cache@v1
         id: cache
         with:
@@ -19,16 +23,19 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           bundle install --jobs 4 --retry 3 --path vendor/bundle
-          - name: Install Dependencies
       - name: checkout build
         uses: actions/checkout@v2
         with:
+          token: ${{ secrets.GH_PAT }}
           ref: master
           path: build
-      - name: build
+      - name: build and deploy
         run: |
+          bundle config --local path vendor/bundle
           bundle exec middleman build
           cd build
+          git config user.email "tonytonyjan@gmail.com"
+          git config user.name "Jian Weihang"
           git add -A
           git commit -m "$(date)"
           git push
