@@ -14,7 +14,7 @@
     <link rel="alternate" href="https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/"/>
     <id>https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/</id>
     <published>2020-01-12T06:44:00+00:00</published>
-    <updated>2020-06-02T14:33:29+00:00</updated>
+    <updated>2020-06-23T09:07:00+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -122,7 +122,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
     <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
     <published>2019-09-23T08:44:00+00:00</published>
-    <updated>2020-06-02T14:33:29+00:00</updated>
+    <updated>2020-06-23T09:07:00+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -210,7 +210,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
     <published>2019-02-09T07:14:00+00:00</published>
-    <updated>2020-06-02T14:33:29+00:00</updated>
+    <updated>2020-06-23T09:07:00+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -274,7 +274,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/"/>
     <id>https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/</id>
     <published>2018-07-08T06:57:00+00:00</published>
-    <updated>2020-06-02T14:33:29+00:00</updated>
+    <updated>2020-06-23T09:07:00+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -434,7 +434,7 @@ $ grep -C 3 --color '"-c"' (find src -name do_command.c)
     <link rel="alternate" href="https://tonytonyjan.net/2018/04/22/ruby-autoloader/"/>
     <id>https://tonytonyjan.net/2018/04/22/ruby-autoloader/</id>
     <published>2018-04-22T08:23:00+00:00</published>
-    <updated>2020-06-02T14:33:29+00:00</updated>
+    <updated>2020-06-23T09:07:00+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -592,7 +592,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2016/12/29/my-cat/"/>
     <id>https://tonytonyjan.net/2016/12/29/my-cat/</id>
     <published>2016-12-29T08:58:00+00:00</published>
-    <updated>2020-06-02T14:33:29+00:00</updated>
+    <updated>2020-06-23T09:07:00+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
