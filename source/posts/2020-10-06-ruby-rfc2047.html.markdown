@@ -1,0 +1,120 @@
+---
+title: 使用 Ruby 實作 RFC 2047
+date: 2020-10-06 12:58 +0800
+tags: [Ruby, Rails, RFC 2047, RFC 822]
+---
+
+最近踩到一個 Rails Action Mailer/Mailbox 的編碼陷阱，跟大家分享。由於 Rails 的 Action Mailer 和 Action Mailbox 功能是基於 [mikel/mail][mikel/mail] 實作而成，意謂著 [mikel/mail][mikel/mail] 裡頭存在的 bug，都一樣會出現在 Rails 裡面。
+
+[其中有個編碼問題][issue 1402]困擾著非英語使用者：
+
+```rb
+Mail::Encodings.value_decode '=?utf-8?B?MjTmmYLplpPjgIHjg4vjg6Xjg7zjgrnjgajnlarntYTjgpLo?= =?utf-8?B?i7Hoqp7jgafkuJbnlYzjgavnmbrkv6HjgZfjgabjgYTjgb7?='
+# => "24時間、ニュースと番組を���語で世界に発信していま"
+```
+
+可見 [mikel/mail][mikel/mail] 對 [RFC 2047][rfc 2047] 的解碼沒有處理好，這會直接影響到 Action Mailbox 在讀取信件欄位時的正確性，例如無法正確顯示信件標題和收件人名稱。
+
+[另一個問題是 `MS950` 編碼][issue 1406]，台灣仍然有許多政府單位的信件採用 `MS950` 編碼：
+
+```rb
+Mail::Encodings.value_decode '=?MS950?B?rue26aWrrEapssS1ue6nvaXms3G5SLNX?= =?MS950?B?wMvBfLFNsM/Ay8F8pEirSL1jpmGnfcXn?= =?MS950?B?w9KhXaa5q0il86ywqHSyzqbbsMq1b7Bl?= =?MS950?B?oUG90MJJv++kVaTos3O1sqFBpMWmXrRfKQ==?='
+# => "�������F�����������q�H�W���|�M�����|�H�H�c�a�}�����]���H�����t�������o�e�A���I���U���s���A���^�_)"
+```
+
+實務上 `MS950` 和 `CP950` 被視為相同的編碼，雖然但筆者找不到相關證據，但現今許多執行環境如 jRuby、Python 等，已經把 `MS950` 視為 `CP950` 的別名。所以上述代碼只要將兩者名稱替換，就能正確解碼：
+
+```rb
+Mail::Encodings.value_decode '=?MS950?B?rue26aWrrEapssS1ue6nvaXms3G5SLNX?= =?MS950?B?wMvBfLFNsM/Ay8F8pEirSL1jpmGnfcXn?= =?MS950?B?w9KhXaa5q0il86ywqHSyzqbbsMq1b7Bl?= =?MS950?B?oUG90MJJv++kVaTos3O1sqFBpMWmXrRfKQ==?='.gsub('MS950', 'CP950')
+# => "桃園市政府警察局交通違規檢舉專區檢舉人信箱地址驗證（此信件為系統自動發送，請點選下方連結，勿回復)"
+```
+
+不過而這個問題比較像是 CRuby 要處理，而非 [mikel/mail][mikel/mail] 要解決的。雖然可以在 [mikel/mail][mikel/mail] 繞路做別名處理，但原作者似乎鮮少在維護這個 gem 了。此外要在 CRuby 提交修補也不知道要等到何時。
+
+ 好在 [RFC 2047][rfc 2047] 實作難度不高，且 [mikel/mail][mikel/mail] 的 [RFC 822][rfc 822] 剖析器是沒問題的，所以需要的程式碼也不多。
+ 
+ 使用範例：
+
+ ```rb
+ Rfc2047.decode_field inbound_mail['subject'].value
+ ```
+ 
+實作如下：
+
+```rb
+# frozen_string_literal: true
+
+# Copyright (c) 2020 Jian Weihang <tonytonyjan@gmail.com>
+
+module Rfc2047
+  TOKEN = /[\041\043-\047\052\053\055\060-\071\101-\132\134\136\137\141-\176]+/.freeze
+  ENCODED_TEXT = /[\041-\076\100-\176]+/.freeze
+  ENCODED_WORD = /=\?(?<charset>#{TOKEN})\?(?<encoding>[QBqb])\?(?<encoded_text>#{ENCODED_TEXT})\?=/.freeze
+  ENCODED_WORD_SEQUENCE = /#{ENCODED_WORD}(?: #{ENCODED_WORD})*/.freeze
+
+  class << self
+    def decode_field(input)
+      return input unless input.match?(ENCODED_WORD)
+
+      input.gsub(ENCODED_WORD_SEQUENCE) do |match|
+        match.split(' ').map! { decode(_1) }.join.encode(Encoding::UTF_8)
+      end
+    end
+
+    def encode(input)
+      "=?#{input.encoding}?B?#{[input].pack('m0')}?="
+    end
+
+    def decode(input)
+      match_data = ENCODED_WORD.match(input)
+      raise ArgumentError if match_data.nil?
+
+      charset, encoding, encoded_text = match_data.captures
+      charset = 'CP950' if charset == 'MS950'
+      decoded =
+        case encoding
+        when 'Q', 'q' then encoded_text.unpack1('M')
+        when 'B', 'b' then encoded_text.unpack1('m')
+        end
+      decoded.force_encoding(charset)
+    end
+  end
+end
+```
+
+```rb
+require 'rfc2047'
+require 'minitest/autorun'
+
+class Rfc2047Test < Minitest::Test
+  def test_decode
+    assert_equal 'this is some text', Rfc2047.decode('=?iso-8859-1?q?this=20is=20some=20text?=')
+    assert_equal '測試', Rfc2047.decode('=?UTF-8?B?5ris6Kmm?=')
+  end
+
+  def test_encode
+    assert_equal '=?UTF-8?B?5ris6Kmm?=', Rfc2047.encode('測試')
+  end
+
+  def test_decode_field
+    assert_equal('hello', Rfc2047.decode_field('hello'))
+    assert_equal('"卡牌屋正版中文桌上遊戲專賣店" <boardgamehut@gmail.com>', Rfc2047.decode_field('"=?BIG5?B?pWS1UKvOpb+qqaSkpOWu4KRXuUPAuLFNveapsQ==?=" <boardgamehut@gmail.com>'))
+    assert_equal(
+      '中央氣象局氣象資料開放平台訊息通知',
+      Rfc2047.decode_field(
+        '=?UTF-8?Q?=E4=B8=AD=E5=A4=AE=E6=B0=A3=E8=B1=A1=E5=B1=80=E6=B0=A3?= =?UTF-8?Q?=E8=B1=A1=E8=B3=87=E6=96=99=E9=96=8B=E6=94=BE=E5=B9=B3=E5=8F=B0?= =?UTF-8?Q?=E8=A8=8A=E6=81=AF=E9=80=9A=E7=9F=A5?='
+      )
+    )
+    assert_equal(
+      '桃園市政府警察局交通違規檢舉專區檢舉人信箱地址驗證（此信件為系統自動發送，請點選下方連結，勿回復)',
+      Rfc2047.decode_field('=?MS950?B?rue26aWrrEapssS1ue6nvaXms3G5SLNX?= =?MS950?B?wMvBfLFNsM/Ay8F8pEirSL1jpmGnfcXn?= =?MS950?B?w9KhXaa5q0il86ywqHSyzqbbsMq1b7Bl?= =?MS950?B?oUG90MJJv++kVaTos3O1sqFBpMWmXrRfKQ==?=')
+    )
+  end
+end
+```
+
+[mikel/mail]: https://github.com/mikel/mail
+[rfc 2047]: https://tools.ietf.org/html/rfc2047
+[rfc 822]: https://tools.ietf.org/html/rfc822
+[issue 1402]: https://github.com/mikel/mail/issues/1402
+[issue 1406]: https://github.com/mikel/mail/issues/1406
