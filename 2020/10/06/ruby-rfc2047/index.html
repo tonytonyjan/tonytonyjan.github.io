@@ -7,21 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="大兜">
   <meta property="og:site_name" content="不歸錄">
-  <meta property="og:url" content="https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/">
-  <title>2020 要幹嘛？做 TJDict 2.0！ - 不歸錄</title>
-<meta name="description" content=" 筆者今年因為肺炎疫情緣故失業，本來想說終於有時間可以做許多想做的事：看看書、學日文、作曲玩動物森友會等等，不料突然收到一封 TJDict 使用者的來信說 Yahoo 字典壞掉了。心想 TJDict 開發至今已經 8 年，其中後 4 年完全沒有經手這個專案，藉機看一下 TJDict 在 Google Web Store 上的使用人數，發現至今仍然每週有約 20,000 人的使用者，頓時涕泗縱橫。身為一個碼農，知道自己的軟體對這個世界有所貢獻實在倍感光榮。 為了消耗因為失業產生的大量時間，TJDict 2.0 就誕生了。 ">
-<meta name="keywords" content="TJDict, Chrome, JavaScript, Firefox, Edge, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
-<meta property="og:title" content="2020 要幹嘛？做 TJDict 2.0！ - 不歸錄" />
-<meta property="og:description" content=" 筆者今年因為肺炎疫情緣故失業，本來想說終於有時間可以做許多想做的事：看看書、學日文、作曲玩動物森友會等等，不料突然收到一封 TJDict 使用者的來信說 Yahoo 字典壞掉了。心想 TJDict 開發至今已經 8 年，其中後 4 年完全沒有經手這個專案，藉機看一下 TJDict 在 Google Web Store 上的使用人數，發現至今仍然每週有約 20,000 人的使用者，頓時涕泗縱橫。身為一個碼農，知道自己的軟體對這個世界有所貢獻實在倍感光榮。 為了消耗因為失業產生的大量時間，TJDict 2.0 就誕生了。 " />
+  <meta property="og:url" content="https://tonytonyjan.net/2020/10/06/ruby-rfc2047/">
+  <title>使用 Ruby 實作 RFC 2047 - 不歸錄</title>
+<meta name="description" content="最近踩到一個 Rails Action Mailer/Mailbox 的編碼陷阱，跟大家分享。由於 Rails 的 Action Mailer 和 Action Mailbox 功能是基於 mikel/mail 實作而成，意謂著 mikel/mail 裡頭存在的 bug，都一樣會出現在 Rails...">
+<meta name="keywords" content="Ruby, Rails, RFC 2047, RFC 822, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="使用 Ruby 實作 RFC 2047 - 不歸錄" />
+<meta property="og:description" content="最近踩到一個 Rails Action Mailer/Mailbox 的編碼陷阱，跟大家分享。由於 Rails 的 Action Mailer 和 Action Mailbox 功能是基於 mikel/mail 實作而成，意謂著 mikel/mail 裡頭存在的 bug，都一樣會出現在 Rails..." />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://tonytonyjan.net/images/tjdict.png" />
-<meta property="article:tag" content="TJDict" />
-<meta property="article:tag" content="Chrome" />
-<meta property="article:tag" content="JavaScript" />
-<meta property="article:tag" content="Firefox" />
-<meta property="article:tag" content="Edge" />
+<meta property="og:image" content="https://tonytonyjan.net/images/site/avatar_big.png" />
+<meta property="article:tag" content="Ruby" />
+<meta property="article:tag" content="Rails" />
+<meta property="article:tag" content="RFC 2047" />
+<meta property="article:tag" content="RFC 822" />
 <meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
-<meta property="article:published_time" content="2020-07-01T01:43:00+08:00" />
+<meta property="article:published_time" content="2020-10-06T12:58:00+08:00" />
 
   <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
   <!-- FAV and TOUCH ICONS -->
@@ -93,7 +92,7 @@
   <article class="post type-post format-standard hentry">
     <!-- .entry-header -->
     <header class="entry-header">
-      <h1 class="entry-title">2020 要幹嘛？做 TJDict 2.0！</h1>
+      <h1 class="entry-title">使用 Ruby 實作 RFC 2047</h1>
     </header>
     <!-- .entry-header -->
     <!-- .entry-meta -->
@@ -104,82 +103,125 @@
       </span>
       <span class="posted-on">
         發表於
-        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2020-07-01T01:43:00+08:00">2020 年 07 月 01 日</time></a>
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2020-10-06T12:58:00+08:00">2020 年 10 月 06 日</time></a>
       </span>
     </div>
     <!-- .entry-meta -->
     <!-- .entry-content -->
     <div class="entry-content">
-      <p><img src="/images/tjdict.png" alt="TJDict" /></p>
+      <p>最近踩到一個 Rails Action Mailer/Mailbox 的編碼陷阱，跟大家分享。由於 Rails 的 Action Mailer 和 Action Mailbox 功能是基於 <a href="https://github.com/mikel/mail">mikel/mail</a> 實作而成，意謂著 <a href="https://github.com/mikel/mail">mikel/mail</a> 裡頭存在的 bug，都一樣會出現在 Rails 裡面。</p>
 
-<p>筆者今年因為肺炎疫情緣故失業，本來想說終於有時間可以做許多想做的事：看看書、學日文、作曲玩動物森友會等等，不料突然收到一封 TJDict 使用者的來信說 Yahoo 字典壞掉了。心想 TJDict 開發至今已經 8 年，其中後 4 年完全沒有經手這個專案，藉機看一下 <a href="https://chrome.google.com/webstore/detail/caafmojgjlbflohillejdmnghkpcjjpp">TJDict 在 Google Web Store</a> 上的使用人數，發現至今仍然每週有約 20,000 人的使用者，頓時涕泗縱橫。身為一個碼農，知道自己的軟體對這個世界有所貢獻實在倍感光榮。</p>
+<p><a href="https://github.com/mikel/mail/issues/1402">其中有個編碼問題</a>困擾著非英語使用者：</p>
 
-<p>為了消耗因為失業產生的大量時間，TJDict 2.0 就誕生了。</p>
+<pre><code class="language-rb">Mail::Encodings.value_decode '=?utf-8?B?MjTmmYLplpPjgIHjg4vjg6Xjg7zjgrnjgajnlarntYTjgpLo?= =?utf-8?B?i7Hoqp7jgafkuJbnlYzjgavnmbrkv6HjgZfjgabjgYTjgb7?='
+# =&gt; "24時間、ニュースと番組を���語で世界に発信していま"
+</code></pre>
+
+<p>可見 <a href="https://github.com/mikel/mail">mikel/mail</a> 對 <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a> 的解碼沒有處理好，這會直接影響到 Action Mailbox 在讀取信件欄位時的正確性，例如無法正確顯示信件標題和收件人名稱。</p>
+
+<p><a href="https://github.com/mikel/mail/issues/1406">另一個問題是 <code>MS950</code> 編碼</a>，台灣仍然有許多政府單位的信件採用 <code>MS950</code> 編碼：</p>
+
+<pre><code class="language-rb">Mail::Encodings.value_decode '=?MS950?B?rue26aWrrEapssS1ue6nvaXms3G5SLNX?= =?MS950?B?wMvBfLFNsM/Ay8F8pEirSL1jpmGnfcXn?= =?MS950?B?w9KhXaa5q0il86ywqHSyzqbbsMq1b7Bl?= =?MS950?B?oUG90MJJv++kVaTos3O1sqFBpMWmXrRfKQ==?='
+# =&gt; "�������F�����������q�H�W���|�M�����|�H�H�c�a�}�����]���H�����t�������o�e�A���I���U���s���A���^�_)"
+</code></pre>
+
+<p>實務上 <code>MS950</code> 和 <code>CP950</code> 被視為相同的編碼，雖然但筆者找不到相關證據，但現今許多執行環境如 jRuby、Python 等，已經把 <code>MS950</code> 視為 <code>CP950</code> 的別名。所以上述代碼只要將兩者名稱替換，就能正確解碼：</p>
+
+<pre><code class="language-rb">Mail::Encodings.value_decode '=?MS950?B?rue26aWrrEapssS1ue6nvaXms3G5SLNX?= =?MS950?B?wMvBfLFNsM/Ay8F8pEirSL1jpmGnfcXn?= =?MS950?B?w9KhXaa5q0il86ywqHSyzqbbsMq1b7Bl?= =?MS950?B?oUG90MJJv++kVaTos3O1sqFBpMWmXrRfKQ==?='.gsub('MS950', 'CP950')
+# =&gt; "桃園市政府警察局交通違規檢舉專區檢舉人信箱地址驗證（此信件為系統自動發送，請點選下方連結，勿回復)"
+</code></pre>
+
+<p>不過而這個問題比較像是 CRuby 要處理，而非 <a href="https://github.com/mikel/mail">mikel/mail</a> 要解決的。雖然可以在 <a href="https://github.com/mikel/mail">mikel/mail</a> 繞路做別名處理，但原作者似乎鮮少在維護這個 gem 了。此外要在 CRuby 提交修補也不知道要等到何時。</p>
+
+<p>好在 <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a> 實作難度不高，且 <a href="https://github.com/mikel/mail">mikel/mail</a> 的 <a href="https://tools.ietf.org/html/rfc822">RFC 822</a> 剖析器是沒問題的，所以需要的程式碼也不多。</p>
+
+<p>使用範例：</p>
+
+<pre><code class="language-rb"> Rfc2047.decode_field inbound_mail['subject'].value
+</code></pre>
+
+<p>實作如下：</p>
+
+<pre><code class="language-rb"># frozen_string_literal: true
+
+# Copyright (c) 2020 Jian Weihang &lt;tonytonyjan@gmail.com&gt;
+
+module Rfc2047
+  TOKEN = /[\041\043-\047\052\053\055\060-\071\101-\132\134\136\137\141-\176]+/.freeze
+  ENCODED_TEXT = /[\041-\076\100-\176]+/.freeze
+  ENCODED_WORD = /=\?(?&lt;charset&gt;#{TOKEN})\?(?&lt;encoding&gt;[QBqb])\?(?&lt;encoded_text&gt;#{ENCODED_TEXT})\?=/.freeze
+  ENCODED_WORD_SEQUENCE = /#{ENCODED_WORD}(?: #{ENCODED_WORD})*/.freeze
+
+  class &lt;&lt; self
+    def decode_field(input)
+      return input unless input.match?(ENCODED_WORD)
+
+      input.gsub(ENCODED_WORD_SEQUENCE) do |match|
+        match.split(' ').map! { decode(_1) }.join.encode(Encoding::UTF_8)
+      end
+    end
+
+    def encode(input)
+      "=?#{input.encoding}?B?#{[input].pack('m0')}?="
+    end
+
+    def decode(input)
+      match_data = ENCODED_WORD.match(input)
+      raise ArgumentError if match_data.nil?
+
+      charset, encoding, encoded_text = match_data.captures
+      charset = 'CP950' if charset == 'MS950'
+      decoded =
+        case encoding
+        when 'Q', 'q' then encoded_text.unpack1('M')
+        when 'B', 'b' then encoded_text.unpack1('m')
+        end
+      decoded.force_encoding(charset)
+    end
+  end
+end
+</code></pre>
+
+<pre><code class="language-rb">require 'rfc2047'
+require 'minitest/autorun'
+
+class Rfc2047Test &lt; Minitest::Test
+  def test_decode
+    assert_equal 'this is some text', Rfc2047.decode('=?iso-8859-1?q?this=20is=20some=20text?=')
+    assert_equal '測試', Rfc2047.decode('=?UTF-8?B?5ris6Kmm?=')
+  end
+
+  def test_encode
+    assert_equal '=?UTF-8?B?5ris6Kmm?=', Rfc2047.encode('測試')
+  end
+
+  def test_decode_field
+    assert_equal('hello', Rfc2047.decode_field('hello'))
+    assert_equal('"卡牌屋正版中文桌上遊戲專賣店" &lt;boardgamehut@gmail.com&gt;', Rfc2047.decode_field('"=?BIG5?B?pWS1UKvOpb+qqaSkpOWu4KRXuUPAuLFNveapsQ==?=" &lt;boardgamehut@gmail.com&gt;'))
+    assert_equal(
+      '中央氣象局氣象資料開放平台訊息通知',
+      Rfc2047.decode_field(
+        '=?UTF-8?Q?=E4=B8=AD=E5=A4=AE=E6=B0=A3=E8=B1=A1=E5=B1=80=E6=B0=A3?= =?UTF-8?Q?=E8=B1=A1=E8=B3=87=E6=96=99=E9=96=8B=E6=94=BE=E5=B9=B3=E5=8F=B0?= =?UTF-8?Q?=E8=A8=8A=E6=81=AF=E9=80=9A=E7=9F=A5?='
+      )
+    )
+    assert_equal(
+      '桃園市政府警察局交通違規檢舉專區檢舉人信箱地址驗證（此信件為系統自動發送，請點選下方連結，勿回復)',
+      Rfc2047.decode_field('=?MS950?B?rue26aWrrEapssS1ue6nvaXms3G5SLNX?= =?MS950?B?wMvBfLFNsM/Ay8F8pEirSL1jpmGnfcXn?= =?MS950?B?w9KhXaa5q0il86ywqHSyzqbbsMq1b7Bl?= =?MS950?B?oUG90MJJv++kVaTos3O1sqFBpMWmXrRfKQ==?=')
+    )
+  end
+end
+</code></pre>
 
 
-
-<h2 id="tjdict-20-做了什麼改變">TJDict 2.0 做了什麼改變？</h2>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CCDerTD8AsE?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-<p>TJDict 1.0 使用的是 2012 當時的技術，那時並沒有 npm 或 bower、瀏覽器沒有無頭模式、<a href="https://browserext.github.io/browserext/">Browser Extensions</a> 標準尚未成熟或被瀏覽器實作等，那時開發比現在辛苦很多。</p>
-
-<p>而 TJDict 2.0 使用了 2020 能找到的最新技術：</p>
-
-<ul>
-  <li>將 Bootstrap 更新到最新版</li>
-  <li>使用 npm 管理套件，不用自己實作套件版本依存系統</li>
-  <li>使用 React 渲染介面，跟 JS 檔案裡醜陋的 HTML 說再見。</li>
-  <li>使用 Storybook 管理 React 元件</li>
-  <li>使用 webpack 打包程式碼</li>
-  <li>使用 Chrome headless 執行測試，終於可以不用在桌面環境開瀏覽器跑測試</li>
-  <li>使用 GitHub Actions 每天自動測試 parser 是否運作正常，不用等到網友提報才知字典壞掉</li>
-  <li>Browser Extensions 標準成熟，輕鬆實現跨瀏覽器</li>
-</ul>
-
-<p>以上看不懂？沒關係，簡單的說意思就是：</p>
-
-<p><strong style="font-size: 300%">2 &gt; 1</strong></p>
-
-<p>沒錯，2 大於 1，也就是 2 是 1 的兩倍，意思就是 TJDict 2.0 比 1.0 更好、更快、更穩，你們用用看就知道。</p>
-
-<h2 id="tjdict-10-去哪了">TJDict 1.0 去哪了？</h2>
-
-<p>雖然已經沒有維護，加上筆者擅長寫髒碼，閱讀的人可能會產生幻覺或思覺失調症，但一想到說不定哪天誰有這方面的需求也不一定，以防萬一，所以筆者把<a href="https://github.com/tonytonyjan/TJDict">原始碼公開在這了</a>。</p>
-
-<p>至於 2.0 的原始碼，未來可能也會公開，只是現在還不是時候。</p>
-
-<h2 id="官網成立">官網成立</h2>
-
-<p>官網就在 <a href="https://tjdict.com">tjdict.com</a>，建議大家如果還沒安裝的話，趕快點進去下載並安裝，因為 TJDict 真的是一款很棒的軟體，沒用過的話是你們的筍絲。</p>
-
-<h2 id="下一步">下一步</h2>
-
-<p>其實有蠻多東西都在願望清單裡面的，像歷史紀錄、透過歷史紀錄自動產生生字簿、單字卡等等，也有把 TJDict 做成桌面軟體而非瀏覽器外掛的打算。</p>
-
-<p>除此之外有擴編團隊的想法，像工程師、設計師等，但更重要的是找到一個可以包養筆者、讓筆者一邊快樂寫程式一邊快樂長大的乾爹，目前這個職位尚有空缺（<del>歡迎來應徵</del>）。</p>
-
-<h2 id="感性一下">感性一下</h2>
-
-<p>其實身為一個小碼農，不敢奢求能做到什麼改變世界的創舉，但筆者小小的夢想一直是能夠開發出對這個世界有幫助的軟體，所以真的很感謝每一位使用 TJDict 的人，今天 TJDict 有你們繼續使用，就是筆者最大的開發動力：）</p>
-
-
-      <!-- .project-action -->
-      <div class="project-action">
-        <a href="https://tjdict.com" class="button button-icon big blue"><i class="fa fa-cloud-download"></i>DOWNLOAD</a>
-        
-        
-      </div>
-      <!-- .project-action -->
+      
     </div>
     <!-- .entry-meta -->
     <footer class="entry-meta">
       <h3>標籤</h3>
-        <a href="/tags/tjdict/" rel="tag">TJDict</a>
-        <a href="/tags/chrome/" rel="tag">Chrome</a>
-        <a href="/tags/javascript/" rel="tag">JavaScript</a>
-        <a href="/tags/firefox/" rel="tag">Firefox</a>
-        <a href="/tags/edge/" rel="tag">Edge</a>
+        <a href="/tags/ruby/" rel="tag">Ruby</a>
+        <a href="/tags/rails/" rel="tag">Rails</a>
+        <a href="/tags/rfc-2047/" rel="tag">RFC 2047</a>
+        <a href="/tags/rfc-822/" rel="tag">RFC 822</a>
     </footer>
     <!-- .entry-meta -->
   </article>
@@ -208,12 +250,9 @@
   <nav class="nav-single row">
     <div class="nav-previous col-sm-6">
     <h4>上一篇</h4>
-    <a href="/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/" rel="prev"><span class="meta-nav">←</span> Rails ActiveStorage 一次下載所有檔案</a>
+    <a href="/2020/07/01/released-tjdict-v2-0-in-2020/" rel="prev"><span class="meta-nav">←</span> 2020 要幹嘛？做 TJDict 2.0！</a>
   </div>
-  <div class="nav-next col-sm-6">
-  <h4>下一篇</h4>
-  <a href="/2020/10/06/ruby-rfc2047/" rel="next">使用 Ruby 實作 RFC 2047 <span class="meta-nav">→</span></a>
-</div>
+  
 </nav>
 <!-- .nav-single -->
 <!-- #comments -->
