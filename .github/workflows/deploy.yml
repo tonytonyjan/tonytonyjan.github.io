@@ -8,21 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.x
-      - uses: actions/cache@v1
-        id: cache
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
-      - name: bundle install
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          bundle install --jobs 4 --retry 3 --path vendor/bundle
+          ruby-version: 2.7
+          bundler-cache: true
+      - run: bundle install --jobs 4 --retry 3
       - name: checkout build
         uses: actions/checkout@v2
         with:
