@@ -14,16 +14,16 @@
     <link rel="alternate" href="https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/"/>
     <id>https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/</id>
     <published>2021-10-16T04:58:00+00:00</published>
-    <updated>2021-10-16T07:16:18+00:00</updated>
+    <updated>2021-10-16T07:25:21+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
-    <summary type="html">&lt;p&gt;&lt;img src="/images/no-dotenv.jpg" alt="no-dotenv"&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src="/images/you-do-not-need-dotenv.jpg" alt="You don't need dotenv"&gt;&lt;/p&gt;
 
 &lt;p&gt;還記得筆者第一次看到 &lt;code&gt;dotenv&lt;/code&gt; 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 &lt;a href="https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/"&gt;&lt;code&gt;left-pad&lt;/code&gt;&lt;/a&gt; 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。&lt;/p&gt;
 
 </summary>
-    <content type="html">&lt;p&gt;&lt;img src="/images/no-dotenv.jpg" alt="no-dotenv" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/you-do-not-need-dotenv.jpg" alt="You don't need dotenv" /&gt;&lt;/p&gt;
 
 &lt;p&gt;還記得筆者第一次看到 &lt;code&gt;dotenv&lt;/code&gt; 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 &lt;a href="https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/"&gt;&lt;code&gt;left-pad&lt;/code&gt;&lt;/a&gt; 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。&lt;/p&gt;
 
@@ -250,7 +250,7 @@ world
     <link rel="alternate" href="https://tonytonyjan.net/2020/10/06/ruby-rfc2047/"/>
     <id>https://tonytonyjan.net/2020/10/06/ruby-rfc2047/</id>
     <published>2020-10-06T04:58:00+00:00</published>
-    <updated>2021-10-16T07:16:18+00:00</updated>
+    <updated>2021-10-16T07:25:21+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -365,7 +365,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/"/>
     <id>https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/</id>
     <published>2020-06-30T17:43:00+00:00</published>
-    <updated>2021-10-16T07:16:18+00:00</updated>
+    <updated>2021-10-16T07:25:21+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -436,7 +436,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/"/>
     <id>https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/</id>
     <published>2020-01-12T06:44:00+00:00</published>
-    <updated>2021-10-16T07:16:18+00:00</updated>
+    <updated>2021-10-16T07:25:21+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -544,7 +544,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
     <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
     <published>2019-09-23T08:44:00+00:00</published>
-    <updated>2021-10-16T07:16:18+00:00</updated>
+    <updated>2021-10-16T07:25:21+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -632,7 +632,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
     <published>2019-02-09T07:14:00+00:00</published>
-    <updated>2021-10-16T07:16:18+00:00</updated>
+    <updated>2021-10-16T07:25:21+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
