@@ -14,7 +14,7 @@
     <link rel="alternate" href="https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/"/>
     <id>https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/</id>
     <published>2021-10-16T04:58:00+00:00</published>
-    <updated>2021-10-16T06:52:05+00:00</updated>
+    <updated>2021-10-16T07:02:12+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -237,10 +237,10 @@ world
 &lt;h2 id="參考"&gt;參考&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;https://man7.org/linux/man-pages/man1/xargs.1.html&lt;/li&gt;
-  &lt;li&gt;https://www.freebsd.org/cgi/man.cgi?xargs&lt;/li&gt;
-  &lt;li&gt;https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200&lt;/li&gt;
-  &lt;li&gt;https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://man7.org/linux/man-pages/man1/xargs.1.html"&gt;https://man7.org/linux/man-pages/man1/xargs.1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.freebsd.org/cgi/man.cgi?xargs"&gt;https://www.freebsd.org/cgi/man.cgi?xargs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200"&gt;https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851"&gt;https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 </content>
@@ -250,7 +250,7 @@ world
     <link rel="alternate" href="https://tonytonyjan.net/2020/10/06/ruby-rfc2047/"/>
     <id>https://tonytonyjan.net/2020/10/06/ruby-rfc2047/</id>
     <published>2020-10-06T04:58:00+00:00</published>
-    <updated>2021-10-16T06:52:05+00:00</updated>
+    <updated>2021-10-16T07:02:12+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -365,7 +365,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/"/>
     <id>https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/</id>
     <published>2020-06-30T17:43:00+00:00</published>
-    <updated>2021-10-16T06:52:05+00:00</updated>
+    <updated>2021-10-16T07:02:12+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -436,7 +436,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/"/>
     <id>https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/</id>
     <published>2020-01-12T06:44:00+00:00</published>
-    <updated>2021-10-16T06:52:05+00:00</updated>
+    <updated>2021-10-16T07:02:12+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -544,7 +544,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
     <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
     <published>2019-09-23T08:44:00+00:00</published>
-    <updated>2021-10-16T06:52:05+00:00</updated>
+    <updated>2021-10-16T07:02:12+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -632,7 +632,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
     <published>2019-02-09T07:14:00+00:00</published>
-    <updated>2021-10-16T06:52:05+00:00</updated>
+    <updated>2021-10-16T07:02:12+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
