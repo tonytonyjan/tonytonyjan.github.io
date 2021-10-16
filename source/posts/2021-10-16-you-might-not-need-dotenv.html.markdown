@@ -6,6 +6,8 @@ image: /images/no-dotenv.jpg
 thumb: /images/thumbs/no-dotenv.jpg
 ---
 
+![TJDict](/images/no-dotenv.jpg)
+
 還記得筆者第一次看到 `dotenv` 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 [`left-pad`][left_pad] 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。
 
 <!-- more -->
