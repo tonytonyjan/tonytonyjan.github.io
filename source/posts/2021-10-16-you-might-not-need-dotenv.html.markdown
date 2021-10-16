@@ -242,10 +242,10 @@ env $(cat .env) [COMMAND [ARGS ...]]
 
 ## 參考
 
-1. https://man7.org/linux/man-pages/man1/xargs.1.html
-2. https://www.freebsd.org/cgi/man.cgi?xargs
-3. https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200
-4. https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851
+1. [https://man7.org/linux/man-pages/man1/xargs.1.html](https://man7.org/linux/man-pages/man1/xargs.1.html)
+2. [https://www.freebsd.org/cgi/man.cgi?xargs](https://www.freebsd.org/cgi/man.cgi?xargs)
+3. [https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200](https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200)
+4. [https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851](https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851)
 
 [posix]: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html
 [unix_philosophy]: https://en.wikipedia.org/wiki/Unix_philosophy
