@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# article: http://ogp.me/ns/article#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="大兜">
+  <meta property="og:site_name" content="不歸錄">
+  <meta property="og:url" content="https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/">
+  <title>你不需要 dotenv - 不歸錄</title>
+<meta name="description" content="還記得筆者第一次看到 dotenv 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 left-pad 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。 ">
+<meta name="keywords" content="env, xargs, tr, grep, dotenv, Rails, Ruby, C, 程式設計, 網頁開發, 大兜, 簡煒航, 作曲, 鋼琴, tonytonyjan">
+<meta property="og:title" content="你不需要 dotenv - 不歸錄" />
+<meta property="og:description" content="還記得筆者第一次看到 dotenv 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 left-pad 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。 " />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://tonytonyjan.net/images/no-dotenv.jpg" />
+<meta property="article:tag" content="env" />
+<meta property="article:tag" content="xargs" />
+<meta property="article:tag" content="tr" />
+<meta property="article:tag" content="grep" />
+<meta property="article:tag" content="dotenv" />
+<meta property="article:author" content="https://www.facebook.com/tonytonyjan" >
+<meta property="article:published_time" content="2021-10-16T12:58:00+08:00" />
+
+  <link href="/feed.xml" rel="alternate" title="不歸錄" type="application/rss+xml">
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/ico/apple-touch-icon.png">
+  <script src="/js/modernizr.custom.js"></script>
+  <!-- FONTS -->
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" type="text/css" href="/css/uniform.default.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="/js/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" type="text/css" href="/css/tooltipster.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!--[if lte IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/tomorrow-night-bright.min.css">
+</head>
+
+<body>
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+    <!-- HEADER -->
+<header class="header">
+  <img src="/images/site/avatar.png" alt="avatar">
+  <h1>大兜</h1>
+  <p>右手寫程式，左手寫音樂</p>
+  <!-- NAV MENU -->
+  <ul class="vs-nav">
+    <!-- TemplateBeginEditable name="Menu-Content" -->
+    <li><a href="/blog/"><i title="回部落格" class="icon-left-open tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a href="/"><i title="回首頁" class="icon-home-1 tooltip" data-tooltip-pos="right"></i></a></li>
+
+    <!-- TemplateEndEditable -->
+  </ul>
+  <!-- NAV MENU -->
+
+  <!-- SEARCH -->
+  <div class="header-search">
+    <form role="search" method="get" id="search-form" action="https://www.google.com.tw/search" onsubmit="this['q'].value = this['q_raw'].value + ' site:https://tonytonyjan.net';">
+      <input type="hidden" name="q" value="">
+      <input type="text" value="" name="q_raw" id="search" placeholder="輸入關鍵字">
+      <input type="submit" id="search-submit" title="Search" value="→">
+    </form>
+  </div>
+  <!-- SEARCH -->
+</header>
+<!-- HEADER -->
+
+    <!-- WRAPPER -->
+    <div class="wrapper"><!-- .blog-single -->
+<div class="readable-content blog-single">
+  <!-- .hentry -->
+  <article class="post type-post format-standard hentry">
+    <!-- .entry-header -->
+    <header class="entry-header">
+      <h1 class="entry-title">你不需要 dotenv</h1>
+    </header>
+    <!-- .entry-header -->
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+      <span class="posted-by">
+        由
+        <a class="url fn n" href="/#/about" title="View all posts by ahmetsali" rel="author">大兜</a>
+      </span>
+      <span class="posted-on">
+        發表於
+        <a href="#" title="{{ current_article.date | date: "%r" }}" rel="bookmark"><time class="entry-date" datetime="2021-10-16T12:58:00+08:00">2021 年 10 月 16 日</time></a>
+      </span>
+    </div>
+    <!-- .entry-meta -->
+    <!-- .entry-content -->
+    <div class="entry-content">
+      <p>還記得筆者第一次看到 <code>dotenv</code> 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 <a href="https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/"><code>left-pad</code></a> 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。</p>
+
+
+
+<h2 id="情境">情境</h2>
+
+<p>假設我們有一個 <code>.env</code> 檔案，裡面存放 <code>key=value</code> 這樣的資訊，而目的是在執行某個程序時，能夠將檔案中的內容載入環境變數，例如：</p>
+
+<pre><code>$ cat .env
+FOO=1
+BAR=2
+</code></pre>
+
+<h2 id="解法">解法</h2>
+
+<p>筆者用以下方法已經很多年了：</p>
+
+<pre><code class="language-sh">env $(cat .env) ruby -e 'pp ENV'
+</code></pre>
+
+<p>但是不少人卻覺得這樣做比較酷：</p>
+
+<p><strong>Ruby</strong></p>
+
+<pre><code class="language-ruby">require 'dotenv'
+Dotenv.load
+pp ENV
+</code></pre>
+
+<p><strong>Node.js</strong></p>
+
+<pre><code class="language-js">require("dotenv").config();
+console.log(process.env);
+</code></pre>
+
+<p>廢到笑。</p>
+
+<p>即便不具備 UN*X 的基本學識，但只要懂一點程式語言，起碼還能用語言本身的功能做到一樣的事，例如：</p>
+
+<p><strong>Ruby</strong></p>
+
+<pre><code class="language-ruby"># myenv.rb
+ENV.merge!({ 'FOO' =&gt; '1', 'BAR' =&gt; '2' })
+</code></pre>
+
+<pre><code class="language-ruby">require 'myenv'
+pp ENV
+</code></pre>
+
+<p><strong>Node.js</strong></p>
+
+<pre><code class="language-js">// myenv.js
+process.env.FOO = "1";
+process.env.BAR = "2";
+</code></pre>
+
+<pre><code class="language-js">require("myenv");
+console.log(process.env);
+</code></pre>
+
+<p>其實這個做法在 <code>.bashrc</code> 很常見，有人會習慣在裡面放 <code>export KEY=VALUE</code>，習慣再好一點的人會把環境變數分成別的檔案，並用 <code>source .env.sh</code> 的方式來載入它們：</p>
+
+<pre><code class="language-sh"># env.sh
+export FOO=1
+export BAR=2
+</code></pre>
+
+<pre><code class="language-sh">source env.sh
+echo $FOO $BAR
+</code></pre>
+
+<p>這其實跟上述 <code>env.rb</code> 和 <code>env.js</code> 是一樣的道理，都是載入外部的檔案以設定環境變數。此外大多情況我們會用 POSIX 兼容的 shell 來完成日常的工作，這時再做一個能 cross shell 的 <code>.env.sh</code> 是沒有必要的（例如支援 fish）。我們也不會為了設定 <code>bash</code> 或 <code>fish</code> 的環境變數，特別去尋找支援該 shell 的 <code>dotenv</code> 套件，那顯得十分多餘。</p>
+
+<p>但是這個方法好像從 shell 語言換到其他程式語言後，工程師的大腦就會跟著突然被格式化。認為自己設定環境變數的風險太高，如果不趕快找一個第三方的環境變數載入器，自己將無法完成這個任務；使用套件後除得到內心的平靜，還能在其他新手間宣示自己使用了成熟的套件，藉以獲得他人尊敬，一舉數得。</p>
+
+<p>黑人問號。</p>
+
+<h2 id="進階解法">進階解法</h2>
+
+<p>再複習一次原本的做法：</p>
+
+<pre><code class="language-sh">env $(cat .env) ruby -e 'pp ENV'
+</code></pre>
+
+<p>雖然這已能應付大多狀況，但無法處理環境變數中的空格及註解，例如：</p>
+
+<pre><code>FOO=hello world
+
+＃ comment
+</code></pre>
+
+<p>我們能用 <code>tr</code> 和 <code>xargs</code> 處理空格（此處為 BSD xargs 而非 GNU xargs）：</p>
+
+<pre><code class="language-sh">cat .env |
+  tr '\n' '\000' |
+  xargs -0 -J@ env @ ruby -e 'pp ENV'
+</code></pre>
+
+<p>並用 <code>grep</code> 處理註解：</p>
+
+<pre><code class="language-sh">grep -v '^ *#' .env |
+  tr '\n' '\000' |
+  xargs -0 -J@ env @ ruby -e 'pp ENV'
+</code></pre>
+
+<p>接著把這段指令寫在 alias 或是 function：</p>
+
+<pre><code class="language-sh">alias xenv="grep -v '^ *#' | tr '\n' '\000' | xargs -0 -J@ env @"
+</code></pre>
+
+<pre><code class="language-sh">xenv() {
+  grep -v '^ *#' | tr '\n' '\000' | xargs -0 -J@ env @ "$@"
+}
+</code></pre>
+
+<p>之後便能更方便地使用：</p>
+
+<pre><code class="language-sh">cat .env1 .env2 .env3 | xenv ruby -e 'pp ENV'
+</code></pre>
+
+<h2 id="與-dotenv-之間的差異">與 <code>dotenv</code> 之間的差異</h2>
+
+<p>相較下筆者的做法較單純，其中最關鍵的差異是處理 <code>value</code> 的方式為所見即所得。既沒有保留字元（除了換行），也不像 <code>dotenv</code> 有 inner/outer/single/double quotes 的概念，更不會有出乎預期的行為（例如 <code>dotenv</code> 會偷刪空格，沒仔細看 README 也許不會知道，更別說 <code>dotenv</code> 還有一堆 quoting 相關的規則）。</p>
+
+<p>因為所見即所得，意即不用擔心意外用到任何跳脫字元：</p>
+
+<pre><code>$ cat .env
+FOO= ~!@#$%^&amp;*()_+"'\
+</code></pre>
+
+<pre><code>$ cat .env | xenv ruby -e 'puts ENV["FOO"]'
+ ~!@#$%^&amp;*()_+"'\
+</code></pre>
+
+<p>目前看來表現得還不錯，但難免還是會好奇目前的實作和 <code>dotenv</code> 之間的差距，於是筆者把 <code>dotenv</code> 官方的 <a href="https://github.com/motdotla/dotenv/blob/27dfd3f/README.md#rules">README</a> 拿出參考：</p>
+
+<ol class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /><code>BASIC=basic</code> becomes <code>{BASIC: 'basic'}</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />empty lines are skipped</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />lines beginning with <code>#</code> are treated as comments</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />empty values become empty strings (<code>EMPTY=</code> becomes <code>{EMPTY: ''}</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />inner quotes are maintained (think JSON) (<code>JSON={"foo": "bar"}</code> becomes <code>{JSON:"{\"foo\": \"bar\"}"</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />whitespace is removed from both ends of unquoted values (<code>FOO= some value </code> becomes <code>{FOO: 'some value'}</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />single and double quoted values are escaped (<code>SINGLE_QUOTE='quoted'</code> becomes <code>{SINGLE_QUOTE: "quoted"}</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />single and double quoted values maintain whitespace from both ends (<code>FOO=" some value "</code> becomes <code>{FOO: ' some value '}</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />double quoted values expand new lines</li>
+</ol>
+
+<p>大概一半以上的功能都達到了，其中 6 筆者不認為是好設計，而 7 和 8 則是多餘的規則。總結來說只要沒有 <code>LF</code> 換行字元，所有 <code>dotenv</code> 能做到的事情，筆者的方法都能做到。</p>
+
+<h2 id="關於-lf-換行字元">關於 <code>LF</code> 換行字元</h2>
+
+<p>筆者的方法在 <code>value</code> 的部分無法有換行字元，唯一的權變措施是將 <code>value</code> 進行 <code>JSON</code> 或是 <code>Base64</code> 編碼，並在軟體中解碼，但筆者不建議這樣做。</p>
+
+<p>不如說有這種需求下，筆者建議放棄 <code>.env</code> 的格式，有兩個理由。</p>
+
+<p>第一個理由是因為設定檔的存在是在工程師不更動原始碼的情況下，能夠透過修改這份檔案以在短時間內調整軟體的設定，亦即這樣的檔案理想上必須要能易讀、易改，不會出現大量像是 <code>\n</code> 等的跳脫字元。</p>
+
+<p>既然設定檔必須是人本設計，那硬生生在 <code>key=value</code> 的格式上加上 <code>\n</code> 的符號反而與設定檔的初衷背道而馳。取而代之使用 <code>YAML</code> 或是 <code>TOML</code> 會比起 <code>.env</code> 更為適合，試比較以下 3 種格式的可讀性：</p>
+
+<p><strong>dotenv</strong></p>
+
+<pre><code>FOO="hello\nworld"
+</code></pre>
+
+<p><strong>YAML</strong></p>
+
+<pre><code class="language-yml">FOO: |
+  hello
+  world
+</code></pre>
+
+<p><strong>TOML</strong></p>
+
+<pre><code class="language-toml">lines = '''
+hello
+world
+'''
+</code></pre>
+
+<p>第二個反對的理由是 <code>.env</code> 的檔案格式並不存在標準，<a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html">POSIX 僅對環境變數定義了 <code>key=value</code> 的格式</a>，並沒有提到將環境變數寫檔案中應該怎麼呈現，且每個語言的實作皆有所差異，能在 Node.js 的 <code>dotenv</code> 執行的 <code>.env</code> 未必能在 Ruby 的 <code>dotenv</code> 中執行。</p>
+
+<p>另一方面 <a href="https://yaml.org/spec/"><code>YAML</code></a> 或 <a href="https://toml.io/en/v1.0.0"><code>TOML</code></a> 都有詳細的規格書，很多程式語言都有支援這些格式，所以實作起來也相當容易，例如使用 Ruby 載入 <code>env.yml</code> 中的環境變數：</p>
+
+<pre><code class="language-sh">alias yenv="ruby -ryaml -e 'exec(YAML.load(STDIN.read), *ARGV)'"
+</code></pre>
+
+<p>為避免混淆，這裡用 <code>node</code>（而非 <code>ruby</code>）把環境變數 <code>FOO</code> 印出來：</p>
+
+<pre><code>$ cat env.yml | yenv node -e 'console.log(process.env.FOO)'
+hello
+world
+</code></pre>
+
+<h2 id="簡單就是讚simple-is-good">簡單就是讚（Simple is Good）</h2>
+
+<p>最後再複習一次：</p>
+
+<pre><code class="language-sh">env $(cat .env) [COMMAND [ARGS ...]]
+</code></pre>
+
+<p>先不防看看自己專案下的 <code>.env</code> 有沒有註解、空格、空行？沒有的話 <code>env</code> 和 <code>cat</code> 就能解決你的問題，有的話再加上 <code>grep</code>、<code>tr</code> 和 <code>xargs</code>。如果有更花式的需求，那也許 <code>sed</code> 和 <code>awk</code> 也可以幫上忙。不要懼怕這些工具，它們全都符合 <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix 哲學</a>，只要你想，便能組合出各種可能性。</p>
+
+<p>至於想在設定檔中支援特殊字元或換行，是時候考慮用成熟的格式標準了，例如 YAML、JSON、TOML 等，透過自己熟悉的程式語言與成熟的格式標準變能輕易做到。</p>
+
+<p>你的 <code>.env</code> 應該越簡單越好，沒有跳脫字元、沒有換行、就只有 <code>key=value</code>；當你需要更進階的設定，考慮更多的 UN*X 工具；當你不熟悉 UN*X 工具，可以比照像是 <code>.bashrc</code> 的設定習慣以自己熟悉的程式語言實現；當你發現你幾乎要發明自己的 <code>.env</code> 格式了，不妨考慮用更成熟的標準配合自己熟悉的程式語言實作它。</p>
+
+<p>最後就會發現，你真的不需要 <code>dotenv</code>。</p>
+
+<h2 id="參考">參考</h2>
+
+<ol>
+  <li>https://man7.org/linux/man-pages/man1/xargs.1.html</li>
+  <li>https://www.freebsd.org/cgi/man.cgi?xargs</li>
+  <li>https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200</li>
+  <li>https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851</li>
+</ol>
+
+
+      
+    </div>
+    <!-- .entry-meta -->
+    <footer class="entry-meta">
+      <h3>標籤</h3>
+        <a href="/tags/env/" rel="tag">env</a>
+        <a href="/tags/xargs/" rel="tag">xargs</a>
+        <a href="/tags/tr/" rel="tag">tr</a>
+        <a href="/tags/grep/" rel="tag">grep</a>
+        <a href="/tags/dotenv/" rel="tag">dotenv</a>
+    </footer>
+    <!-- .entry-meta -->
+  </article>
+  <!-- .hentry -->
+  <!-- .about-author -->
+  <aside class="about-author">
+    <h3>關於作者</h3>
+    <!-- .author-bio -->
+    <div class="author-bio">
+      <!-- .author-img -->
+      <div class="author-img">
+        <a href="/#/about"><img alt="大兜" src="/images/site/avatar.png" class="avatar"></a>
+      </div>
+      <!-- .author-img -->
+      <!-- .author-info -->
+      <div class="author-info">
+        <h4 class="author-name">大兜</h4>
+        <p>身份複雜的工程師、研究生、SOHO 族、創業中。喜歡 Ruby、Java、C，愛好寫程式，以此為樂，並以此維生。</p>
+      </div>
+      <!-- .author-info -->
+    </div>
+    <!-- .author-bio -->
+  </aside>
+  <!-- .about-author -->
+  <!-- .nav-single -->
+  <nav class="nav-single row">
+    <div class="nav-previous col-sm-6">
+    <h4>上一篇</h4>
+    <a href="/2020/10/06/ruby-rfc2047/" rel="prev"><span class="meta-nav">←</span> 使用 Ruby 實作 RFC 2047</a>
+  </div>
+  
+</nav>
+<!-- .nav-single -->
+<!-- #comments -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<!-- .blog-single -->
+</div>
+    <!-- WRAPPER -->
+  </div>
+  <!-- CONTAINER -->
+  <!-- TemplateBeginEditable name="Body-End-Content" -->
+  <!-- TemplateEndEditable -->
+
+  <!-- SCRIPTS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.address-1.5.min.js"></script>
+  <script src="/js/triple.layout.js"></script>
+  <!-- <script src="/js/smoothscroll.js"></script> -->
+  <script src="/js/nprogress/nprogress.js"></script>
+  <script src="/js/fastclick.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+  <script src="/js/jquery.uniform.min.js"></script>
+  <script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="/js/jquery.tooltipster.min.js"></script>
+  <script src="/js/twitterFetcher_v10_min.js"></script>
+  <script src="/js/mediaelement/mediaelement-and-player.min.js"></script>
+  <script src="/js/send-mail.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/custom.js"></script>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tonytonyjan-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71890573-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

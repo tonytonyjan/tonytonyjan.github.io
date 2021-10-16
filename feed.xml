@@ -5,16 +5,248 @@
   <id>https://tonytonyjan.net</id>
   <link href="https://tonytonyjan.net"/>
   <link href="https://tonytonyjan.net/feed.xml" rel="self"/>
-  <updated>2020-10-06T04:58:00+00:00</updated>
+  <updated>2021-10-16T04:58:00+00:00</updated>
   <author>
     <name>大兜</name>
   </author>
+  <entry>
+    <title>你不需要 dotenv</title>
+    <link rel="alternate" href="https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/"/>
+    <id>https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/</id>
+    <published>2021-10-16T04:58:00+00:00</published>
+    <updated>2021-10-16T06:33:19+00:00</updated>
+    <author>
+      <name>大兜</name>
+    </author>
+    <summary type="html">&lt;p&gt;還記得筆者第一次看到 &lt;code&gt;dotenv&lt;/code&gt; 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 &lt;a href="https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/"&gt;&lt;code&gt;left-pad&lt;/code&gt;&lt;/a&gt; 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。&lt;/p&gt;
+
+</summary>
+    <content type="html">&lt;p&gt;還記得筆者第一次看到 &lt;code&gt;dotenv&lt;/code&gt; 的時候覺得這是哪個幽默的工程師寫的笑話用以嘲笑外行人，後來發現不對，這東西是認真的，而且有很多人在用這套工具。百思不得其解，就像幾年前看到 &lt;a href="https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/"&gt;&lt;code&gt;left-pad&lt;/code&gt;&lt;/a&gt; 一樣，明明實作不過 11 行，人們卻寧願仰賴第三方套件，也不願自己寫，好奇我們在開源軟體蓬勃發展之下，是否漸漸忘記怎麼用電腦。&lt;/p&gt;
+
+
+
+&lt;h2 id="情境"&gt;情境&lt;/h2&gt;
+
+&lt;p&gt;假設我們有一個 &lt;code&gt;.env&lt;/code&gt; 檔案，裡面存放 &lt;code&gt;key=value&lt;/code&gt; 這樣的資訊，而目的是在執行某個程序時，能夠將檔案中的內容載入環境變數，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat .env
+FOO=1
+BAR=2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="解法"&gt;解法&lt;/h2&gt;
+
+&lt;p&gt;筆者用以下方法已經很多年了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;env $(cat .env) ruby -e 'pp ENV'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是不少人卻覺得這樣做比較酷：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ruby&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;require 'dotenv'
+Dotenv.load
+pp ENV
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Node.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-js"&gt;require("dotenv").config();
+console.log(process.env);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;廢到笑。&lt;/p&gt;
+
+&lt;p&gt;即便不具備 UN*X 的基本學識，但只要懂一點程式語言，起碼還能用語言本身的功能做到一樣的事，例如：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ruby&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;# myenv.rb
+ENV.merge!({ 'FOO' =&amp;gt; '1', 'BAR' =&amp;gt; '2' })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-ruby"&gt;require 'myenv'
+pp ENV
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Node.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-js"&gt;// myenv.js
+process.env.FOO = "1";
+process.env.BAR = "2";
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-js"&gt;require("myenv");
+console.log(process.env);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其實這個做法在 &lt;code&gt;.bashrc&lt;/code&gt; 很常見，有人會習慣在裡面放 &lt;code&gt;export KEY=VALUE&lt;/code&gt;，習慣再好一點的人會把環境變數分成別的檔案，並用 &lt;code&gt;source .env.sh&lt;/code&gt; 的方式來載入它們：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;# env.sh
+export FOO=1
+export BAR=2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;source env.sh
+echo $FOO $BAR
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;這其實跟上述 &lt;code&gt;env.rb&lt;/code&gt; 和 &lt;code&gt;env.js&lt;/code&gt; 是一樣的道理，都是載入外部的檔案以設定環境變數。此外大多情況我們會用 POSIX 兼容的 shell 來完成日常的工作，這時再做一個能 cross shell 的 &lt;code&gt;.env.sh&lt;/code&gt; 是沒有必要的（例如支援 fish）。我們也不會為了設定 &lt;code&gt;bash&lt;/code&gt; 或 &lt;code&gt;fish&lt;/code&gt; 的環境變數，特別去尋找支援該 shell 的 &lt;code&gt;dotenv&lt;/code&gt; 套件，那顯得十分多餘。&lt;/p&gt;
+
+&lt;p&gt;但是這個方法好像從 shell 語言換到其他程式語言後，工程師的大腦就會跟著突然被格式化。認為自己設定環境變數的風險太高，如果不趕快找一個第三方的環境變數載入器，自己將無法完成這個任務；使用套件後除得到內心的平靜，還能在其他新手間宣示自己使用了成熟的套件，藉以獲得他人尊敬，一舉數得。&lt;/p&gt;
+
+&lt;p&gt;黑人問號。&lt;/p&gt;
+
+&lt;h2 id="進階解法"&gt;進階解法&lt;/h2&gt;
+
+&lt;p&gt;再複習一次原本的做法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;env $(cat .env) ruby -e 'pp ENV'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;雖然這已能應付大多狀況，但無法處理環境變數中的空格及註解，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FOO=hello world
+
+＃ comment
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我們能用 &lt;code&gt;tr&lt;/code&gt; 和 &lt;code&gt;xargs&lt;/code&gt; 處理空格（此處為 BSD xargs 而非 GNU xargs）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;cat .env |
+  tr '\n' '\000' |
+  xargs -0 -J@ env @ ruby -e 'pp ENV'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;並用 &lt;code&gt;grep&lt;/code&gt; 處理註解：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;grep -v '^ *#' .env |
+  tr '\n' '\000' |
+  xargs -0 -J@ env @ ruby -e 'pp ENV'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接著把這段指令寫在 alias 或是 function：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;alias xenv="grep -v '^ *#' | tr '\n' '\000' | xargs -0 -J@ env @"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;xenv() {
+  grep -v '^ *#' | tr '\n' '\000' | xargs -0 -J@ env @ "$@"
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;之後便能更方便地使用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;cat .env1 .env2 .env3 | xenv ruby -e 'pp ENV'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="與-dotenv-之間的差異"&gt;與 &lt;code&gt;dotenv&lt;/code&gt; 之間的差異&lt;/h2&gt;
+
+&lt;p&gt;相較下筆者的做法較單純，其中最關鍵的差異是處理 &lt;code&gt;value&lt;/code&gt; 的方式為所見即所得。既沒有保留字元（除了換行），也不像 &lt;code&gt;dotenv&lt;/code&gt; 有 inner/outer/single/double quotes 的概念，更不會有出乎預期的行為（例如 &lt;code&gt;dotenv&lt;/code&gt; 會偷刪空格，沒仔細看 README 也許不會知道，更別說 &lt;code&gt;dotenv&lt;/code&gt; 還有一堆 quoting 相關的規則）。&lt;/p&gt;
+
+&lt;p&gt;因為所見即所得，意即不用擔心意外用到任何跳脫字元：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat .env
+FOO= ~!@#$%^&amp;amp;*()_+"'\
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat .env | xenv ruby -e 'puts ENV["FOO"]'
+ ~!@#$%^&amp;amp;*()_+"'\
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;目前看來表現得還不錯，但難免還是會好奇目前的實作和 &lt;code&gt;dotenv&lt;/code&gt; 之間的差距，於是筆者把 &lt;code&gt;dotenv&lt;/code&gt; 官方的 &lt;a href="https://github.com/motdotla/dotenv/blob/27dfd3f/README.md#rules"&gt;README&lt;/a&gt; 拿出參考：&lt;/p&gt;
+
+&lt;ol class="task-list"&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /&gt;&lt;code&gt;BASIC=basic&lt;/code&gt; becomes &lt;code&gt;{BASIC: 'basic'}&lt;/code&gt;&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /&gt;empty lines are skipped&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /&gt;lines beginning with &lt;code&gt;#&lt;/code&gt; are treated as comments&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /&gt;empty values become empty strings (&lt;code&gt;EMPTY=&lt;/code&gt; becomes &lt;code&gt;{EMPTY: ''}&lt;/code&gt;)&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /&gt;inner quotes are maintained (think JSON) (&lt;code&gt;JSON={"foo": "bar"}&lt;/code&gt; becomes &lt;code&gt;{JSON:"{\"foo\": \"bar\"}"&lt;/code&gt;)&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /&gt;whitespace is removed from both ends of unquoted values (&lt;code&gt;FOO= some value &lt;/code&gt; becomes &lt;code&gt;{FOO: 'some value'}&lt;/code&gt;)&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /&gt;single and double quoted values are escaped (&lt;code&gt;SINGLE_QUOTE='quoted'&lt;/code&gt; becomes &lt;code&gt;{SINGLE_QUOTE: "quoted"}&lt;/code&gt;)&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /&gt;single and double quoted values maintain whitespace from both ends (&lt;code&gt;FOO=" some value "&lt;/code&gt; becomes &lt;code&gt;{FOO: ' some value '}&lt;/code&gt;)&lt;/li&gt;
+  &lt;li class="task-list-item"&gt;&lt;input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /&gt;double quoted values expand new lines&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;大概一半以上的功能都達到了，其中 6 筆者不認為是好設計，而 7 和 8 則是多餘的規則。總結來說只要沒有 &lt;code&gt;LF&lt;/code&gt; 換行字元，所有 &lt;code&gt;dotenv&lt;/code&gt; 能做到的事情，筆者的方法都能做到。&lt;/p&gt;
+
+&lt;h2 id="關於-lf-換行字元"&gt;關於 &lt;code&gt;LF&lt;/code&gt; 換行字元&lt;/h2&gt;
+
+&lt;p&gt;筆者的方法在 &lt;code&gt;value&lt;/code&gt; 的部分無法有換行字元，唯一的權變措施是將 &lt;code&gt;value&lt;/code&gt; 進行 &lt;code&gt;JSON&lt;/code&gt; 或是 &lt;code&gt;Base64&lt;/code&gt; 編碼，並在軟體中解碼，但筆者不建議這樣做。&lt;/p&gt;
+
+&lt;p&gt;不如說有這種需求下，筆者建議放棄 &lt;code&gt;.env&lt;/code&gt; 的格式，有兩個理由。&lt;/p&gt;
+
+&lt;p&gt;第一個理由是因為設定檔的存在是在工程師不更動原始碼的情況下，能夠透過修改這份檔案以在短時間內調整軟體的設定，亦即這樣的檔案理想上必須要能易讀、易改，不會出現大量像是 &lt;code&gt;\n&lt;/code&gt; 等的跳脫字元。&lt;/p&gt;
+
+&lt;p&gt;既然設定檔必須是人本設計，那硬生生在 &lt;code&gt;key=value&lt;/code&gt; 的格式上加上 &lt;code&gt;\n&lt;/code&gt; 的符號反而與設定檔的初衷背道而馳。取而代之使用 &lt;code&gt;YAML&lt;/code&gt; 或是 &lt;code&gt;TOML&lt;/code&gt; 會比起 &lt;code&gt;.env&lt;/code&gt; 更為適合，試比較以下 3 種格式的可讀性：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dotenv&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FOO="hello\nworld"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;YAML&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-yml"&gt;FOO: |
+  hello
+  world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;TOML&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-toml"&gt;lines = '''
+hello
+world
+'''
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;第二個反對的理由是 &lt;code&gt;.env&lt;/code&gt; 的檔案格式並不存在標準，&lt;a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html"&gt;POSIX 僅對環境變數定義了 &lt;code&gt;key=value&lt;/code&gt; 的格式&lt;/a&gt;，並沒有提到將環境變數寫檔案中應該怎麼呈現，且每個語言的實作皆有所差異，能在 Node.js 的 &lt;code&gt;dotenv&lt;/code&gt; 執行的 &lt;code&gt;.env&lt;/code&gt; 未必能在 Ruby 的 &lt;code&gt;dotenv&lt;/code&gt; 中執行。&lt;/p&gt;
+
+&lt;p&gt;另一方面 &lt;a href="https://yaml.org/spec/"&gt;&lt;code&gt;YAML&lt;/code&gt;&lt;/a&gt; 或 &lt;a href="https://toml.io/en/v1.0.0"&gt;&lt;code&gt;TOML&lt;/code&gt;&lt;/a&gt; 都有詳細的規格書，很多程式語言都有支援這些格式，所以實作起來也相當容易，例如使用 Ruby 載入 &lt;code&gt;env.yml&lt;/code&gt; 中的環境變數：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;alias yenv="ruby -ryaml -e 'exec(YAML.load(STDIN.read), *ARGV)'"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;為避免混淆，這裡用 &lt;code&gt;node&lt;/code&gt;（而非 &lt;code&gt;ruby&lt;/code&gt;）把環境變數 &lt;code&gt;FOO&lt;/code&gt; 印出來：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat env.yml | yenv node -e 'console.log(process.env.FOO)'
+hello
+world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="簡單就是讚simple-is-good"&gt;簡單就是讚（Simple is Good）&lt;/h2&gt;
+
+&lt;p&gt;最後再複習一次：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;env $(cat .env) [COMMAND [ARGS ...]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先不防看看自己專案下的 &lt;code&gt;.env&lt;/code&gt; 有沒有註解、空格、空行？沒有的話 &lt;code&gt;env&lt;/code&gt; 和 &lt;code&gt;cat&lt;/code&gt; 就能解決你的問題，有的話再加上 &lt;code&gt;grep&lt;/code&gt;、&lt;code&gt;tr&lt;/code&gt; 和 &lt;code&gt;xargs&lt;/code&gt;。如果有更花式的需求，那也許 &lt;code&gt;sed&lt;/code&gt; 和 &lt;code&gt;awk&lt;/code&gt; 也可以幫上忙。不要懼怕這些工具，它們全都符合 &lt;a href="https://en.wikipedia.org/wiki/Unix_philosophy"&gt;Unix 哲學&lt;/a&gt;，只要你想，便能組合出各種可能性。&lt;/p&gt;
+
+&lt;p&gt;至於想在設定檔中支援特殊字元或換行，是時候考慮用成熟的格式標準了，例如 YAML、JSON、TOML 等，透過自己熟悉的程式語言與成熟的格式標準變能輕易做到。&lt;/p&gt;
+
+&lt;p&gt;你的 &lt;code&gt;.env&lt;/code&gt; 應該越簡單越好，沒有跳脫字元、沒有換行、就只有 &lt;code&gt;key=value&lt;/code&gt;；當你需要更進階的設定，考慮更多的 UN*X 工具；當你不熟悉 UN*X 工具，可以比照像是 &lt;code&gt;.bashrc&lt;/code&gt; 的設定習慣以自己熟悉的程式語言實現；當你發現你幾乎要發明自己的 &lt;code&gt;.env&lt;/code&gt; 格式了，不妨考慮用更成熟的標準配合自己熟悉的程式語言實作它。&lt;/p&gt;
+
+&lt;p&gt;最後就會發現，你真的不需要 &lt;code&gt;dotenv&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id="參考"&gt;參考&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;https://man7.org/linux/man-pages/man1/xargs.1.html&lt;/li&gt;
+  &lt;li&gt;https://www.freebsd.org/cgi/man.cgi?xargs&lt;/li&gt;
+  &lt;li&gt;https://github.com/freebsd/freebsd-src/blob/0c1a5ea/usr.bin/env/env.c#L192-L200&lt;/li&gt;
+  &lt;li&gt;https://github.com/coreutils/coreutils/blob/3753c70/src/env.c#L839-L851&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+  </entry>
   <entry>
     <title>使用 Ruby 實作 RFC 2047</title>
     <link rel="alternate" href="https://tonytonyjan.net/2020/10/06/ruby-rfc2047/"/>
     <id>https://tonytonyjan.net/2020/10/06/ruby-rfc2047/</id>
     <published>2020-10-06T04:58:00+00:00</published>
-    <updated>2021-10-16T06:25:42+00:00</updated>
+    <updated>2021-10-16T06:33:19+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -129,7 +361,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/"/>
     <id>https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/</id>
     <published>2020-06-30T17:43:00+00:00</published>
-    <updated>2021-10-16T06:25:42+00:00</updated>
+    <updated>2021-10-16T06:33:19+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -200,7 +432,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/"/>
     <id>https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/</id>
     <published>2020-01-12T06:44:00+00:00</published>
-    <updated>2021-10-16T06:25:42+00:00</updated>
+    <updated>2021-10-16T06:33:19+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -308,7 +540,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
     <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
     <published>2019-09-23T08:44:00+00:00</published>
-    <updated>2021-10-16T06:25:42+00:00</updated>
+    <updated>2021-10-16T06:33:19+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -396,7 +628,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
     <published>2019-02-09T07:14:00+00:00</published>
-    <updated>2021-10-16T06:25:42+00:00</updated>
+    <updated>2021-10-16T06:33:19+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -453,166 +685,6 @@ end
 &lt;p&gt;原本這遊戲是沒有名字的，筆者也不知道怎麼取名，但在遊玩的過程中，當看到男生答不出女生的生日時的那副天怒人怨的窘境，不難理解為何筆者將這個遊戲取名「男生女生慼」（笑）。&lt;/p&gt;
 
 &lt;p&gt;因為雙約會的次數不太多，筆者其實只有玩過一次，如果對於這遊戲有什麼反饋，歡迎留言。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>cron 如何忽略系統的環境變數</title>
-    <link rel="alternate" href="https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/"/>
-    <id>https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/</id>
-    <published>2018-07-08T06:57:00+00:00</published>
-    <updated>2021-10-16T06:25:42+00:00</updated>
-    <author>
-      <name>大兜</name>
-    </author>
-    <summary type="html">&lt;p&gt;這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。&lt;/p&gt;
-
-</summary>
-    <content type="html">&lt;p&gt;這大概是碼農們時常會遇到的問題之一了，明明設定好的環境變數在殼層操作沒有問題，但是同樣的指令在 cron 卻會出現找不到該指令或找不到環境變數的錯誤。&lt;/p&gt;
-
-
-
-&lt;h1 id="cron-的環境變數去哪了"&gt;cron 的環境變數去哪了？&lt;/h1&gt;
-
-&lt;p&gt;為了偵錯，這時筆者通常會在 cron 腳本設定：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* * * * * env &amp;gt; /var/log/env.log
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;靜待一分鐘後觀察 &lt;code&gt;/var/log/env.log&lt;/code&gt; 的內容，以決定要補上那些缺漏的環境變數。&lt;/p&gt;
-
-&lt;p&gt;筆者將以類似這樣技巧來重現問題與實驗，並且透過以下 &lt;code&gt;Dockerfile&lt;/code&gt; 作為基礎：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-dockerfile"&gt;FROM debian:stretch-slim
-RUN echo 'deb-src http://deb.debian.org/debian stretch main' &amp;gt;&amp;gt; /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -y procps cron vim dpkg-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id="問題重現"&gt;問題重現&lt;/h1&gt;
-
-&lt;p&gt;透過 &lt;code&gt;docker run -e FOO=BAR&lt;/code&gt; 可以將環境變數 &lt;code&gt;FOO=BAR&lt;/code&gt; 設定在 Docker container 的 init 程序，由於 init 程序是 UN*X 啟動時開天闢地的第一個程序，其他的程序都是由此程序衍生出來，所以除非做了特別設定，否則所有程序能繼承到 &lt;code&gt;FOO&lt;/code&gt; 環境變數。&lt;/p&gt;
-
-&lt;p&gt;讓我們驗證一下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker run --rm -e FOO=BAR IMAGE_NAME env
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-HOSTNAME=20794784a3ce
-FOO=BAR
-HOME=/root
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我們可以看到 &lt;code&gt;FOO=BAR&lt;/code&gt; 確實傳進去了，接著，我們再用 cron 做另外一個實驗：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker run --rm -e FOO=BAR IMAGE_NAME sh -c 'echo \'* * * * * env &amp;gt; /var/log/env.log\' | crontab - &amp;amp;&amp;amp; cron &amp;amp;&amp;amp; sleep $((62 - $(date +%S) )) &amp;amp;&amp;amp; cat /var/log/env.log'
-HOME=/root
-LOGNAME=root
-PATH=/usr/bin:/bin
-SHELL=/bin/sh
-PWD=/root
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;sleep $((62 - $(date +%S) ))&lt;/code&gt; - 指的是「睡到秒針到 2」。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;從印出的結果發現，同樣是 &lt;code&gt;env&lt;/code&gt; 指令，在殼層執行與 cron 執行的結果並不一致。首先 &lt;code&gt;FOO=BAR&lt;/code&gt; 消失了，甚至 &lt;code&gt;PATH&lt;/code&gt; 裡的路徑也差異極大，從原本的 &lt;code&gt;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&lt;/code&gt; 變成僅剩下 &lt;code&gt;/usr/bin:/bin&lt;/code&gt;，這可以說明為何許多人在 cron 腳本中使用指令時，習慣使用絕對路徑，或者在腳本上方定義明確定義 &lt;code&gt;PATH&lt;/code&gt; 變數。&lt;/p&gt;
-
-&lt;h2 id="cron-的-forking-過程"&gt;cron 的 forking 過程&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;那麼 cron 是在哪個階段把環境變數清掉的呢？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;由於筆者深受「知其然不知其所以然」的痛苦，不得不調查 cron 到底在搞什麼鬼。在此推薦一個好用的指令：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-sh"&gt;ps wwefxo pid,ppid,command
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;ww&lt;/code&gt; - 無視終端機的寬度，將結果都印出&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;e&lt;/code&gt; - 印出環境變數&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;f&lt;/code&gt; - 以樹狀的方式呈現&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;x&lt;/code&gt; - 印出不被任何終端所控制的程序，例如守護行程&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;o pid,ppid,command&lt;/code&gt; - 只印出程序的 pid、ppid、command&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;更多用法請參考 &lt;a href="https://linux.die.net/man/1/ps"&gt;man ps&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;用同樣的技巧再作一次實驗：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker run --rm -e FOO=BAR IMAGE_NAME sh -c 'echo \'* * * * * ps wwefxo pid,ppid,command &amp;gt; /var/log/ps.log\' | crontab - &amp;amp;&amp;amp; cron &amp;amp;&amp;amp; sleep $((62 - $(date +%S) )) &amp;amp;&amp;amp; cat /var/log/ps.log'
-  PID  PPID COMMAND
-    1     0 sh -c echo '* * * * * ps wwefxo pid,ppid,command &amp;gt; /var/log/ps.log' | crontab - &amp;amp;&amp;amp; cron &amp;amp;&amp;amp; sleep $((62 - $(date +%S) )) &amp;amp;&amp;amp; cat /var/log/ps.log PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin HOSTNAME=87736bfa1426 FOO=BAR HOME=/root
-   11     1 cron HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
-   14    11  \_ CRON HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
-   15    14      \_ /bin/sh -c ps wwefxo pid,ppid,command &amp;gt; /var/log/ps.log SHELL=/bin/sh HOME=/root PATH=/usr/bin:/bin LOGNAME=root
-   16    15          \_ ps wwefxo pid,ppid,command HOME=/root LOGNAME=root PATH=/usr/bin:/bin SHELL=/bin/sh PWD=/root
-   13     1 sleep 57 HOSTNAME=87736bfa1426 HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin FOO=BAR PWD=/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;由此可見當 cron 執行一份工作項目時，整體程序的祖孫結構如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;init -&amp;gt; cron -&amp;gt; cron -&amp;gt; sh -&amp;gt; cron job
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;cron 會額外再 fork 一次自己，然後再執行 &lt;code&gt;sh -c "JOB STRING"&lt;/code&gt;，而環境變數正是在這個階段消失的。&lt;/p&gt;
-
-&lt;p&gt;截至目前為止我們僅知道執行 &lt;code&gt;sh&lt;/code&gt; 時，環境變數已經被改變，無法說明為何環境變數會莫名奇妙消失。筆者起初猜測是 cron 有使用 &lt;code&gt;env -i&lt;/code&gt; 指令，但從程序樹的結果來看則不然。&lt;/p&gt;
-
-&lt;p&gt;無計可施，只好翻了一下 cron 的原始碼，在 &lt;code&gt;do_command.c&lt;/code&gt; 找到了線索：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker run --rm -e FOO=BAR -w /usr/src -v (pwd)/src:/usr/src IMAGE_NAME apt-get source cron
-$ grep -C 3 --color '"-c"' (find src -name do_command.c)
-                            }
-                        }
-#endif
-                        execle(shell, shell, "-c", e-&amp;gt;cmd, (char *)0, jobenv);
-                        fprintf(stderr, "%s: execle: %s\n", shell, strerror(errno));
-                        _exit(ERROR_EXIT);
-                }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;原來 cron 在執行 &lt;code&gt;sh&lt;/code&gt; 指令時，使用了 &lt;code&gt;execle&lt;/code&gt;，且在最後的參數傳入了自訂的環境變數 &lt;code&gt;jobenv&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;引用一段 &lt;code&gt;execle&lt;/code&gt; 的 &lt;code&gt;man&lt;/code&gt; 頁面：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The execle() and execvpe() functions allow the caller to specify the environment of the executed program via the argument envp. The envp argument is an array of pointers to null-terminated strings and must be terminated by a NULL pointer. The other functions take the environment for the new process image from the external variable environ in the calling process.  - https://linux.die.net/man/3/execle&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;然後於是筆者在 &lt;code&gt;entry.c&lt;/code&gt; 找到了設定環境變數的地方&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ grep -B 2 --color 'env_set' (find src -name entry.c)
-        if (!env_get("SHELL", e-&amp;gt;envp)) {
-                snprintf(envstr, MAX_ENVSTR, "SHELL=%s", _PATH_BSHELL);
-                if ((tenvp = env_set(e-&amp;gt;envp, envstr))) {
---
-        if (!env_get("HOME", e-&amp;gt;envp)) {
-                snprintf(envstr, MAX_ENVSTR, "HOME=%s", pw-&amp;gt;pw_dir);
-                if ((tenvp = env_set(e-&amp;gt;envp, envstr))) {
---
-        if (!env_get("PATH", e-&amp;gt;envp)) {
-                snprintf(envstr, MAX_ENVSTR, "PATH=%s", _PATH_DEFPATH);
-                if ((tenvp = env_set(e-&amp;gt;envp, envstr))) {
---
-        }
-        snprintf(envstr, MAX_ENVSTR, "%s=%s", "LOGNAME", pw-&amp;gt;pw_name);
-        if ((tenvp = env_set(e-&amp;gt;envp, envstr))) {
---
-#if defined(BSD)
-        snprintf(envstr, MAX_ENVSTR, "%s=%s", "USER", pw-&amp;gt;pw_name);
-        if ((tenvp = env_set(e-&amp;gt;envp, envstr))) {
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;分別設定了 &lt;code&gt;SHELL&lt;/code&gt;、&lt;code&gt;HOME&lt;/code&gt;、&lt;code&gt;PATH&lt;/code&gt; 和 &lt;code&gt;LOGNAME&lt;/code&gt;，這 4 的變數和上述用 &lt;code&gt;ps&lt;/code&gt; 所觀測的環境變數，&lt;code&gt;SHELL=/bin/sh HOME=/root PATH=/usr/bin:/bin LOGNAME=root&lt;/code&gt;，其結果是完全吻合的。&lt;/p&gt;
-
-&lt;p&gt;至此，真相大白。&lt;/p&gt;
-
-&lt;h1 id="後記"&gt;後記&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;本文中的 cron 指的是大多數人所使用的 vixie cron，如果是 busybox 的實作則不會出現這個問題，在 busybox 裡面，cron 工作的程序環境變數會繼承父程序。&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
