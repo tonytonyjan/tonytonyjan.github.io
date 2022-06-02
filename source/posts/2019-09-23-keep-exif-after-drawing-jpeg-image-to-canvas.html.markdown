@@ -14,22 +14,22 @@ tags: [JavaScript, 已知用火]
 
 只不過 Martin Perry 的[在 2013 的做法](http://www.perry.cz/files/ExifRestorer.js)有些老舊，筆者重新用 2019 已知的技術翻新了版本。僅使用 [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) 和 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)。
 
-# 問題描述
+## 問題描述
 
 在 canvas 上繪製 JPEG 圖片，處理後再將 canvas 輸出新的 JPEG 圖片，同時保留 EXIF 資訊。
 
-# Demo
+## Demo
 
 - [Keep EXIF Data after Drawing JPEG Image in Canvas](https://codepen.io/tonytonyjan/project/editor/XEkOkv)
 - [copyExif.js]
 
-# 解釋
+## 解釋
 
 直覺上，第一時間想到的做法會是先讀取 EXIF 後再重新寫入。其中讀取 EXIF 方面首選 [exif-js](https://github.com/exif-js/exif-js)，但寫入 EXIF 方面就不是這麼容易找到成熟的專案，若非年久失修，就是使用的人太少，可能有很多尚未發現的問題。
 
 然而需求若只是單純要保存原本的 EXIF，而非逐一寫入，其實不需要用到像 exif-js 這麼大的專案。因為 JPEG 檔案的裡面的元資料其實像貨櫃一樣，一個個整齊地存放在名為 marker 的資料結構裡，而其中一個 marker 專門存放 EXIF 資訊。只要將其複製下來，並在新的 JPEG 圖片裡貼上，那麼新的圖片就可以完整保留原始圖片的 EXIF。
 
-# JPEG Marker 結構
+## JPEG Marker 結構
 
 每一個 JPEG marker 結構如下：
 
@@ -45,7 +45,9 @@ marker 的標頭都以兩個位元表示，格式以 `FFXX` 的形式出現，�
 
 `FFC1` 表示 marker 標頭，`000C` 表示資料結構大小為 12，但 12 包含了 `000C` 本身，所以後面的 `DD DD ...` 只有 10 個位元。
 
-# copyExif.js
+## copyExif.js
+
+[原始碼][copyexif.js]
 
 EXIF 資訊存放在 APP1 marker 裡面，標頭為 `FFE1`，這個檔案的實際操作如下：
 
@@ -53,9 +55,14 @@ EXIF 資訊存放在 APP1 marker 裡面，標頭為 `FFE1`，這個檔案的實�
 2. 取得 canvas 的 blob。
 3. 將取得到的 APP1 marker 嵌入 canvas blob 裡面的正確位置。
 
-如果有任何問題或覺得寫的哪裡不好，希望能到 [gist][copyexif.js] 給筆者一些指點，感激不盡。
+## 參考資料
 
-# 參考資料
-
-- [Exif - Wikipedia](https://en.wikipedia.org/wiki/Exif)
-- [Exif file format - MIT Media Lab](https://www.media.mit.edu/pia/Research/deepview/exif.html)
+- [https://en.wikipedia.org/wiki/Exif](https://en.wikipedia.org/wiki/Exif)
+- [https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure](https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure)
+- [https://exiftool.org/TagNames/EXIF.html](https://exiftool.org/TagNames/EXIF.html)
+- [https://web.archive.org/web/20131018091152/http://exif.org/Exif2-2.PDF](https://web.archive.org/web/20131018091152/http://exif.org/Exif2-2.PDF)
+- [https://web.archive.org/web/20210108174645/https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf](https://web.archive.org/web/20210108174645/https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf)
+- [https://www.fileformat.info/format/tiff/egff.htm](https://www.fileformat.info/format/tiff/egff.htm)
+- [https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml#specs](https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml#specs)
+- [https://www.media.mit.edu/pia/Research/deepview/exif.html](https://www.media.mit.edu/pia/Research/deepview/exif.html)
+- [https://www.media.mit.edu/pia/Research/deepview/exif.html](https://www.media.mit.edu/pia/Research/deepview/exif.html)
