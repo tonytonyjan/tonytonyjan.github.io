@@ -116,24 +116,24 @@
 
 <p>只不過 Martin Perry 的<a href="http://www.perry.cz/files/ExifRestorer.js">在 2013 的做法</a>有些老舊，筆者重新用 2019 已知的技術翻新了版本。僅使用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">Blob</a> 和 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a>。</p>
 
-<h1 id="問題描述">問題描述</h1>
+<h2 id="問題描述">問題描述</h2>
 
 <p>在 canvas 上繪製 JPEG 圖片，處理後再將 canvas 輸出新的 JPEG 圖片，同時保留 EXIF 資訊。</p>
 
-<h1 id="demo">Demo</h1>
+<h2 id="demo">Demo</h2>
 
 <ul>
   <li><a href="https://codepen.io/tonytonyjan/project/editor/XEkOkv">Keep EXIF Data after Drawing JPEG Image in Canvas</a></li>
   <li><a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233">copyExif.js</a></li>
 </ul>
 
-<h1 id="解釋">解釋</h1>
+<h2 id="解釋">解釋</h2>
 
 <p>直覺上，第一時間想到的做法會是先讀取 EXIF 後再重新寫入。其中讀取 EXIF 方面首選 <a href="https://github.com/exif-js/exif-js">exif-js</a>，但寫入 EXIF 方面就不是這麼容易找到成熟的專案，若非年久失修，就是使用的人太少，可能有很多尚未發現的問題。</p>
 
 <p>然而需求若只是單純要保存原本的 EXIF，而非逐一寫入，其實不需要用到像 exif-js 這麼大的專案。因為 JPEG 檔案的裡面的元資料其實像貨櫃一樣，一個個整齊地存放在名為 marker 的資料結構裡，而其中一個 marker 專門存放 EXIF 資訊。只要將其複製下來，並在新的 JPEG 圖片裡貼上，那麼新的圖片就可以完整保留原始圖片的 EXIF。</p>
 
-<h1 id="jpeg-marker-結構">JPEG Marker 結構</h1>
+<h2 id="jpeg-marker-結構">JPEG Marker 結構</h2>
 
 <p>每一個 JPEG marker 結構如下：</p>
 
@@ -162,7 +162,9 @@
 
 <p><code>FFC1</code> 表示 marker 標頭，<code>000C</code> 表示資料結構大小為 12，但 12 包含了 <code>000C</code> 本身，所以後面的 <code>DD DD ...</code> 只有 10 個位元。</p>
 
-<h1 id="copyexifjs">copyExif.js</h1>
+<h2 id="copyexifjs">copyExif.js</h2>
+
+<p><a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233">原始碼</a></p>
 
 <p>EXIF 資訊存放在 APP1 marker 裡面，標頭為 <code>FFE1</code>，這個檔案的實際操作如下：</p>
 
@@ -172,13 +174,18 @@
   <li>將取得到的 APP1 marker 嵌入 canvas blob 裡面的正確位置。</li>
 </ol>
 
-<p>如果有任何問題或覺得寫的哪裡不好，希望能到 <a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233">gist</a> 給筆者一些指點，感激不盡。</p>
-
-<h1 id="參考資料">參考資料</h1>
+<h2 id="參考資料">參考資料</h2>
 
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Exif">Exif - Wikipedia</a></li>
-  <li><a href="https://www.media.mit.edu/pia/Research/deepview/exif.html">Exif file format - MIT Media Lab</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Exif">https://en.wikipedia.org/wiki/Exif</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure">https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure</a></li>
+  <li><a href="https://exiftool.org/TagNames/EXIF.html">https://exiftool.org/TagNames/EXIF.html</a></li>
+  <li><a href="https://web.archive.org/web/20131018091152/http://exif.org/Exif2-2.PDF">https://web.archive.org/web/20131018091152/http://exif.org/Exif2-2.PDF</a></li>
+  <li><a href="https://web.archive.org/web/20210108174645/https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf">https://web.archive.org/web/20210108174645/https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf</a></li>
+  <li><a href="https://www.fileformat.info/format/tiff/egff.htm">https://www.fileformat.info/format/tiff/egff.htm</a></li>
+  <li><a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml#specs">https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml#specs</a></li>
+  <li><a href="https://www.media.mit.edu/pia/Research/deepview/exif.html">https://www.media.mit.edu/pia/Research/deepview/exif.html</a></li>
+  <li><a href="https://www.media.mit.edu/pia/Research/deepview/exif.html">https://www.media.mit.edu/pia/Research/deepview/exif.html</a></li>
 </ul>
 
       

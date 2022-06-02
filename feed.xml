@@ -14,7 +14,7 @@
     <link rel="alternate" href="https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/"/>
     <id>https://tonytonyjan.net/2021/10/16/you-might-not-need-dotenv/</id>
     <published>2021-10-16T04:58:00+00:00</published>
-    <updated>2021-10-16T07:25:21+00:00</updated>
+    <updated>2022-06-02T10:29:37+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -250,7 +250,7 @@ world
     <link rel="alternate" href="https://tonytonyjan.net/2020/10/06/ruby-rfc2047/"/>
     <id>https://tonytonyjan.net/2020/10/06/ruby-rfc2047/</id>
     <published>2020-10-06T04:58:00+00:00</published>
-    <updated>2021-10-16T07:25:21+00:00</updated>
+    <updated>2022-06-02T10:29:37+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -365,7 +365,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/"/>
     <id>https://tonytonyjan.net/2020/07/01/released-tjdict-v2-0-in-2020/</id>
     <published>2020-06-30T17:43:00+00:00</published>
-    <updated>2021-10-16T07:25:21+00:00</updated>
+    <updated>2022-06-02T10:29:37+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -436,7 +436,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/"/>
     <id>https://tonytonyjan.net/2020/01/12/how-to-download-all-attachments-with-rails-activestorage/</id>
     <published>2020-01-12T06:44:00+00:00</published>
-    <updated>2021-10-16T07:25:21+00:00</updated>
+    <updated>2022-06-02T10:29:37+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -544,7 +544,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/"/>
     <id>https://tonytonyjan.net/2019/09/23/keep-exif-after-drawing-jpeg-image-to-canvas/</id>
     <published>2019-09-23T08:44:00+00:00</published>
-    <updated>2021-10-16T07:25:21+00:00</updated>
+    <updated>2022-06-02T10:29:37+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
@@ -561,24 +561,24 @@ end
 
 &lt;p&gt;只不過 Martin Perry 的&lt;a href="http://www.perry.cz/files/ExifRestorer.js"&gt;在 2013 的做法&lt;/a&gt;有些老舊，筆者重新用 2019 已知的技術翻新了版本。僅使用 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob"&gt;Blob&lt;/a&gt; 和 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"&gt;ArrayBuffer&lt;/a&gt;。&lt;/p&gt;
 
-&lt;h1 id="問題描述"&gt;問題描述&lt;/h1&gt;
+&lt;h2 id="問題描述"&gt;問題描述&lt;/h2&gt;
 
 &lt;p&gt;在 canvas 上繪製 JPEG 圖片，處理後再將 canvas 輸出新的 JPEG 圖片，同時保留 EXIF 資訊。&lt;/p&gt;
 
-&lt;h1 id="demo"&gt;Demo&lt;/h1&gt;
+&lt;h2 id="demo"&gt;Demo&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href="https://codepen.io/tonytonyjan/project/editor/XEkOkv"&gt;Keep EXIF Data after Drawing JPEG Image in Canvas&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233"&gt;copyExif.js&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id="解釋"&gt;解釋&lt;/h1&gt;
+&lt;h2 id="解釋"&gt;解釋&lt;/h2&gt;
 
 &lt;p&gt;直覺上，第一時間想到的做法會是先讀取 EXIF 後再重新寫入。其中讀取 EXIF 方面首選 &lt;a href="https://github.com/exif-js/exif-js"&gt;exif-js&lt;/a&gt;，但寫入 EXIF 方面就不是這麼容易找到成熟的專案，若非年久失修，就是使用的人太少，可能有很多尚未發現的問題。&lt;/p&gt;
 
 &lt;p&gt;然而需求若只是單純要保存原本的 EXIF，而非逐一寫入，其實不需要用到像 exif-js 這麼大的專案。因為 JPEG 檔案的裡面的元資料其實像貨櫃一樣，一個個整齊地存放在名為 marker 的資料結構裡，而其中一個 marker 專門存放 EXIF 資訊。只要將其複製下來，並在新的 JPEG 圖片裡貼上，那麼新的圖片就可以完整保留原始圖片的 EXIF。&lt;/p&gt;
 
-&lt;h1 id="jpeg-marker-結構"&gt;JPEG Marker 結構&lt;/h1&gt;
+&lt;h2 id="jpeg-marker-結構"&gt;JPEG Marker 結構&lt;/h2&gt;
 
 &lt;p&gt;每一個 JPEG marker 結構如下：&lt;/p&gt;
 
@@ -607,7 +607,9 @@ end
 
 &lt;p&gt;&lt;code&gt;FFC1&lt;/code&gt; 表示 marker 標頭，&lt;code&gt;000C&lt;/code&gt; 表示資料結構大小為 12，但 12 包含了 &lt;code&gt;000C&lt;/code&gt; 本身，所以後面的 &lt;code&gt;DD DD ...&lt;/code&gt; 只有 10 個位元。&lt;/p&gt;
 
-&lt;h1 id="copyexifjs"&gt;copyExif.js&lt;/h1&gt;
+&lt;h2 id="copyexifjs"&gt;copyExif.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233"&gt;原始碼&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;EXIF 資訊存放在 APP1 marker 裡面，標頭為 &lt;code&gt;FFE1&lt;/code&gt;，這個檔案的實際操作如下：&lt;/p&gt;
 
@@ -617,13 +619,18 @@ end
   &lt;li&gt;將取得到的 APP1 marker 嵌入 canvas blob 裡面的正確位置。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;如果有任何問題或覺得寫的哪裡不好，希望能到 &lt;a href="https://gist.github.com/tonytonyjan/ffb7cd0e82cb293b843ece7e79364233"&gt;gist&lt;/a&gt; 給筆者一些指點，感激不盡。&lt;/p&gt;
-
-&lt;h1 id="參考資料"&gt;參考資料&lt;/h1&gt;
+&lt;h2 id="參考資料"&gt;參考資料&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Exif"&gt;Exif - Wikipedia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.media.mit.edu/pia/Research/deepview/exif.html"&gt;Exif file format - MIT Media Lab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Exif"&gt;https://en.wikipedia.org/wiki/Exif&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure"&gt;https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://exiftool.org/TagNames/EXIF.html"&gt;https://exiftool.org/TagNames/EXIF.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://web.archive.org/web/20131018091152/http://exif.org/Exif2-2.PDF"&gt;https://web.archive.org/web/20131018091152/http://exif.org/Exif2-2.PDF&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://web.archive.org/web/20210108174645/https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf"&gt;https://web.archive.org/web/20210108174645/https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.fileformat.info/format/tiff/egff.htm"&gt;https://www.fileformat.info/format/tiff/egff.htm&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml#specs"&gt;https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml#specs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.media.mit.edu/pia/Research/deepview/exif.html"&gt;https://www.media.mit.edu/pia/Research/deepview/exif.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.media.mit.edu/pia/Research/deepview/exif.html"&gt;https://www.media.mit.edu/pia/Research/deepview/exif.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>
@@ -632,7 +639,7 @@ end
     <link rel="alternate" href="https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/"/>
     <id>https://tonytonyjan.net/2019/02/09/a-board-game-for-double-dating/</id>
     <published>2019-02-09T07:14:00+00:00</published>
-    <updated>2021-10-16T07:25:21+00:00</updated>
+    <updated>2022-06-02T10:29:37+00:00</updated>
     <author>
       <name>大兜</name>
     </author>
